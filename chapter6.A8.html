@@ -1,0 +1,771 @@
+<!DOCTYPE html><html lang="pt">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Apêndice 6.H Seção 9 (9 Variáveis Instrumentais) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal</title>
+<!--Generated on Tue Aug 27 12:19:15 2024 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on Última revisão: August 27, 2024.-->
+<style>:root { --bml-ltx-font-size: 10.95; }</style>
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/style.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-table.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-search.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-bookdown.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-fontsettings.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="bookml/CSS/style.css" type="text/css">
+<link rel="stylesheet" href="bookml/CSS/style.gitbook,plain.css" type="text/css">
+<link rel="stylesheet" href="bookml/CSS/style.gitbook.css" type="text/css">
+<link rel="stylesheet" href="bmluser/colors.gitbook-book.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6"></script>
+<link rel="up" href="chapter6.html" title="Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="up up" href="index.html" title="Inferência Causal">
+<link rel="start" href="index.html" title="Inferência Causal">
+<link rel="prev" href="chapter6.A7.html" title="Apêndice 6.G Seção 8 (8 Levando a intuição do SCM ao POM) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="next" href="chapter6.A9.html" title="Apêndice 6.I Seção 10 (10 Contrafactuais) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="appendix" href="chapter6.A1.html" title="Apêndice 6.A Seção 2.4 (2.4 Exemplos de Modelo Probabilístico em um DAG) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="appendix" href="chapter6.A2.html" title="Apêndice 6.B Seção 2.5 (2.5 Modelo Causal (Causal Model)) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="appendix" href="chapter6.A3.html" title="Apêndice 6.C Seção 3 (3 Independência Condicional e D-separação) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="appendix" href="chapter6.A4.html" title="Apêndice 6.D Relativas à Seção 4 (4 O modelo de probabilidade para intervenções) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="appendix" href="chapter6.A5.html" title="Apêndice 6.E Seção 5 (5 Controlando confundidores (critério backdoor)) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="appendix" href="chapter6.A6.html" title="Apêndice 6.F Seções 6 e 7 (6 Controlando mediadores (critério frontdoor)) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="appendix" href="chapter6.A7.html" title="Apêndice 6.G Seção 8 (8 Levando a intuição do SCM ao POM) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="appendix" href="chapter6.A9.html" title="Apêndice 6.I Seção 10 (10 Contrafactuais) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="appendix" href="chapter6.A10.html" title="Apêndice 6.J Seção 11 (11 Identificabilidade na Descoberta Causal) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="chapter" href="chapter1.html" title="Capítulo 1 Por que estudar Inferência Causal? ‣ Inferência Causal">
+<link rel="chapter" href="chapter2.html" title="Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal">
+<link rel="chapter" href="chapter3.html" title="Capítulo 3 Intervenções ‣ Inferência Causal">
+<link rel="chapter" href="chapter4.html" title="Capítulo 4 Resultados potenciais ‣ Inferência Causal">
+<link rel="chapter" href="chapter5.html" title="Capítulo 5 Descoberta Causal ‣ Inferência Causal">
+<link rel="chapter" href="chapter6.html" title="Capítulo 6 Demonstrações ‣ Inferência Causal">
+</head>
+<body>
+<div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+<a href="#bml-main-content" tabindex="0" class="bml-skip-to-content">Skip to content.</a>
+<div class="book-summary"><nav class="ltx_page_navbar">
+<ul class="ltx_toclist summary">
+<li>
+<a href="index.html" title="" class="ltx_ref" rel="start">Inferência Causal <span class="ltx_text"> </span></a>
+</li>
+<li class="divider">
+<li data-level="1" data-path="chapter1.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter1.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">1 </span></b>Por que estudar Inferência Causal?</a></li>
+<li data-level="2" data-path="chapter2.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter2.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">2 </span></b>Modelo Causal (CM)</a></li>
+<li data-level="3" data-path="chapter3.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter3.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">3 </span></b>Intervenções</a></li>
+<li data-level="4" data-path="chapter4.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter4.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">4 </span></b>Resultados potenciais</a></li>
+<li data-level="5" data-path="chapter5.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter5.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">5 </span></b>Descoberta Causal</a></li>
+<li data-level="6" data-path="chapter6.html" class="ltx_tocentry ltx_tocentry_chapter  chapter ">
+<a href="chapter6.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6 </span></b>Demonstrações</a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li data-level="6.A" data-path="chapter6.A1.html" class="ltx_tocentry ltx_tocentry_appendix  chapter "><a href="chapter6.A1.html" title="In Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6.A </span></b><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">2.4</span> (<b><span class="ltx_tag ltx_tag_text">2.4 </span></b>Exemplos de Modelo Probabilístico em um DAG)</a></li>
+<li data-level="6.B" data-path="chapter6.A2.html" class="ltx_tocentry ltx_tocentry_appendix  chapter "><a href="chapter6.A2.html" title="In Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6.B </span></b><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">2.5</span> (<b><span class="ltx_tag ltx_tag_text">2.5 </span></b>Modelo Causal (Causal Model))</a></li>
+<li data-level="6.C" data-path="chapter6.A3.html" class="ltx_tocentry ltx_tocentry_appendix  chapter "><a href="chapter6.A3.html" title="In Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6.C </span></b><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">3</span> (<b><span class="ltx_tag ltx_tag_text">3 </span></b>Independência Condicional e D-separação)</a></li>
+<li data-level="6.D" data-path="chapter6.A4.html" class="ltx_tocentry ltx_tocentry_appendix  chapter "><a href="chapter6.A4.html" title="In Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6.D </span></b>Relativas à <span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">4</span> (<b><span class="ltx_tag ltx_tag_text">4 </span></b>O modelo de probabilidade para intervenções)</a></li>
+<li data-level="6.E" data-path="chapter6.A5.html" class="ltx_tocentry ltx_tocentry_appendix  chapter "><a href="chapter6.A5.html" title="In Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6.E </span></b><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">5</span> (<b><span class="ltx_tag ltx_tag_text">5 </span></b>Controlando confundidores (critério <span class="ltx_text ltx_font_italic">backdoor</span>))</a></li>
+<li data-level="6.F" data-path="chapter6.A6.html" class="ltx_tocentry ltx_tocentry_appendix  chapter "><a href="chapter6.A6.html" title="In Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6.F </span></b><span class="ltx_text ltx_ref_tag">Seções</span> <span class="ltx_text ltx_ref_tag">6</span> e <span class="ltx_text ltx_ref_tag">7</span> (<b><span class="ltx_tag ltx_tag_text">6 </span></b>Controlando mediadores (critério frontdoor))</a></li>
+<li data-level="6.G" data-path="chapter6.A7.html" class="ltx_tocentry ltx_tocentry_appendix  chapter "><a href="chapter6.A7.html" title="In Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6.G </span></b><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">8</span> (<b><span class="ltx_tag ltx_tag_text">8 </span></b>Levando a intuição do SCM ao POM)</a></li>
+<li data-level="6.H" data-path="" class="ltx_tocentry ltx_tocentry_appendix ltx_ref_self  chapter active"><a href="" title="In Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6.H </span></b><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">9</span> (<b><span class="ltx_tag ltx_tag_text">9 </span></b>Variáveis Instrumentais)</a></li>
+<li data-level="6.I" data-path="chapter6.A9.html" class="ltx_tocentry ltx_tocentry_appendix  chapter "><a href="chapter6.A9.html" title="In Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6.I </span></b><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">10</span> (<b><span class="ltx_tag ltx_tag_text">10 </span></b>Contrafactuais)</a></li>
+<li data-level="6.J" data-path="chapter6.A10.html" class="ltx_tocentry ltx_tocentry_appendix  chapter "><a href="chapter6.A10.html" title="In Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6.J </span></b><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">11</span> (<b><span class="ltx_tag ltx_tag_text">11 </span></b>Identificabilidade na Descoberta Causal)</a></li>
+</ol>
+</li>
+</ul>
+</nav></div>
+<div class="ltx_page_main book-body fixed">
+<div class="body-inner">
+<div class="book-header fixed" role="navigation"><h1> (</h1></div>
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="ltx_page_content page-inner" id="bml-main-content">
+<section class="ltx_appendix normal" lang="pt">
+<div class="section level1">
+
+<h1 class="ltx_title ltx_title_appendix">
+<span class="ltx_tag ltx_tag_appendix header-section-number">Apêndice 6.H</span> <a href="S9.html" title="9 Variáveis Instrumentais ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">9</span></a> (<a href="S9.html" title="In Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref ltx_refmacro_nameref"><span class="ltx_text ltx_ref_title">Variáveis Instrumentais</span></a>)</h1>
+
+<div id="chapter6.Thmtheorem19" class="ltx_theorem ltx_theorem_definition">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Definição 6.19</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter6.Thmtheorem19.p1" class="ltx_para">
+<p class="ltx_p"><math id="chapter6.Thmtheorem19.p1.m1" class="ltx_Math" alttext="{\mathbb{U}}=\{U_{V}:V\in{\mathcal{V}}\}" display="inline"><semantics><mrow><mi>𝕌</mi><mo>=</mo><mrow><mo stretchy="false">{</mo><msub><mi>U</mi><mi>V</mi></msub><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mi>V</mi><mo>∈</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi></mrow><mo stretchy="false">}</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{U}}=\{U_{V}:V\in{\mathcal{V}}\}</annotation></semantics></math>,
+<math id="chapter6.Thmtheorem19.p1.m2" class="ltx_Math" alttext="{\mathcal{V}}^{(1)}=\{V\in{\mathcal{V}}:Pa(V)=\emptyset\}" display="inline"><semantics><mrow><msup><mi class="ltx_font_mathcaligraphic">𝒱</mi><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mi>V</mi><mo>∈</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi></mrow><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mrow><mi>P</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>V</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>∅︀</mi></mrow><mo stretchy="false">}</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{V}}^{(1)}=\{V\in{\mathcal{V}}:Pa(V)=\emptyset\}</annotation></semantics></math>, e
+<math id="chapter6.Thmtheorem19.p1.m3" class="ltx_Math" alttext="{\mathcal{V}}^{(i)}=\{V\in{\mathcal{V}}:Pa(V)\subseteq{\mathcal{V}}^{(i-1)}\}" display="inline"><semantics><mrow><msup><mi class="ltx_font_mathcaligraphic">𝒱</mi><mrow><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mi>V</mi><mo>∈</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi></mrow><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mrow><mi>P</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>V</mi><mo stretchy="false">)</mo></mrow></mrow><mo>⊆</mo><msup><mi class="ltx_font_mathcaligraphic">𝒱</mi><mrow><mo stretchy="false">(</mo><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup></mrow><mo stretchy="false">}</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{V}}^{(i)}=\{V\in{\mathcal{V}}:Pa(V)\subseteq{\mathcal{V}}^{(i-1)}\}</annotation></semantics></math>.</p>
+</div>
+</div>
+<div id="chapter6.Thmtheorem20" class="ltx_theorem ltx_theorem_lemma">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Lema 6.20</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter6.Thmtheorem20.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">No modelo de resultados potenciais (<a href="chapter4.html#Thmtheorem7" title="Definição 4.7. ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Definição</span> <span class="ltx_text ltx_ref_tag">4.7</span></a>)
+se <math id="chapter6.Thmtheorem20.p1.m1" class="ltx_Math" alttext="Anc^{*}(Y_{{\mathbf{X}}={\mathbf{x}}})\cap{\mathbb{U}}=Anc^{*}({\mathbf{Y}}_{{%
+\mathbf{X}}={\mathbf{x}},{\mathbf{Z}}={\mathbf{z}}})\cap{\mathbb{U}}" display="inline"><semantics><mrow><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>Y</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>∩</mo><mi>𝕌</mi></mrow><mo>=</mo><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>𝐘</mi><mrow><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow><mo>,</mo><mrow><mi>𝐙</mi><mo>=</mo><mi>𝐳</mi></mrow></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>∩</mo><mi>𝕌</mi></mrow></mrow><annotation encoding="application/x-tex">Anc^{*}(Y_{{\mathbf{X}}={\mathbf{x}}})\cap{\mathbb{U}}=Anc^{*}({\mathbf{Y}}_{{%
+\mathbf{X}}={\mathbf{x}},{\mathbf{Z}}={\mathbf{z}}})\cap{\mathbb{U}}</annotation></semantics></math>,
+então para cada <math id="chapter6.Thmtheorem20.p1.m2" class="ltx_Math" alttext="V\in Pa(Y)" display="inline"><semantics><mrow><mi>V</mi><mo>∈</mo><mrow><mi>P</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>Y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">V\in Pa(Y)</annotation></semantics></math>,
+<math id="chapter6.Thmtheorem20.p1.m3" class="ltx_Math" alttext="Anc^{*}(V_{{\mathbf{X}}={\mathbf{x}}})\cap{\mathbb{U}}=Anc^{*}(V_{{\mathbf{X}}%
+={\mathbf{x}},{\mathbf{Z}}={\mathbf{z}}})\cap{\mathbb{U}}" display="inline"><semantics><mrow><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>V</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>∩</mo><mi>𝕌</mi></mrow><mo>=</mo><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>V</mi><mrow><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow><mo>,</mo><mrow><mi>𝐙</mi><mo>=</mo><mi>𝐳</mi></mrow></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>∩</mo><mi>𝕌</mi></mrow></mrow><annotation encoding="application/x-tex">Anc^{*}(V_{{\mathbf{X}}={\mathbf{x}}})\cap{\mathbb{U}}=Anc^{*}(V_{{\mathbf{X}}%
+={\mathbf{x}},{\mathbf{Z}}={\mathbf{z}}})\cap{\mathbb{U}}</annotation></semantics></math>.</span></p>
+</div>
+</div>
+<div class="ltx_proof">
+
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Demonstração.</h6>
+<div id="p1" class="ltx_para">
+<p class="ltx_p">Primeiramente, note que
+para todo <math id="p1.m1" class="ltx_Math" alttext="Z\in{\mathbf{Z}}" display="inline"><semantics><mrow><mi>Z</mi><mo>∈</mo><mi>𝐙</mi></mrow><annotation encoding="application/x-tex">Z\in{\mathbf{Z}}</annotation></semantics></math>,
+tem-se que <math id="p1.m2" class="ltx_Math" alttext="U_{Z}\notin Anc^{*}(Y_{{\mathbf{X}}={\mathbf{x}},{\mathbf{Z}}={\mathbf{z}}})=%
+Anc^{*}(Y_{{\mathbf{X}}={\mathbf{x}}})" display="inline"><semantics><mrow><msub><mi>U</mi><mi>Z</mi></msub><mo>∉</mo><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>Y</mi><mrow><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow><mo>,</mo><mrow><mi>𝐙</mi><mo>=</mo><mi>𝐳</mi></mrow></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>Y</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">U_{Z}\notin Anc^{*}(Y_{{\mathbf{X}}={\mathbf{x}},{\mathbf{Z}}={\mathbf{z}}})=%
+Anc^{*}(Y_{{\mathbf{X}}={\mathbf{x}}})</annotation></semantics></math>.
+Assim, como <math id="p1.m3" class="ltx_Math" alttext="Anc^{*}(V_{{\mathbf{X}}={\mathbf{x}}})\subseteq Anc^{*}(Y_{{\mathbf{X}}={%
+\mathbf{x}}})" display="inline"><semantics><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>V</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>⊆</mo><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>Y</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">Anc^{*}(V_{{\mathbf{X}}={\mathbf{x}}})\subseteq Anc^{*}(Y_{{\mathbf{X}}={%
+\mathbf{x}}})</annotation></semantics></math>,
+<math id="p1.m4" class="ltx_Math" alttext="U_{Z}\notin Anc^{*}(V_{{\mathbf{X}}={\mathbf{x}}})" display="inline"><semantics><mrow><msub><mi>U</mi><mi>Z</mi></msub><mo>∉</mo><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>V</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">U_{Z}\notin Anc^{*}(V_{{\mathbf{X}}={\mathbf{x}}})</annotation></semantics></math>. Isto é,
+<math id="p1.m5" class="ltx_Math" alttext="{\mathbf{Z}}_{{\mathbf{X}}={\mathbf{x}}}\cap Anc^{*}(V_{{\mathbf{X}}={\mathbf{%
+x}}})=\emptyset" display="inline"><semantics><mrow><mrow><msub><mi>𝐙</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo>∩</mo><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>V</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mi>∅︀</mi></mrow><annotation encoding="application/x-tex">{\mathbf{Z}}_{{\mathbf{X}}={\mathbf{x}}}\cap Anc^{*}(V_{{\mathbf{X}}={\mathbf{%
+x}}})=\emptyset</annotation></semantics></math>.</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">A seguir, por construção da <a href="chapter4.html#Thmtheorem7" title="Definição 4.7. ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Definição</span> <span class="ltx_text ltx_ref_tag">4.7</span></a>,
+<math id="p2.m1" class="ltx_Math" alttext="Anc^{*}(V_{{\mathbf{X}}={\mathbf{x}},{\mathbf{Z}}={\mathbf{z}}})\cap{\mathbb{U%
+}}\subseteq Anc^{*}(V_{{\mathbf{X}}={\mathbf{x}}})\cap{\mathbb{U}}" display="inline"><semantics><mrow><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>V</mi><mrow><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow><mo>,</mo><mrow><mi>𝐙</mi><mo>=</mo><mi>𝐳</mi></mrow></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>∩</mo><mi>𝕌</mi></mrow><mo>⊆</mo><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>V</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>∩</mo><mi>𝕌</mi></mrow></mrow><annotation encoding="application/x-tex">Anc^{*}(V_{{\mathbf{X}}={\mathbf{x}},{\mathbf{Z}}={\mathbf{z}}})\cap{\mathbb{U%
+}}\subseteq Anc^{*}(V_{{\mathbf{X}}={\mathbf{x}}})\cap{\mathbb{U}}</annotation></semantics></math>.
+Assim, basta provar que para todo <math id="p2.m2" class="ltx_Math" alttext="U\in Anc^{*}(V_{{\mathbf{X}}={\mathbf{x}}})\cap{\mathbb{U}}" display="inline"><semantics><mrow><mi>U</mi><mo>∈</mo><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>V</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>∩</mo><mi>𝕌</mi></mrow></mrow><annotation encoding="application/x-tex">U\in Anc^{*}(V_{{\mathbf{X}}={\mathbf{x}}})\cap{\mathbb{U}}</annotation></semantics></math>
+tem-se que <math id="p2.m3" class="ltx_Math" alttext="U\in Anc^{*}(V_{{\mathbf{X}}={\mathbf{x}},{\mathbf{Z}}={\mathbf{z}}})" display="inline"><semantics><mrow><mi>U</mi><mo>∈</mo><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>V</mi><mrow><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow><mo>,</mo><mrow><mi>𝐙</mi><mo>=</mo><mi>𝐳</mi></mrow></mrow></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">U\in Anc^{*}(V_{{\mathbf{X}}={\mathbf{x}},{\mathbf{Z}}={\mathbf{z}}})</annotation></semantics></math>.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">Tome <math id="p3.m1" class="ltx_Math" alttext="U\in Anc^{*}(V_{{\mathbf{X}}={\mathbf{x}}})\cap{\mathbb{U}}" display="inline"><semantics><mrow><mi>U</mi><mo>∈</mo><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>V</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>∩</mo><mi>𝕌</mi></mrow></mrow><annotation encoding="application/x-tex">U\in Anc^{*}(V_{{\mathbf{X}}={\mathbf{x}}})\cap{\mathbb{U}}</annotation></semantics></math>.
+Por construção, existem vértices, <math id="p3.m2" class="ltx_Math" alttext="C_{1},\ldots,C_{m}\in{\mathcal{V}}" display="inline"><semantics><mrow><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>C</mi><mi>m</mi></msub></mrow><mo>∈</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi></mrow><annotation encoding="application/x-tex">C_{1},\ldots,C_{m}\in{\mathcal{V}}</annotation></semantics></math>
+que constituem um caminho direcionado de
+<math id="p3.m3" class="ltx_Math" alttext="U" display="inline"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math> a <math id="p3.m4" class="ltx_Math" alttext="V_{{\mathbf{X}}={\mathbf{x}}}" display="inline"><semantics><msub><mi>V</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><annotation encoding="application/x-tex">V_{{\mathbf{X}}={\mathbf{x}}}</annotation></semantics></math>,
+<math id="p3.m5" class="ltx_Math" alttext="(U,(C_{1})_{{\mathbf{X}}={\mathbf{x}}},\ldots,(C_{m})_{{\mathbf{X}}={\mathbf{x%
+}}},V_{{\mathbf{X}}={\mathbf{x}}})" display="inline"><semantics><mrow><mo stretchy="false">(</mo><mi>U</mi><mo>,</mo><msub><mrow><mo stretchy="false">(</mo><msub><mi>C</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mrow><mo stretchy="false">(</mo><msub><mi>C</mi><mi>m</mi></msub><mo stretchy="false">)</mo></mrow><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo>,</mo><msub><mi>V</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(U,(C_{1})_{{\mathbf{X}}={\mathbf{x}}},\ldots,(C_{m})_{{\mathbf{X}}={\mathbf{x%
+}}},V_{{\mathbf{X}}={\mathbf{x}}})</annotation></semantics></math>.
+Como <math id="p3.m6" class="ltx_Math" alttext="{\mathbf{Z}}_{{\mathbf{X}}={\mathbf{x}}}\cap Anc^{*}(V_{{\mathbf{X}}={\mathbf{%
+x}}})=\emptyset" display="inline"><semantics><mrow><mrow><msub><mi>𝐙</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo>∩</mo><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>V</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mi>∅︀</mi></mrow><annotation encoding="application/x-tex">{\mathbf{Z}}_{{\mathbf{X}}={\mathbf{x}}}\cap Anc^{*}(V_{{\mathbf{X}}={\mathbf{%
+x}}})=\emptyset</annotation></semantics></math>,
+não existe <math id="p3.m7" class="ltx_Math" alttext="V_{i}" display="inline"><semantics><msub><mi>V</mi><mi>i</mi></msub><annotation encoding="application/x-tex">V_{i}</annotation></semantics></math> tal que <math id="p3.m8" class="ltx_Math" alttext="V_{i}\in{\mathbf{Z}}" display="inline"><semantics><mrow><msub><mi>V</mi><mi>i</mi></msub><mo>∈</mo><mi>𝐙</mi></mrow><annotation encoding="application/x-tex">V_{i}\in{\mathbf{Z}}</annotation></semantics></math>. Portanto,
+<math id="p3.m9" class="ltx_Math" alttext="(U,(C_{1})_{{\mathbf{X}}={\mathbf{x}},{\mathbf{Z}}={\mathbf{z}}},\ldots,(C_{m}%
+)_{{\mathbf{X}}={\mathbf{x}}},V_{{\mathbf{X}}={\mathbf{x}},{\mathbf{Z}}={%
+\mathbf{z}}})" display="inline"><semantics><mrow><mo stretchy="false">(</mo><mi>U</mi><mo>,</mo><msub><mrow><mo stretchy="false">(</mo><msub><mi>C</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow><mrow><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow><mo>,</mo><mrow><mi>𝐙</mi><mo>=</mo><mi>𝐳</mi></mrow></mrow></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mrow><mo stretchy="false">(</mo><msub><mi>C</mi><mi>m</mi></msub><mo stretchy="false">)</mo></mrow><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo>,</mo><msub><mi>V</mi><mrow><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow><mo>,</mo><mrow><mi>𝐙</mi><mo>=</mo><mi>𝐳</mi></mrow></mrow></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(U,(C_{1})_{{\mathbf{X}}={\mathbf{x}},{\mathbf{Z}}={\mathbf{z}}},\ldots,(C_{m}%
+)_{{\mathbf{X}}={\mathbf{x}}},V_{{\mathbf{X}}={\mathbf{x}},{\mathbf{Z}}={%
+\mathbf{z}}})</annotation></semantics></math> é
+um caminho direcionado de <math id="p3.m10" class="ltx_Math" alttext="U" display="inline"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math> a <math id="p3.m11" class="ltx_Math" alttext="V_{{\mathbf{X}}={\mathbf{x}},{\mathbf{Z}}={\mathbf{z}}}" display="inline"><semantics><msub><mi>V</mi><mrow><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow><mo>,</mo><mrow><mi>𝐙</mi><mo>=</mo><mi>𝐳</mi></mrow></mrow></msub><annotation encoding="application/x-tex">V_{{\mathbf{X}}={\mathbf{x}},{\mathbf{Z}}={\mathbf{z}}}</annotation></semantics></math>, isto é,
+<math id="p3.m12" class="ltx_Math" alttext="U\in Anc^{*}(V_{{\mathbf{X}}={\mathbf{x}},{\mathbf{Z}}={\mathbf{z}}})" display="inline"><semantics><mrow><mi>U</mi><mo>∈</mo><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>V</mi><mrow><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow><mo>,</mo><mrow><mi>𝐙</mi><mo>=</mo><mi>𝐳</mi></mrow></mrow></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">U\in Anc^{*}(V_{{\mathbf{X}}={\mathbf{x}},{\mathbf{Z}}={\mathbf{z}}})</annotation></semantics></math>.
+∎</p>
+</div>
+</div>
+<div id="chapter6.Thmtheorem21" class="ltx_theorem ltx_theorem_lemma">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Lema 6.21</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter6.Thmtheorem21.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">No modelo de resultados potenciais (<a href="chapter4.html#Thmtheorem7" title="Definição 4.7. ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Definição</span> <span class="ltx_text ltx_ref_tag">4.7</span></a>),
+se <math id="chapter6.Thmtheorem21.p1.m1" class="ltx_Math" alttext="Anc^{*}(Y_{{\mathbf{X}}={\mathbf{x}}})\cap{\mathbb{U}}=Anc^{*}(Y_{{\mathbf{X}}%
+={\mathbf{x}},{\mathbf{Z}}={\mathbf{z}}})\cap{\mathbb{U}}" display="inline"><semantics><mrow><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>Y</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>∩</mo><mi>𝕌</mi></mrow><mo>=</mo><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>Y</mi><mrow><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow><mo>,</mo><mrow><mi>𝐙</mi><mo>=</mo><mi>𝐳</mi></mrow></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>∩</mo><mi>𝕌</mi></mrow></mrow><annotation encoding="application/x-tex">Anc^{*}(Y_{{\mathbf{X}}={\mathbf{x}}})\cap{\mathbb{U}}=Anc^{*}(Y_{{\mathbf{X}}%
+={\mathbf{x}},{\mathbf{Z}}={\mathbf{z}}})\cap{\mathbb{U}}</annotation></semantics></math>, então
+<math id="chapter6.Thmtheorem21.p1.m2" class="ltx_Math" alttext="Y_{{\mathbf{X}}={\mathbf{x}}}\equiv Y_{{\mathbf{X}}={\mathbf{x}},{\mathbf{Z}}=%
+{\mathbf{z}}}" display="inline"><semantics><mrow><msub><mi>Y</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo>≡</mo><msub><mi>Y</mi><mrow><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow><mo>,</mo><mrow><mi>𝐙</mi><mo>=</mo><mi>𝐳</mi></mrow></mrow></msub></mrow><annotation encoding="application/x-tex">Y_{{\mathbf{X}}={\mathbf{x}}}\equiv Y_{{\mathbf{X}}={\mathbf{x}},{\mathbf{Z}}=%
+{\mathbf{z}}}</annotation></semantics></math>.</span></p>
+</div>
+</div>
+<div class="ltx_proof">
+
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Demonstração.</h6>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">Faremos a demonstração por indução.
+Para tal, utilizaremos a <a href="#chapter6.Thmtheorem19" title="Definição 6.19. ‣ Apêndice 6.H Seção 9 (9 Variáveis Instrumentais) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Definição</span> <span class="ltx_text ltx_ref_tag">6.19</span></a>.
+Se <math id="p4.m1" class="ltx_Math" alttext="Y\in{\mathcal{V}}^{(1)}" display="inline"><semantics><mrow><mi>Y</mi><mo>∈</mo><msup><mi class="ltx_font_mathcaligraphic">𝒱</mi><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">Y\in{\mathcal{V}}^{(1)}</annotation></semantics></math>, então <math id="p4.m2" class="ltx_Math" alttext="Pa(Y)=\emptyset" display="inline"><semantics><mrow><mrow><mi>P</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>Y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>∅︀</mi></mrow><annotation encoding="application/x-tex">Pa(Y)=\emptyset</annotation></semantics></math>.
+Assim, <math id="p4.m3" class="ltx_Math" alttext="Anc^{*}(Y_{{\mathbf{X}}={\mathbf{x}}})" display="inline"><semantics><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>Y</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">Anc^{*}(Y_{{\mathbf{X}}={\mathbf{x}}})</annotation></semantics></math> é <math id="p4.m4" class="ltx_Math" alttext="\{U_{Y}\}" display="inline"><semantics><mrow><mo stretchy="false">{</mo><msub><mi>U</mi><mi>Y</mi></msub><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">\{U_{Y}\}</annotation></semantics></math> ou <math id="p4.m5" class="ltx_Math" alttext="\emptyset" display="inline"><semantics><mi>∅︀</mi><annotation encoding="application/x-tex">\emptyset</annotation></semantics></math>.
+Se <math id="p4.m6" class="ltx_Math" alttext="Anc^{*}(Y_{{\mathbf{X}}={\mathbf{x}}})=\emptyset" display="inline"><semantics><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>Y</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>∅︀</mi></mrow><annotation encoding="application/x-tex">Anc^{*}(Y_{{\mathbf{X}}={\mathbf{x}}})=\emptyset</annotation></semantics></math>,
+então <math id="p4.m7" class="ltx_Math" alttext="Y\in{\mathbf{X}}" display="inline"><semantics><mrow><mi>Y</mi><mo>∈</mo><mi>𝐗</mi></mrow><annotation encoding="application/x-tex">Y\in{\mathbf{X}}</annotation></semantics></math>. Portanto, tomando <math id="p4.m8" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> como <math id="p4.m9" class="ltx_Math" alttext="X_{i}" display="inline"><semantics><msub><mi>X</mi><mi>i</mi></msub><annotation encoding="application/x-tex">X_{i}</annotation></semantics></math>,
+<math id="p4.m10" class="ltx_Math" alttext="Y_{{\mathbf{X}}={\mathbf{x}}}\equiv{\mathbf{x}}_{i}\equiv Y_{{\mathbf{X}}={%
+\mathbf{x}},{\mathbf{Z}}={\mathbf{z}}}" display="inline"><semantics><mrow><msub><mi>Y</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo>≡</mo><msub><mi>𝐱</mi><mi>i</mi></msub><mo>≡</mo><msub><mi>Y</mi><mrow><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow><mo>,</mo><mrow><mi>𝐙</mi><mo>=</mo><mi>𝐳</mi></mrow></mrow></msub></mrow><annotation encoding="application/x-tex">Y_{{\mathbf{X}}={\mathbf{x}}}\equiv{\mathbf{x}}_{i}\equiv Y_{{\mathbf{X}}={%
+\mathbf{x}},{\mathbf{Z}}={\mathbf{z}}}</annotation></semantics></math>.
+Se <math id="p4.m11" class="ltx_Math" alttext="Anc^{*}(Y_{{\mathbf{X}}={\mathbf{x}}})=Anc^{*}(Y_{{\mathbf{X}}={\mathbf{x}},{%
+\mathbf{Z}}={\mathbf{z}}})=\{U_{Y}\}" display="inline"><semantics><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>Y</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>Y</mi><mrow><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow><mo>,</mo><mrow><mi>𝐙</mi><mo>=</mo><mi>𝐳</mi></mrow></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo stretchy="false">{</mo><msub><mi>U</mi><mi>Y</mi></msub><mo stretchy="false">}</mo></mrow></mrow><annotation encoding="application/x-tex">Anc^{*}(Y_{{\mathbf{X}}={\mathbf{x}}})=Anc^{*}(Y_{{\mathbf{X}}={\mathbf{x}},{%
+\mathbf{Z}}={\mathbf{z}}})=\{U_{Y}\}</annotation></semantics></math>, então
+<math id="p4.m12" class="ltx_Math" alttext="Y_{{\mathbf{X}}={\mathbf{x}}}\equiv g_{Y}(U_{Y})\equiv Y_{{\mathbf{X}}={%
+\mathbf{x}},{\mathbf{Z}}={\mathbf{z}}}" display="inline"><semantics><mrow><msub><mi>Y</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo>≡</mo><mrow><msub><mi>g</mi><mi>Y</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>U</mi><mi>Y</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>≡</mo><msub><mi>Y</mi><mrow><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow><mo>,</mo><mrow><mi>𝐙</mi><mo>=</mo><mi>𝐳</mi></mrow></mrow></msub></mrow><annotation encoding="application/x-tex">Y_{{\mathbf{X}}={\mathbf{x}}}\equiv g_{Y}(U_{Y})\equiv Y_{{\mathbf{X}}={%
+\mathbf{x}},{\mathbf{Z}}={\mathbf{z}}}</annotation></semantics></math>.</p>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p">Agora, suponha que se <math id="p5.m1" class="ltx_Math" alttext="V\in{\mathcal{V}}^{(i-1)}" display="inline"><semantics><mrow><mi>V</mi><mo>∈</mo><msup><mi class="ltx_font_mathcaligraphic">𝒱</mi><mrow><mo stretchy="false">(</mo><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">V\in{\mathcal{V}}^{(i-1)}</annotation></semantics></math> e
+<math id="p5.m2" class="ltx_Math" alttext="Anc^{*}(V_{{\mathbf{X}}={\mathbf{x}}})\cap{\mathbb{U}}=Anc^{*}(V_{{\mathbf{X}}%
+={\mathbf{x}},{\mathbf{Z}}={\mathbf{z}}})\cap{\mathbb{U}}" display="inline"><semantics><mrow><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>V</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>∩</mo><mi>𝕌</mi></mrow><mo>=</mo><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>V</mi><mrow><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow><mo>,</mo><mrow><mi>𝐙</mi><mo>=</mo><mi>𝐳</mi></mrow></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>∩</mo><mi>𝕌</mi></mrow></mrow><annotation encoding="application/x-tex">Anc^{*}(V_{{\mathbf{X}}={\mathbf{x}}})\cap{\mathbb{U}}=Anc^{*}(V_{{\mathbf{X}}%
+={\mathbf{x}},{\mathbf{Z}}={\mathbf{z}}})\cap{\mathbb{U}}</annotation></semantics></math>, então
+<math id="p5.m3" class="ltx_Math" alttext="V_{{\mathbf{X}}={\mathbf{x}}}\equiv V_{{\mathbf{X}}={\mathbf{x}},{\mathbf{Z}}=%
+{\mathbf{z}}}" display="inline"><semantics><mrow><msub><mi>V</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo>≡</mo><msub><mi>V</mi><mrow><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow><mo>,</mo><mrow><mi>𝐙</mi><mo>=</mo><mi>𝐳</mi></mrow></mrow></msub></mrow><annotation encoding="application/x-tex">V_{{\mathbf{X}}={\mathbf{x}}}\equiv V_{{\mathbf{X}}={\mathbf{x}},{\mathbf{Z}}=%
+{\mathbf{z}}}</annotation></semantics></math>.
+Tome <math id="p5.m4" class="ltx_Math" alttext="Y\in{\mathcal{V}}^{(i)}" display="inline"><semantics><mrow><mi>Y</mi><mo>∈</mo><msup><mi class="ltx_font_mathcaligraphic">𝒱</mi><mrow><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">Y\in{\mathcal{V}}^{(i)}</annotation></semantics></math> tal que
+<math id="p5.m5" class="ltx_Math" alttext="Anc^{*}(Y_{{\mathbf{X}}={\mathbf{x}}})\cap{\mathbb{U}}=Anc^{*}(Y_{{\mathbf{X}}%
+={\mathbf{x}},{\mathbf{Z}}={\mathbf{z}}})\cap{\mathbb{U}}" display="inline"><semantics><mrow><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>Y</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>∩</mo><mi>𝕌</mi></mrow><mo>=</mo><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>Y</mi><mrow><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow><mo>,</mo><mrow><mi>𝐙</mi><mo>=</mo><mi>𝐳</mi></mrow></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>∩</mo><mi>𝕌</mi></mrow></mrow><annotation encoding="application/x-tex">Anc^{*}(Y_{{\mathbf{X}}={\mathbf{x}}})\cap{\mathbb{U}}=Anc^{*}(Y_{{\mathbf{X}}%
+={\mathbf{x}},{\mathbf{Z}}={\mathbf{z}}})\cap{\mathbb{U}}</annotation></semantics></math>.
+Se <math id="p5.m6" class="ltx_Math" alttext="U_{Y}\notin Anc^{*}(Y_{{\mathbf{X}}={\mathbf{x}}})" display="inline"><semantics><mrow><msub><mi>U</mi><mi>Y</mi></msub><mo>∉</mo><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>Y</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">U_{Y}\notin Anc^{*}(Y_{{\mathbf{X}}={\mathbf{x}}})</annotation></semantics></math>, então
+existe <math id="p5.m7" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> é algum <math id="p5.m8" class="ltx_Math" alttext="X_{i}" display="inline"><semantics><msub><mi>X</mi><mi>i</mi></msub><annotation encoding="application/x-tex">X_{i}</annotation></semantics></math>. Portanto,
+<math id="p5.m9" class="ltx_Math" alttext="Y_{{\mathbf{X}}={\mathbf{x}}}\equiv{\mathbf{x}}_{i}\equiv Y_{{\mathbf{X}}={%
+\mathbf{x}},{\mathbf{Z}}={\mathbf{z}}}" display="inline"><semantics><mrow><msub><mi>Y</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo>≡</mo><msub><mi>𝐱</mi><mi>i</mi></msub><mo>≡</mo><msub><mi>Y</mi><mrow><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow><mo>,</mo><mrow><mi>𝐙</mi><mo>=</mo><mi>𝐳</mi></mrow></mrow></msub></mrow><annotation encoding="application/x-tex">Y_{{\mathbf{X}}={\mathbf{x}}}\equiv{\mathbf{x}}_{i}\equiv Y_{{\mathbf{X}}={%
+\mathbf{x}},{\mathbf{Z}}={\mathbf{z}}}</annotation></semantics></math>.
+A seguir, suponha que <math id="p5.m10" class="ltx_Math" alttext="U_{Y}\in Anc^{*}(Y_{{\mathbf{X}}={\mathbf{x}},{\mathbf{Z}}={\mathbf{z}}})" display="inline"><semantics><mrow><msub><mi>U</mi><mi>Y</mi></msub><mo>∈</mo><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>Y</mi><mrow><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow><mo>,</mo><mrow><mi>𝐙</mi><mo>=</mo><mi>𝐳</mi></mrow></mrow></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">U_{Y}\in Anc^{*}(Y_{{\mathbf{X}}={\mathbf{x}},{\mathbf{Z}}={\mathbf{z}}})</annotation></semantics></math>.
+Para cada <math id="p5.m11" class="ltx_Math" alttext="V\in Pa(Y)" display="inline"><semantics><mrow><mi>V</mi><mo>∈</mo><mrow><mi>P</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>Y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">V\in Pa(Y)</annotation></semantics></math>, como <math id="p5.m12" class="ltx_Math" alttext="Y\in{\mathcal{V}}^{(i)}" display="inline"><semantics><mrow><mi>Y</mi><mo>∈</mo><msup><mi class="ltx_font_mathcaligraphic">𝒱</mi><mrow><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">Y\in{\mathcal{V}}^{(i)}</annotation></semantics></math>,
+<math id="p5.m13" class="ltx_Math" alttext="V\in{\mathcal{V}}^{(i-1)}" display="inline"><semantics><mrow><mi>V</mi><mo>∈</mo><msup><mi class="ltx_font_mathcaligraphic">𝒱</mi><mrow><mo stretchy="false">(</mo><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">V\in{\mathcal{V}}^{(i-1)}</annotation></semantics></math>.
+Além disso, decorre do <a href="#chapter6.Thmtheorem20" title="Lema 6.20. ‣ Apêndice 6.H Seção 9 (9 Variáveis Instrumentais) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Lema</span> <span class="ltx_text ltx_ref_tag">6.20</span></a>, que
+<math id="p5.m14" class="ltx_Math" alttext="Anc^{*}(V_{{\mathbf{X}}={\mathbf{x}}})\cap U=Anc^{*}(V_{{\mathbf{X}}={\mathbf{%
+x}},{\mathbf{Z}}={\mathbf{z}}})\cap U" display="inline"><semantics><mrow><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>V</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>∩</mo><mi>U</mi></mrow><mo>=</mo><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>V</mi><mrow><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow><mo>,</mo><mrow><mi>𝐙</mi><mo>=</mo><mi>𝐳</mi></mrow></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>∩</mo><mi>U</mi></mrow></mrow><annotation encoding="application/x-tex">Anc^{*}(V_{{\mathbf{X}}={\mathbf{x}}})\cap U=Anc^{*}(V_{{\mathbf{X}}={\mathbf{%
+x}},{\mathbf{Z}}={\mathbf{z}}})\cap U</annotation></semantics></math>.
+Portanto, decorre da hipótese de indução que
+<math id="p5.m15" class="ltx_Math" alttext="V_{{\mathbf{X}}={\mathbf{x}}}\equiv V_{{\mathbf{X}}={\mathbf{x}},{\mathbf{Z}}=%
+{\mathbf{z}}}" display="inline"><semantics><mrow><msub><mi>V</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo>≡</mo><msub><mi>V</mi><mrow><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow><mo>,</mo><mrow><mi>𝐙</mi><mo>=</mo><mi>𝐳</mi></mrow></mrow></msub></mrow><annotation encoding="application/x-tex">V_{{\mathbf{X}}={\mathbf{x}}}\equiv V_{{\mathbf{X}}={\mathbf{x}},{\mathbf{Z}}=%
+{\mathbf{z}}}</annotation></semantics></math>. Assim,</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx135" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex321"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex321.m1" class="ltx_Math" alttext="\displaystyle Y_{{\mathbf{X}}={\mathbf{x}}}\equiv g_{Y}(U_{Y},(Pa(Y))_{{%
+\mathbf{X}}={\mathbf{x}}})\equiv g_{Y}(U_{Y},(Pa(Y))_{{\mathbf{X}}={\mathbf{x}%
+},{\mathbf{Z}}={\mathbf{z}}})\equiv Y_{{\mathbf{X}}={\mathbf{x}},{\mathbf{Z}}=%
+{\mathbf{z}}}" display="inline"><semantics><mrow><msub><mi>Y</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo>≡</mo><mrow><msub><mi>g</mi><mi>Y</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>U</mi><mi>Y</mi></msub><mo>,</mo><msub><mrow><mo stretchy="false">(</mo><mrow><mi>P</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>Y</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>≡</mo><mrow><msub><mi>g</mi><mi>Y</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>U</mi><mi>Y</mi></msub><mo>,</mo><msub><mrow><mo stretchy="false">(</mo><mrow><mi>P</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>Y</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow><mrow><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow><mo>,</mo><mrow><mi>𝐙</mi><mo>=</mo><mi>𝐳</mi></mrow></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>≡</mo><msub><mi>Y</mi><mrow><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow><mo>,</mo><mrow><mi>𝐙</mi><mo>=</mo><mi>𝐳</mi></mrow></mrow></msub></mrow><annotation encoding="application/x-tex">\displaystyle Y_{{\mathbf{X}}={\mathbf{x}}}\equiv g_{Y}(U_{Y},(Pa(Y))_{{%
+\mathbf{X}}={\mathbf{x}}})\equiv g_{Y}(U_{Y},(Pa(Y))_{{\mathbf{X}}={\mathbf{x}%
+},{\mathbf{Z}}={\mathbf{z}}})\equiv Y_{{\mathbf{X}}={\mathbf{x}},{\mathbf{Z}}=%
+{\mathbf{z}}}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<p class="ltx_p">∎</p>
+</div>
+</div>
+<div class="ltx_proof">
+
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Prova do <a href="S9.html#chapter4.Thmtheorem23" title="Lema 4.23. ‣ 9 Variáveis Instrumentais ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Lema</span> <span class="ltx_text ltx_ref_tag">4.23</span></a>.</h6>
+<div id="p6" class="ltx_para">
+<p class="ltx_p">A seguir, suponha que existe um caminho direcionado de
+<math id="p6.m1" class="ltx_Math" alttext="I" display="inline"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math> a <math id="p6.m2" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>, <math id="p6.m3" class="ltx_Math" alttext="(I,C_{1},\ldots,C_{m},Y)" display="inline"><semantics><mrow><mo stretchy="false">(</mo><mi>I</mi><mo>,</mo><msub><mi>C</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>C</mi><mi>m</mi></msub><mo>,</mo><mi>Y</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(I,C_{1},\ldots,C_{m},Y)</annotation></semantics></math>, que não passa por <math id="p6.m4" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>.
+Escolha <math id="p6.m5" class="ltx_Math" alttext="f" display="inline"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math> tal que <math id="p6.m6" class="ltx_Math" alttext="I\sim\text{Bernoulli}(0.5)" display="inline"><semantics><mrow><mi>I</mi><mo>∼</mo><mrow><mtext>Bernoulli</mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0.5</mn><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">I\sim\text{Bernoulli}(0.5)</annotation></semantics></math> e
+<math id="p6.m7" class="ltx_Math" alttext="I\equiv C_{1}\equiv\ldots\equiv C_{m}\equiv Y" display="inline"><semantics><mrow><mi>I</mi><mo>≡</mo><msub><mi>C</mi><mn>1</mn></msub><mo>≡</mo><mi mathvariant="normal">…</mi><mo>≡</mo><msub><mi>C</mi><mi>m</mi></msub><mo>≡</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">I\equiv C_{1}\equiv\ldots\equiv C_{m}\equiv Y</annotation></semantics></math>.
+<math id="p6.m8" class="ltx_Math" alttext="Y_{X=x}\sim\text{Bernoulli}(0.5)" display="inline"><semantics><mrow><msub><mi>Y</mi><mrow><mi>X</mi><mo>=</mo><mi>x</mi></mrow></msub><mo>∼</mo><mrow><mtext>Bernoulli</mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0.5</mn><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">Y_{X=x}\sim\text{Bernoulli}(0.5)</annotation></semantics></math> e
+<math id="p6.m9" class="ltx_Math" alttext="Y_{X=x,I=i}\equiv i" display="inline"><semantics><mrow><msub><mi>Y</mi><mrow><mrow><mi>X</mi><mo>=</mo><mi>x</mi></mrow><mo>,</mo><mrow><mi>I</mi><mo>=</mo><mi>i</mi></mrow></mrow></msub><mo>≡</mo><mi>i</mi></mrow><annotation encoding="application/x-tex">Y_{X=x,I=i}\equiv i</annotation></semantics></math>. Portanto,
+<math id="p6.m10" class="ltx_Math" alttext="{\mathbb{P}}(Y_{X=x}\neq Y_{X=x,I=i})&gt;0" display="inline"><semantics><mrow><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>Y</mi><mrow><mi>X</mi><mo>=</mo><mi>x</mi></mrow></msub><mo>≠</mo><msub><mi>Y</mi><mrow><mrow><mi>X</mi><mo>=</mo><mi>x</mi></mrow><mo>,</mo><mrow><mi>I</mi><mo>=</mo><mi>i</mi></mrow></mrow></msub></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">{\mathbb{P}}(Y_{X=x}\neq Y_{X=x,I=i})&gt;0</annotation></semantics></math>.</p>
+</div>
+<div id="p7" class="ltx_para">
+<p class="ltx_p">A seguir, suponha que todo caminho direcionado de
+<math id="p7.m1" class="ltx_Math" alttext="I" display="inline"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math> a <math id="p7.m2" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>, <math id="p7.m3" class="ltx_Math" alttext="C" display="inline"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>, é tal que existe <math id="p7.m4" class="ltx_Math" alttext="j" display="inline"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math> com <math id="p7.m5" class="ltx_Math" alttext="C_{j}=X" display="inline"><semantics><mrow><msub><mi>C</mi><mi>j</mi></msub><mo>=</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">C_{j}=X</annotation></semantics></math>.
+Iremos provar que
+<math id="p7.m6" class="ltx_Math" alttext="Anc^{*}(Y_{X=x})\cap{\mathbb{U}}=Anc^{*}(Y_{X=x,I=i})\cap{\mathbb{U}}" display="inline"><semantics><mrow><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>Y</mi><mrow><mi>X</mi><mo>=</mo><mi>x</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>∩</mo><mi>𝕌</mi></mrow><mo>=</mo><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>Y</mi><mrow><mrow><mi>X</mi><mo>=</mo><mi>x</mi></mrow><mo>,</mo><mrow><mi>I</mi><mo>=</mo><mi>i</mi></mrow></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>∩</mo><mi>𝕌</mi></mrow></mrow><annotation encoding="application/x-tex">Anc^{*}(Y_{X=x})\cap{\mathbb{U}}=Anc^{*}(Y_{X=x,I=i})\cap{\mathbb{U}}</annotation></semantics></math> e,
+com base no <a href="#chapter6.Thmtheorem21" title="Lema 6.21. ‣ Apêndice 6.H Seção 9 (9 Variáveis Instrumentais) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Lema</span> <span class="ltx_text ltx_ref_tag">6.21</span></a>, concluir que
+<math id="p7.m7" class="ltx_Math" alttext="Y_{I=i,X=x}\equiv Y_{X=x}" display="inline"><semantics><mrow><msub><mi>Y</mi><mrow><mrow><mi>I</mi><mo>=</mo><mi>i</mi></mrow><mo>,</mo><mrow><mi>X</mi><mo>=</mo><mi>x</mi></mrow></mrow></msub><mo>≡</mo><msub><mi>Y</mi><mrow><mi>X</mi><mo>=</mo><mi>x</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Y_{I=i,X=x}\equiv Y_{X=x}</annotation></semantics></math>.
+Como <math id="p7.m8" class="ltx_Math" alttext="Anc^{*}(Y_{X=x,I=i})\cap{\mathbb{U}}\subseteq Anc^{*}(Y_{X=x})\cap{\mathbb{U}}" display="inline"><semantics><mrow><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>Y</mi><mrow><mrow><mi>X</mi><mo>=</mo><mi>x</mi></mrow><mo>,</mo><mrow><mi>I</mi><mo>=</mo><mi>i</mi></mrow></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>∩</mo><mi>𝕌</mi></mrow><mo>⊆</mo><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>Y</mi><mrow><mi>X</mi><mo>=</mo><mi>x</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>∩</mo><mi>𝕌</mi></mrow></mrow><annotation encoding="application/x-tex">Anc^{*}(Y_{X=x,I=i})\cap{\mathbb{U}}\subseteq Anc^{*}(Y_{X=x})\cap{\mathbb{U}}</annotation></semantics></math>,
+basta provar que
+todo <math id="p7.m9" class="ltx_Math" alttext="U\in Anc^{*}(Y_{X=x})\cap{\mathbb{U}}" display="inline"><semantics><mrow><mi>U</mi><mo>∈</mo><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>Y</mi><mrow><mi>X</mi><mo>=</mo><mi>x</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>∩</mo><mi>𝕌</mi></mrow></mrow><annotation encoding="application/x-tex">U\in Anc^{*}(Y_{X=x})\cap{\mathbb{U}}</annotation></semantics></math> satisfaz
+<math id="p7.m10" class="ltx_Math" alttext="U\in Anc^{*}(Y_{X=x,I=i})" display="inline"><semantics><mrow><mi>U</mi><mo>∈</mo><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>Y</mi><mrow><mrow><mi>X</mi><mo>=</mo><mi>x</mi></mrow><mo>,</mo><mrow><mi>I</mi><mo>=</mo><mi>i</mi></mrow></mrow></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">U\in Anc^{*}(Y_{X=x,I=i})</annotation></semantics></math>.</p>
+</div>
+<div id="p8" class="ltx_para">
+<p class="ltx_p">Tome <math id="p8.m1" class="ltx_Math" alttext="U\in Anc^{*}(Y_{X=x})\cap{\mathbb{U}}" display="inline"><semantics><mrow><mi>U</mi><mo>∈</mo><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>Y</mi><mrow><mi>X</mi><mo>=</mo><mi>x</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>∩</mo><mi>𝕌</mi></mrow></mrow><annotation encoding="application/x-tex">U\in Anc^{*}(Y_{X=x})\cap{\mathbb{U}}</annotation></semantics></math>.
+Assim, existem vértices
+<math id="p8.m2" class="ltx_Math" alttext="C_{1},\ldots,C_{m}\in{\mathcal{V}}" display="inline"><semantics><mrow><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>C</mi><mi>m</mi></msub></mrow><mo>∈</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi></mrow><annotation encoding="application/x-tex">C_{1},\ldots,C_{m}\in{\mathcal{V}}</annotation></semantics></math> e
+um caminho direcionado de
+<math id="p8.m3" class="ltx_Math" alttext="U" display="inline"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math> a <math id="p8.m4" class="ltx_Math" alttext="Y_{{\mathbf{X}}={\mathbf{x}}}" display="inline"><semantics><msub><mi>Y</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><annotation encoding="application/x-tex">Y_{{\mathbf{X}}={\mathbf{x}}}</annotation></semantics></math>,
+<math id="p8.m5" class="ltx_Math" alttext="(U,(C_{1})_{X=x},\ldots,(C_{m})_{X=x},Y_{X=x})" display="inline"><semantics><mrow><mo stretchy="false">(</mo><mi>U</mi><mo>,</mo><msub><mrow><mo stretchy="false">(</mo><msub><mi>C</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow><mrow><mi>X</mi><mo>=</mo><mi>x</mi></mrow></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mrow><mo stretchy="false">(</mo><msub><mi>C</mi><mi>m</mi></msub><mo stretchy="false">)</mo></mrow><mrow><mi>X</mi><mo>=</mo><mi>x</mi></mrow></msub><mo>,</mo><msub><mi>Y</mi><mrow><mi>X</mi><mo>=</mo><mi>x</mi></mrow></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(U,(C_{1})_{X=x},\ldots,(C_{m})_{X=x},Y_{X=x})</annotation></semantics></math>.
+Note que se algum <math id="p8.m6" class="ltx_Math" alttext="C_{j}" display="inline"><semantics><msub><mi>C</mi><mi>j</mi></msub><annotation encoding="application/x-tex">C_{j}</annotation></semantics></math> fosse <math id="p8.m7" class="ltx_Math" alttext="I" display="inline"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math>, então
+pela hipótese do lema, existiria algum <math id="p8.m8" class="ltx_Math" alttext="C_{k}" display="inline"><semantics><msub><mi>C</mi><mi>k</mi></msub><annotation encoding="application/x-tex">C_{k}</annotation></semantics></math>
+que seria <math id="p8.m9" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>. Assim,
+<math id="p8.m10" class="ltx_Math" alttext="(U,C_{1},\ldots,C_{m},Y_{X=x})" display="inline"><semantics><mrow><mo stretchy="false">(</mo><mi>U</mi><mo>,</mo><msub><mi>C</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>C</mi><mi>m</mi></msub><mo>,</mo><msub><mi>Y</mi><mrow><mi>X</mi><mo>=</mo><mi>x</mi></mrow></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(U,C_{1},\ldots,C_{m},Y_{X=x})</annotation></semantics></math>
+não seria um caminho direcionado,
+afinal, <math id="p8.m11" class="ltx_Math" alttext="X_{X=x}" display="inline"><semantics><msub><mi>X</mi><mrow><mi>X</mi><mo>=</mo><mi>x</mi></mrow></msub><annotation encoding="application/x-tex">X_{X=x}</annotation></semantics></math> não tem pais.
+Portanto, <math id="p8.m12" class="ltx_Math" alttext="I" display="inline"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math> não está em <math id="p8.m13" class="ltx_Math" alttext="C_{1},\ldots,C_{m}" display="inline"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>C</mi><mi>m</mi></msub></mrow><annotation encoding="application/x-tex">C_{1},\ldots,C_{m}</annotation></semantics></math>.
+Conclua que
+<math id="p8.m14" class="ltx_Math" alttext="(U,(C_{1})_{X=x,I=i},\ldots,(C_{m})_{X=x,I=i},Y_{X=x,I=i})" display="inline"><semantics><mrow><mo stretchy="false">(</mo><mi>U</mi><mo>,</mo><msub><mrow><mo stretchy="false">(</mo><msub><mi>C</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow><mrow><mrow><mi>X</mi><mo>=</mo><mi>x</mi></mrow><mo>,</mo><mrow><mi>I</mi><mo>=</mo><mi>i</mi></mrow></mrow></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mrow><mo stretchy="false">(</mo><msub><mi>C</mi><mi>m</mi></msub><mo stretchy="false">)</mo></mrow><mrow><mrow><mi>X</mi><mo>=</mo><mi>x</mi></mrow><mo>,</mo><mrow><mi>I</mi><mo>=</mo><mi>i</mi></mrow></mrow></msub><mo>,</mo><msub><mi>Y</mi><mrow><mrow><mi>X</mi><mo>=</mo><mi>x</mi></mrow><mo>,</mo><mrow><mi>I</mi><mo>=</mo><mi>i</mi></mrow></mrow></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(U,(C_{1})_{X=x,I=i},\ldots,(C_{m})_{X=x,I=i},Y_{X=x,I=i})</annotation></semantics></math> é
+um caminho direcionado de <math id="p8.m15" class="ltx_Math" alttext="U" display="inline"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math> a <math id="p8.m16" class="ltx_Math" alttext="Y_{X=x,I=i}" display="inline"><semantics><msub><mi>Y</mi><mrow><mrow><mi>X</mi><mo>=</mo><mi>x</mi></mrow><mo>,</mo><mrow><mi>I</mi><mo>=</mo><mi>i</mi></mrow></mrow></msub><annotation encoding="application/x-tex">Y_{X=x,I=i}</annotation></semantics></math>.
+Isto é, <math id="p8.m17" class="ltx_Math" alttext="U\in Anc^{*}(Y_{X=x,I=i})" display="inline"><semantics><mrow><mi>U</mi><mo>∈</mo><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><msup><mi>c</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>Y</mi><mrow><mrow><mi>X</mi><mo>=</mo><mi>x</mi></mrow><mo>,</mo><mrow><mi>I</mi><mo>=</mo><mi>i</mi></mrow></mrow></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">U\in Anc^{*}(Y_{X=x,I=i})</annotation></semantics></math>.
+Decorre do <a href="#chapter6.Thmtheorem21" title="Lema 6.21. ‣ Apêndice 6.H Seção 9 (9 Variáveis Instrumentais) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Lema</span> <span class="ltx_text ltx_ref_tag">6.21</span></a> que
+<math id="p8.m18" class="ltx_Math" alttext="Y_{I=i,X=x}\equiv Y_{X=x}" display="inline"><semantics><mrow><msub><mi>Y</mi><mrow><mrow><mi>I</mi><mo>=</mo><mi>i</mi></mrow><mo>,</mo><mrow><mi>X</mi><mo>=</mo><mi>x</mi></mrow></mrow></msub><mo>≡</mo><msub><mi>Y</mi><mrow><mi>X</mi><mo>=</mo><mi>x</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Y_{I=i,X=x}\equiv Y_{X=x}</annotation></semantics></math>.
+∎</p>
+</div>
+</div>
+<div id="chapter6.Thmtheorem22" class="ltx_theorem ltx_theorem_lemma">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Lema 6.22</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter6.Thmtheorem22.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Se <math id="chapter6.Thmtheorem22.p1.m1" class="ltx_Math" alttext="I" display="inline"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math> é um instrumento para medir
+o efeito causal de <math id="chapter6.Thmtheorem22.p1.m2" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> em <math id="chapter6.Thmtheorem22.p1.m3" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> e
+<math id="chapter6.Thmtheorem22.p1.m4" class="ltx_Math" alttext="X\in Anc(Y)" display="inline"><semantics><mrow><mi>X</mi><mo>∈</mo><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>c</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>Y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">X\in Anc(Y)</annotation></semantics></math>, então
+<math id="chapter6.Thmtheorem22.p1.m5" class="ltx_Math" alttext="I" display="inline"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math> é ignorável para o efeito em <math id="chapter6.Thmtheorem22.p1.m6" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>.</span></p>
+</div>
+</div>
+<div class="ltx_proof">
+
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Demonstração.</h6>
+<div id="p9" class="ltx_para">
+<p class="ltx_p">Provaremos a contra-positiva.
+Se <math id="p9.m1" class="ltx_Math" alttext="I" display="inline"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math> não é ignorável para medir o efeito em <math id="p9.m2" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>,
+então decorre do <a href="S8.html#chapter4.Thmtheorem13" title="Lema 4.13. ‣ 8 Levando a intuição do SCM ao POM ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Lema</span> <span class="ltx_text ltx_ref_tag">4.13</span></a> que
+<math id="p9.m3" class="ltx_Math" alttext="I" display="inline"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math> e <math id="p9.m4" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> tem um ancestral comum, <math id="p9.m5" class="ltx_Math" alttext="Z" display="inline"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math>.
+Como <math id="p9.m6" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> é um ancestral de <math id="p9.m7" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>,
+decorre que <math id="p9.m8" class="ltx_Math" alttext="Z" display="inline"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math> é ancestral comum a <math id="p9.m9" class="ltx_Math" alttext="I" display="inline"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math> e <math id="p9.m10" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>.
+Portanto, conclui-se do <a href="S8.html#chapter4.Thmtheorem13" title="Lema 4.13. ‣ 8 Levando a intuição do SCM ao POM ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Lema</span> <span class="ltx_text ltx_ref_tag">4.13</span></a> que
+<math id="p9.m11" class="ltx_Math" alttext="I" display="inline"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math> não é ignorável para <math id="p9.m12" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>.
+Isto é, pela <a href="S9.html#chapter4.Thmtheorem22" title="Definição 4.22. ‣ 9 Variáveis Instrumentais ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Definição</span> <span class="ltx_text ltx_ref_tag">4.22</span></a>.1,
+<math id="p9.m13" class="ltx_Math" alttext="I" display="inline"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math> não é um instrumento.
+∎</p>
+</div>
+</div>
+<div id="chapter6.Thmtheorem23" class="ltx_theorem ltx_theorem_lemma">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Lema 6.23</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter6.Thmtheorem23.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Se <math id="chapter6.Thmtheorem23.p1.m1" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> é ignorável para medir
+o efeito causal em <math id="chapter6.Thmtheorem23.p1.m2" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> em um
+CM linear Gaussiano, então</span></p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx136" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex322"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex322.m1" class="ltx_Math" alttext="\displaystyle{ACE}=Cov[X,Y]\cdot{\mathbb{V}}^{-1}[X]." display="inline"><semantics><mrow><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>C</mi><mo>⁢</mo><mi>E</mi></mrow><mo>=</mo><mrow><mrow><mrow><mi>C</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>X</mi><mo>,</mo><mi>Y</mi><mo rspace="0.055em" stretchy="false">]</mo></mrow></mrow><mo rspace="0.222em">⋅</mo><msup><mi>𝕍</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>X</mi><mo stretchy="false">]</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow><annotation encoding="application/x-tex">\displaystyle{ACE}=Cov[X,Y]\cdot{\mathbb{V}}^{-1}[X].</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="ltx_proof">
+
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Demonstração.</h6>
+<div id="p10" class="ltx_para">
+<p class="ltx_p">Decorre do <a href="S2.html#chapter2.Thmtheorem26" title="Lema 2.26. ‣ 2.5 Modelo Causal (Causal Model) ‣ 2 Elementos de Modelos Probabilísticos em Grafos ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Lema</span> <span class="ltx_text ltx_ref_tag">2.26</span></a> que
+<math id="p10.m1" class="ltx_Math" alttext="{\mathcal{V}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒱</mi><annotation encoding="application/x-tex">{\mathcal{V}}</annotation></semantics></math> segue uma normal multivariada.
+Portanto, existem <math id="p10.m2" class="ltx_Math" alttext="\alpha" display="inline"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math> e <math id="p10.m3" class="ltx_Math" alttext="\beta" display="inline"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math> tais que</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx137" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="E16"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="E16.m1" class="ltx_Math" alttext="\displaystyle{\mathbb{E}}[Y|X]=\alpha+\beta\cdot X." display="inline"><semantics><mrow><mrow><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>Y</mi><mo fence="false">|</mo><mi>X</mi></mrow><mo stretchy="false">]</mo></mrow></mrow><mo>=</mo><mrow><mi>α</mi><mo>+</mo><mrow><mi>β</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><mi>X</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow><annotation encoding="application/x-tex">\displaystyle{\mathbb{E}}[Y|X]=\alpha+\beta\cdot X.</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(16)</span></td>
+</tr></tbody>
+</table>
+</div>
+<p class="ltx_p">Assim,</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx138" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex323"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex323.m1" class="ltx_Math" alttext="\displaystyle{ACE}" display="inline"><semantics><mrow><mi>A</mi><mo>⁢</mo><mi>C</mi><mo>⁢</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">\displaystyle{ACE}</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex323.m2" class="ltx_Math" alttext="\displaystyle=\frac{d{\mathbb{E}}[Y|do(X=x)]}{dx}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mi>d</mi><mo>⁢</mo><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>Y</mi><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">]</mo></mrow></mrow><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle=\frac{d{\mathbb{E}}[Y|do(X=x)]}{dx}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex324"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex324.m1" class="ltx_Math" alttext="\displaystyle=\frac{d{\mathbb{E}}[Y|X=x]}{dx}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mi>d</mi><mo>⁢</mo><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mrow><mi>Y</mi><mo fence="false">|</mo><mi>X</mi></mrow><mo>=</mo><mi>x</mi></mrow><mo stretchy="false">]</mo></mrow></mrow><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle=\frac{d{\mathbb{E}}[Y|X=x]}{dx}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="E17"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="E17.m1" class="ltx_Math" alttext="\displaystyle=\frac{d(\alpha+\beta x)}{dx}=\beta" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mi>d</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>α</mi><mo>+</mo><mrow><mi>β</mi><mo>⁢</mo><mi>x</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle><mo>=</mo><mi>β</mi></mrow><annotation encoding="application/x-tex">\displaystyle=\frac{d(\alpha+\beta x)}{dx}=\beta</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(17)</span></td>
+</tr></tbody>
+</table>
+</div>
+<p class="ltx_p">Finalmente,</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx139" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex325"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex325.m1" class="ltx_Math" alttext="\displaystyle Cov[X,Y]" display="inline"><semantics><mrow><mi>C</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>X</mi><mo>,</mo><mi>Y</mi><mo stretchy="false">]</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle Cov[X,Y]</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex325.m2" class="ltx_Math" alttext="\displaystyle={\mathbb{E}}[XY]-{\mathbb{E}}[X]{\mathbb{E}}[Y]" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>X</mi><mo>⁢</mo><mi>Y</mi></mrow><mo stretchy="false">]</mo></mrow></mrow><mo>−</mo><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>X</mi><mo stretchy="false">]</mo></mrow><mo>⁢</mo><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>Y</mi><mo stretchy="false">]</mo></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle={\mathbb{E}}[XY]-{\mathbb{E}}[X]{\mathbb{E}}[Y]</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex326"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex326.m1" class="ltx_Math" alttext="\displaystyle={\mathbb{E}}[X{\mathbb{E}}[Y|X]]-{\mathbb{E}}[X]{\mathbb{E}}[{%
+\mathbb{E}}[Y|X]]" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>X</mi><mo>⁢</mo><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>Y</mi><mo fence="false">|</mo><mi>X</mi></mrow><mo stretchy="false">]</mo></mrow></mrow><mo stretchy="false">]</mo></mrow></mrow><mo>−</mo><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>X</mi><mo stretchy="false">]</mo></mrow><mo>⁢</mo><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>Y</mi><mo fence="false">|</mo><mi>X</mi></mrow><mo stretchy="false">]</mo></mrow></mrow><mo stretchy="false">]</mo></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle={\mathbb{E}}[X{\mathbb{E}}[Y|X]]-{\mathbb{E}}[X]{\mathbb{E}}[{%
+\mathbb{E}}[Y|X]]</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex327"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex327.m1" class="ltx_Math" alttext="\displaystyle={\mathbb{E}}[X(\alpha+\beta X)]-{\mathbb{E}}[X]{\mathbb{E}}[%
+\alpha+\beta X]" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>X</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>α</mi><mo>+</mo><mrow><mi>β</mi><mo>⁢</mo><mi>X</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">]</mo></mrow></mrow><mo>−</mo><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>X</mi><mo stretchy="false">]</mo></mrow><mo>⁢</mo><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>α</mi><mo>+</mo><mrow><mi>β</mi><mo>⁢</mo><mi>X</mi></mrow></mrow><mo stretchy="false">]</mo></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle={\mathbb{E}}[X(\alpha+\beta X)]-{\mathbb{E}}[X]{\mathbb{E}}[%
+\alpha+\beta X]</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex328"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex328.m1" class="ltx_Math" alttext="\displaystyle=\alpha{\mathbb{E}}[X]+\beta{\mathbb{E}}[X^{2}]-\alpha{\mathbb{E}%
+}[X]-\beta{\mathbb{E}}[X]^{2}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mrow><mrow><mi>α</mi><mo>⁢</mo><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>X</mi><mo stretchy="false">]</mo></mrow></mrow><mo>+</mo><mrow><mi>β</mi><mo>⁢</mo><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><msup><mi>X</mi><mn>2</mn></msup><mo stretchy="false">]</mo></mrow></mrow></mrow><mo>−</mo><mrow><mi>α</mi><mo>⁢</mo><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>X</mi><mo stretchy="false">]</mo></mrow></mrow><mo>−</mo><mrow><mi>β</mi><mo>⁢</mo><mi>𝔼</mi><mo>⁢</mo><msup><mrow><mo stretchy="false">[</mo><mi>X</mi><mo stretchy="false">]</mo></mrow><mn>2</mn></msup></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle=\alpha{\mathbb{E}}[X]+\beta{\mathbb{E}}[X^{2}]-\alpha{\mathbb{E}%
+}[X]-\beta{\mathbb{E}}[X]^{2}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex329"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex329.m1" class="ltx_Math" alttext="\displaystyle=\beta{\mathbb{V}}[X]" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mi>β</mi><mo>⁢</mo><mi>𝕍</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>X</mi><mo stretchy="false">]</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle=\beta{\mathbb{V}}[X]</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex330"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex330.m1" class="ltx_Math" alttext="\displaystyle={ACE}\cdot{\mathbb{V}}[X]" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>C</mi><mo>⁢</mo><mi>E</mi></mrow><mo lspace="0.222em" rspace="0.222em">⋅</mo><mi>𝕍</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>X</mi><mo stretchy="false">]</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle={ACE}\cdot{\mathbb{V}}[X]</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<p class="ltx_p">Rearranjando os termos, obtenha
+<math id="p10.m4" class="ltx_Math" alttext="{ACE}=Cov[X,Y]\cdot{\mathbb{V}}^{-1}[X]" display="inline"><semantics><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>C</mi><mo>⁢</mo><mi>E</mi></mrow><mo>=</mo><mrow><mrow><mrow><mi>C</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>X</mi><mo>,</mo><mi>Y</mi><mo rspace="0.055em" stretchy="false">]</mo></mrow></mrow><mo rspace="0.222em">⋅</mo><msup><mi>𝕍</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>X</mi><mo stretchy="false">]</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">{ACE}=Cov[X,Y]\cdot{\mathbb{V}}^{-1}[X]</annotation></semantics></math>.
+∎</p>
+</div>
+</div>
+<div class="ltx_proof">
+
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Prova do <a href="S9.html#chapter4.Thmtheorem24" title="Teorema 4.24. ‣ 9 Variáveis Instrumentais ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Teorema</span> <span class="ltx_text ltx_ref_tag">4.24</span></a>.</h6>
+<div id="p11" class="ltx_para">
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx140" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex331"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex331.m1" class="ltx_Math" alttext="\displaystyle Cov[I,Y]\cdot{\mathbb{V}}^{-1}[I]" display="inline"><semantics><mrow><mrow><mrow><mi>C</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>I</mi><mo>,</mo><mi>Y</mi><mo rspace="0.055em" stretchy="false">]</mo></mrow></mrow><mo rspace="0.222em">⋅</mo><msup><mi>𝕍</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>I</mi><mo stretchy="false">]</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle Cov[I,Y]\cdot{\mathbb{V}}^{-1}[I]</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex331.m2" class="ltx_Math" alttext="\displaystyle={ACE}_{I,Y}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mi>A</mi><mo>⁢</mo><mi>C</mi><mo>⁢</mo><msub><mi>E</mi><mrow><mi>I</mi><mo>,</mo><mi>Y</mi></mrow></msub></mrow></mrow><annotation encoding="application/x-tex">\displaystyle={ACE}_{I,Y}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright" colspan="2"></td>
+</tr></tbody>
+<tbody id="Ex332"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex332.m1" class="ltx_Math" alttext="\displaystyle=\sum_{C\in\mathbb{C}_{I,Y}}\prod_{i=1}^{|C|-1}\beta_{C_{i+1},C_{%
+i}}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mrow><mi>C</mi><mo>∈</mo><msub><mi>ℂ</mi><mrow><mi>I</mi><mo>,</mo><mi>Y</mi></mrow></msub></mrow></munder></mstyle><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∏</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mrow><mo stretchy="false">|</mo><mi>C</mi><mo stretchy="false">|</mo></mrow><mo>−</mo><mn>1</mn></mrow></munderover></mstyle><msub><mi>β</mi><mrow><msub><mi>C</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>C</mi><mi>i</mi></msub></mrow></msub></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle=\sum_{C\in\mathbb{C}_{I,Y}}\prod_{i=1}^{|C|-1}\beta_{C_{i+1},C_{%
+i}}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright" colspan="2"></td>
+</tr></tbody>
+<tbody id="Ex333"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex333.m1" class="ltx_Math" alttext="\displaystyle=\sum_{C\in\mathbb{C}_{I,X}}\sum_{K\in\mathbb{C}_{X,Y}}\left(%
+\prod_{i=1}^{|C|-1}\beta_{C_{i+1},C_{i}}\right)\left(\prod_{j=1}^{|K|-1}\beta_%
+{K_{i+1},K_{i}}\right)" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mrow><mi>C</mi><mo>∈</mo><msub><mi>ℂ</mi><mrow><mi>I</mi><mo>,</mo><mi>X</mi></mrow></msub></mrow></munder></mstyle><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mrow><mi>K</mi><mo>∈</mo><msub><mi>ℂ</mi><mrow><mi>X</mi><mo>,</mo><mi>Y</mi></mrow></msub></mrow></munder></mstyle><mrow><mrow><mo>(</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∏</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mrow><mo stretchy="false">|</mo><mi>C</mi><mo stretchy="false">|</mo></mrow><mo>−</mo><mn>1</mn></mrow></munderover></mstyle><msub><mi>β</mi><mrow><msub><mi>C</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>C</mi><mi>i</mi></msub></mrow></msub></mrow><mo>)</mo></mrow><mo>⁢</mo><mrow><mo>(</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∏</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mrow><mrow><mo stretchy="false">|</mo><mi>K</mi><mo stretchy="false">|</mo></mrow><mo>−</mo><mn>1</mn></mrow></munderover></mstyle><msub><mi>β</mi><mrow><msub><mi>K</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>K</mi><mi>i</mi></msub></mrow></msub></mrow><mo>)</mo></mrow></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle=\sum_{C\in\mathbb{C}_{I,X}}\sum_{K\in\mathbb{C}_{X,Y}}\left(%
+\prod_{i=1}^{|C|-1}\beta_{C_{i+1},C_{i}}\right)\left(\prod_{j=1}^{|K|-1}\beta_%
+{K_{i+1},K_{i}}\right)</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright" colspan="2"></td>
+</tr></tbody>
+<tbody id="Ex334"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex334.m1" class="ltx_Math" alttext="\displaystyle=\left(\sum_{C\in\mathbb{C}_{I,X}}\prod_{i=1}^{|C|-1}\beta_{C_{i+%
+1},C_{i}}\right)\left(\sum_{K\in\mathbb{C}_{X,Y}}\left(\prod_{j=1}^{|K|-1}%
+\beta_{K_{i+1},K_{i}}\right)\right)" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mrow><mo>(</mo><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mrow><mi>C</mi><mo>∈</mo><msub><mi>ℂ</mi><mrow><mi>I</mi><mo>,</mo><mi>X</mi></mrow></msub></mrow></munder></mstyle><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∏</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mrow><mo stretchy="false">|</mo><mi>C</mi><mo stretchy="false">|</mo></mrow><mo>−</mo><mn>1</mn></mrow></munderover></mstyle><msub><mi>β</mi><mrow><msub><mi>C</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>C</mi><mi>i</mi></msub></mrow></msub></mrow></mrow><mo>)</mo></mrow><mo>⁢</mo><mrow><mo>(</mo><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mrow><mi>K</mi><mo>∈</mo><msub><mi>ℂ</mi><mrow><mi>X</mi><mo>,</mo><mi>Y</mi></mrow></msub></mrow></munder></mstyle><mrow><mo>(</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∏</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mrow><mrow><mo stretchy="false">|</mo><mi>K</mi><mo stretchy="false">|</mo></mrow><mo>−</mo><mn>1</mn></mrow></munderover></mstyle><msub><mi>β</mi><mrow><msub><mi>K</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>K</mi><mi>i</mi></msub></mrow></msub></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle=\left(\sum_{C\in\mathbb{C}_{I,X}}\prod_{i=1}^{|C|-1}\beta_{C_{i+%
+1},C_{i}}\right)\left(\sum_{K\in\mathbb{C}_{X,Y}}\left(\prod_{j=1}^{|K|-1}%
+\beta_{K_{i+1},K_{i}}\right)\right)</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright" colspan="2"></td>
+</tr></tbody>
+<tbody id="Ex335"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex335.m1" class="ltx_Math" alttext="\displaystyle={ACE}_{I,X}\cdot{ACE}_{X,Y}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>C</mi><mo>⁢</mo><msub><mi>E</mi><mrow><mi>I</mi><mo>,</mo><mi>X</mi></mrow></msub></mrow><mo lspace="0.222em" rspace="0.222em">⋅</mo><mi>A</mi></mrow><mo>⁢</mo><mi>C</mi><mo>⁢</mo><msub><mi>E</mi><mrow><mi>X</mi><mo>,</mo><mi>Y</mi></mrow></msub></mrow></mrow><annotation encoding="application/x-tex">\displaystyle={ACE}_{I,X}\cdot{ACE}_{X,Y}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright" colspan="2"></td>
+</tr></tbody>
+<tbody id="Ex336"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex336.m1" class="ltx_Math" alttext="\displaystyle=Cov[I,X]\cdot{\mathbb{V}}^{-1}[I]\cdot{ACE}_{X,Y}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mrow><mrow><mrow><mrow><mi>C</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>I</mi><mo>,</mo><mi>X</mi><mo rspace="0.055em" stretchy="false">]</mo></mrow></mrow><mo rspace="0.222em">⋅</mo><msup><mi>𝕍</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>I</mi><mo rspace="0.055em" stretchy="false">]</mo></mrow></mrow><mo rspace="0.222em">⋅</mo><mi>A</mi></mrow><mo>⁢</mo><mi>C</mi><mo>⁢</mo><msub><mi>E</mi><mrow><mi>X</mi><mo>,</mo><mi>Y</mi></mrow></msub></mrow></mrow><annotation encoding="application/x-tex">\displaystyle=Cov[I,X]\cdot{\mathbb{V}}^{-1}[I]\cdot{ACE}_{X,Y}</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><span class="ltx_text ltx_markedasmath"><a href="#chapter6.Thmtheorem22" title="Lema 6.22. ‣ Apêndice 6.H Seção 9 (9 Variáveis Instrumentais) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Lemas</span> <span class="ltx_text ltx_ref_tag">6.22</span></a> e <a href="#chapter6.Thmtheorem23" title="Lema 6.23. ‣ Apêndice 6.H Seção 9 (9 Variáveis Instrumentais) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">6.23</span></a></span></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<p class="ltx_p">Rearranjando os termos, obtemos <math id="p11.m1" class="ltx_Math" alttext="{ACE}_{X,Y}=\frac{Cov[I,Y]}{Cov[I,X]}" display="inline"><semantics><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>C</mi><mo>⁢</mo><msub><mi>E</mi><mrow><mi>X</mi><mo>,</mo><mi>Y</mi></mrow></msub></mrow><mo>=</mo><mfrac><mrow><mi>C</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>I</mi><mo>,</mo><mi>Y</mi><mo stretchy="false">]</mo></mrow></mrow><mrow><mi>C</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>I</mi><mo>,</mo><mi>X</mi><mo stretchy="false">]</mo></mrow></mrow></mfrac></mrow><annotation encoding="application/x-tex">{ACE}_{X,Y}=\frac{Cov[I,Y]}{Cov[I,X]}</annotation></semantics></math>.
+∎</p>
+</div>
+</div>
+<div class="ltx_proof">
+
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Prova do <a href="S9.html#chapter4.Thmtheorem27" title="Teorema 4.27. ‣ 9 Variáveis Instrumentais ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Teorema</span> <span class="ltx_text ltx_ref_tag">4.27</span></a>.</h6>
+<div id="p12" class="ltx_para">
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx141" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex337"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex337.m2" class="ltx_Math" alttext="\displaystyle Y_{I=1}-Y_{I=0}" display="inline"><semantics><mrow><msub><mi>Y</mi><mrow><mi>I</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>I</mi><mo>=</mo><mn>0</mn></mrow></msub></mrow><annotation encoding="application/x-tex">\displaystyle Y_{I=1}-Y_{I=0}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright" colspan="2"></td>
+</tr></tbody>
+<tbody id="Ex338"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex338.m1" class="ltx_Math" alttext="\displaystyle=" display="inline"><semantics><mo>=</mo><annotation encoding="application/x-tex">\displaystyle=</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex338.m2" class="ltx_Math" alttext="\displaystyle Y_{I=1}{\mathbb{I}}(X_{I=1}=1)+Y_{I=1}{\mathbb{I}}(X_{I=1}=0)-Y_%
+{I=0}{\mathbb{I}}(X_{I=0}=1)-Y_{I=0}{\mathbb{I}}(X_{I=0}=0)" display="inline"><semantics><mrow><mrow><mrow><msub><mi>Y</mi><mrow><mi>I</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>⁢</mo><mi>𝕀</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>X</mi><mrow><mi>I</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><msub><mi>Y</mi><mrow><mi>I</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>⁢</mo><mi>𝕀</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>X</mi><mrow><mi>I</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>−</mo><mrow><msub><mi>Y</mi><mrow><mi>I</mi><mo>=</mo><mn>0</mn></mrow></msub><mo>⁢</mo><mi>𝕀</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>X</mi><mrow><mi>I</mi><mo>=</mo><mn>0</mn></mrow></msub><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><msub><mi>Y</mi><mrow><mi>I</mi><mo>=</mo><mn>0</mn></mrow></msub><mo>⁢</mo><mi>𝕀</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>X</mi><mrow><mi>I</mi><mo>=</mo><mn>0</mn></mrow></msub><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle Y_{I=1}{\mathbb{I}}(X_{I=1}=1)+Y_{I=1}{\mathbb{I}}(X_{I=1}=0)-Y_%
+{I=0}{\mathbb{I}}(X_{I=0}=1)-Y_{I=0}{\mathbb{I}}(X_{I=0}=0)</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright" colspan="2"></td>
+</tr></tbody>
+<tbody id="Ex339"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex339.m1" class="ltx_Math" alttext="\displaystyle=" display="inline"><semantics><mo>=</mo><annotation encoding="application/x-tex">\displaystyle=</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex339.m2" class="ltx_Math" alttext="\displaystyle Y_{I=1,X=1}{\mathbb{I}}(X_{I=1}=1)+Y_{I=1,X=0}{\mathbb{I}}(X_{I=%
+1}=0)-Y_{I=0,X=1}{\mathbb{I}}(X_{I=0}=1)-Y_{I=0,X=0}{\mathbb{I}}(X_{I=0}=0)" display="inline"><semantics><mrow><mrow><mrow><msub><mi>Y</mi><mrow><mrow><mi>I</mi><mo>=</mo><mn>1</mn></mrow><mo>,</mo><mrow><mi>X</mi><mo>=</mo><mn>1</mn></mrow></mrow></msub><mo>⁢</mo><mi>𝕀</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>X</mi><mrow><mi>I</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><msub><mi>Y</mi><mrow><mrow><mi>I</mi><mo>=</mo><mn>1</mn></mrow><mo>,</mo><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow></mrow></msub><mo>⁢</mo><mi>𝕀</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>X</mi><mrow><mi>I</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>−</mo><mrow><msub><mi>Y</mi><mrow><mrow><mi>I</mi><mo>=</mo><mn>0</mn></mrow><mo>,</mo><mrow><mi>X</mi><mo>=</mo><mn>1</mn></mrow></mrow></msub><mo>⁢</mo><mi>𝕀</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>X</mi><mrow><mi>I</mi><mo>=</mo><mn>0</mn></mrow></msub><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><msub><mi>Y</mi><mrow><mrow><mi>I</mi><mo>=</mo><mn>0</mn></mrow><mo>,</mo><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow></mrow></msub><mo>⁢</mo><mi>𝕀</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>X</mi><mrow><mi>I</mi><mo>=</mo><mn>0</mn></mrow></msub><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle Y_{I=1,X=1}{\mathbb{I}}(X_{I=1}=1)+Y_{I=1,X=0}{\mathbb{I}}(X_{I=%
+1}=0)-Y_{I=0,X=1}{\mathbb{I}}(X_{I=0}=1)-Y_{I=0,X=0}{\mathbb{I}}(X_{I=0}=0)</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright" colspan="2"></td>
+</tr></tbody>
+<tbody id="Ex340"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex340.m1" class="ltx_Math" alttext="\displaystyle=" display="inline"><semantics><mo>=</mo><annotation encoding="application/x-tex">\displaystyle=</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex340.m2" class="ltx_Math" alttext="\displaystyle Y_{X=1}{\mathbb{I}}(X_{I=1}=1)+Y_{X=0}{\mathbb{I}}(X_{I=1}=0)-Y_%
+{X=1}{\mathbb{I}}(X_{I=0}=1)-Y_{X=0}{\mathbb{I}}(X_{I=0}=0)" display="inline"><semantics><mrow><mrow><mrow><msub><mi>Y</mi><mrow><mi>X</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>⁢</mo><mi>𝕀</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>X</mi><mrow><mi>I</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><msub><mi>Y</mi><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow></msub><mo>⁢</mo><mi>𝕀</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>X</mi><mrow><mi>I</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>−</mo><mrow><msub><mi>Y</mi><mrow><mi>X</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>⁢</mo><mi>𝕀</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>X</mi><mrow><mi>I</mi><mo>=</mo><mn>0</mn></mrow></msub><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><msub><mi>Y</mi><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow></msub><mo>⁢</mo><mi>𝕀</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>X</mi><mrow><mi>I</mi><mo>=</mo><mn>0</mn></mrow></msub><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle Y_{X=1}{\mathbb{I}}(X_{I=1}=1)+Y_{X=0}{\mathbb{I}}(X_{I=1}=0)-Y_%
+{X=1}{\mathbb{I}}(X_{I=0}=1)-Y_{X=0}{\mathbb{I}}(X_{I=0}=0)</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><span class="ltx_text ltx_markedasmath"><a href="S9.html#chapter4.Thmtheorem22" title="Definição 4.22. ‣ 9 Variáveis Instrumentais ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Definição</span> <span class="ltx_text ltx_ref_tag">4.22</span></a>.2</span></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex341"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex341.m1" class="ltx_Math" alttext="\displaystyle=" display="inline"><semantics><mo>=</mo><annotation encoding="application/x-tex">\displaystyle=</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex341.m2" class="ltx_Math" alttext="\displaystyle(Y_{X=1}-Y_{X=0})({\mathbb{I}}(X_{I=1}=1)-{\mathbb{I}}(X_{I=0}=1))" display="inline"><semantics><mrow><mrow><mo stretchy="false">(</mo><mrow><msub><mi>Y</mi><mrow><mi>X</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow></msub></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>𝕀</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>X</mi><mrow><mi>I</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>𝕀</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>X</mi><mrow><mi>I</mi><mo>=</mo><mn>0</mn></mrow></msub><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle(Y_{X=1}-Y_{X=0})({\mathbb{I}}(X_{I=1}=1)-{\mathbb{I}}(X_{I=0}=1))</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright" colspan="2"></td>
+</tr></tbody>
+<tbody id="E18"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="E18.m1" class="ltx_Math" alttext="\displaystyle=" display="inline"><semantics><mo>=</mo><annotation encoding="application/x-tex">\displaystyle=</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="E18.m2" class="ltx_Math" alttext="\displaystyle(Y_{X=1}-Y_{X=0})(X_{I=1}-X_{I=0})" display="inline"><semantics><mrow><mrow><mo stretchy="false">(</mo><mrow><msub><mi>Y</mi><mrow><mi>X</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow></msub></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>X</mi><mrow><mi>I</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>X</mi><mrow><mi>I</mi><mo>=</mo><mn>0</mn></mrow></msub></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle(Y_{X=1}-Y_{X=0})(X_{I=1}-X_{I=0})</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="E18.m3" class="ltx_Math" alttext="\displaystyle X\in\{0,1\}" display="inline"><semantics><mrow><mi>X</mi><mo>∈</mo><mrow><mo stretchy="false">{</mo><mn>0,1</mn><mo stretchy="false">}</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle X\in\{0,1\}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(18)</span></td>
+</tr></tbody>
+</table>
+</div>
+<p class="ltx_p">Portanto,</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx142" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex342"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex342.m1" class="ltx_Math" alttext="\displaystyle{\mathbb{E}}[Y_{I=1}-Y_{I=0}]" display="inline"><semantics><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><msub><mi>Y</mi><mrow><mi>I</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>I</mi><mo>=</mo><mn>0</mn></mrow></msub></mrow><mo stretchy="false">]</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle{\mathbb{E}}[Y_{I=1}-Y_{I=0}]</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex342.m2" class="ltx_Math" alttext="\displaystyle={\mathbb{E}}[(Y_{X=1}-Y_{X=0})(X_{I=1}-X_{I=0})]" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><msub><mi>Y</mi><mrow><mi>X</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow></msub></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>X</mi><mrow><mi>I</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>X</mi><mrow><mi>I</mi><mo>=</mo><mn>0</mn></mrow></msub></mrow><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">]</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle={\mathbb{E}}[(Y_{X=1}-Y_{X=0})(X_{I=1}-X_{I=0})]</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="E19"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="E19.m1" class="ltx_Math" alttext="\displaystyle={\mathbb{E}}[Y_{X=1}-Y_{X=0}|X_{I=1}-X_{I=0}=1]{\mathbb{P}}(X_{I%
+=1}-X_{I=0}=1)" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mrow><msub><mi>Y</mi><mrow><mi>X</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>−</mo><mrow><msub><mi>Y</mi><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow></msub><mo fence="false">|</mo><mrow><msub><mi>X</mi><mrow><mi>I</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>X</mi><mrow><mi>I</mi><mo>=</mo><mn>0</mn></mrow></msub></mrow></mrow></mrow><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">]</mo></mrow><mo>⁢</mo><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><msub><mi>X</mi><mrow><mi>I</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>X</mi><mrow><mi>I</mi><mo>=</mo><mn>0</mn></mrow></msub></mrow><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle={\mathbb{E}}[Y_{X=1}-Y_{X=0}|X_{I=1}-X_{I=0}=1]{\mathbb{P}}(X_{I%
+=1}-X_{I=0}=1)</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(19)</span></td>
+</tr></tbody>
+</table>
+</div>
+<p class="ltx_p">Como <math id="p12.m1" class="ltx_Math" alttext="I" display="inline"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math> é um instrumento,
+decorre da <a href="S9.html#chapter4.Thmtheorem22" title="Definição 4.22. ‣ 9 Variáveis Instrumentais ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Definição</span> <span class="ltx_text ltx_ref_tag">4.22</span></a> que <math id="p12.m2" class="ltx_Math" alttext="Cov[I,X]\neq 0" display="inline"><semantics><mrow><mrow><mi>C</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>I</mi><mo>,</mo><mi>X</mi><mo stretchy="false">]</mo></mrow></mrow><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">Cov[I,X]\neq 0</annotation></semantics></math>.
+Portanto, <math id="p12.m3" class="ltx_Math" alttext="{\mathbb{P}}(X_{I=1}-X_{I=0}=1)\neq 0" display="inline"><semantics><mrow><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><msub><mi>X</mi><mrow><mi>I</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>X</mi><mrow><mi>I</mi><mo>=</mo><mn>0</mn></mrow></msub></mrow><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">{\mathbb{P}}(X_{I=1}-X_{I=0}=1)\neq 0</annotation></semantics></math>.
+Reagrupando os termos na <a href="#Ex342" title="Apêndice 6.H Seção 9 (9 Variáveis Instrumentais) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">tillegg</span> <span class="ltx_text ltx_ref_tag">6.H</span></a>,
+obtemos:</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx143" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex343"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex343.m1" class="ltx_Math" alttext="\displaystyle{\mathbb{E}}[Y_{X=1}-Y_{X=0}|X_{I=1}-X_{I=0}=1]" display="inline"><semantics><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mrow><msub><mi>Y</mi><mrow><mi>X</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>−</mo><mrow><msub><mi>Y</mi><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow></msub><mo fence="false">|</mo><mrow><msub><mi>X</mi><mrow><mi>I</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>X</mi><mrow><mi>I</mi><mo>=</mo><mn>0</mn></mrow></msub></mrow></mrow></mrow><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">]</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle{\mathbb{E}}[Y_{X=1}-Y_{X=0}|X_{I=1}-X_{I=0}=1]</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex343.m2" class="ltx_Math" alttext="\displaystyle=\frac{{\mathbb{E}}[Y_{I=1}-Y_{I=0}]}{{\mathbb{P}}(X_{I=1}-X_{I=0%
+}=1)}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><msub><mi>Y</mi><mrow><mi>I</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>I</mi><mo>=</mo><mn>0</mn></mrow></msub></mrow><mo stretchy="false">]</mo></mrow></mrow><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><msub><mi>X</mi><mrow><mi>I</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>X</mi><mrow><mi>I</mi><mo>=</mo><mn>0</mn></mrow></msub></mrow><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle=\frac{{\mathbb{E}}[Y_{I=1}-Y_{I=0}]}{{\mathbb{P}}(X_{I=1}-X_{I=0%
+}=1)}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright" colspan="2"></td>
+</tr></tbody>
+<tbody id="E21"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="E21.m1" class="ltx_Math" alttext="\displaystyle{LATE}" display="inline"><semantics><mrow><mi>L</mi><mo>⁢</mo><mi>A</mi><mo>⁢</mo><mi>T</mi><mo>⁢</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">\displaystyle{LATE}</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="E21.m2" class="ltx_Math" alttext="\displaystyle=\frac{{\mathbb{E}}[Y_{I=1}-Y_{I=0}]}{{\mathbb{P}}(X_{I=1}-X_{I=0%
+}=1)}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><msub><mi>Y</mi><mrow><mi>I</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>I</mi><mo>=</mo><mn>0</mn></mrow></msub></mrow><mo stretchy="false">]</mo></mrow></mrow><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><msub><mi>X</mi><mrow><mi>I</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>X</mi><mrow><mi>I</mi><mo>=</mo><mn>0</mn></mrow></msub></mrow><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle=\frac{{\mathbb{E}}[Y_{I=1}-Y_{I=0}]}{{\mathbb{P}}(X_{I=1}-X_{I=0%
+}=1)}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright" colspan="2"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(21)</span></td>
+</tr></tbody>
+<tbody id="E22"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="E22.m1" class="ltx_Math" alttext="\displaystyle=\frac{{\mathbb{E}}[Y_{I=1}-Y_{I=0}]}{{\mathbb{E}}[X_{I=1}-X_{I=0%
+}]}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><msub><mi>Y</mi><mrow><mi>I</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>I</mi><mo>=</mo><mn>0</mn></mrow></msub></mrow><mo stretchy="false">]</mo></mrow></mrow><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><msub><mi>X</mi><mrow><mi>I</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>X</mi><mrow><mi>I</mi><mo>=</mo><mn>0</mn></mrow></msub></mrow><mo stretchy="false">]</mo></mrow></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle=\frac{{\mathbb{E}}[Y_{I=1}-Y_{I=0}]}{{\mathbb{E}}[X_{I=1}-X_{I=0%
+}]}</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="E22.m2" class="ltx_Math" alttext="\displaystyle X\in\{0,1\},\text{\lx@cref{creftype~refnum}{def:monotone}}" display="inline"><semantics><mrow><mi>X</mi><mo>∈</mo><mrow><mrow><mo stretchy="false">{</mo><mn>0,1</mn><mo stretchy="false">}</mo></mrow><mo>,</mo><semantics><annotation-xml encoding="text/html" style="display: block;"><a href="S9.html#chapter4.Thmtheorem25" title="Definição 4.25. ‣ 9 Variáveis Instrumentais ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Definição</span> <span class="ltx_text ltx_ref_tag">4.25</span></a></annotation-xml></semantics></mrow></mrow><annotation encoding="application/x-tex">\displaystyle X\in\{0,1\},\text{\lx@cref{creftype~refnum}{def:monotone}}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(22)</span></td>
+</tr></tbody>
+</table>
+</div>
+<p class="ltx_p">Há dois casos a considerar.
+Se <math id="p12.m4" class="ltx_Math" alttext="X\in Anc(Y)" display="inline"><semantics><mrow><mi>X</mi><mo>∈</mo><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>c</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>Y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">X\in Anc(Y)</annotation></semantics></math>.
+Assim, decorre do <a href="#chapter6.Thmtheorem22" title="Lema 6.22. ‣ Apêndice 6.H Seção 9 (9 Variáveis Instrumentais) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Lema</span> <span class="ltx_text ltx_ref_tag">6.22</span></a> que
+<math id="p12.m5" class="ltx_Math" alttext="I" display="inline"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math> é ignorável para medir <math id="p12.m6" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>. Neste caso,
+podemos continuar a desenvolver <a href="#Ex343" title="Apêndice 6.H Seção 9 (9 Variáveis Instrumentais) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">tillegg</span> <span class="ltx_text ltx_ref_tag">6.H</span></a>:</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx144" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex344"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex344.m1" class="ltx_Math" alttext="\displaystyle{LATE}" display="inline"><semantics><mrow><mi>L</mi><mo>⁢</mo><mi>A</mi><mo>⁢</mo><mi>T</mi><mo>⁢</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">\displaystyle{LATE}</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex344.m2" class="ltx_Math" alttext="\displaystyle=\frac{{\mathbb{E}}[Y|I=1]-{\mathbb{E}}[Y|I=0]}{{\mathbb{E}}[X|I=%
+1]-{\mathbb{E}}[X|I=0]}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mrow><mi>Y</mi><mo fence="false">|</mo><mi>I</mi></mrow><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">]</mo></mrow></mrow><mo>−</mo><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mrow><mi>Y</mi><mo fence="false">|</mo><mi>I</mi></mrow><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">]</mo></mrow></mrow></mrow><mrow><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mrow><mi>X</mi><mo fence="false">|</mo><mi>I</mi></mrow><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">]</mo></mrow></mrow><mo>−</mo><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mrow><mi>X</mi><mo fence="false">|</mo><mi>I</mi></mrow><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">]</mo></mrow></mrow></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle=\frac{{\mathbb{E}}[Y|I=1]-{\mathbb{E}}[Y|I=0]}{{\mathbb{E}}[X|I=%
+1]-{\mathbb{E}}[X|I=0]}</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><span class="ltx_text ltx_markedasmath"><a href="S9.html#chapter4.Thmtheorem22" title="Definição 4.22. ‣ 9 Variáveis Instrumentais ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Definição</span> <span class="ltx_text ltx_ref_tag">4.22</span></a>.1, <span class="ltx_ref ltx_missing_label ltx_ref_self">LABEL:{cor:ignore}</span></span></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<p class="ltx_p">Se <math id="p12.m7" class="ltx_Math" alttext="X\notin Anc(Y)" display="inline"><semantics><mrow><mi>X</mi><mo>∉</mo><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>c</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>Y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">X\notin Anc(Y)</annotation></semantics></math>, então
+como <math id="p12.m8" class="ltx_Math" alttext="I" display="inline"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math> é um instrumento,
+decorre do <a href="S9.html#chapter4.Thmtheorem23" title="Lema 4.23. ‣ 9 Variáveis Instrumentais ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Lema</span> <span class="ltx_text ltx_ref_tag">4.23</span></a> que
+<math id="p12.m9" class="ltx_Math" alttext="I\notin Anc(Y)" display="inline"><semantics><mrow><mi>I</mi><mo>∉</mo><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>c</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>Y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">I\notin Anc(Y)</annotation></semantics></math>. Portanto,
+conclua do <a href="S5.html#chapter3.Thmtheorem36" title="Exercício 3.36. ‣ 5.3 Exercícios ‣ 5 Controlando confundidores (critério backdoor) ‣ Capítulo 3 Intervenções ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Exercício</span> <span class="ltx_text ltx_ref_tag">3.36</span></a> que
+<math id="p12.m10" class="ltx_Math" alttext="{\mathbb{E}}[Y|do(I=1)]-{\mathbb{E}}[Y|do(I=0)]=0" display="inline"><semantics><mrow><mrow><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>Y</mi><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>I</mi><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">]</mo></mrow></mrow><mo>−</mo><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>Y</mi><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>I</mi><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">]</mo></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">{\mathbb{E}}[Y|do(I=1)]-{\mathbb{E}}[Y|do(I=0)]=0</annotation></semantics></math>, o que implica
+pelo <a href="S8.html#chapter4.Thmtheorem11" title="Lema 4.11. ‣ 8 Levando a intuição do SCM ao POM ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Lema</span> <span class="ltx_text ltx_ref_tag">4.11</span></a> que
+<math id="p12.m11" class="ltx_Math" alttext="{\mathbb{E}}[Y_{I=1}-Y_{I=0}]=0" display="inline"><semantics><mrow><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><msub><mi>Y</mi><mrow><mi>I</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>I</mi><mo>=</mo><mn>0</mn></mrow></msub></mrow><mo stretchy="false">]</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">{\mathbb{E}}[Y_{I=1}-Y_{I=0}]=0</annotation></semantics></math>.
+Como <math id="p12.m12" class="ltx_Math" alttext="I" display="inline"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math> é ignorável para <math id="p12.m13" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>,
+decorre do <a href="S8.html#chapter4.Thmtheorem14" title="Corolário 4.14. ‣ 8 Levando a intuição do SCM ao POM ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Corolário</span> <span class="ltx_text ltx_ref_tag">4.14</span></a> que
+<math id="p12.m14" class="ltx_Math" alttext="{\mathbb{E}}[Y|I=1]-{\mathbb{E}}[Y|I=0]=0" display="inline"><semantics><mrow><mrow><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mrow><mi>Y</mi><mo fence="false">|</mo><mi>I</mi></mrow><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">]</mo></mrow></mrow><mo>−</mo><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mrow><mi>Y</mi><mo fence="false">|</mo><mi>I</mi></mrow><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">]</mo></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">{\mathbb{E}}[Y|I=1]-{\mathbb{E}}[Y|I=0]=0</annotation></semantics></math>.
+Assim, decorre do <a href="#Ex343" title="Apêndice 6.H Seção 9 (9 Variáveis Instrumentais) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">tillegg</span> <span class="ltx_text ltx_ref_tag">6.H</span></a> que
+<math id="p12.m15" class="ltx_Math" alttext="{LATE}=0=\frac{{\mathbb{E}}[Y|I=1]-{\mathbb{E}}[Y|I=0]}{{\mathbb{E}}[X|I=1]-{%
+\mathbb{E}}[X|I=0]}" display="inline"><semantics><mrow><mrow><mi>L</mi><mo>⁢</mo><mi>A</mi><mo>⁢</mo><mi>T</mi><mo>⁢</mo><mi>E</mi></mrow><mo>=</mo><mn>0</mn><mo>=</mo><mfrac><mrow><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mrow><mi>Y</mi><mo fence="false">|</mo><mi>I</mi></mrow><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">]</mo></mrow></mrow><mo>−</mo><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mrow><mi>Y</mi><mo fence="false">|</mo><mi>I</mi></mrow><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">]</mo></mrow></mrow></mrow><mrow><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mrow><mi>X</mi><mo fence="false">|</mo><mi>I</mi></mrow><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">]</mo></mrow></mrow><mo>−</mo><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mrow><mi>X</mi><mo fence="false">|</mo><mi>I</mi></mrow><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">]</mo></mrow></mrow></mrow></mfrac></mrow><annotation encoding="application/x-tex">{LATE}=0=\frac{{\mathbb{E}}[Y|I=1]-{\mathbb{E}}[Y|I=0]}{{\mathbb{E}}[X|I=1]-{%
+\mathbb{E}}[X|I=0]}</annotation></semantics></math>.
+∎</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<a href="chapter6.A7.html" class="navigation navigation-prev" aria-label="Previous page"><i class="fa fa-angle-left"></i></a><a href="chapter6.A9.html" class="navigation navigation-next" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+</div>
+</div>
+<script src="bookml/gitbook/js/app.min.js"></script>
+<script src="bookml/gitbook/js/jquery.highlight.js"></script>
+<script src="bookml/gitbook/js/plugin-search.js"></script>
+<script src="bookml/gitbook/js/plugin-fontsettings.js"></script>
+<script src="bookml/gitbook/js/plugin-bookdown.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script>
+        MathJax = {
+          startup: {
+            ready() {
+              // do not process equations disabled with \bmlDisableMathJax (code suggested by Davide P. Cervone)
+              class bmlFindMathML extends MathJax._.input.mathml.FindMathML.FindMathML {
+                processMath(set) {
+                  const adaptor = this.adaptor;
+                  for (const node of set.values()) {
+                    if (adaptor.hasClass(node, 'bml_disable_mathjax')) {
+                      set.delete(node);
+                    }
+                  }
+                  return super.processMath(set);
+                }
+              }
+
+              MathJax._.components.global.combineDefaults(MathJax.config, 'mml', {FindMathML: new bmlFindMathML()});
+
+              MathJax.startup.defaultReady();
+
+              // preproces MathML to make MathJax aware of certain LaTeXML and BookML additional info
+              const mmlFilters = MathJax.startup.input[0].mmlFilters;
+
+              // convert the LaTeXML calligraphic (chancery) annotation to a form MathJax understands
+              // since the corresponding Unicode characters render as script (rounded)
+              const script2latin = {
+                '𝒜': 'A', 'ℬ': 'B', '𝒞': 'C', '𝒟': 'D', 'ℰ': 'E', 'ℱ': 'F', '𝒢': 'G',
+                'ℋ': 'H', 'ℐ': 'I', '𝒥': 'J', '𝒦': 'K', 'ℒ': 'L', 'ℳ': 'M', '𝒩': 'N',
+                '𝒪': 'O', '𝒫': 'P', '𝒬': 'Q', 'ℛ': 'R', '𝒮': 'S', '𝒯': 'T', '𝒰': 'U',
+                '𝒱': 'V', '𝒲': 'W', '𝒳': 'X', '𝒴': 'Y', '𝒵': 'Z',
+              };
+
+              mmlFilters.add((args) => {
+                for (const n of args.data.getElementsByClassName('ltx_font_mathcaligraphic')) {
+                  n.classList.add('MJX-tex-calligraphic');
+                  const letter = script2latin[n.textContent];
+                  if (letter !== undefined) { n.textContent = letter; }
+                }
+              });
+
+              // adjust characters based on Unicode variation sequences
+              const replacements = {
+                // MathJax renders the empty set as the U+FE00 variant, so the plain character needs adjusting
+                '∅': { variant: 'variant' },
+                // MathJax renders script characters in rounded style, which is fine for no variation and U+FE00
+                '𝒜\xFE00': { text: 'A', variant: 'tex-calligraphic' },
+                'ℬ\xFE00': { text: 'B', variant: 'tex-calligraphic' },
+                '𝒞\xFE00': { text: 'C', variant: 'tex-calligraphic' },
+                '𝒟\xFE00': { text: 'D', variant: 'tex-calligraphic' },
+                'ℰ\xFE00': { text: 'E', variant: 'tex-calligraphic' },
+                'ℱ\xFE00': { text: 'F', variant: 'tex-calligraphic' },
+                '𝒢\xFE00': { text: 'G', variant: 'tex-calligraphic' },
+                'ℋ\xFE00': { text: 'H', variant: 'tex-calligraphic' },
+                'ℐ\xFE00': { text: 'I', variant: 'tex-calligraphic' },
+                '𝒥\xFE00': { text: 'J', variant: 'tex-calligraphic' },
+                '𝒦\xFE00': { text: 'K', variant: 'tex-calligraphic' },
+                'ℒ\xFE00': { text: 'L', variant: 'tex-calligraphic' },
+                'ℳ\xFE00': { text: 'M', variant: 'tex-calligraphic' },
+                '𝒩\xFE00': { text: 'N', variant: 'tex-calligraphic' },
+                '𝒪\xFE00': { text: 'O', variant: 'tex-calligraphic' },
+                '𝒫\xFE00': { text: 'P', variant: 'tex-calligraphic' },
+                '𝒬\xFE00': { text: 'Q', variant: 'tex-calligraphic' },
+                'ℛ\xFE00': { text: 'R', variant: 'tex-calligraphic' },
+                '𝒮\xFE00': { text: 'S', variant: 'tex-calligraphic' },
+                '𝒯\xFE00': { text: 'T', variant: 'tex-calligraphic' },
+                '𝒰\xFE00': { text: 'U', variant: 'tex-calligraphic' },
+                '𝒱\xFE00': { text: 'V', variant: 'tex-calligraphic' },
+                '𝒲\xFE00': { text: 'W', variant: 'tex-calligraphic' },
+                '𝒳\xFE00': { text: 'X', variant: 'tex-calligraphic' },
+                '𝒴\xFE00': { text: 'Y', variant: 'tex-calligraphic' },
+                '𝒵\xFE00': { text: 'Z', variant: 'tex-calligraphic' }
+              };
+
+              mmlFilters.add((args) => {
+                let nodes = document.evaluate('.//m:mi | .//m:mn | .//m:mo | .//m:ms', args.data,
+                  () => 'http://www.w3.org/1998/Math/MathML', XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE);
+                for (let i = 0; i < nodes.snapshotLength; i++) {
+                  const n = nodes.snapshotItem(i);
+                  const repl = replacements[n.innerHTML];
+                  if (repl !== undefined) {
+                    const variant = repl['variant'];
+                    const text = repl['text'];
+                    if (variant !== undefined) { n.classList.add('MJX-' + variant); n.removeAttribute('mathvariant'); }
+                    if (text !== undefined) { n.innerHTML = text; }
+                  }
+                }
+              });
+            }
+          }
+        };
+      </script>
+<script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-chtml.js"></script>
+<script type="text/javascript">
+                gitbook.require(["gitbook"], function(gitbook) {
+                gitbook.start({
+                  "fontsettings": {
+                    "theme": "white",
+                    "family": "sans",
+                    "size": 2
+                  },
+                  "download": [ [ "book.pdf", "PDF" ], ],
+                  "search": {
+                    "engine": "fuse"
+                  },
+                  "toc": {
+                    "collapse": "none"
+                  }
+                });
+              });
+            </script>
+</body>
+
+</html>

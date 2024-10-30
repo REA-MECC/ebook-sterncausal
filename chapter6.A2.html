@@ -1,0 +1,335 @@
+<!DOCTYPE html><html lang="pt">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Apêndice 6.B Seção 2.5 (2.5 Modelo Causal (Causal Model)) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal</title>
+<!--Generated on Tue Aug 27 12:19:15 2024 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on Última revisão: August 27, 2024.-->
+<style>:root { --bml-ltx-font-size: 10.95; }</style>
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/style.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-table.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-search.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-bookdown.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-fontsettings.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="bookml/CSS/style.css" type="text/css">
+<link rel="stylesheet" href="bookml/CSS/style.gitbook,plain.css" type="text/css">
+<link rel="stylesheet" href="bookml/CSS/style.gitbook.css" type="text/css">
+<link rel="stylesheet" href="bmluser/colors.gitbook-book.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6"></script>
+<link rel="up" href="chapter6.html" title="Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="up up" href="index.html" title="Inferência Causal">
+<link rel="start" href="index.html" title="Inferência Causal">
+<link rel="prev" href="chapter6.A1.html" title="Apêndice 6.A Seção 2.4 (2.4 Exemplos de Modelo Probabilístico em um DAG) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="next" href="chapter6.A3.html" title="Apêndice 6.C Seção 3 (3 Independência Condicional e D-separação) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="appendix" href="chapter6.A1.html" title="Apêndice 6.A Seção 2.4 (2.4 Exemplos de Modelo Probabilístico em um DAG) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="appendix" href="chapter6.A3.html" title="Apêndice 6.C Seção 3 (3 Independência Condicional e D-separação) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="appendix" href="chapter6.A4.html" title="Apêndice 6.D Relativas à Seção 4 (4 O modelo de probabilidade para intervenções) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="appendix" href="chapter6.A5.html" title="Apêndice 6.E Seção 5 (5 Controlando confundidores (critério backdoor)) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="appendix" href="chapter6.A6.html" title="Apêndice 6.F Seções 6 e 7 (6 Controlando mediadores (critério frontdoor)) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="appendix" href="chapter6.A7.html" title="Apêndice 6.G Seção 8 (8 Levando a intuição do SCM ao POM) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="appendix" href="chapter6.A8.html" title="Apêndice 6.H Seção 9 (9 Variáveis Instrumentais) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="appendix" href="chapter6.A9.html" title="Apêndice 6.I Seção 10 (10 Contrafactuais) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="appendix" href="chapter6.A10.html" title="Apêndice 6.J Seção 11 (11 Identificabilidade na Descoberta Causal) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="chapter" href="chapter1.html" title="Capítulo 1 Por que estudar Inferência Causal? ‣ Inferência Causal">
+<link rel="chapter" href="chapter2.html" title="Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal">
+<link rel="chapter" href="chapter3.html" title="Capítulo 3 Intervenções ‣ Inferência Causal">
+<link rel="chapter" href="chapter4.html" title="Capítulo 4 Resultados potenciais ‣ Inferência Causal">
+<link rel="chapter" href="chapter5.html" title="Capítulo 5 Descoberta Causal ‣ Inferência Causal">
+<link rel="chapter" href="chapter6.html" title="Capítulo 6 Demonstrações ‣ Inferência Causal">
+</head>
+<body>
+<div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+<a href="#bml-main-content" tabindex="0" class="bml-skip-to-content">Skip to content.</a>
+<div class="book-summary"><nav class="ltx_page_navbar">
+<ul class="ltx_toclist summary">
+<li>
+<a href="index.html" title="" class="ltx_ref" rel="start">Inferência Causal <span class="ltx_text"> </span></a>
+</li>
+<li class="divider">
+<li data-level="1" data-path="chapter1.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter1.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">1 </span></b>Por que estudar Inferência Causal?</a></li>
+<li data-level="2" data-path="chapter2.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter2.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">2 </span></b>Modelo Causal (CM)</a></li>
+<li data-level="3" data-path="chapter3.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter3.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">3 </span></b>Intervenções</a></li>
+<li data-level="4" data-path="chapter4.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter4.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">4 </span></b>Resultados potenciais</a></li>
+<li data-level="5" data-path="chapter5.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter5.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">5 </span></b>Descoberta Causal</a></li>
+<li data-level="6" data-path="chapter6.html" class="ltx_tocentry ltx_tocentry_chapter  chapter ">
+<a href="chapter6.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6 </span></b>Demonstrações</a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li data-level="6.A" data-path="chapter6.A1.html" class="ltx_tocentry ltx_tocentry_appendix  chapter "><a href="chapter6.A1.html" title="In Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6.A </span></b><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">2.4</span> (<b><span class="ltx_tag ltx_tag_text">2.4 </span></b>Exemplos de Modelo Probabilístico em um DAG)</a></li>
+<li data-level="6.B" data-path="" class="ltx_tocentry ltx_tocentry_appendix ltx_ref_self  chapter active"><a href="" title="In Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6.B </span></b><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">2.5</span> (<b><span class="ltx_tag ltx_tag_text">2.5 </span></b>Modelo Causal (Causal Model))</a></li>
+<li data-level="6.C" data-path="chapter6.A3.html" class="ltx_tocentry ltx_tocentry_appendix  chapter "><a href="chapter6.A3.html" title="In Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6.C </span></b><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">3</span> (<b><span class="ltx_tag ltx_tag_text">3 </span></b>Independência Condicional e D-separação)</a></li>
+<li data-level="6.D" data-path="chapter6.A4.html" class="ltx_tocentry ltx_tocentry_appendix  chapter "><a href="chapter6.A4.html" title="In Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6.D </span></b>Relativas à <span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">4</span> (<b><span class="ltx_tag ltx_tag_text">4 </span></b>O modelo de probabilidade para intervenções)</a></li>
+<li data-level="6.E" data-path="chapter6.A5.html" class="ltx_tocentry ltx_tocentry_appendix  chapter "><a href="chapter6.A5.html" title="In Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6.E </span></b><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">5</span> (<b><span class="ltx_tag ltx_tag_text">5 </span></b>Controlando confundidores (critério <span class="ltx_text ltx_font_italic">backdoor</span>))</a></li>
+<li data-level="6.F" data-path="chapter6.A6.html" class="ltx_tocentry ltx_tocentry_appendix  chapter "><a href="chapter6.A6.html" title="In Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6.F </span></b><span class="ltx_text ltx_ref_tag">Seções</span> <span class="ltx_text ltx_ref_tag">6</span> e <span class="ltx_text ltx_ref_tag">7</span> (<b><span class="ltx_tag ltx_tag_text">6 </span></b>Controlando mediadores (critério frontdoor))</a></li>
+<li data-level="6.G" data-path="chapter6.A7.html" class="ltx_tocentry ltx_tocentry_appendix  chapter "><a href="chapter6.A7.html" title="In Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6.G </span></b><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">8</span> (<b><span class="ltx_tag ltx_tag_text">8 </span></b>Levando a intuição do SCM ao POM)</a></li>
+<li data-level="6.H" data-path="chapter6.A8.html" class="ltx_tocentry ltx_tocentry_appendix  chapter "><a href="chapter6.A8.html" title="In Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6.H </span></b><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">9</span> (<b><span class="ltx_tag ltx_tag_text">9 </span></b>Variáveis Instrumentais)</a></li>
+<li data-level="6.I" data-path="chapter6.A9.html" class="ltx_tocentry ltx_tocentry_appendix  chapter "><a href="chapter6.A9.html" title="In Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6.I </span></b><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">10</span> (<b><span class="ltx_tag ltx_tag_text">10 </span></b>Contrafactuais)</a></li>
+<li data-level="6.J" data-path="chapter6.A10.html" class="ltx_tocentry ltx_tocentry_appendix  chapter "><a href="chapter6.A10.html" title="In Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6.J </span></b><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">11</span> (<b><span class="ltx_tag ltx_tag_text">11 </span></b>Identificabilidade na Descoberta Causal)</a></li>
+</ol>
+</li>
+</ul>
+</nav></div>
+<div class="ltx_page_main book-body fixed">
+<div class="body-inner">
+<div class="book-header fixed" role="navigation"><h1> (</h1></div>
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="ltx_page_content page-inner" id="bml-main-content">
+<section class="ltx_appendix normal" lang="pt">
+<div class="section level1">
+
+<h1 class="ltx_title ltx_title_appendix">
+<span class="ltx_tag ltx_tag_appendix header-section-number">Apêndice 6.B</span> <a href="S2.html#SS5" title="2.5 Modelo Causal (Causal Model) ‣ 2 Elementos de Modelos Probabilísticos em Grafos ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">2.5</span></a> (<a href="S2.html#SS5" title="In 2 Elementos de Modelos Probabilísticos em Grafos ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref ltx_refmacro_nameref"><span class="ltx_text ltx_ref_title">Modelo Causal (Causal Model)</span></a>)</h1>
+
+<div class="ltx_proof">
+
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Prova do <a href="S2.html#chapter2.Thmtheorem27" title="Lema 2.27. ‣ 2.5 Modelo Causal (Causal Model) ‣ 2 Elementos de Modelos Probabilísticos em Grafos ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Lema</span> <span class="ltx_text ltx_ref_tag">2.27</span></a>.</h6>
+<div id="p1" class="ltx_para">
+<p class="ltx_p">Realizaremos a demonstração por indução.
+Para tal, defina
+<math id="p1.m1" class="ltx_Math" alttext="{\mathcal{V}}^{(1)}=\{V\in{\mathcal{V}}:Pa(V)=\emptyset\}" display="inline"><semantics><mrow><msup><mi class="ltx_font_mathcaligraphic">𝒱</mi><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mi>V</mi><mo>∈</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi></mrow><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mrow><mi>P</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>V</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>∅︀</mi></mrow><mo stretchy="false">}</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{V}}^{(1)}=\{V\in{\mathcal{V}}:Pa(V)=\emptyset\}</annotation></semantics></math>, e
+para cada <math id="p1.m2" class="ltx_Math" alttext="i&gt;2" display="inline"><semantics><mrow><mi>i</mi><mo>&gt;</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">i&gt;2</annotation></semantics></math>,
+<math id="p1.m3" class="ltx_Math" alttext="{\mathcal{V}}^{(i)}=\{V\in{\mathcal{V}}:Pa(V)\subseteq{\mathcal{V}}^{(i-1)}\}" display="inline"><semantics><mrow><msup><mi class="ltx_font_mathcaligraphic">𝒱</mi><mrow><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mi>V</mi><mo>∈</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi></mrow><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mrow><mi>P</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>V</mi><mo stretchy="false">)</mo></mrow></mrow><mo>⊆</mo><msup><mi class="ltx_font_mathcaligraphic">𝒱</mi><mrow><mo stretchy="false">(</mo><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup></mrow><mo stretchy="false">}</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{V}}^{(i)}=\{V\in{\mathcal{V}}:Pa(V)\subseteq{\mathcal{V}}^{(i-1)}\}</annotation></semantics></math>.</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">Se <math id="p2.m1" class="ltx_Math" alttext="Y\in{\mathcal{V}}^{(1)}" display="inline"><semantics><mrow><mi>Y</mi><mo>∈</mo><msup><mi class="ltx_font_mathcaligraphic">𝒱</mi><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">Y\in{\mathcal{V}}^{(1)}</annotation></semantics></math>, então por construção
+<math id="p2.m2" class="ltx_Math" alttext="{\mathbb{E}}[Y]=\mu_{Y}" display="inline"><semantics><mrow><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>Y</mi><mo stretchy="false">]</mo></mrow></mrow><mo>=</mo><msub><mi>μ</mi><mi>Y</mi></msub></mrow><annotation encoding="application/x-tex">{\mathbb{E}}[Y]=\mu_{Y}</annotation></semantics></math>. Também, como <math id="p2.m3" class="ltx_Math" alttext="Pa(Y)=\emptyset" display="inline"><semantics><mrow><mrow><mi>P</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>Y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>∅︀</mi></mrow><annotation encoding="application/x-tex">Pa(Y)=\emptyset</annotation></semantics></math>,
+<math id="p2.m4" class="ltx_Math" alttext="\mathbb{C}_{V,Y}=\emptyset" display="inline"><semantics><mrow><msub><mi>ℂ</mi><mrow><mi>V</mi><mo>,</mo><mi>Y</mi></mrow></msub><mo>=</mo><mi>∅︀</mi></mrow><annotation encoding="application/x-tex">\mathbb{C}_{V,Y}=\emptyset</annotation></semantics></math>, para todo <math id="p2.m5" class="ltx_Math" alttext="V\neq Y" display="inline"><semantics><mrow><mi>V</mi><mo>≠</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">V\neq Y</annotation></semantics></math>, e
+<math id="p2.m6" class="ltx_Math" alttext="\mathbb{C}_{Y,Y}" display="inline"><semantics><msub><mi>ℂ</mi><mrow><mi>Y</mi><mo>,</mo><mi>Y</mi></mrow></msub><annotation encoding="application/x-tex">\mathbb{C}_{Y,Y}</annotation></semantics></math> tem apenas o caminho unitário, <math id="p2.m7" class="ltx_Math" alttext="C^{*}=(Y)" display="inline"><semantics><mrow><msup><mi>C</mi><mo>∗</mo></msup><mo>=</mo><mrow><mo stretchy="false">(</mo><mi>Y</mi><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">C^{*}=(Y)</annotation></semantics></math>.
+Assim,</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx80" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex152"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex152.m1" class="ltx_Math" alttext="\displaystyle\sum_{V\in\mathbb{{\mathcal{V}}}}\sum_{C\in\mathbb{C}_{V,Y}}\mu_{%
+V}\cdot\prod_{i=1}^{|C|-1}\beta_{C_{i+1},C_{i}}" display="inline"><semantics><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mrow><mi>V</mi><mo>∈</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi></mrow></munder></mstyle><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mrow><mi>C</mi><mo>∈</mo><msub><mi>ℂ</mi><mrow><mi>V</mi><mo>,</mo><mi>Y</mi></mrow></msub></mrow></munder></mstyle><mrow><msub><mi>μ</mi><mi>V</mi></msub><mo lspace="0.222em" rspace="0.222em">⋅</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∏</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mrow><mo stretchy="false">|</mo><mi>C</mi><mo stretchy="false">|</mo></mrow><mo>−</mo><mn>1</mn></mrow></munderover></mstyle><msub><mi>β</mi><mrow><msub><mi>C</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>C</mi><mi>i</mi></msub></mrow></msub></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle\sum_{V\in\mathbb{{\mathcal{V}}}}\sum_{C\in\mathbb{C}_{V,Y}}\mu_{%
+V}\cdot\prod_{i=1}^{|C|-1}\beta_{C_{i+1},C_{i}}</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex152.m2" class="ltx_Math" alttext="\displaystyle=\mu_{Y}\cdot\prod_{i=1}^{|C^{*}|-1}\beta_{C^{*}_{i+1},C^{*}_{i}}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><msub><mi>μ</mi><mi>Y</mi></msub><mo lspace="0.222em" rspace="0.222em">⋅</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∏</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mrow><mo stretchy="false">|</mo><msup><mi>C</mi><mo>∗</mo></msup><mo stretchy="false">|</mo></mrow><mo>−</mo><mn>1</mn></mrow></munderover></mstyle><msub><mi>β</mi><mrow><msubsup><mi>C</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow><mo>∗</mo></msubsup><mo>,</mo><msubsup><mi>C</mi><mi>i</mi><mo>∗</mo></msubsup></mrow></msub></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle=\mu_{Y}\cdot\prod_{i=1}^{|C^{*}|-1}\beta_{C^{*}_{i+1},C^{*}_{i}}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex153"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex153.m1" class="ltx_Math" alttext="\displaystyle=\mu_{Y}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><msub><mi>μ</mi><mi>Y</mi></msub></mrow><annotation encoding="application/x-tex">\displaystyle=\mu_{Y}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<p class="ltx_p">A seguir, suponha que para todo
+<math id="p2.m8" class="ltx_Math" alttext="W\in{\mathcal{V}}^{(i-1)}" display="inline"><semantics><mrow><mi>W</mi><mo>∈</mo><msup><mi class="ltx_font_mathcaligraphic">𝒱</mi><mrow><mo stretchy="false">(</mo><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">W\in{\mathcal{V}}^{(i-1)}</annotation></semantics></math>,
+<math id="p2.m9" class="ltx_Math" alttext="{\mathbb{E}}[W]=\sum_{V\in\mathbb{{\mathcal{V}}}}\sum_{C\in\mathbb{C}_{V,W}}%
+\mu_{V}\cdot\prod_{i=1}^{|C|-1}\beta_{C_{i+1},C_{i}}" display="inline"><semantics><mrow><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>W</mi><mo stretchy="false">]</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msub><mo rspace="0em">∑</mo><mrow><mi>V</mi><mo>∈</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi></mrow></msub><mrow><msub><mo>∑</mo><mrow><mi>C</mi><mo>∈</mo><msub><mi>ℂ</mi><mrow><mi>V</mi><mo>,</mo><mi>W</mi></mrow></msub></mrow></msub><mrow><msub><mi>μ</mi><mi>V</mi></msub><mo lspace="0.222em" rspace="0.055em">⋅</mo><mrow><msubsup><mo>∏</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mrow><mo stretchy="false">|</mo><mi>C</mi><mo stretchy="false">|</mo></mrow><mo>−</mo><mn>1</mn></mrow></msubsup><msub><mi>β</mi><mrow><msub><mi>C</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>C</mi><mi>i</mi></msub></mrow></msub></mrow></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{E}}[W]=\sum_{V\in\mathbb{{\mathcal{V}}}}\sum_{C\in\mathbb{C}_{V,W}}%
+\mu_{V}\cdot\prod_{i=1}^{|C|-1}\beta_{C_{i+1},C_{i}}</annotation></semantics></math> e
+tome <math id="p2.m10" class="ltx_Math" alttext="Y\in{\mathcal{V}}^{(i)}" display="inline"><semantics><mrow><mi>Y</mi><mo>∈</mo><msup><mi class="ltx_font_mathcaligraphic">𝒱</mi><mrow><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">Y\in{\mathcal{V}}^{(i)}</annotation></semantics></math>. Como todo caminho direcionado que
+chega em <math id="p2.m11" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> a partir de <math id="p2.m12" class="ltx_Math" alttext="V\neq Y" display="inline"><semantics><mrow><mi>V</mi><mo>≠</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">V\neq Y</annotation></semantics></math>
+tem como penúltimo elemento um pai de <math id="p2.m13" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>,
+podemos escrever</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx81" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="E7"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="E7.m1" class="ltx_Math" alttext="\displaystyle\mathbb{C}_{V,Y}" display="inline"><semantics><msub><mi>ℂ</mi><mrow><mi>V</mi><mo>,</mo><mi>Y</mi></mrow></msub><annotation encoding="application/x-tex">\displaystyle\mathbb{C}_{V,Y}</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="E7.m2" class="ltx_Math" alttext="\displaystyle=\cup_{W\in Pa(Y)}\{(C,Y):C\in\mathbb{C}_{V,W}\}" display="inline"><semantics><mrow><mi></mi><mo rspace="0em">=</mo><mrow><msub><mo lspace="0em">∪</mo><mrow><mi>W</mi><mo>∈</mo><mrow><mi>P</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>Y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></msub><mrow><mo stretchy="false">{</mo><mrow><mo stretchy="false">(</mo><mi>C</mi><mo>,</mo><mi>Y</mi><mo rspace="0.278em" stretchy="false">)</mo></mrow><mo rspace="0.278em">:</mo><mrow><mi>C</mi><mo>∈</mo><msub><mi>ℂ</mi><mrow><mi>V</mi><mo>,</mo><mi>W</mi></mrow></msub></mrow><mo stretchy="false">}</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle=\cup_{W\in Pa(Y)}\{(C,Y):C\in\mathbb{C}_{V,W}\}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(7)</span></td>
+</tr></tbody>
+</table>
+</div>
+<p class="ltx_p">Portanto, obtemos:</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx82" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex154"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex154.m1" class="ltx_Math" alttext="\displaystyle\sum_{V\in\mathbb{{\mathcal{V}}}}\sum_{C\in\mathbb{C}_{V,Y}}\mu_{%
+V}\cdot\prod_{i=1}^{|C|-1}\beta_{C_{i+1},C_{i}}" display="inline"><semantics><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mrow><mi>V</mi><mo>∈</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi></mrow></munder></mstyle><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mrow><mi>C</mi><mo>∈</mo><msub><mi>ℂ</mi><mrow><mi>V</mi><mo>,</mo><mi>Y</mi></mrow></msub></mrow></munder></mstyle><mrow><msub><mi>μ</mi><mi>V</mi></msub><mo lspace="0.222em" rspace="0.222em">⋅</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∏</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mrow><mo stretchy="false">|</mo><mi>C</mi><mo stretchy="false">|</mo></mrow><mo>−</mo><mn>1</mn></mrow></munderover></mstyle><msub><mi>β</mi><mrow><msub><mi>C</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>C</mi><mi>i</mi></msub></mrow></msub></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle\sum_{V\in\mathbb{{\mathcal{V}}}}\sum_{C\in\mathbb{C}_{V,Y}}\mu_{%
+V}\cdot\prod_{i=1}^{|C|-1}\beta_{C_{i+1},C_{i}}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright" colspan="2"></td>
+</tr></tbody>
+<tbody id="Ex155"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex155.m1" class="ltx_Math" alttext="\displaystyle=" display="inline"><semantics><mo>=</mo><annotation encoding="application/x-tex">\displaystyle=</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex155.m2" class="ltx_Math" alttext="\displaystyle\mu_{Y}+\sum_{V\neq Y}\sum_{\cup_{W\in Pa(Y)}\{C^{*}=(C,Y):C\in%
+\mathbb{C}_{V,W}\}}\mu_{V}\cdot\left(\prod_{i=1}^{|C^{*}|-1}\beta_{C^{*}_{i+1}%
+,C^{*}_{i}}\right)" display="inline"><semantics><mrow><msub><mi>μ</mi><mi>Y</mi></msub><mo>+</mo><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mrow><mi>V</mi><mo>≠</mo><mi>Y</mi></mrow></munder></mstyle><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mrow><msub><mo>∪</mo><mrow><mi>W</mi><mo>∈</mo><mrow><mi>P</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>Y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></msub><mrow><mo stretchy="false">{</mo><mrow><msup><mi>C</mi><mo>∗</mo></msup><mo>=</mo><mrow><mo stretchy="false">(</mo><mi>C</mi><mo>,</mo><mi>Y</mi><mo rspace="0.278em" stretchy="false">)</mo></mrow></mrow><mo rspace="0.278em">:</mo><mrow><mi>C</mi><mo>∈</mo><msub><mi>ℂ</mi><mrow><mi>V</mi><mo>,</mo><mi>W</mi></mrow></msub></mrow><mo stretchy="false">}</mo></mrow></mrow></munder></mstyle><mrow><msub><mi>μ</mi><mi>V</mi></msub><mo lspace="0.222em" rspace="0.222em">⋅</mo><mrow><mo>(</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∏</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mrow><mo stretchy="false">|</mo><msup><mi>C</mi><mo>∗</mo></msup><mo stretchy="false">|</mo></mrow><mo>−</mo><mn>1</mn></mrow></munderover></mstyle><msub><mi>β</mi><mrow><msubsup><mi>C</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow><mo>∗</mo></msubsup><mo>,</mo><msubsup><mi>C</mi><mi>i</mi><mo>∗</mo></msubsup></mrow></msub></mrow><mo>)</mo></mrow></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle\mu_{Y}+\sum_{V\neq Y}\sum_{\cup_{W\in Pa(Y)}\{C^{*}=(C,Y):C\in%
+\mathbb{C}_{V,W}\}}\mu_{V}\cdot\left(\prod_{i=1}^{|C^{*}|-1}\beta_{C^{*}_{i+1}%
+,C^{*}_{i}}\right)</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright" colspan="2"></td>
+</tr></tbody>
+<tbody id="Ex156"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex156.m1" class="ltx_Math" alttext="\displaystyle=" display="inline"><semantics><mo>=</mo><annotation encoding="application/x-tex">\displaystyle=</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex156.m2" class="ltx_Math" alttext="\displaystyle\mu_{Y}+\sum_{V\neq Y}\sum_{W\in Pa(Y)}\sum_{C\in\mathbb{C}_{V,W}%
+}\mu_{V}\cdot\left(\prod_{i=1}^{|C|-1}\beta_{C_{i+1},C_{i}}\right)\cdot\beta_{%
+Y,W}" display="inline"><semantics><mrow><msub><mi>μ</mi><mi>Y</mi></msub><mo>+</mo><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mrow><mi>V</mi><mo>≠</mo><mi>Y</mi></mrow></munder></mstyle><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mrow><mi>W</mi><mo>∈</mo><mrow><mi>P</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>Y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></munder></mstyle><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mrow><mi>C</mi><mo>∈</mo><msub><mi>ℂ</mi><mrow><mi>V</mi><mo>,</mo><mi>W</mi></mrow></msub></mrow></munder></mstyle><mrow><msub><mi>μ</mi><mi>V</mi></msub><mo lspace="0.222em" rspace="0.222em">⋅</mo><mrow><mo>(</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∏</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mrow><mo stretchy="false">|</mo><mi>C</mi><mo stretchy="false">|</mo></mrow><mo>−</mo><mn>1</mn></mrow></munderover></mstyle><msub><mi>β</mi><mrow><msub><mi>C</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>C</mi><mi>i</mi></msub></mrow></msub></mrow><mo rspace="0.055em">)</mo></mrow><mo rspace="0.222em">⋅</mo><msub><mi>β</mi><mrow><mi>Y</mi><mo>,</mo><mi>W</mi></mrow></msub></mrow></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle\mu_{Y}+\sum_{V\neq Y}\sum_{W\in Pa(Y)}\sum_{C\in\mathbb{C}_{V,W}%
+}\mu_{V}\cdot\left(\prod_{i=1}^{|C|-1}\beta_{C_{i+1},C_{i}}\right)\cdot\beta_{%
+Y,W}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright" colspan="2"></td>
+</tr></tbody>
+<tbody id="Ex157"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex157.m1" class="ltx_Math" alttext="\displaystyle=" display="inline"><semantics><mo>=</mo><annotation encoding="application/x-tex">\displaystyle=</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex157.m2" class="ltx_Math" alttext="\displaystyle\mu_{Y}+\sum_{W\in Pa(Y)}\beta_{Y,W}\sum_{V\in{\mathcal{V}}}\sum_%
+{C\in\mathbb{C}_{V,W}}\mu_{V}\cdot\left(\prod_{i=1}^{|C|-1}\beta_{C_{i+1},C_{i%
+}}\right)" display="inline"><semantics><mrow><msub><mi>μ</mi><mi>Y</mi></msub><mo>+</mo><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mrow><mi>W</mi><mo>∈</mo><mrow><mi>P</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>Y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></munder></mstyle><mrow><msub><mi>β</mi><mrow><mi>Y</mi><mo>,</mo><mi>W</mi></mrow></msub><mo>⁢</mo><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mrow><mi>V</mi><mo>∈</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi></mrow></munder></mstyle><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mrow><mi>C</mi><mo>∈</mo><msub><mi>ℂ</mi><mrow><mi>V</mi><mo>,</mo><mi>W</mi></mrow></msub></mrow></munder></mstyle><mrow><msub><mi>μ</mi><mi>V</mi></msub><mo lspace="0.222em" rspace="0.222em">⋅</mo><mrow><mo>(</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∏</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mrow><mo stretchy="false">|</mo><mi>C</mi><mo stretchy="false">|</mo></mrow><mo>−</mo><mn>1</mn></mrow></munderover></mstyle><msub><mi>β</mi><mrow><msub><mi>C</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>C</mi><mi>i</mi></msub></mrow></msub></mrow><mo>)</mo></mrow></mrow></mrow></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle\mu_{Y}+\sum_{W\in Pa(Y)}\beta_{Y,W}\sum_{V\in{\mathcal{V}}}\sum_%
+{C\in\mathbb{C}_{V,W}}\mu_{V}\cdot\left(\prod_{i=1}^{|C|-1}\beta_{C_{i+1},C_{i%
+}}\right)</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright" colspan="2"></td>
+</tr></tbody>
+<tbody id="Ex158"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex158.m1" class="ltx_Math" alttext="\displaystyle=" display="inline"><semantics><mo>=</mo><annotation encoding="application/x-tex">\displaystyle=</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex158.m2" class="ltx_Math" alttext="\displaystyle\mu_{Y}+\sum_{W\in Pa(Y)}\beta_{Y,W}{\mathbb{E}}[W]" display="inline"><semantics><mrow><msub><mi>μ</mi><mi>Y</mi></msub><mo>+</mo><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mrow><mi>W</mi><mo>∈</mo><mrow><mi>P</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>Y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></munder></mstyle><mrow><msub><mi>β</mi><mrow><mi>Y</mi><mo>,</mo><mi>W</mi></mrow></msub><mo>⁢</mo><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>W</mi><mo stretchy="false">]</mo></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle\mu_{Y}+\sum_{W\in Pa(Y)}\beta_{Y,W}{\mathbb{E}}[W]</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex158.m3" class="ltx_Math" alttext="\displaystyle W\in{\mathcal{V}}^{(i-1)}" display="inline"><semantics><mrow><mi>W</mi><mo>∈</mo><msup><mi class="ltx_font_mathcaligraphic">𝒱</mi><mrow><mo stretchy="false">(</mo><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">\displaystyle W\in{\mathcal{V}}^{(i-1)}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex159"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex159.m1" class="ltx_Math" alttext="\displaystyle=" display="inline"><semantics><mo>=</mo><annotation encoding="application/x-tex">\displaystyle=</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex159.m2" class="ltx_Math" alttext="\displaystyle{\mathbb{E}}\left[\mu_{Y}+\sum_{W\in Pa(Y)}\beta_{Y,W}W\right]" display="inline"><semantics><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo>[</mo><mrow><msub><mi>μ</mi><mi>Y</mi></msub><mo>+</mo><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mrow><mi>W</mi><mo>∈</mo><mrow><mi>P</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>Y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></munder></mstyle><mrow><msub><mi>β</mi><mrow><mi>Y</mi><mo>,</mo><mi>W</mi></mrow></msub><mo>⁢</mo><mi>W</mi></mrow></mrow></mrow><mo>]</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle{\mathbb{E}}\left[\mu_{Y}+\sum_{W\in Pa(Y)}\beta_{Y,W}W\right]</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright" colspan="2"></td>
+</tr></tbody>
+<tbody id="Ex160"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex160.m1" class="ltx_Math" alttext="\displaystyle=" display="inline"><semantics><mo>=</mo><annotation encoding="application/x-tex">\displaystyle=</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex160.m2" class="ltx_Math" alttext="\displaystyle{\mathbb{E}}[{\mathbb{E}}[Y|Pa(Y)]]={\mathbb{E}}[Y]" display="inline"><semantics><mrow><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>Y</mi><mo fence="false">|</mo><mrow><mi>P</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>Y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">]</mo></mrow></mrow><mo stretchy="false">]</mo></mrow></mrow><mo>=</mo><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>Y</mi><mo stretchy="false">]</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle{\mathbb{E}}[{\mathbb{E}}[Y|Pa(Y)]]={\mathbb{E}}[Y]</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright" colspan="2"></td>
+</tr></tbody>
+</table>
+</div>
+<p class="ltx_p">∎</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<a href="chapter6.A1.html" class="navigation navigation-prev" aria-label="Previous page"><i class="fa fa-angle-left"></i></a><a href="chapter6.A3.html" class="navigation navigation-next" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+</div>
+</div>
+<script src="bookml/gitbook/js/app.min.js"></script>
+<script src="bookml/gitbook/js/jquery.highlight.js"></script>
+<script src="bookml/gitbook/js/plugin-search.js"></script>
+<script src="bookml/gitbook/js/plugin-fontsettings.js"></script>
+<script src="bookml/gitbook/js/plugin-bookdown.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script>
+        MathJax = {
+          startup: {
+            ready() {
+              // do not process equations disabled with \bmlDisableMathJax (code suggested by Davide P. Cervone)
+              class bmlFindMathML extends MathJax._.input.mathml.FindMathML.FindMathML {
+                processMath(set) {
+                  const adaptor = this.adaptor;
+                  for (const node of set.values()) {
+                    if (adaptor.hasClass(node, 'bml_disable_mathjax')) {
+                      set.delete(node);
+                    }
+                  }
+                  return super.processMath(set);
+                }
+              }
+
+              MathJax._.components.global.combineDefaults(MathJax.config, 'mml', {FindMathML: new bmlFindMathML()});
+
+              MathJax.startup.defaultReady();
+
+              // preproces MathML to make MathJax aware of certain LaTeXML and BookML additional info
+              const mmlFilters = MathJax.startup.input[0].mmlFilters;
+
+              // convert the LaTeXML calligraphic (chancery) annotation to a form MathJax understands
+              // since the corresponding Unicode characters render as script (rounded)
+              const script2latin = {
+                '𝒜': 'A', 'ℬ': 'B', '𝒞': 'C', '𝒟': 'D', 'ℰ': 'E', 'ℱ': 'F', '𝒢': 'G',
+                'ℋ': 'H', 'ℐ': 'I', '𝒥': 'J', '𝒦': 'K', 'ℒ': 'L', 'ℳ': 'M', '𝒩': 'N',
+                '𝒪': 'O', '𝒫': 'P', '𝒬': 'Q', 'ℛ': 'R', '𝒮': 'S', '𝒯': 'T', '𝒰': 'U',
+                '𝒱': 'V', '𝒲': 'W', '𝒳': 'X', '𝒴': 'Y', '𝒵': 'Z',
+              };
+
+              mmlFilters.add((args) => {
+                for (const n of args.data.getElementsByClassName('ltx_font_mathcaligraphic')) {
+                  n.classList.add('MJX-tex-calligraphic');
+                  const letter = script2latin[n.textContent];
+                  if (letter !== undefined) { n.textContent = letter; }
+                }
+              });
+
+              // adjust characters based on Unicode variation sequences
+              const replacements = {
+                // MathJax renders the empty set as the U+FE00 variant, so the plain character needs adjusting
+                '∅': { variant: 'variant' },
+                // MathJax renders script characters in rounded style, which is fine for no variation and U+FE00
+                '𝒜\xFE00': { text: 'A', variant: 'tex-calligraphic' },
+                'ℬ\xFE00': { text: 'B', variant: 'tex-calligraphic' },
+                '𝒞\xFE00': { text: 'C', variant: 'tex-calligraphic' },
+                '𝒟\xFE00': { text: 'D', variant: 'tex-calligraphic' },
+                'ℰ\xFE00': { text: 'E', variant: 'tex-calligraphic' },
+                'ℱ\xFE00': { text: 'F', variant: 'tex-calligraphic' },
+                '𝒢\xFE00': { text: 'G', variant: 'tex-calligraphic' },
+                'ℋ\xFE00': { text: 'H', variant: 'tex-calligraphic' },
+                'ℐ\xFE00': { text: 'I', variant: 'tex-calligraphic' },
+                '𝒥\xFE00': { text: 'J', variant: 'tex-calligraphic' },
+                '𝒦\xFE00': { text: 'K', variant: 'tex-calligraphic' },
+                'ℒ\xFE00': { text: 'L', variant: 'tex-calligraphic' },
+                'ℳ\xFE00': { text: 'M', variant: 'tex-calligraphic' },
+                '𝒩\xFE00': { text: 'N', variant: 'tex-calligraphic' },
+                '𝒪\xFE00': { text: 'O', variant: 'tex-calligraphic' },
+                '𝒫\xFE00': { text: 'P', variant: 'tex-calligraphic' },
+                '𝒬\xFE00': { text: 'Q', variant: 'tex-calligraphic' },
+                'ℛ\xFE00': { text: 'R', variant: 'tex-calligraphic' },
+                '𝒮\xFE00': { text: 'S', variant: 'tex-calligraphic' },
+                '𝒯\xFE00': { text: 'T', variant: 'tex-calligraphic' },
+                '𝒰\xFE00': { text: 'U', variant: 'tex-calligraphic' },
+                '𝒱\xFE00': { text: 'V', variant: 'tex-calligraphic' },
+                '𝒲\xFE00': { text: 'W', variant: 'tex-calligraphic' },
+                '𝒳\xFE00': { text: 'X', variant: 'tex-calligraphic' },
+                '𝒴\xFE00': { text: 'Y', variant: 'tex-calligraphic' },
+                '𝒵\xFE00': { text: 'Z', variant: 'tex-calligraphic' }
+              };
+
+              mmlFilters.add((args) => {
+                let nodes = document.evaluate('.//m:mi | .//m:mn | .//m:mo | .//m:ms', args.data,
+                  () => 'http://www.w3.org/1998/Math/MathML', XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE);
+                for (let i = 0; i < nodes.snapshotLength; i++) {
+                  const n = nodes.snapshotItem(i);
+                  const repl = replacements[n.innerHTML];
+                  if (repl !== undefined) {
+                    const variant = repl['variant'];
+                    const text = repl['text'];
+                    if (variant !== undefined) { n.classList.add('MJX-' + variant); n.removeAttribute('mathvariant'); }
+                    if (text !== undefined) { n.innerHTML = text; }
+                  }
+                }
+              });
+            }
+          }
+        };
+      </script>
+<script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-chtml.js"></script>
+<script type="text/javascript">
+                gitbook.require(["gitbook"], function(gitbook) {
+                gitbook.start({
+                  "fontsettings": {
+                    "theme": "white",
+                    "family": "sans",
+                    "size": 2
+                  },
+                  "download": [ [ "book.pdf", "PDF" ], ],
+                  "search": {
+                    "engine": "fuse"
+                  },
+                  "toc": {
+                    "collapse": "none"
+                  }
+                });
+              });
+            </script>
+</body>
+
+</html>

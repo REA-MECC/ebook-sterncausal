@@ -1,0 +1,381 @@
+<!DOCTYPE html><html lang="pt">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>11 Identificabilidade na Descoberta Causal ‣ Capítulo 5 Descoberta Causal ‣ Inferência Causal</title>
+<!--Generated on Tue Aug 27 12:19:15 2024 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on Última revisão: August 27, 2024.-->
+<style>:root { --bml-ltx-font-size: 10.95; }</style>
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/style.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-table.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-search.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-bookdown.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-fontsettings.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="bookml/CSS/style.css" type="text/css">
+<link rel="stylesheet" href="bookml/CSS/style.gitbook,plain.css" type="text/css">
+<link rel="stylesheet" href="bookml/CSS/style.gitbook.css" type="text/css">
+<link rel="stylesheet" href="bmluser/colors.gitbook-book.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6"></script>
+<link rel="up" href="chapter5.html" title="Capítulo 5 Descoberta Causal ‣ Inferência Causal">
+<link rel="up up" href="index.html" title="Inferência Causal">
+<link rel="start" href="index.html" title="Inferência Causal">
+<link rel="prev" href="chapter5.html" title="Capítulo 5 Descoberta Causal ‣ Inferência Causal">
+<link rel="next" href="S12.html" title="12 Algoritmos de Descoberta Causal ‣ Capítulo 5 Descoberta Causal ‣ Inferência Causal">
+<link rel="section" href="S12.html" title="12 Algoritmos de Descoberta Causal ‣ Capítulo 5 Descoberta Causal ‣ Inferência Causal">
+<link rel="bibliography" href="bib.html" title="Referências ‣ Capítulo 5 Descoberta Causal ‣ Inferência Causal">
+<link rel="chapter" href="chapter1.html" title="Capítulo 1 Por que estudar Inferência Causal? ‣ Inferência Causal">
+<link rel="chapter" href="chapter2.html" title="Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal">
+<link rel="chapter" href="chapter3.html" title="Capítulo 3 Intervenções ‣ Inferência Causal">
+<link rel="chapter" href="chapter4.html" title="Capítulo 4 Resultados potenciais ‣ Inferência Causal">
+<link rel="chapter" href="chapter5.html" title="Capítulo 5 Descoberta Causal ‣ Inferência Causal">
+<link rel="chapter" href="chapter6.html" title="Capítulo 6 Demonstrações ‣ Inferência Causal">
+</head>
+<body>
+<div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+<a href="#bml-main-content" tabindex="0" class="bml-skip-to-content">Skip to content.</a>
+<div class="book-summary"><nav class="ltx_page_navbar">
+<ul class="ltx_toclist summary">
+<li>
+<a href="index.html" title="" class="ltx_ref" rel="start">Inferência Causal <span class="ltx_text"> </span></a>
+</li>
+<li class="divider">
+<li data-level="1" data-path="chapter1.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter1.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">1 </span></b>Por que estudar Inferência Causal?</a></li>
+<li data-level="2" data-path="chapter2.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter2.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">2 </span></b>Modelo Causal (CM)</a></li>
+<li data-level="3" data-path="chapter3.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter3.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">3 </span></b>Intervenções</a></li>
+<li data-level="4" data-path="chapter4.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter4.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">4 </span></b>Resultados potenciais</a></li>
+<li data-level="5" data-path="chapter5.html" class="ltx_tocentry ltx_tocentry_chapter  chapter ">
+<a href="chapter5.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">5 </span></b>Descoberta Causal</a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li data-level="11" data-path="" class="ltx_tocentry ltx_tocentry_section ltx_ref_self  chapter active"><a href="" title="In Capítulo 5 Descoberta Causal ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">11 </span></b>Identificabilidade na Descoberta Causal</a></li>
+<li data-level="12" data-path="S12.html" class="ltx_tocentry ltx_tocentry_section  chapter "><a href="S12.html" title="In Capítulo 5 Descoberta Causal ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">12 </span></b>Algoritmos de Descoberta Causal</a></li>
+<li data-level="" data-path="bib.html" class="ltx_tocentry ltx_tocentry_bibliography  chapter "><a href="bib.html" title="In Capítulo 5 Descoberta Causal ‣ Inferência Causal" class="ltx_ref">Referências</a></li>
+</ol>
+</li>
+<li data-level="6" data-path="chapter6.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter6.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6 </span></b>Demonstrações</a></li>
+</ul>
+</nav></div>
+<div class="ltx_page_main book-body fixed">
+<div class="body-inner">
+<div class="book-header fixed" role="navigation"><h1>Identificabilidade na Descoberta Causal</h1></div>
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="ltx_page_content page-inner" id="bml-main-content">
+<section class="ltx_section normal" lang="pt">
+<div class="section level1">
+
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section header-section-number">11</span> Identificabilidade na Descoberta Causal</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p">Para contextualizar o problema da
+identificabilidade na Descoberta Causal,
+podemos começar com um exemplo simplista.
+Considere que observamos as variáveis: <math id="p1.m1" class="ltx_Math" alttext="{\mathcal{V}}=\{X,Y\}" display="inline"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo>=</mo><mrow><mo stretchy="false">{</mo><mi>X</mi><mo>,</mo><mi>Y</mi><mo stretchy="false">}</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{V}}=\{X,Y\}</annotation></semantics></math>.
+Neste caso, há pelo menos duas dificuldades.</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">Primeiramente, considere que
+<math id="p2.m1" class="ltx_Math" alttext="f" display="inline"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math> é tal que <math id="p2.m2" class="ltx_math_unparsed" alttext="X\perp\!\!\!\!\perp^{f}Y" display="inline"><semantics><mrow><mi>X</mi><mpadded width="0.080em"><mo>⟂</mo></mpadded><msup><mo>⟂</mo><mi>f</mi></msup><mi>Y</mi></mrow><annotation encoding="application/x-tex">X\perp\!\!\!\!\perp^{f}Y</annotation></semantics></math>.
+Neste caso, apesar de intuitivamente
+considerarmos o grafo causal,
+<math id="p2.m3" class="ltx_Math" alttext="X\hskip 8.53581ptY" display="inline"><semantics><mrow><mi>X</mi><mo lspace="0.850em">⁢</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">X\hskip 8.53581ptY</annotation></semantics></math>,
+a densidade <math id="p2.m4" class="ltx_Math" alttext="f" display="inline"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math> também é compatível com
+<math id="p2.m5" class="ltx_Math" alttext="X\rightarrow Y" display="inline"><semantics><mrow><mi>X</mi><mo stretchy="false">→</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">X\rightarrow Y</annotation></semantics></math>.
+De fato, <math id="p2.m6" class="ltx_Math" alttext="X\rightarrow Y" display="inline"><semantics><mrow><mi>X</mi><mo stretchy="false">→</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">X\rightarrow Y</annotation></semantics></math> determina que
+<math id="p2.m7" class="ltx_Math" alttext="f(x,y)=f(x)f(y|x)" display="inline"><semantics><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>y</mi><mo fence="false">|</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">f(x,y)=f(x)f(y|x)</annotation></semantics></math>,
+o que é verdadeiro mesmo quando
+<math id="p2.m8" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> e <math id="p2.m9" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> são independentes.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">Contudo, ainda que
+ambos os grafos sejam compatíveis com <math id="p3.m1" class="ltx_Math" alttext="f" display="inline"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>,
+o grafo <math id="p3.m2" class="ltx_Math" alttext="X\hskip 8.53581ptY" display="inline"><semantics><mrow><mi>X</mi><mo lspace="0.850em">⁢</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">X\hskip 8.53581ptY</annotation></semantics></math> é mais informativo.
+Somente com base neste grafo podemos
+deduzir que <math id="p3.m3" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> é independente de <math id="p3.m4" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>.
+Essa constatação elucida que não buscamos apenas
+um grafo causal, <math id="p3.m5" class="ltx_Math" alttext="{\mathcal{G}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒢</mi><annotation encoding="application/x-tex">{\mathcal{G}}</annotation></semantics></math>, compatível com
+a distribuição geradora dos dados, <math id="p3.m6" class="ltx_Math" alttext="f" display="inline"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>.
+Desejamos que <math id="p3.m7" class="ltx_Math" alttext="{\mathcal{G}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒢</mi><annotation encoding="application/x-tex">{\mathcal{G}}</annotation></semantics></math> permita
+deduzir o maior número possível
+de relações de independência condicional presentes em <math id="p3.m8" class="ltx_Math" alttext="f" display="inline"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>.
+Uma maneira de lidar com este problema é
+trocar o objetivo de encontrar
+<math id="p3.m9" class="ltx_Math" alttext="{\mathcal{G}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒢</mi><annotation encoding="application/x-tex">{\mathcal{G}}</annotation></semantics></math> compatível com <math id="p3.m10" class="ltx_Math" alttext="f" display="inline"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math> por
+encontrar <math id="p3.m11" class="ltx_Math" alttext="{\mathcal{G}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒢</mi><annotation encoding="application/x-tex">{\mathcal{G}}</annotation></semantics></math> <span class="ltx_text ltx_font_bold">fiel</span> a <math id="p3.m12" class="ltx_Math" alttext="f" display="inline"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>:</p>
+</div>
+<div id="chapter5.Thmtheorem1" class="ltx_theorem ltx_theorem_definition">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Definição 5.1</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter5.Thmtheorem1.p1" class="ltx_para">
+<p class="ltx_p">Dizemos que <math id="chapter5.Thmtheorem1.p1.m1" class="ltx_Math" alttext="f" display="inline"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math> é fiel a <math id="chapter5.Thmtheorem1.p1.m2" class="ltx_Math" alttext="{\mathcal{G}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒢</mi><annotation encoding="application/x-tex">{\mathcal{G}}</annotation></semantics></math> ou, equivalentemente,
+que <math id="chapter5.Thmtheorem1.p1.m3" class="ltx_Math" alttext="{\mathcal{G}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒢</mi><annotation encoding="application/x-tex">{\mathcal{G}}</annotation></semantics></math> é fiel a <math id="chapter5.Thmtheorem1.p1.m4" class="ltx_Math" alttext="f" display="inline"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>, se
+para quaisquer <math id="chapter5.Thmtheorem1.p1.m5" class="ltx_Math" alttext="{\mathbf{X}},{\mathbf{Y}},{\mathbf{Z}}\subseteq{\mathcal{V}}" display="inline"><semantics><mrow><mrow><mi>𝐗</mi><mo>,</mo><mi>𝐘</mi><mo>,</mo><mi>𝐙</mi></mrow><mo>⊆</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi></mrow><annotation encoding="application/x-tex">{\mathbf{X}},{\mathbf{Y}},{\mathbf{Z}}\subseteq{\mathcal{V}}</annotation></semantics></math>,
+<math id="chapter5.Thmtheorem1.p1.m6" class="ltx_math_unparsed" alttext="{\mathbf{X}}\perp\!\!\!\!\perp^{f}{\mathbf{Y}}|{\mathbf{Z}}" display="inline"><semantics><mrow><mi>𝐗</mi><mpadded width="0.080em"><mo>⟂</mo></mpadded><msup><mo>⟂</mo><mi>f</mi></msup><mi>𝐘</mi><mo fence="false" rspace="0.167em" stretchy="false">|</mo><mi>𝐙</mi></mrow><annotation encoding="application/x-tex">{\mathbf{X}}\perp\!\!\!\!\perp^{f}{\mathbf{Y}}|{\mathbf{Z}}</annotation></semantics></math> se e somente se
+<math id="chapter5.Thmtheorem1.p1.m7" class="ltx_Math" alttext="{\mathbf{X}}\perp^{\mathcal{G}}{\mathbf{Y}}|{\mathbf{Z}}" display="inline"><semantics><mrow><mi>𝐗</mi><msup><mo>⟂</mo><mi class="ltx_font_mathcaligraphic">𝒢</mi></msup><mrow><mi>𝐘</mi><mo fence="false">|</mo><mi>𝐙</mi></mrow></mrow><annotation encoding="application/x-tex">{\mathbf{X}}\perp^{\mathcal{G}}{\mathbf{Y}}|{\mathbf{Z}}</annotation></semantics></math>.</p>
+</div>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">Podemos interpretar a <a href="#chapter5.Thmtheorem1" title="Definição 5.1. ‣ 11 Identificabilidade na Descoberta Causal ‣ Capítulo 5 Descoberta Causal ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Definição</span> <span class="ltx_text ltx_ref_tag">5.1</span></a>
+à luz do <a href="S3.html#chapter2.Thmtheorem49" title="Teorema 2.49. ‣ 3.2 D-separação ‣ 3 Independência Condicional e D-separação ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Teorema</span> <span class="ltx_text ltx_ref_tag">2.49</span></a>.
+Se <math id="p4.m1" class="ltx_Math" alttext="{\mathcal{G}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒢</mi><annotation encoding="application/x-tex">{\mathcal{G}}</annotation></semantics></math> é compatível com <math id="p4.m2" class="ltx_Math" alttext="f" display="inline"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math> e
+<math id="p4.m3" class="ltx_Math" alttext="{\mathbf{X}}\perp^{\mathcal{G}}{\mathbf{Y}}|{\mathbf{Z}}" display="inline"><semantics><mrow><mi>𝐗</mi><msup><mo>⟂</mo><mi class="ltx_font_mathcaligraphic">𝒢</mi></msup><mrow><mi>𝐘</mi><mo fence="false">|</mo><mi>𝐙</mi></mrow></mrow><annotation encoding="application/x-tex">{\mathbf{X}}\perp^{\mathcal{G}}{\mathbf{Y}}|{\mathbf{Z}}</annotation></semantics></math>, então
+o <a href="S3.html#chapter2.Thmtheorem49" title="Teorema 2.49. ‣ 3.2 D-separação ‣ 3 Independência Condicional e D-separação ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Teorema</span> <span class="ltx_text ltx_ref_tag">2.49</span></a> indica que
+<math id="p4.m4" class="ltx_math_unparsed" alttext="{\mathbf{X}}\perp\!\!\!\!\perp^{f}{\mathbf{Y}}|{\mathbf{Z}}" display="inline"><semantics><mrow><mi>𝐗</mi><mpadded width="0.080em"><mo>⟂</mo></mpadded><msup><mo>⟂</mo><mi>f</mi></msup><mi>𝐘</mi><mo fence="false" rspace="0.167em" stretchy="false">|</mo><mi>𝐙</mi></mrow><annotation encoding="application/x-tex">{\mathbf{X}}\perp\!\!\!\!\perp^{f}{\mathbf{Y}}|{\mathbf{Z}}</annotation></semantics></math>.
+Contudo, em geral não é possível inferir
+uma d-separação em um grafo compatível
+a partir de uma relação de independência condicional.
+Quando <math id="p4.m5" class="ltx_Math" alttext="{\mathcal{G}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒢</mi><annotation encoding="application/x-tex">{\mathcal{G}}</annotation></semantics></math> é fiel a <math id="p4.m6" class="ltx_Math" alttext="f" display="inline"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>,
+toda relação de independência condicional implica
+uma d-separação em <math id="p4.m7" class="ltx_Math" alttext="{\mathcal{G}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒢</mi><annotation encoding="application/x-tex">{\mathcal{G}}</annotation></semantics></math>. Isto é,
+<math id="p4.m8" class="ltx_Math" alttext="{\mathcal{G}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒢</mi><annotation encoding="application/x-tex">{\mathcal{G}}</annotation></semantics></math> traz a maior informação possível sobre
+as relações de independência condicional em <math id="p4.m9" class="ltx_Math" alttext="f" display="inline"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>.</p>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p">O segundo problema de identificabilidade é que
+pode haver mais de um grafo causal fiel
+à distribuição geradora dos dados.
+Como ilustração, considere novamente que
+<math id="p5.m1" class="ltx_Math" alttext="{\mathcal{V}}=\{X,Y\}" display="inline"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo>=</mo><mrow><mo stretchy="false">{</mo><mi>X</mi><mo>,</mo><mi>Y</mi><mo stretchy="false">}</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{V}}=\{X,Y\}</annotation></semantics></math> e que <math id="p5.m2" class="ltx_Math" alttext="f" display="inline"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math> é tal que
+<math id="p5.m3" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> e <math id="p5.m4" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> não são independentes.
+Neste caso, tanto
+<math id="p5.m5" class="ltx_Math" alttext="X\rightarrow Y" display="inline"><semantics><mrow><mi>X</mi><mo stretchy="false">→</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">X\rightarrow Y</annotation></semantics></math>
+quanto <math id="p5.m6" class="ltx_Math" alttext="X\leftarrow Y" display="inline"><semantics><mrow><mi>X</mi><mo stretchy="false">←</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">X\leftarrow Y</annotation></semantics></math> são fiéis a <math id="p5.m7" class="ltx_Math" alttext="f" display="inline"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>.
+Em outras palavras,
+se não fizermos mais suposições,
+ambos os grafos explicam igualmente bem <math id="p5.m8" class="ltx_Math" alttext="f" display="inline"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>.</p>
+</div>
+<div id="p6" class="ltx_para">
+<p class="ltx_p">Com base nesta observação,
+podemos definir um tipo de
+não-identificabilidade em
+descoberta causal.
+Se dois grafos causais são fiéis às
+mesmas distribuições, então
+não importa qual seja a densidade geradora dos dados,
+não é possível diferenciá-los por meio dos dados.
+Neste caso, dizemos que os grafos são
+<span class="ltx_text ltx_font_bold">fielmente indistinguíveis</span>:</p>
+</div>
+<div id="chapter5.Thmtheorem2" class="ltx_theorem ltx_theorem_definition">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Definição 5.2</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter5.Thmtheorem2.p1" class="ltx_para">
+<p class="ltx_p">Dois grafos, <math id="chapter5.Thmtheorem2.p1.m1" class="ltx_Math" alttext="{\mathcal{G}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒢</mi><annotation encoding="application/x-tex">{\mathcal{G}}</annotation></semantics></math> e <math id="chapter5.Thmtheorem2.p1.m2" class="ltx_Math" alttext="{\mathcal{G}}^{*}" display="inline"><semantics><msup><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>∗</mo></msup><annotation encoding="application/x-tex">{\mathcal{G}}^{*}</annotation></semantics></math>, são
+fielmente indistinguíveis
+(<math id="chapter5.Thmtheorem2.p1.m3" class="ltx_Math" alttext="{\mathcal{G}}\sim{\mathcal{G}}^{*}" display="inline"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>∼</mo><msup><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">{\mathcal{G}}\sim{\mathcal{G}}^{*}</annotation></semantics></math>) se,
+para todo <math id="chapter5.Thmtheorem2.p1.m4" class="ltx_Math" alttext="f" display="inline"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>,</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx72" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex129"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex129.m1" class="ltx_Math" alttext="\displaystyle\text{$f$ é fiel a ${\mathcal{G}}$
+se e somente se
+$f$ é fiel a ${\mathcal{G}}^{*}$}." display="inline"><semantics><mrow><mrow><mi>f</mi><mtext> é fiel a </mtext><mi class="ltx_font_mathcaligraphic">𝒢</mi><mtext> se e somente se </mtext><mi>f</mi><mtext> é fiel a </mtext><msup><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>∗</mo></msup></mrow><mo lspace="0em">.</mo></mrow><annotation encoding="application/x-tex">\displaystyle\text{$f$ é fiel a ${\mathcal{G}}$
+se e somente se
+$f$ é fiel a ${\mathcal{G}}^{*}$}.</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="p7" class="ltx_para">
+<p class="ltx_p">A seguir, a <a href="#chapter5.Thmtheorem4" title="Definição 5.4. ‣ 11 Identificabilidade na Descoberta Causal ‣ Capítulo 5 Descoberta Causal ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Definição</span> <span class="ltx_text ltx_ref_tag">5.4</span></a> e
+o <a href="#chapter5.Thmtheorem5" title="Teorema 5.5 (Verma2022). ‣ 11 Identificabilidade na Descoberta Causal ‣ Capítulo 5 Descoberta Causal ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Teorema</span> <span class="ltx_text ltx_ref_tag">5.5</span></a> mostram
+uma operacionalização da
+relação de indistinguibilidade fiel.</p>
+</div>
+<div id="chapter5.Thmtheorem3" class="ltx_theorem ltx_theorem_definition">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Definição 5.3</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter5.Thmtheorem3.p1" class="ltx_para">
+<p class="ltx_p">Dizemos que <math id="chapter5.Thmtheorem3.p1.m1" class="ltx_Math" alttext="(V_{1},V_{2},V_{3})" display="inline"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>V</mi><mn>1</mn></msub><mo>,</mo><msub><mi>V</mi><mn>2</mn></msub><mo>,</mo><msub><mi>V</mi><mn>3</mn></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(V_{1},V_{2},V_{3})</annotation></semantics></math> formam
+um colisor desprotegido em <math id="chapter5.Thmtheorem3.p1.m2" class="ltx_Math" alttext="{\mathcal{G}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒢</mi><annotation encoding="application/x-tex">{\mathcal{G}}</annotation></semantics></math> se
+<math id="chapter5.Thmtheorem3.p1.m3" class="ltx_Math" alttext="V_{1}\stackrel{{\scriptstyle{\mathcal{G}}}}{{\rightarrow}}V_{2}\stackrel{{%
+\scriptstyle{\mathcal{G}}}}{{\leftarrow}}V_{3}" display="inline"><semantics><mrow><msub><mi>V</mi><mn>1</mn></msub><mover><mo stretchy="false">→</mo><mi class="ltx_font_mathcaligraphic">𝒢</mi></mover><msub><mi>V</mi><mn>2</mn></msub><mover><mo stretchy="false">←</mo><mi class="ltx_font_mathcaligraphic">𝒢</mi></mover><msub><mi>V</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">V_{1}\stackrel{{\scriptstyle{\mathcal{G}}}}{{\rightarrow}}V_{2}\stackrel{{%
+\scriptstyle{\mathcal{G}}}}{{\leftarrow}}V_{3}</annotation></semantics></math> e
+<math id="chapter5.Thmtheorem3.p1.m4" class="ltx_Math" alttext="V_{1}" display="inline"><semantics><msub><mi>V</mi><mn>1</mn></msub><annotation encoding="application/x-tex">V_{1}</annotation></semantics></math> e <math id="chapter5.Thmtheorem3.p1.m5" class="ltx_Math" alttext="V_{3}" display="inline"><semantics><msub><mi>V</mi><mn>3</mn></msub><annotation encoding="application/x-tex">V_{3}</annotation></semantics></math> não são adjacentes em <math id="chapter5.Thmtheorem3.p1.m6" class="ltx_Math" alttext="{\mathcal{G}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒢</mi><annotation encoding="application/x-tex">{\mathcal{G}}</annotation></semantics></math>.</p>
+</div>
+</div>
+<div id="chapter5.Thmtheorem4" class="ltx_theorem ltx_theorem_definition">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Definição 5.4</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter5.Thmtheorem4.p1" class="ltx_para">
+<p class="ltx_p">Os DAGs <math id="chapter5.Thmtheorem4.p1.m1" class="ltx_Math" alttext="{\mathcal{G}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒢</mi><annotation encoding="application/x-tex">{\mathcal{G}}</annotation></semantics></math> e <math id="chapter5.Thmtheorem4.p1.m2" class="ltx_Math" alttext="{\mathcal{G}}^{*}" display="inline"><semantics><msup><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>∗</mo></msup><annotation encoding="application/x-tex">{\mathcal{G}}^{*}</annotation></semantics></math> tem o mesmo padrão se:</p>
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span><div id="I1.i1.p1" class="ltx_para">​<p class="ltx_p">Para quaisquer vértices <math id="I1.i1.p1.m1" class="ltx_Math" alttext="V_{1}" display="inline"><semantics><msub><mi>V</mi><mn>1</mn></msub><annotation encoding="application/x-tex">V_{1}</annotation></semantics></math> e <math id="I1.i1.p1.m2" class="ltx_Math" alttext="V_{2}" display="inline"><semantics><msub><mi>V</mi><mn>2</mn></msub><annotation encoding="application/x-tex">V_{2}</annotation></semantics></math>,
+<math id="I1.i1.p1.m3" class="ltx_Math" alttext="V_{1}" display="inline"><semantics><msub><mi>V</mi><mn>1</mn></msub><annotation encoding="application/x-tex">V_{1}</annotation></semantics></math> e <math id="I1.i1.p1.m4" class="ltx_Math" alttext="V_{2}" display="inline"><semantics><msub><mi>V</mi><mn>2</mn></msub><annotation encoding="application/x-tex">V_{2}</annotation></semantics></math> são adjacentes em <math id="I1.i1.p1.m5" class="ltx_Math" alttext="{\mathcal{G}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒢</mi><annotation encoding="application/x-tex">{\mathcal{G}}</annotation></semantics></math>
+se e somente se
+<math id="I1.i1.p1.m6" class="ltx_Math" alttext="V_{1}" display="inline"><semantics><msub><mi>V</mi><mn>1</mn></msub><annotation encoding="application/x-tex">V_{1}</annotation></semantics></math> e <math id="I1.i1.p1.m7" class="ltx_Math" alttext="V_{2}" display="inline"><semantics><msub><mi>V</mi><mn>2</mn></msub><annotation encoding="application/x-tex">V_{2}</annotation></semantics></math> são adjacentes em <math id="I1.i1.p1.m8" class="ltx_Math" alttext="{\mathcal{G}}^{*}" display="inline"><semantics><msup><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>∗</mo></msup><annotation encoding="application/x-tex">{\mathcal{G}}^{*}</annotation></semantics></math>.</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span><div id="I1.i2.p1" class="ltx_para">​<p class="ltx_p"><math id="I1.i2.p1.m1" class="ltx_Math" alttext="(V_{1},V_{2},V_{3})" display="inline"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>V</mi><mn>1</mn></msub><mo>,</mo><msub><mi>V</mi><mn>2</mn></msub><mo>,</mo><msub><mi>V</mi><mn>3</mn></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(V_{1},V_{2},V_{3})</annotation></semantics></math> é um colisor desprotegido em <math id="I1.i2.p1.m2" class="ltx_Math" alttext="{\mathcal{G}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒢</mi><annotation encoding="application/x-tex">{\mathcal{G}}</annotation></semantics></math>
+se e somente se é um colisor desprotegido em <math id="I1.i2.p1.m3" class="ltx_Math" alttext="{\mathcal{G}}^{*}" display="inline"><semantics><msup><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>∗</mo></msup><annotation encoding="application/x-tex">{\mathcal{G}}^{*}</annotation></semantics></math>.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="chapter5.Thmtheorem5" class="ltx_theorem ltx_theorem_theorem">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Teorema 5.5</span></span><span class="ltx_text ltx_font_bold"> </span>(<cite class="ltx_cite ltx_citemacro_citet"><span class="ltx_ref ltx_missing_citation ltx_ref_self">Verma2022</span></cite>)<span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter5.Thmtheorem5.p1" class="ltx_para">
+<p class="ltx_p"><math id="chapter5.Thmtheorem5.p1.m1" class="ltx_Math" alttext="{\mathcal{G}}\sim{\mathcal{G}}^{*}" display="inline"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>∼</mo><msup><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">{\mathcal{G}}\sim{\mathcal{G}}^{*}</annotation></semantics></math><span class="ltx_text ltx_font_italic"> se e somente se
+<math id="chapter5.Thmtheorem5.p1.m2" class="ltx_Math" alttext="{\mathcal{G}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒢</mi><annotation encoding="application/x-tex">{\mathcal{G}}</annotation></semantics></math> e <math id="chapter5.Thmtheorem5.p1.m3" class="ltx_Math" alttext="{\mathcal{G}}^{*}" display="inline"><semantics><msup><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>∗</mo></msup><annotation encoding="application/x-tex">{\mathcal{G}}^{*}</annotation></semantics></math> tem o mesmo padrão.</span></p>
+</div>
+</div>
+<div id="p8" class="ltx_para">
+<p class="ltx_p">De forma geral,
+o <a href="#chapter5.Thmtheorem5" title="Teorema 5.5 (Verma2022). ‣ 11 Identificabilidade na Descoberta Causal ‣ Capítulo 5 Descoberta Causal ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Teorema</span> <span class="ltx_text ltx_ref_tag">5.5</span></a> mostra que,
+sem maiores suposições,
+só é possível aprender
+o padrão de um grafo a partir dos dados.
+Isto é, é possível determinar todas
+as relações de adjacência e, também,
+os colisores desprotegidos existentes no grafo.
+A seguir, estudaremos algoritmos que
+se propõem a descobrir esse padrão.</p>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<a href="chapter5.html" class="navigation navigation-prev" aria-label="Previous page"><i class="fa fa-angle-left"></i></a><a href="S12.html" class="navigation navigation-next" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+</div>
+</div>
+<script src="bookml/gitbook/js/app.min.js"></script>
+<script src="bookml/gitbook/js/jquery.highlight.js"></script>
+<script src="bookml/gitbook/js/plugin-search.js"></script>
+<script src="bookml/gitbook/js/plugin-fontsettings.js"></script>
+<script src="bookml/gitbook/js/plugin-bookdown.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script>
+        MathJax = {
+          startup: {
+            ready() {
+              // do not process equations disabled with \bmlDisableMathJax (code suggested by Davide P. Cervone)
+              class bmlFindMathML extends MathJax._.input.mathml.FindMathML.FindMathML {
+                processMath(set) {
+                  const adaptor = this.adaptor;
+                  for (const node of set.values()) {
+                    if (adaptor.hasClass(node, 'bml_disable_mathjax')) {
+                      set.delete(node);
+                    }
+                  }
+                  return super.processMath(set);
+                }
+              }
+
+              MathJax._.components.global.combineDefaults(MathJax.config, 'mml', {FindMathML: new bmlFindMathML()});
+
+              MathJax.startup.defaultReady();
+
+              // preproces MathML to make MathJax aware of certain LaTeXML and BookML additional info
+              const mmlFilters = MathJax.startup.input[0].mmlFilters;
+
+              // convert the LaTeXML calligraphic (chancery) annotation to a form MathJax understands
+              // since the corresponding Unicode characters render as script (rounded)
+              const script2latin = {
+                '𝒜': 'A', 'ℬ': 'B', '𝒞': 'C', '𝒟': 'D', 'ℰ': 'E', 'ℱ': 'F', '𝒢': 'G',
+                'ℋ': 'H', 'ℐ': 'I', '𝒥': 'J', '𝒦': 'K', 'ℒ': 'L', 'ℳ': 'M', '𝒩': 'N',
+                '𝒪': 'O', '𝒫': 'P', '𝒬': 'Q', 'ℛ': 'R', '𝒮': 'S', '𝒯': 'T', '𝒰': 'U',
+                '𝒱': 'V', '𝒲': 'W', '𝒳': 'X', '𝒴': 'Y', '𝒵': 'Z',
+              };
+
+              mmlFilters.add((args) => {
+                for (const n of args.data.getElementsByClassName('ltx_font_mathcaligraphic')) {
+                  n.classList.add('MJX-tex-calligraphic');
+                  const letter = script2latin[n.textContent];
+                  if (letter !== undefined) { n.textContent = letter; }
+                }
+              });
+
+              // adjust characters based on Unicode variation sequences
+              const replacements = {
+                // MathJax renders the empty set as the U+FE00 variant, so the plain character needs adjusting
+                '∅': { variant: 'variant' },
+                // MathJax renders script characters in rounded style, which is fine for no variation and U+FE00
+                '𝒜\xFE00': { text: 'A', variant: 'tex-calligraphic' },
+                'ℬ\xFE00': { text: 'B', variant: 'tex-calligraphic' },
+                '𝒞\xFE00': { text: 'C', variant: 'tex-calligraphic' },
+                '𝒟\xFE00': { text: 'D', variant: 'tex-calligraphic' },
+                'ℰ\xFE00': { text: 'E', variant: 'tex-calligraphic' },
+                'ℱ\xFE00': { text: 'F', variant: 'tex-calligraphic' },
+                '𝒢\xFE00': { text: 'G', variant: 'tex-calligraphic' },
+                'ℋ\xFE00': { text: 'H', variant: 'tex-calligraphic' },
+                'ℐ\xFE00': { text: 'I', variant: 'tex-calligraphic' },
+                '𝒥\xFE00': { text: 'J', variant: 'tex-calligraphic' },
+                '𝒦\xFE00': { text: 'K', variant: 'tex-calligraphic' },
+                'ℒ\xFE00': { text: 'L', variant: 'tex-calligraphic' },
+                'ℳ\xFE00': { text: 'M', variant: 'tex-calligraphic' },
+                '𝒩\xFE00': { text: 'N', variant: 'tex-calligraphic' },
+                '𝒪\xFE00': { text: 'O', variant: 'tex-calligraphic' },
+                '𝒫\xFE00': { text: 'P', variant: 'tex-calligraphic' },
+                '𝒬\xFE00': { text: 'Q', variant: 'tex-calligraphic' },
+                'ℛ\xFE00': { text: 'R', variant: 'tex-calligraphic' },
+                '𝒮\xFE00': { text: 'S', variant: 'tex-calligraphic' },
+                '𝒯\xFE00': { text: 'T', variant: 'tex-calligraphic' },
+                '𝒰\xFE00': { text: 'U', variant: 'tex-calligraphic' },
+                '𝒱\xFE00': { text: 'V', variant: 'tex-calligraphic' },
+                '𝒲\xFE00': { text: 'W', variant: 'tex-calligraphic' },
+                '𝒳\xFE00': { text: 'X', variant: 'tex-calligraphic' },
+                '𝒴\xFE00': { text: 'Y', variant: 'tex-calligraphic' },
+                '𝒵\xFE00': { text: 'Z', variant: 'tex-calligraphic' }
+              };
+
+              mmlFilters.add((args) => {
+                let nodes = document.evaluate('.//m:mi | .//m:mn | .//m:mo | .//m:ms', args.data,
+                  () => 'http://www.w3.org/1998/Math/MathML', XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE);
+                for (let i = 0; i < nodes.snapshotLength; i++) {
+                  const n = nodes.snapshotItem(i);
+                  const repl = replacements[n.innerHTML];
+                  if (repl !== undefined) {
+                    const variant = repl['variant'];
+                    const text = repl['text'];
+                    if (variant !== undefined) { n.classList.add('MJX-' + variant); n.removeAttribute('mathvariant'); }
+                    if (text !== undefined) { n.innerHTML = text; }
+                  }
+                }
+              });
+            }
+          }
+        };
+      </script>
+<script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-chtml.js"></script>
+<script type="text/javascript">
+                gitbook.require(["gitbook"], function(gitbook) {
+                gitbook.start({
+                  "fontsettings": {
+                    "theme": "white",
+                    "family": "sans",
+                    "size": 2
+                  },
+                  "download": [ [ "book.pdf", "PDF" ], ],
+                  "search": {
+                    "engine": "fuse"
+                  },
+                  "toc": {
+                    "collapse": "none"
+                  }
+                });
+              });
+            </script>
+</body>
+
+</html>

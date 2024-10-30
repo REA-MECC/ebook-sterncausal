@@ -1,0 +1,670 @@
+<!DOCTYPE html><html lang="pt">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>10 Contrafactuais ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal</title>
+<!--Generated on Tue Aug 27 12:19:15 2024 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on Última revisão: August 27, 2024.-->
+<style>:root { --bml-ltx-font-size: 10.95; }</style>
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/style.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-table.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-search.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-bookdown.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-fontsettings.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="bookml/CSS/style.css" type="text/css">
+<link rel="stylesheet" href="bookml/CSS/style.gitbook,plain.css" type="text/css">
+<link rel="stylesheet" href="bookml/CSS/style.gitbook.css" type="text/css">
+<link rel="stylesheet" href="bmluser/colors.gitbook-book.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6"></script>
+<link rel="up" href="chapter4.html" title="Capítulo 4 Resultados potenciais ‣ Inferência Causal">
+<link rel="up up" href="index.html" title="Inferência Causal">
+<link rel="start" href="index.html" title="Inferência Causal">
+<link rel="prev" href="S9.html" title="9 Variáveis Instrumentais ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal">
+<link rel="next" href="chapter5.html" title="Capítulo 5 Descoberta Causal ‣ Inferência Causal">
+<link rel="section" href="S8.html" title="8 Levando a intuição do SCM ao POM ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal">
+<link rel="section" href="S9.html" title="9 Variáveis Instrumentais ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal">
+<link rel="chapter" href="chapter1.html" title="Capítulo 1 Por que estudar Inferência Causal? ‣ Inferência Causal">
+<link rel="chapter" href="chapter2.html" title="Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal">
+<link rel="chapter" href="chapter3.html" title="Capítulo 3 Intervenções ‣ Inferência Causal">
+<link rel="chapter" href="chapter4.html" title="Capítulo 4 Resultados potenciais ‣ Inferência Causal">
+<link rel="chapter" href="chapter5.html" title="Capítulo 5 Descoberta Causal ‣ Inferência Causal">
+<link rel="chapter" href="chapter6.html" title="Capítulo 6 Demonstrações ‣ Inferência Causal">
+</head>
+<body>
+<div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+<a href="#bml-main-content" tabindex="0" class="bml-skip-to-content">Skip to content.</a>
+<div class="book-summary"><nav class="ltx_page_navbar">
+<ul class="ltx_toclist summary">
+<li>
+<a href="index.html" title="" class="ltx_ref" rel="start">Inferência Causal <span class="ltx_text"> </span></a>
+</li>
+<li class="divider">
+<li data-level="1" data-path="chapter1.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter1.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">1 </span></b>Por que estudar Inferência Causal?</a></li>
+<li data-level="2" data-path="chapter2.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter2.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">2 </span></b>Modelo Causal (CM)</a></li>
+<li data-level="3" data-path="chapter3.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter3.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">3 </span></b>Intervenções</a></li>
+<li data-level="4" data-path="chapter4.html" class="ltx_tocentry ltx_tocentry_chapter  chapter ">
+<a href="chapter4.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">4 </span></b>Resultados potenciais</a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li data-level="8" data-path="S8.html" class="ltx_tocentry ltx_tocentry_section  chapter "><a href="S8.html" title="In Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">8 </span></b>Levando a intuição do SCM ao POM</a></li>
+<li data-level="9" data-path="S9.html" class="ltx_tocentry ltx_tocentry_section  chapter "><a href="S9.html" title="In Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">9 </span></b>Variáveis Instrumentais</a></li>
+<li data-level="10" data-path="" class="ltx_tocentry ltx_tocentry_section ltx_ref_self  chapter active">
+<a href="" title="In Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">10 </span></b>Contrafactuais</a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li data-level="10.1" data-path="" class="ltx_tocentry ltx_tocentry_subsection  chapter "><a href="#SS1" title="In 10 Contrafactuais ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">10.1 </span></b>Contrafactuais e Responsabilidade Civil</a></li>
+<li data-level="10.2" data-path="" class="ltx_tocentry ltx_tocentry_subsection  chapter "><a href="#SS2" title="In 10 Contrafactuais ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">10.2 </span></b>Exercícios</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li data-level="5" data-path="chapter5.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter5.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">5 </span></b>Descoberta Causal</a></li>
+<li data-level="6" data-path="chapter6.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter6.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6 </span></b>Demonstrações</a></li>
+</ul>
+</nav></div>
+<div class="ltx_page_main book-body fixed">
+<div class="body-inner">
+<div class="book-header fixed" role="navigation"><h1>Contrafactuais</h1></div>
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="ltx_page_content page-inner" id="bml-main-content">
+<section class="ltx_section normal" lang="pt">
+<div class="section level1">
+
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section header-section-number">10</span> Contrafactuais</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p">Existem situações em que gostaríamos de saber
+o que teria ocorrido, caso certas condições fossem diferentes
+daquelas que foram efetivamente observadas.
+Por exemplo, considere que a perna de um indivíduo é amputada
+em virtude de um erro de diagnóstico médico.
+Neste caso, o indivíduo tem o direito
+a ser indenizado por seus danos.
+Contudo, qual o valor da indenização?
+Para responder a esta pergunta,
+somos levados a questionar
+como seria a vida deste indivíduo
+caso não houvesse o erro de diagnóstico.
+Este tipo de pergunta é chamada de <span class="ltx_text ltx_font_italic">contrafactual</span>.</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">Uma característica fundamental de contrafactuais é que
+estamos interessados em uma “realidade” distinta
+daquela que foi observada.
+Contudo, se só observamos uma realidade,
+como é possível aprender algo sobre “realidades distintas”?
+Por exemplo, se supomos que
+não houve um erro de diagnóstico médico,
+o que mais seria diferente?
+Nesta realidade alternativa, consideramos que
+não houve erro médico porque
+há um médico muito mais concentrado, competente,
+ético e com exames mais precisos?
+Ou estamos supondo apenas que
+características pontuais que o levaram ao erro não estão presentes e,
+assim, essencialmente é o mesmo médico tratando o paciente?
+Ainda que não há uma resposta única para esta pergunta,
+há um cenário que é comumente analisado.
+Neste supomos que a realidade alternativa é
+a mais próxima possível da observada dada
+a restrição que um determinado fato ocorreu diferentemente.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">Neste sentido, resultados potenciais são um formalismo útil.
+Dentro deste formalismo, consideramos que
+<math id="p3.m1" class="ltx_Math" alttext="{\mathcal{V}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒱</mi><annotation encoding="application/x-tex">{\mathcal{V}}</annotation></semantics></math> são as variáveis da “realidade observada”.
+Por outro lado, <math id="p3.m2" class="ltx_Math" alttext="{\mathcal{V}}_{{\mathbf{X}}={\mathbf{x}}}" display="inline"><semantics><msub><mi class="ltx_font_mathcaligraphic">𝒱</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><annotation encoding="application/x-tex">{\mathcal{V}}_{{\mathbf{X}}={\mathbf{x}}}</annotation></semantics></math> são
+as variáveis que seriam observadas quando
+<math id="p3.m3" class="ltx_Math" alttext="{\mathbf{X}}" display="inline"><semantics><mi>𝐗</mi><annotation encoding="application/x-tex">{\mathbf{X}}</annotation></semantics></math> é fixado no valor <math id="p3.m4" class="ltx_Math" alttext="{\mathbf{x}}" display="inline"><semantics><mi>𝐱</mi><annotation encoding="application/x-tex">{\mathbf{x}}</annotation></semantics></math>.
+Neste formalismo (<a href="chapter4.html#Thmtheorem7" title="Definição 4.7. ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Definição</span> <span class="ltx_text ltx_ref_tag">4.7</span></a>), consideramos que
+<math id="p3.m5" class="ltx_Math" alttext="Y=g_{Y}(Pa^{*}(Y),U_{Y})" display="inline"><semantics><mrow><mi>Y</mi><mo>=</mo><mrow><msub><mi>g</mi><mi>Y</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>P</mi><mo>⁢</mo><msup><mi>a</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>Y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><msub><mi>U</mi><mi>Y</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">Y=g_{Y}(Pa^{*}(Y),U_{Y})</annotation></semantics></math> e
+<math id="p3.m6" class="ltx_Math" alttext="Y_{{\mathbf{X}}={\mathbf{x}}}=g_{Y}(Pa^{*}(Y_{{\mathbf{X}}={\mathbf{x}}}),U_{Y})" display="inline"><semantics><mrow><msub><mi>Y</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo>=</mo><mrow><msub><mi>g</mi><mi>Y</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>P</mi><mo>⁢</mo><msup><mi>a</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>Y</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><msub><mi>U</mi><mi>Y</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">Y_{{\mathbf{X}}={\mathbf{x}}}=g_{Y}(Pa^{*}(Y_{{\mathbf{X}}={\mathbf{x}}}),U_{Y})</annotation></semantics></math>
+Isto é, na realidade contrafactual,
+<math id="p3.m7" class="ltx_Math" alttext="Y_{{\mathbf{X}}={\mathbf{x}}}" display="inline"><semantics><msub><mi>Y</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><annotation encoding="application/x-tex">Y_{{\mathbf{X}}={\mathbf{x}}}</annotation></semantics></math> e <math id="p3.m8" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> são gerados pelo mesmo mecanismo, <math id="p3.m9" class="ltx_Math" alttext="g_{Y}" display="inline"><semantics><msub><mi>g</mi><mi>Y</mi></msub><annotation encoding="application/x-tex">g_{Y}</annotation></semantics></math>.
+Além disso, os ruídos locais representados por <math id="p3.m10" class="ltx_Math" alttext="U_{Y}" display="inline"><semantics><msub><mi>U</mi><mi>Y</mi></msub><annotation encoding="application/x-tex">U_{Y}</annotation></semantics></math> são
+os mesmos em <math id="p3.m11" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> e <math id="p3.m12" class="ltx_Math" alttext="Y_{{\mathbf{X}}={\mathbf{x}}}" display="inline"><semantics><msub><mi>Y</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><annotation encoding="application/x-tex">Y_{{\mathbf{X}}={\mathbf{x}}}</annotation></semantics></math>.
+Pode-se argumentar que a equivalência de mecanismos
+e de ruídos locais satisfaz a condição de que
+realidades contrafactuais devem ser
+tão próximas quanto possível da realidade observada.</p>
+</div>
+<div id="chapter4.Thmtheorem28" class="ltx_theorem ltx_theorem_example">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Exemplo 4.28</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter4.Thmtheorem28.p1" class="ltx_para">
+<p class="ltx_p">Considere que <math id="chapter4.Thmtheorem28.p1.m1" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> é a indicadora de que houve um erro médico e
+<math id="chapter4.Thmtheorem28.p1.m2" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> é a indicadora de que a perna do paciente não é amputada.
+Por simplicidade, vamos supor que estas são
+as únicas duas variáveis relevantes e que
+o grafo causal é <math id="chapter4.Thmtheorem28.p1.m3" class="ltx_Math" alttext="{\mathcal{G}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒢</mi><annotation encoding="application/x-tex">{\mathcal{G}}</annotation></semantics></math> tal que <math id="chapter4.Thmtheorem28.p1.m4" class="ltx_Math" alttext="X\rightarrow Y" display="inline"><semantics><mrow><mi>X</mi><mo stretchy="false">→</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">X\rightarrow Y</annotation></semantics></math>.
+Também considere que <math id="chapter4.Thmtheorem28.p1.m5" class="ltx_Math" alttext="f(X=1)=\epsilon" display="inline"><semantics><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">f(X=1)=\epsilon</annotation></semantics></math>,
+<math id="chapter4.Thmtheorem28.p1.m6" class="ltx_Math" alttext="f(Y=1|X=1)=p_{1}" display="inline"><semantics><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>Y</mi><mo>=</mo><mrow><mn>1</mn><mo fence="false">|</mo><mi>X</mi></mrow><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msub><mi>p</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">f(Y=1|X=1)=p_{1}</annotation></semantics></math>, e <math id="chapter4.Thmtheorem28.p1.m7" class="ltx_Math" alttext="f(Y=1|X=0)=p_{0}" display="inline"><semantics><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>Y</mi><mo>=</mo><mrow><mn>1</mn><mo fence="false">|</mo><mi>X</mi></mrow><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msub><mi>p</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">f(Y=1|X=0)=p_{0}</annotation></semantics></math>, <math id="chapter4.Thmtheorem28.p1.m8" class="ltx_Math" alttext="p_{0}&gt;p_{1}" display="inline"><semantics><mrow><msub><mi>p</mi><mn>0</mn></msub><mo>&gt;</mo><msub><mi>p</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">p_{0}&gt;p_{1}</annotation></semantics></math>.
+Assim, o CM é <math id="chapter4.Thmtheorem28.p1.m9" class="ltx_Math" alttext="({\mathcal{G}},f)" display="inline"><semantics><mrow><mo stretchy="false">(</mo><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>,</mo><mi>f</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">({\mathcal{G}},f)</annotation></semantics></math>.</p>
+</div>
+<div id="chapter4.Thmtheorem28.p2" class="ltx_para">
+<p class="ltx_p">Para definir, um modelo de resultados potenciais,
+é necessário determinar um SCM (<a href="chapter4.html#Thmtheorem3" title="Definição 4.3. ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Definição</span> <span class="ltx_text ltx_ref_tag">4.3</span></a>).
+Uma possibilidade é escolher <math id="chapter4.Thmtheorem28.p2.m1" class="ltx_Math" alttext="U_{X},U_{Y}\sim U(0,1)" display="inline"><semantics><mrow><mrow><msub><mi>U</mi><mi>X</mi></msub><mo>,</mo><msub><mi>U</mi><mi>Y</mi></msub></mrow><mo>∼</mo><mrow><mi>U</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">U_{X},U_{Y}\sim U(0,1)</annotation></semantics></math>,
+<math id="chapter4.Thmtheorem28.p2.m2" class="ltx_Math" alttext="g_{X}(U_{X})\equiv{\mathbb{I}}(U_{X}\leq\epsilon)" display="inline"><semantics><mrow><mrow><msub><mi>g</mi><mi>X</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>U</mi><mi>X</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>≡</mo><mrow><mi>𝕀</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>U</mi><mi>X</mi></msub><mo>≤</mo><mi>ϵ</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">g_{X}(U_{X})\equiv{\mathbb{I}}(U_{X}\leq\epsilon)</annotation></semantics></math>, e
+<math id="chapter4.Thmtheorem28.p2.m3" class="ltx_Math" alttext="g_{Y}(U_{Y},X)\equiv{\mathbb{I}}(U_{Y}\leq p_{X})" display="inline"><semantics><mrow><mrow><msub><mi>g</mi><mi>Y</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>U</mi><mi>Y</mi></msub><mo>,</mo><mi>X</mi><mo stretchy="false">)</mo></mrow></mrow><mo>≡</mo><mrow><mi>𝕀</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>U</mi><mi>Y</mi></msub><mo>≤</mo><msub><mi>p</mi><mi>X</mi></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">g_{Y}(U_{Y},X)\equiv{\mathbb{I}}(U_{Y}\leq p_{X})</annotation></semantics></math>.
+Podemos mostrar que este SCM representa
+o CM definido no parágrafo anterior:</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx66" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex116"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex116.m1" class="ltx_Math" alttext="\displaystyle f(X=1)" display="inline"><semantics><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle f(X=1)</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex116.m2" class="ltx_Math" alttext="\displaystyle={\mathbb{P}}({\mathbb{I}}(U_{X}\leq\epsilon))=\epsilon" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>𝕀</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>U</mi><mi>X</mi></msub><mo>≤</mo><mi>ϵ</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">\displaystyle={\mathbb{P}}({\mathbb{I}}(U_{X}\leq\epsilon))=\epsilon</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex116.m3" class="ltx_Math" alttext="\displaystyle\text{\lx@cref{creftype~refnum}{def:scm}},U_{X}\sim U(0,1)," display="inline"><semantics><mrow><mrow><mrow><semantics><annotation-xml encoding="text/html" style="display: block;"><a href="chapter4.html#Thmtheorem3" title="Definição 4.3. ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Definição</span> <span class="ltx_text ltx_ref_tag">4.3</span></a></annotation-xml></semantics><mo>,</mo><msub><mi>U</mi><mi>X</mi></msub></mrow><mo>∼</mo><mrow><mi>U</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">\displaystyle\text{\lx@cref{creftype~refnum}{def:scm}},U_{X}\sim U(0,1),</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex117"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex117.m1" class="ltx_Math" alttext="\displaystyle f(Y=1|X=x)" display="inline"><semantics><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>Y</mi><mo>=</mo><mrow><mn>1</mn><mo fence="false">|</mo><mi>X</mi></mrow><mo>=</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle f(Y=1|X=x)</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex117.m2" class="ltx_Math" alttext="\displaystyle={\mathbb{P}}({\mathbb{I}}(U_{Y}\leq p_{x}))=p_{x}." display="inline"><semantics><mrow><mrow><mi></mi><mo>=</mo><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>𝕀</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>U</mi><mi>Y</mi></msub><mo>≤</mo><msub><mi>p</mi><mi>x</mi></msub></mrow><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msub><mi>p</mi><mi>x</mi></msub></mrow><mo lspace="0em">.</mo></mrow><annotation encoding="application/x-tex">\displaystyle={\mathbb{P}}({\mathbb{I}}(U_{Y}\leq p_{x}))=p_{x}.</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright" colspan="2"></td>
+</tr></tbody>
+</table>
+</div>
+<p class="ltx_p">Com base no modelo de resultados potenciais,
+podemos perguntar qual teria sido a probabilidade
+de que a perna do paciente não fosse amputada sem
+um erro médico, sabendo que observou-se
+o erro e a amputação: <math id="chapter4.Thmtheorem28.p2.m4" class="ltx_Math" alttext="{\mathbb{P}}(Y_{X=0}|X=1,Y=1)" display="inline"><semantics><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mrow><msub><mi>Y</mi><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow></msub><mo fence="false">|</mo><mi>X</mi></mrow><mo>=</mo><mn>1</mn></mrow><mo>,</mo><mrow><mi>Y</mi><mo>=</mo><mn>1</mn></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{P}}(Y_{X=0}|X=1,Y=1)</annotation></semantics></math>.</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx67" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex118"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex118.m1" class="ltx_math_unparsed" alttext="\displaystyle{\mathbb{P}}(Y_{X=0}=1|X=1,Y=0)" display="inline"><semantics><mrow><mi>ℙ</mi><mrow><mo stretchy="false">(</mo><msub><mi>Y</mi><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow></msub><mo>=</mo><mn>1</mn><mo fence="false" rspace="0.167em" stretchy="false">|</mo><mi>X</mi><mo>=</mo><mn>1</mn><mo>,</mo><mi>Y</mi><mo>=</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle{\mathbb{P}}(Y_{X=0}=1|X=1,Y=0)</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex118.m2" class="ltx_math_unparsed" alttext="\displaystyle={\mathbb{P}}({\mathbb{I}}(U_{Y}\leq p_{0})=1|{\mathbb{I}}(U_{X}%
+\leq\epsilon)==1,{\mathbb{I}}(U_{Y}&gt;p_{1})=1)" display="inline"><semantics><mrow><mo>=</mo><mi>ℙ</mi><mrow><mo stretchy="false">(</mo><mi>𝕀</mi><mrow><mo stretchy="false">(</mo><msub><mi>U</mi><mi>Y</mi></msub><mo>≤</mo><msub><mi>p</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mo>=</mo><mn>1</mn><mo fence="false" rspace="0.167em" stretchy="false">|</mo><mi>𝕀</mi><mrow><mo stretchy="false">(</mo><msub><mi>U</mi><mi>X</mi></msub><mo>≤</mo><mi>ϵ</mi><mo stretchy="false">)</mo></mrow><mo rspace="0em">=</mo><mo lspace="0em">=</mo><mn>1</mn><mo>,</mo><mi>𝕀</mi><mrow><mo stretchy="false">(</mo><msub><mi>U</mi><mi>Y</mi></msub><mo>&gt;</mo><msub><mi>p</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow><mo>=</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle={\mathbb{P}}({\mathbb{I}}(U_{Y}\leq p_{0})=1|{\mathbb{I}}(U_{X}%
+\leq\epsilon)==1,{\mathbb{I}}(U_{Y}&gt;p_{1})=1)</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex119"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex119.m1" class="ltx_Math" alttext="\displaystyle={\mathbb{P}}(U_{Y}\leq p_{0}|U_{X}\leq\epsilon,U_{Y}&gt;p_{1})" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>U</mi><mi>Y</mi></msub><mo>≤</mo><mrow><msub><mi>p</mi><mn>0</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">|</mo><mrow><msub><mi>U</mi><mi>X</mi></msub><mo>≤</mo><mrow><mi>ϵ</mi><mo>,</mo><msub><mi>U</mi><mi>Y</mi></msub></mrow></mrow><mo fence="true" lspace="0em">&gt;</mo></mrow><mo lspace="0em">⁢</mo><msub><mi>p</mi><mn>1</mn></msub></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle={\mathbb{P}}(U_{Y}\leq p_{0}|U_{X}\leq\epsilon,U_{Y}&gt;p_{1})</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex120"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex120.m1" class="ltx_Math" alttext="\displaystyle={\mathbb{P}}(U_{Y}\leq p_{0}|U_{Y}&gt;p_{1})" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>U</mi><mi>Y</mi></msub><mo>≤</mo><mrow><msub><mi>p</mi><mn>0</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">|</mo><msub><mi>U</mi><mi>Y</mi></msub><mo fence="true" lspace="0em">&gt;</mo></mrow><mo lspace="0em">⁢</mo><msub><mi>p</mi><mn>1</mn></msub></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle={\mathbb{P}}(U_{Y}\leq p_{0}|U_{Y}&gt;p_{1})</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex121"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex121.m1" class="ltx_Math" alttext="\displaystyle=\frac{{\mathbb{P}}(p_{1}&lt;U_{Y}\leq p_{0})}{{\mathbb{P}}(U_{Y}&gt;p_%
+{1})}=\frac{p_{0}-p_{1}}{1-p_{1}}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>p</mi><mn>1</mn></msub><mo>&lt;</mo><msub><mi>U</mi><mi>Y</mi></msub><mo>≤</mo><msub><mi>p</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>U</mi><mi>Y</mi></msub><mo>&gt;</mo><msub><mi>p</mi><mn>1</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></mfrac></mstyle><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><msub><mi>p</mi><mn>0</mn></msub><mo>−</mo><msub><mi>p</mi><mn>1</mn></msub></mrow><mrow><mn>1</mn><mo>−</mo><msub><mi>p</mi><mn>1</mn></msub></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle=\frac{{\mathbb{P}}(p_{1}&lt;U_{Y}\leq p_{0})}{{\mathbb{P}}(U_{Y}&gt;p_%
+{1})}=\frac{p_{0}-p_{1}}{1-p_{1}}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">Uma característica importante do <a href="#chapter4.Thmtheorem28" title="Exemplo 4.28. ‣ 10 Contrafactuais ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Exemplo</span> <span class="ltx_text ltx_ref_tag">4.28</span></a> é que
+a probabilidade contrafactual depende
+tanto da distribuição de <math id="p4.m1" class="ltx_Math" alttext="U_{Y}" display="inline"><semantics><msub><mi>U</mi><mi>Y</mi></msub><annotation encoding="application/x-tex">U_{Y}</annotation></semantics></math> quanto da funções <math id="p4.m2" class="ltx_Math" alttext="g_{Y}" display="inline"><semantics><msub><mi>g</mi><mi>Y</mi></msub><annotation encoding="application/x-tex">g_{Y}</annotation></semantics></math>.
+Estas quantidades não podem ser determinadas pelos dados.
+Em outras palavras, as probabilidades contrafactuais dependem
+fundamentalmente de suposições que não podem ser testadas.
+No <a href="#chapter4.Thmtheorem28" title="Exemplo 4.28. ‣ 10 Contrafactuais ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Exemplo</span> <span class="ltx_text ltx_ref_tag">4.28</span></a> definimos que
+<math id="p4.m3" class="ltx_Math" alttext="g_{Y}(U_{Y},X)={\mathbb{I}}(U_{Y}\leq p_{X})" display="inline"><semantics><mrow><mrow><msub><mi>g</mi><mi>Y</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>U</mi><mi>Y</mi></msub><mo>,</mo><mi>X</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>𝕀</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>U</mi><mi>Y</mi></msub><mo>≤</mo><msub><mi>p</mi><mi>X</mi></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">g_{Y}(U_{Y},X)={\mathbb{I}}(U_{Y}\leq p_{X})</annotation></semantics></math>.
+Este acoplamento determina que todo paciente que
+não teve sua perna amputada com um erro médico,
+também não a teria sem o erro médico.
+Como nunca observamos ambas as situações para
+um mesmo paciente, esta afirmação não é testável.
+O <a href="#chapter4.Thmtheorem29" title="Exemplo 4.29. ‣ 10 Contrafactuais ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Exemplo</span> <span class="ltx_text ltx_ref_tag">4.29</span></a> mostra que
+a probabilidade contrafactual varia conforme
+o acoplamento utilizado.</p>
+</div>
+<div id="chapter4.Thmtheorem29" class="ltx_theorem ltx_theorem_example">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Exemplo 4.29</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter4.Thmtheorem29.p1" class="ltx_para">
+<p class="ltx_p">No <a href="#chapter4.Thmtheorem28" title="Exemplo 4.28. ‣ 10 Contrafactuais ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Exemplo</span> <span class="ltx_text ltx_ref_tag">4.28</span></a>, considere que
+<math id="chapter4.Thmtheorem29.p1.m1" class="ltx_Math" alttext="g_{Y}(U_{Y},1)={\mathbb{I}}(U_{Y}\leq p_{1})" display="inline"><semantics><mrow><mrow><msub><mi>g</mi><mi>Y</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>U</mi><mi>Y</mi></msub><mo>⁢</mo><mn>,1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>𝕀</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>U</mi><mi>Y</mi></msub><mo>≤</mo><msub><mi>p</mi><mn>1</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">g_{Y}(U_{Y},1)={\mathbb{I}}(U_{Y}\leq p_{1})</annotation></semantics></math> e
+<math id="chapter4.Thmtheorem29.p1.m2" class="ltx_Math" alttext="g_{Y}(U_{Y},0)={\mathbb{I}}(U_{Y}\geq 1-p_{0})" display="inline"><semantics><mrow><mrow><msub><mi>g</mi><mi>Y</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>U</mi><mi>Y</mi></msub><mo>⁢</mo><mn>,0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>𝕀</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>U</mi><mi>Y</mi></msub><mo>≥</mo><mrow><mn>1</mn><mo>−</mo><msub><mi>p</mi><mn>0</mn></msub></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">g_{Y}(U_{Y},0)={\mathbb{I}}(U_{Y}\geq 1-p_{0})</annotation></semantics></math>.</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx68" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex122"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex122.m1" class="ltx_math_unparsed" alttext="\displaystyle{\mathbb{P}}(Y_{X=0}=1|X=1,Y=0)" display="inline"><semantics><mrow><mi>ℙ</mi><mrow><mo stretchy="false">(</mo><msub><mi>Y</mi><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow></msub><mo>=</mo><mn>1</mn><mo fence="false" rspace="0.167em" stretchy="false">|</mo><mi>X</mi><mo>=</mo><mn>1</mn><mo>,</mo><mi>Y</mi><mo>=</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle{\mathbb{P}}(Y_{X=0}=1|X=1,Y=0)</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex122.m2" class="ltx_math_unparsed" alttext="\displaystyle={\mathbb{P}}({\mathbb{I}}(U_{Y}\geq 1-p_{0})=1|{\mathbb{I}}(U_{X%
+}\leq\epsilon)==1,{\mathbb{I}}(U_{Y}&gt;p_{1})=1)" display="inline"><semantics><mrow><mo>=</mo><mi>ℙ</mi><mrow><mo stretchy="false">(</mo><mi>𝕀</mi><mrow><mo stretchy="false">(</mo><msub><mi>U</mi><mi>Y</mi></msub><mo>≥</mo><mn>1</mn><mo>−</mo><msub><mi>p</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mo>=</mo><mn>1</mn><mo fence="false" rspace="0.167em" stretchy="false">|</mo><mi>𝕀</mi><mrow><mo stretchy="false">(</mo><msub><mi>U</mi><mi>X</mi></msub><mo>≤</mo><mi>ϵ</mi><mo stretchy="false">)</mo></mrow><mo rspace="0em">=</mo><mo lspace="0em">=</mo><mn>1</mn><mo>,</mo><mi>𝕀</mi><mrow><mo stretchy="false">(</mo><msub><mi>U</mi><mi>Y</mi></msub><mo>&gt;</mo><msub><mi>p</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow><mo>=</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle={\mathbb{P}}({\mathbb{I}}(U_{Y}\geq 1-p_{0})=1|{\mathbb{I}}(U_{X%
+}\leq\epsilon)==1,{\mathbb{I}}(U_{Y}&gt;p_{1})=1)</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex123"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex123.m1" class="ltx_Math" alttext="\displaystyle={\mathbb{P}}(U_{Y}\geq 1-p_{0}|U_{X}\leq\epsilon,U_{Y}&gt;p_{1})" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>U</mi><mi>Y</mi></msub><mo>≥</mo><mrow><mn>1</mn><mo>−</mo><mrow><msub><mi>p</mi><mn>0</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">|</mo><mrow><msub><mi>U</mi><mi>X</mi></msub><mo>≤</mo><mrow><mi>ϵ</mi><mo>,</mo><msub><mi>U</mi><mi>Y</mi></msub></mrow></mrow><mo fence="true" lspace="0em">&gt;</mo></mrow><mo lspace="0em">⁢</mo><msub><mi>p</mi><mn>1</mn></msub></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle={\mathbb{P}}(U_{Y}\geq 1-p_{0}|U_{X}\leq\epsilon,U_{Y}&gt;p_{1})</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex124"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex124.m1" class="ltx_Math" alttext="\displaystyle={\mathbb{P}}(U_{Y}&gt;1-p_{0}|U_{Y}&gt;p_{1})" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>U</mi><mi>Y</mi></msub><mo>&gt;</mo><mrow><mn>1</mn><mo>−</mo><mrow><msub><mi>p</mi><mn>0</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">|</mo><msub><mi>U</mi><mi>Y</mi></msub><mo fence="true" lspace="0em">&gt;</mo></mrow><mo lspace="0em">⁢</mo><msub><mi>p</mi><mn>1</mn></msub></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle={\mathbb{P}}(U_{Y}&gt;1-p_{0}|U_{Y}&gt;p_{1})</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex125"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex125.m1" class="ltx_math_unparsed" alttext="\displaystyle=\frac{{\mathbb{P}}(U_{Y}&gt;\max(1-p_{0},p_{1})}{{\mathbb{P}}(U_{Y}%
+&gt;p_{1})}=\frac{\min(p_{0},1-p_{1})}{1-p_{1}}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mi>ℙ</mi><mrow><mo stretchy="false">(</mo><msub><mi>U</mi><mi>Y</mi></msub><mo>&gt;</mo><mi>max</mi><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><msub><mi>p</mi><mn>0</mn></msub><mo>,</mo><msub><mi>p</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>U</mi><mi>Y</mi></msub><mo>&gt;</mo><msub><mi>p</mi><mn>1</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></mfrac></mstyle><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mi>min</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><msub><mi>p</mi><mn>0</mn></msub><mo>⁢</mo><mn>,1</mn></mrow><mo>−</mo><msub><mi>p</mi><mn>1</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><mn>1</mn><mo>−</mo><msub><mi>p</mi><mn>1</mn></msub></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle=\frac{{\mathbb{P}}(U_{Y}&gt;\max(1-p_{0},p_{1})}{{\mathbb{P}}(U_{Y}%
+&gt;p_{1})}=\frac{\min(p_{0},1-p_{1})}{1-p_{1}}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<p class="ltx_p">Neste caso, <math id="chapter4.Thmtheorem29.p1.m3" class="ltx_Math" alttext="g_{Y}" display="inline"><semantics><msub><mi>g</mi><mi>Y</mi></msub><annotation encoding="application/x-tex">g_{Y}</annotation></semantics></math> induz a mema distribuição
+sobre <math id="chapter4.Thmtheorem29.p1.m4" class="ltx_Math" alttext="(X,Y)" display="inline"><semantics><mrow><mo stretchy="false">(</mo><mi>X</mi><mo>,</mo><mi>Y</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(X,Y)</annotation></semantics></math> que o acoplamento no <a href="#chapter4.Thmtheorem28" title="Exemplo 4.28. ‣ 10 Contrafactuais ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Exemplo</span> <span class="ltx_text ltx_ref_tag">4.28</span></a>.
+Ainda assim, a probabilidade contrafactual obtida é diferente.
+Isto ocorre pois, ao contrário do <a href="#chapter4.Thmtheorem28" title="Exemplo 4.28. ‣ 10 Contrafactuais ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Exemplo</span> <span class="ltx_text ltx_ref_tag">4.28</span></a>,
+a nova <math id="chapter4.Thmtheorem29.p1.m5" class="ltx_Math" alttext="g_{Y}" display="inline"><semantics><msub><mi>g</mi><mi>Y</mi></msub><annotation encoding="application/x-tex">g_{Y}</annotation></semantics></math> indica que é possível que um paciente
+tenha a perna amputada sem o erro médico e
+não a tenha com o erro.</p>
+</div>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p">De um ponto de vista operacional,
+o <a href="#chapter4.Thmtheorem30" title="Teorema 4.30 (Cálculo contrafactual). ‣ 10 Contrafactuais ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Teorema</span> <span class="ltx_text ltx_ref_tag">4.30</span></a> abaixo provê
+um algoritmo para calcular probabilidades contrafactuais:</p>
+</div>
+<div id="chapter4.Thmtheorem30" class="ltx_theorem ltx_theorem_theorem">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Teorema 4.30</span></span><span class="ltx_text ltx_font_bold"> </span>(Cálculo contrafactual)<span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter4.Thmtheorem30.p1" class="ltx_para">
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx69" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex126"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex126.m1" class="ltx_Math" alttext="\displaystyle{\mathbb{P}}({\mathbf{Y}}_{{\mathbf{X}}={\mathbf{x}}}\leq{\mathbf%
+{y}}|{\mathbf{Z}}={\mathbf{z}})" display="inline"><semantics><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>𝐘</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo>≤</mo><mrow><mi>𝐲</mi><mo fence="false">|</mo><mi>𝐙</mi></mrow><mo>=</mo><mi>𝐳</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle{\mathbb{P}}({\mathbf{Y}}_{{\mathbf{X}}={\mathbf{x}}}\leq{\mathbf%
+{y}}|{\mathbf{Z}}={\mathbf{z}})</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex126.m2" class="ltx_Math" alttext="\displaystyle=\int{\mathbb{P}}({\mathbf{Y}}_{{\mathbf{X}}={\mathbf{x}}}\leq{%
+\mathbf{y}}|{\mathbb{U}})f({\mathbb{U}}|{\mathbf{Z}}={\mathbf{z}})d{\mathbb{U}}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mrow><mo>∫</mo><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>𝐘</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo>≤</mo><mrow><mi>𝐲</mi><mo fence="false">|</mo><mi>𝕌</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>𝕌</mi><mo fence="false">|</mo><mi>𝐙</mi></mrow><mo>=</mo><mi>𝐳</mi></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>𝕌</mi></mrow></mrow></mrow></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle=\int{\mathbb{P}}({\mathbf{Y}}_{{\mathbf{X}}={\mathbf{x}}}\leq{%
+\mathbf{y}}|{\mathbb{U}})f({\mathbb{U}}|{\mathbf{Z}}={\mathbf{z}})d{\mathbb{U}}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="p6" class="ltx_para">
+<p class="ltx_p">O <a href="#chapter4.Thmtheorem30" title="Teorema 4.30 (Cálculo contrafactual). ‣ 10 Contrafactuais ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Teorema</span> <span class="ltx_text ltx_ref_tag">4.30</span></a> indica que
+o cálculo de probabilidades contrafactuais
+pode ser dividido em duas etapas.
+Primeiramente, calcula-se a nova distribuição
+dos ruídos locais, <math id="p6.m1" class="ltx_Math" alttext="{\mathbb{U}}" display="inline"><semantics><mi>𝕌</mi><annotation encoding="application/x-tex">{\mathbb{U}}</annotation></semantics></math>, após aprender que
+<math id="p6.m2" class="ltx_Math" alttext="{\mathbf{Z}}={\mathbf{z}}" display="inline"><semantics><mrow><mi>𝐙</mi><mo>=</mo><mi>𝐳</mi></mrow><annotation encoding="application/x-tex">{\mathbf{Z}}={\mathbf{z}}</annotation></semantics></math>, obtendo assim <math id="p6.m3" class="ltx_Math" alttext="f({\mathbb{U}}|{\mathbf{Z}}={\mathbf{z}})" display="inline"><semantics><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>𝕌</mi><mo fence="false">|</mo><mi>𝐙</mi></mrow><mo>=</mo><mi>𝐳</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">f({\mathbb{U}}|{\mathbf{Z}}={\mathbf{z}})</annotation></semantics></math>.
+A seguir, calcula-se
+<math id="p6.m4" class="ltx_Math" alttext="{\mathbb{P}}({\mathbf{Y}}_{{\mathbf{X}}={\mathbf{x}}}\leq{\mathbf{y}})" display="inline"><semantics><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>𝐘</mi><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow></msub><mo>≤</mo><mi>𝐲</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{P}}({\mathbf{Y}}_{{\mathbf{X}}={\mathbf{x}}}\leq{\mathbf{y}})</annotation></semantics></math> utilizando-se que
+a distribuição de <math id="p6.m5" class="ltx_Math" alttext="{\mathbb{U}}" display="inline"><semantics><mi>𝕌</mi><annotation encoding="application/x-tex">{\mathbb{U}}</annotation></semantics></math> é <math id="p6.m6" class="ltx_Math" alttext="f({\mathbb{U}}|{\mathbf{Z}}={\mathbf{z}})" display="inline"><semantics><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>𝕌</mi><mo fence="false">|</mo><mi>𝐙</mi></mrow><mo>=</mo><mi>𝐳</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">f({\mathbb{U}}|{\mathbf{Z}}={\mathbf{z}})</annotation></semantics></math>
+ao invés de <math id="p6.m7" class="ltx_Math" alttext="f({\mathbb{U}})" display="inline"><semantics><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝕌</mi><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">f({\mathbb{U}})</annotation></semantics></math>.</p>
+</div>
+<div id="p7" class="ltx_para">
+<p class="ltx_p">Na próxima seção, veremos
+uma aplicação mais detalhada de
+contrafactuais no Direito.
+Esta discussão é baseada em
+<cite class="ltx_cite ltx_citemacro_citet"><span class="ltx_ref ltx_missing_citation ltx_ref_self">Stern2019</span></cite>.</p>
+</div>
+<section id="SS1" class="ltx_subsection normal">
+<div class="section level2">
+
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection header-section-number">10.1</span> Contrafactuais e Responsabilidade Civil</h2>
+
+<div id="SS1.p1" class="ltx_para">
+<p class="ltx_p">O art. 927 do Código Civil de 2002 determina que:</p>
+</div>
+<div id="SS1.p2" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p">Aquele que, por ato ilícito,
+causar dano a outrem,
+fica obrigado a repará-lo.</p>
+</blockquote>
+</div>
+<div id="SS1.p3" class="ltx_para">
+<p class="ltx_p">Este artigo institui a Responsabilidade Aquiliana,
+isto é o dever daquele que causa um dano
+de forma ilícita a <span class="ltx_text ltx_font_bold">reparar</span> as vítimas.
+Sem entrar em detalhes sobre a lei,
+um elemento fundamental deste conceito é a reparação.</p>
+</div>
+<div id="SS1.p4" class="ltx_para">
+<p class="ltx_p">O que é a reparação?
+Esta pergunta é ainda mais complicada dado que
+o Direito somente pode exigir que
+esta reparação ocorra por meio de
+um pagamento em dinheiro.
+Neste sentido, uma posição comum é
+definir que reparação é
+o valor de pagamento que
+torna a vítima inteira, isto é,
+na condição em que ela estaria caso
+não tivesse sofrido o dano.</p>
+</div>
+<div id="SS1.p5" class="ltx_para">
+<p class="ltx_p">Para nossos fins,
+a parte central desta definição de reparação é que
+ela exige uma consideração contrafactual. Isto é,
+ela questiona qual teria sido a condição da vítima
+caso esta não tivesse sofrido o dano.
+Podemos avaliar esta questão com
+as ferramentas desenvolvidas
+na <span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">10</span></span>.</p>
+</div>
+<div id="SS1.p6" class="ltx_para">
+<p class="ltx_p">Para tal, construíremos
+um modelo de resultados potenciais.
+Considere que <math id="SS1.p6.m1" class="ltx_Math" alttext="{\mathcal{V}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒱</mi><annotation encoding="application/x-tex">{\mathcal{V}}</annotation></semantics></math> é
+o conjunto de todas as variáveis juridicamente relevantes.
+Dentre elas, <math id="SS1.p6.m2" class="ltx_Math" alttext="I" display="inline"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math> é a indicadora de que
+o causador do dano agiu de forma ilícita.
+Além disso, <math id="SS1.p6.m3" class="ltx_Math" alttext="E\subseteq{\mathcal{V}}" display="inline"><semantics><mrow><mi>E</mi><mo>⊆</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi></mrow><annotation encoding="application/x-tex">E\subseteq{\mathcal{V}}</annotation></semantics></math> é
+um conjunto de variáveis que foi observada e
+trazida como evidência à Justiça.
+Finalmente, <math id="SS1.p6.m4" class="ltx_Math" alttext="U({\mathcal{V}},m)" display="inline"><semantics><mrow><mi>U</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo>,</mo><mi>m</mi><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">U({\mathcal{V}},m)</annotation></semantics></math> é
+uma função de utilidade que
+indica o quão desejável é para a vítima
+obter o resultado <math id="SS1.p6.m5" class="ltx_Math" alttext="{\mathcal{V}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒱</mi><annotation encoding="application/x-tex">{\mathcal{V}}</annotation></semantics></math> e, além disso,
+uma indenização monetária de <math id="SS1.p6.m6" class="ltx_Math" alttext="m" display="inline"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>.
+Dentro deste contexto,
+uma quantificação do dano é
+uma função, <math id="SS1.p6.m7" class="ltx_Math" alttext="Q(E)\in\Re^{+}" display="inline"><semantics><mrow><mrow><mi>Q</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>E</mi><mo stretchy="false">)</mo></mrow></mrow><mo>∈</mo><msup><mi mathvariant="normal">ℜ</mi><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">Q(E)\in\Re^{+}</annotation></semantics></math>, que
+define uma compensação para
+cada possível evidência apresentada.</p>
+</div>
+<div id="SS1.p7" class="ltx_para">
+<p class="ltx_p">Dentro deste contexto,
+uma primeira pergunta é
+o quanto da evidência pode ser usada
+para quantificar o dano.
+Neste aspecto, há uma tensão importante entre
+previsibilidade e reparação <cite class="ltx_cite ltx_citemacro_citep">(<span class="ltx_ref ltx_missing_citation ltx_ref_self">Fisher1990</span>)</cite>.
+Considere que um diário com a assinatura de Janis Joplin é
+destruído em um sebo antes da fama da cantora.
+Poderia a posterior fama de Joplin
+ser levada em consideração na reparação?
+De forma mais geral, quanto da evidência conhecida
+no momento do julgamento pode ser usada
+na quantificação do dano?</p>
+</div>
+<div id="SS1.p8" class="ltx_para">
+<p class="ltx_p">De uma perspectiva social,
+cada possível resposta apresenta
+vantagens e desvantagens.
+Por um lado, o uso de muita informação permite que
+seja possível colocar a vítima no presente
+o mais próximo da condição em que ela estaria
+caso o ato ilícito não tivesse ocorrido.
+Por outro lado, quanto mais informação é usada,
+mais imprevisível se torna o valor da reparação
+no momento em que o ilícito é cometido.</p>
+</div>
+<div id="SS1.p9" class="ltx_para">
+<p class="ltx_p">Formalmente, podemos imagimar
+ao menos três respostas para a pergunta levantada.
+A primeira resposta é de que toda evidência pode ser usada.
+Isto é, não há restrições sobre <math id="SS1.p9.m1" class="ltx_Math" alttext="Q" display="inline"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>.
+A segunda resposta é de que nenhuma evidência pode ser usada,
+isto é, <math id="SS1.p9.m2" class="ltx_Math" alttext="Q" display="inline"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math> deve ser uma função constante.
+Finalmente, uma resposta intermediária é obtida supondo que
+<math id="SS1.p9.m3" class="ltx_Math" alttext="Q" display="inline"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math> somente leva em consideração se a situação
+da vítima foi superior ou inferior àquela que
+ela poderia esperar sem o ilícito.
+Formalmente, tomando
+<math id="SS1.p9.m4" class="ltx_Math" alttext="g(E)={\mathbb{I}}({\mathbb{E}}[U({\mathcal{V}},0)|E]&gt;{\mathbb{E}}[U({\mathcal{%
+V}}_{X=0},0)])" display="inline"><semantics><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>E</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>𝕀</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mrow><mi>U</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo>⁢</mo><mn>,0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo fence="false">|</mo><mi>E</mi></mrow><mo stretchy="false">]</mo></mrow></mrow><mo>&gt;</mo><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>U</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi class="ltx_font_mathcaligraphic">𝒱</mi><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow></msub><mo>⁢</mo><mn>,0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">]</mo></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">g(E)={\mathbb{I}}({\mathbb{E}}[U({\mathcal{V}},0)|E]&gt;{\mathbb{E}}[U({\mathcal{%
+V}}_{X=0},0)])</annotation></semantics></math>,
+temos que se <math id="SS1.p9.m5" class="ltx_Math" alttext="g(E_{1})=g(E_{2})" display="inline"><semantics><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>E</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>E</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">g(E_{1})=g(E_{2})</annotation></semantics></math>, então
+<math id="SS1.p9.m6" class="ltx_Math" alttext="Q(E_{1})=Q(E_{2})" display="inline"><semantics><mrow><mrow><mi>Q</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>E</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>Q</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>E</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">Q(E_{1})=Q(E_{2})</annotation></semantics></math>.
+Em última análise, a escolha da resposta correta
+não é uma questão científica, mas de Direito.
+Contudo, utilizando contrafactuais podemos
+analisá-la e indicar os aspectos fundamentais
+envolvidos na escolha.</p>
+</div>
+<div id="SS1.p10" class="ltx_para">
+<p class="ltx_p">Um outro aspecto fundamental
+na quantificação de danos é a especificação de <math id="SS1.p10.m1" class="ltx_Math" alttext="Q" display="inline"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>.
+Para tal, há duas possíveis interpretações de reparação.
+Por um lado, pode-se entender que
+a reparação deve levar a vítima o mais próximo possível
+ao estado em que ela estaria sem o ato ilícito,
+levando em consideração toda a evidência disponível.
+Uma possível formalização deste raciocínio é:</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx70" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex127"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex127.m1" class="ltx_Math" alttext="\displaystyle Q=\arg\min_{Q^{*}}{\mathbb{E}}[(U({\mathcal{V}},Q^{*}(E))-U({%
+\mathcal{V}}_{X=0},0))^{2}]" display="inline"><semantics><mrow><mi>Q</mi><mo>=</mo><mrow><mrow><mi>arg</mi><mo lspace="0.167em">⁡</mo><mrow><munder><mi>min</mi><msup><mi>Q</mi><mo>∗</mo></msup></munder><mo lspace="0.167em">⁡</mo><mi>𝔼</mi></mrow></mrow><mo>⁢</mo><mrow><mo stretchy="false">[</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>U</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo>,</mo><mrow><msup><mi>Q</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>E</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>U</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi class="ltx_font_mathcaligraphic">𝒱</mi><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow></msub><mo>⁢</mo><mn>,0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo stretchy="false">]</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle Q=\arg\min_{Q^{*}}{\mathbb{E}}[(U({\mathcal{V}},Q^{*}(E))-U({%
+\mathcal{V}}_{X=0},0))^{2}]</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<p class="ltx_p">Por outro lado, pode-se entender que,
+no momento em que o ato ilícito foi cometido,
+a vítima deveria estar indiferente entre
+não sofrer o ilícito ou sofrê-lo e receber a indenização.
+Esta outra interpretação pode ser formalizada da seguinte forma:</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx71" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex128"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex128.m1" class="ltx_Math" alttext="\displaystyle Q=\arg\min_{Q^{*}:{\mathbb{E}}[U({\mathcal{V}},Q^{*})]={\mathbb{%
+E}}[U({\mathcal{V}}_{X=0},0)]}{\mathbb{E}}[(U({\mathcal{V}},Q^{*}(E))-U({%
+\mathcal{V}}_{X=0},0))^{2}]" display="inline"><semantics><mrow><mi>Q</mi><mo>=</mo><mrow><mrow><mi>arg</mi><mo lspace="0.167em">⁡</mo><mrow><munder><mi>min</mi><mrow><msup><mi>Q</mi><mo>∗</mo></msup><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>U</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo>,</mo><msup><mi>Q</mi><mo>∗</mo></msup><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">]</mo></mrow></mrow><mo>=</mo><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>U</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi class="ltx_font_mathcaligraphic">𝒱</mi><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow></msub><mo>⁢</mo><mn>,0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">]</mo></mrow></mrow></mrow></mrow></munder><mo lspace="0.167em">⁡</mo><mi>𝔼</mi></mrow></mrow><mo>⁢</mo><mrow><mo stretchy="false">[</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>U</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo>,</mo><mrow><msup><mi>Q</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>E</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>U</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi class="ltx_font_mathcaligraphic">𝒱</mi><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow></msub><mo>⁢</mo><mn>,0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo stretchy="false">]</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle Q=\arg\min_{Q^{*}:{\mathbb{E}}[U({\mathcal{V}},Q^{*})]={\mathbb{%
+E}}[U({\mathcal{V}}_{X=0},0)]}{\mathbb{E}}[(U({\mathcal{V}},Q^{*}(E))-U({%
+\mathcal{V}}_{X=0},0))^{2}]</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div id="SS1.p11" class="ltx_para">
+<p class="ltx_p">Finalmente, como estabelecer
+um modelo de resultados potenciais
+a partir de um modelo causal?
+Como vimos anteriormente,
+um mesmo CM  pode ser compatível com
+diversos SCM. Além disso,
+cada SCM pode levar a avaliações
+distintas de contrafactuais.
+Uma possível resposta é que
+o SCM deve ser estabelecido pelo perito.
+Contudo, o custo de um perito pode ser
+incompatível com o valor do pedido.
+Neste caso, algumas alternativas são supor que
+<math id="SS1.p11.m1" class="ltx_Math" alttext="{\mathcal{V}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒱</mi><annotation encoding="application/x-tex">{\mathcal{V}}</annotation></semantics></math> e <math id="SS1.p11.m2" class="ltx_Math" alttext="{\mathcal{V}}_{X=0}" display="inline"><semantics><msub><mi class="ltx_font_mathcaligraphic">𝒱</mi><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow></msub><annotation encoding="application/x-tex">{\mathcal{V}}_{X=0}</annotation></semantics></math> são independentes ou
+tomar a sua dependência de forma a minimizar
+<math id="SS1.p11.m3" class="ltx_Math" alttext="{\mathbb{E}}[(U({\mathcal{V}},0)-U({\mathcal{V}}_{X=0},0))^{2}]" display="inline"><semantics><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>U</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo>⁢</mo><mn>,0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>U</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi class="ltx_font_mathcaligraphic">𝒱</mi><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow></msub><mo>⁢</mo><mn>,0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo stretchy="false">]</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{E}}[(U({\mathcal{V}},0)-U({\mathcal{V}}_{X=0},0))^{2}]</annotation></semantics></math>.</p>
+</div>
+</div>
+</section>
+<section id="SS2" class="ltx_subsection normal">
+<div class="section level2">
+
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection header-section-number">10.2</span> Exercícios</h2>
+
+<div id="chapter4.Thmtheorem31" class="ltx_theorem ltx_theorem_exercise">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Exercício 4.31</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter4.Thmtheorem31.p1" class="ltx_para">
+<p class="ltx_p">Com base na discussão levantada na <a href="#SS1" title="10.1 Contrafactuais e Responsabilidade Civil ‣ 10 Contrafactuais ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">10.1</span></a>,
+discuta formas de reparação para
+o caso levantado no <a href="#chapter4.Thmtheorem28" title="Exemplo 4.28. ‣ 10 Contrafactuais ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Exemplo</span> <span class="ltx_text ltx_ref_tag">4.28</span></a>.</p>
+</div>
+</div>
+<div id="chapter4.Thmtheorem32" class="ltx_theorem ltx_theorem_exercise">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Exercício 4.32</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter4.Thmtheorem32.p1" class="ltx_para">
+<p class="ltx_p">Suponha que sem o ato ilícito,
+um paciente tem o tempo de sobrevivência dado
+pela acumulada <math id="chapter4.Thmtheorem32.p1.m1" class="ltx_Math" alttext="F_{0}" display="inline"><semantics><msub><mi>F</mi><mn>0</mn></msub><annotation encoding="application/x-tex">F_{0}</annotation></semantics></math>.
+Por outro lado, com o ato ilícito,
+seu tempo de sobrevivência é dado por <math id="chapter4.Thmtheorem32.p1.m2" class="ltx_Math" alttext="F_{1}" display="inline"><semantics><msub><mi>F</mi><mn>1</mn></msub><annotation encoding="application/x-tex">F_{1}</annotation></semantics></math>.
+Ocorrido o ilícito, o paciente falece após 1 ano.
+Discuta possíveis reparações para
+o paciente com base na <a href="#SS1" title="10.1 Contrafactuais e Responsabilidade Civil ‣ 10 Contrafactuais ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">10.1</span></a>.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</section>
+</div>
+</div>
+</div>
+<a href="S9.html" class="navigation navigation-prev" aria-label="Previous page"><i class="fa fa-angle-left"></i></a><a href="chapter5.html" class="navigation navigation-next" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+</div>
+</div>
+<script src="bookml/gitbook/js/app.min.js"></script>
+<script src="bookml/gitbook/js/jquery.highlight.js"></script>
+<script src="bookml/gitbook/js/plugin-search.js"></script>
+<script src="bookml/gitbook/js/plugin-fontsettings.js"></script>
+<script src="bookml/gitbook/js/plugin-bookdown.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script>
+        MathJax = {
+          startup: {
+            ready() {
+              // do not process equations disabled with \bmlDisableMathJax (code suggested by Davide P. Cervone)
+              class bmlFindMathML extends MathJax._.input.mathml.FindMathML.FindMathML {
+                processMath(set) {
+                  const adaptor = this.adaptor;
+                  for (const node of set.values()) {
+                    if (adaptor.hasClass(node, 'bml_disable_mathjax')) {
+                      set.delete(node);
+                    }
+                  }
+                  return super.processMath(set);
+                }
+              }
+
+              MathJax._.components.global.combineDefaults(MathJax.config, 'mml', {FindMathML: new bmlFindMathML()});
+
+              MathJax.startup.defaultReady();
+
+              // preproces MathML to make MathJax aware of certain LaTeXML and BookML additional info
+              const mmlFilters = MathJax.startup.input[0].mmlFilters;
+
+              // convert the LaTeXML calligraphic (chancery) annotation to a form MathJax understands
+              // since the corresponding Unicode characters render as script (rounded)
+              const script2latin = {
+                '𝒜': 'A', 'ℬ': 'B', '𝒞': 'C', '𝒟': 'D', 'ℰ': 'E', 'ℱ': 'F', '𝒢': 'G',
+                'ℋ': 'H', 'ℐ': 'I', '𝒥': 'J', '𝒦': 'K', 'ℒ': 'L', 'ℳ': 'M', '𝒩': 'N',
+                '𝒪': 'O', '𝒫': 'P', '𝒬': 'Q', 'ℛ': 'R', '𝒮': 'S', '𝒯': 'T', '𝒰': 'U',
+                '𝒱': 'V', '𝒲': 'W', '𝒳': 'X', '𝒴': 'Y', '𝒵': 'Z',
+              };
+
+              mmlFilters.add((args) => {
+                for (const n of args.data.getElementsByClassName('ltx_font_mathcaligraphic')) {
+                  n.classList.add('MJX-tex-calligraphic');
+                  const letter = script2latin[n.textContent];
+                  if (letter !== undefined) { n.textContent = letter; }
+                }
+              });
+
+              // adjust characters based on Unicode variation sequences
+              const replacements = {
+                // MathJax renders the empty set as the U+FE00 variant, so the plain character needs adjusting
+                '∅': { variant: 'variant' },
+                // MathJax renders script characters in rounded style, which is fine for no variation and U+FE00
+                '𝒜\xFE00': { text: 'A', variant: 'tex-calligraphic' },
+                'ℬ\xFE00': { text: 'B', variant: 'tex-calligraphic' },
+                '𝒞\xFE00': { text: 'C', variant: 'tex-calligraphic' },
+                '𝒟\xFE00': { text: 'D', variant: 'tex-calligraphic' },
+                'ℰ\xFE00': { text: 'E', variant: 'tex-calligraphic' },
+                'ℱ\xFE00': { text: 'F', variant: 'tex-calligraphic' },
+                '𝒢\xFE00': { text: 'G', variant: 'tex-calligraphic' },
+                'ℋ\xFE00': { text: 'H', variant: 'tex-calligraphic' },
+                'ℐ\xFE00': { text: 'I', variant: 'tex-calligraphic' },
+                '𝒥\xFE00': { text: 'J', variant: 'tex-calligraphic' },
+                '𝒦\xFE00': { text: 'K', variant: 'tex-calligraphic' },
+                'ℒ\xFE00': { text: 'L', variant: 'tex-calligraphic' },
+                'ℳ\xFE00': { text: 'M', variant: 'tex-calligraphic' },
+                '𝒩\xFE00': { text: 'N', variant: 'tex-calligraphic' },
+                '𝒪\xFE00': { text: 'O', variant: 'tex-calligraphic' },
+                '𝒫\xFE00': { text: 'P', variant: 'tex-calligraphic' },
+                '𝒬\xFE00': { text: 'Q', variant: 'tex-calligraphic' },
+                'ℛ\xFE00': { text: 'R', variant: 'tex-calligraphic' },
+                '𝒮\xFE00': { text: 'S', variant: 'tex-calligraphic' },
+                '𝒯\xFE00': { text: 'T', variant: 'tex-calligraphic' },
+                '𝒰\xFE00': { text: 'U', variant: 'tex-calligraphic' },
+                '𝒱\xFE00': { text: 'V', variant: 'tex-calligraphic' },
+                '𝒲\xFE00': { text: 'W', variant: 'tex-calligraphic' },
+                '𝒳\xFE00': { text: 'X', variant: 'tex-calligraphic' },
+                '𝒴\xFE00': { text: 'Y', variant: 'tex-calligraphic' },
+                '𝒵\xFE00': { text: 'Z', variant: 'tex-calligraphic' }
+              };
+
+              mmlFilters.add((args) => {
+                let nodes = document.evaluate('.//m:mi | .//m:mn | .//m:mo | .//m:ms', args.data,
+                  () => 'http://www.w3.org/1998/Math/MathML', XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE);
+                for (let i = 0; i < nodes.snapshotLength; i++) {
+                  const n = nodes.snapshotItem(i);
+                  const repl = replacements[n.innerHTML];
+                  if (repl !== undefined) {
+                    const variant = repl['variant'];
+                    const text = repl['text'];
+                    if (variant !== undefined) { n.classList.add('MJX-' + variant); n.removeAttribute('mathvariant'); }
+                    if (text !== undefined) { n.innerHTML = text; }
+                  }
+                }
+              });
+            }
+          }
+        };
+      </script>
+<script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-chtml.js"></script>
+<script type="text/javascript">
+                gitbook.require(["gitbook"], function(gitbook) {
+                gitbook.start({
+                  "fontsettings": {
+                    "theme": "white",
+                    "family": "sans",
+                    "size": 2
+                  },
+                  "download": [ [ "book.pdf", "PDF" ], ],
+                  "search": {
+                    "engine": "fuse"
+                  },
+                  "toc": {
+                    "collapse": "none"
+                  }
+                });
+              });
+            </script>
+</body>
+
+</html>

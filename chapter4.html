@@ -1,0 +1,588 @@
+<!DOCTYPE html><html lang="pt">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Capítulo 4 Resultados potenciais ‣ Inferência Causal</title>
+<!--Generated on Tue Aug 27 12:19:15 2024 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on Última revisão: August 27, 2024.-->
+<style>:root { --bml-ltx-font-size: 10.95; }</style>
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/style.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-table.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-search.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-bookdown.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-fontsettings.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="bookml/CSS/style.css" type="text/css">
+<link rel="stylesheet" href="bookml/CSS/style.gitbook,plain.css" type="text/css">
+<link rel="stylesheet" href="bookml/CSS/style.gitbook.css" type="text/css">
+<link rel="stylesheet" href="bmluser/colors.gitbook-book.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6"></script>
+<link rel="up" href="index.html" title="Inferência Causal">
+<link rel="start" href="index.html" title="Inferência Causal">
+<link rel="prev" href="S7.html" title="7 Do-calculus ‣ Capítulo 3 Intervenções ‣ Inferência Causal">
+<link rel="next" href="S8.html" title="8 Levando a intuição do SCM ao POM ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal">
+<link rel="chapter" href="chapter1.html" title="Capítulo 1 Por que estudar Inferência Causal? ‣ Inferência Causal">
+<link rel="chapter" href="chapter2.html" title="Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal">
+<link rel="chapter" href="chapter3.html" title="Capítulo 3 Intervenções ‣ Inferência Causal">
+<link rel="chapter" href="chapter5.html" title="Capítulo 5 Descoberta Causal ‣ Inferência Causal">
+<link rel="chapter" href="chapter6.html" title="Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="section" href="S8.html" title="8 Levando a intuição do SCM ao POM ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal">
+<link rel="section" href="S9.html" title="9 Variáveis Instrumentais ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal">
+<link rel="section" href="S10.html" title="10 Contrafactuais ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal">
+</head>
+<body>
+<div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+<a href="#bml-main-content" tabindex="0" class="bml-skip-to-content">Skip to content.</a>
+<div class="book-summary"><nav class="ltx_page_navbar">
+<ul class="ltx_toclist summary">
+<li>
+<a href="index.html" title="" class="ltx_ref" rel="start">Inferência Causal <span class="ltx_text"> </span></a>
+</li>
+<li class="divider">
+<li data-level="1" data-path="chapter1.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter1.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">1 </span></b>Por que estudar Inferência Causal?</a></li>
+<li data-level="2" data-path="chapter2.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter2.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">2 </span></b>Modelo Causal (CM)</a></li>
+<li data-level="3" data-path="chapter3.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter3.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">3 </span></b>Intervenções</a></li>
+<li data-level="4" data-path="" class="ltx_tocentry ltx_tocentry_chapter ltx_ref_self  chapter active">
+<a href="" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">4 </span></b>Resultados potenciais</a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li data-level="8" data-path="S8.html" class="ltx_tocentry ltx_tocentry_section  chapter "><a href="S8.html" title="In Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">8 </span></b>Levando a intuição do SCM ao POM</a></li>
+<li data-level="9" data-path="S9.html" class="ltx_tocentry ltx_tocentry_section  chapter "><a href="S9.html" title="In Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">9 </span></b>Variáveis Instrumentais</a></li>
+<li data-level="10" data-path="S10.html" class="ltx_tocentry ltx_tocentry_section  chapter "><a href="S10.html" title="In Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">10 </span></b>Contrafactuais</a></li>
+</ol>
+</li>
+<li data-level="5" data-path="chapter5.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter5.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">5 </span></b>Descoberta Causal</a></li>
+<li data-level="6" data-path="chapter6.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter6.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6 </span></b>Demonstrações</a></li>
+</ul>
+</nav></div>
+<div class="ltx_page_main book-body fixed">
+<div class="body-inner">
+<div class="book-header fixed" role="navigation"><h1>Resultados potenciais</h1></div>
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="ltx_page_content page-inner" id="bml-main-content">
+<section class="ltx_chapter normal" lang="pt">
+<div class="section level1">
+
+<h1 class="ltx_title ltx_title_chapter">
+<span class="ltx_tag ltx_tag_chapter header-section-number">Capítulo 4</span> Resultados potenciais</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p">No capítulo passado, vimos que
+<math id="p1.m1" class="ltx_Math" alttext="f(y|do(x))" display="inline"><semantics><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>y</mi><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(y|do(x))</annotation></semantics></math> nos permite entender
+o comportamento de <math id="p1.m2" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> em
+um cenário distinto dos dados observados.
+Por exemplo, se <math id="p1.m3" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> é
+a indicadora de um tratamento e
+<math id="p1.m4" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> é a indicadora de cura, então
+<math id="p1.m5" class="ltx_Math" alttext="f(y|do(X=1))" display="inline"><semantics><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>y</mi><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(y|do(X=1))</annotation></semantics></math> nos permite entender
+a proporção de cura em um cenário hipotético em que
+administramos o tratamento a todos os indivíduos.
+Esta distribuição nos permite investigar
+questões causais que
+não eram acessíveis usando apenas
+a distribuição observacional, <math id="p1.m6" class="ltx_Math" alttext="f(y,x)" display="inline"><semantics><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo>,</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(y,x)</annotation></semantics></math>.</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">Contudo, algumas perguntas causais
+não são respondidas utilizando apenas
+os mecanismos desenvolvidos no <a href="chapter3.html" title="Capítulo 3 Intervenções ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">capítulo</span> <span class="ltx_text ltx_ref_tag">3</span></a>.
+Por exemplo, qual a probabilidade de que
+um indivíduo se cure quando recebe o tratamento e
+não se cure quando não o recebe.
+Quando tentamos traduzir esta questão,
+notamos que partes dela envolvem <math id="p2.m1" class="ltx_Math" alttext="Y=1" display="inline"><semantics><mrow><mi>Y</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">Y=1</annotation></semantics></math> e <math id="p2.m2" class="ltx_Math" alttext="do(X=1)" display="inline"><semantics><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">do(X=1)</annotation></semantics></math>
+e outras partes envolvem <math id="p2.m3" class="ltx_Math" alttext="Y=0" display="inline"><semantics><mrow><mi>Y</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">Y=0</annotation></semantics></math> e <math id="p2.m4" class="ltx_Math" alttext="do(X=0)" display="inline"><semantics><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">do(X=0)</annotation></semantics></math>.
+Se tentarmos uma tradução ingênua,
+podemos obter uma expressão como <math id="p2.m5" class="ltx_Math" alttext="{\mathbb{P}}(Y=1,Y=0|do(X=1),do(X=0))" display="inline"><semantics><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>Y</mi><mo>=</mo><mn>1</mn></mrow><mo>,</mo><mrow><mi>Y</mi><mo>=</mo><mrow><mn>0</mn><mo fence="false">|</mo><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{P}}(Y=1,Y=0|do(X=1),do(X=0))</annotation></semantics></math>.
+Contudo, a probabilidade acima não responde à pergunta colocada.
+Em primeiro lugar, não está definido fazermos
+as intervenções <math id="p2.m6" class="ltx_Math" alttext="do(X=1)" display="inline"><semantics><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">do(X=1)</annotation></semantics></math> e <math id="p2.m7" class="ltx_Math" alttext="do(X=0)" display="inline"><semantics><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">do(X=0)</annotation></semantics></math> na mesma unidade amostral.
+Além disso, mesmo que a probabilidade estivesse definida,
+é impossível que o mesmo <math id="p2.m8" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> assuma tanto o valor <math id="p2.m9" class="ltx_Math" alttext="1" display="inline"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math> quanto <math id="p2.m10" class="ltx_Math" alttext="0" display="inline"><mn>0</mn></math>.
+Isto é, <math id="p2.m11" class="ltx_Math" alttext="{\mathbb{P}}(Y=1,Y=0|\ldots)=0" display="inline"><semantics><mrow><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>Y</mi><mo>=</mo><mn>1</mn></mrow><mo>,</mo><mrow><mi>Y</mi><mo>=</mo><mrow><mn>0</mn><mo fence="false">|</mo><mi mathvariant="normal">…</mi></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">{\mathbb{P}}(Y=1,Y=0|\ldots)=0</annotation></semantics></math>.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">A última constatação nos revela que
+o modelo no <a href="chapter3.html" title="Capítulo 3 Intervenções ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">capítulo</span> <span class="ltx_text ltx_ref_tag">3</span></a>
+não tem variáveis suficientes para
+traduzir a pergunta levantada.
+Se imaginamos que é possível que
+um indivíduo se cure ao receber o tratamento e
+não se cure quando não o recebe,
+isto ocorre pois as ocorrências de cura
+em cada cenário hipotético não são
+logicamente equivalentes.
+Em outras palavras, é como se
+houvessem <span class="ltx_text ltx_font_italic">resultados potenciais<span id="footnote2" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">2</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">2</sup>
+              <span class="ltx_tag ltx_tag_note"><span class="ltx_text ltx_font_upright">2</span></span>
+              
+              
+              
+              
+              
+              
+              
+            <span class="ltx_text ltx_font_upright">
+Esta é uma tradução livre da expressão
+“potential outcomes” usada em inglês.</span></span></span></span></span>,
+<math id="p3.m1" class="ltx_Math" alttext="Y_{1}" display="inline"><semantics><msub><mi>Y</mi><mn>1</mn></msub><annotation encoding="application/x-tex">Y_{1}</annotation></semantics></math> e <math id="p3.m2" class="ltx_Math" alttext="Y_{0}" display="inline"><semantics><msub><mi>Y</mi><mn>0</mn></msub><annotation encoding="application/x-tex">Y_{0}</annotation></semantics></math>, para
+indicar a ocorrência de cura em
+cada cenário considerado.
+Com o uso destas variáveis,
+poderíamos escrever
+<math id="p3.m3" class="ltx_Math" alttext="{\mathbb{P}}(Y_{1}=1,Y_{0}=0)" display="inline"><semantics><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><msub><mi>Y</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn></mrow><mo>,</mo><mrow><msub><mi>Y</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{P}}(Y_{1}=1,Y_{0}=0)</annotation></semantics></math>.</p>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">O objetivo desta seção é
+incluir este tipo de variável de forma
+a preservar as ferramentas desenvolvidas
+no <a href="chapter3.html" title="Capítulo 3 Intervenções ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">capítulo</span> <span class="ltx_text ltx_ref_tag">3</span></a>.<span id="footnote3" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">3</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">3</sup>
+            <span class="ltx_tag ltx_tag_note">3</span>
+            
+            
+            
+            
+            
+            
+            
+          
+Para tal, adotaremos uma construção
+baseada em <cite class="ltx_cite ltx_citemacro_citet"><span class="ltx_ref ltx_missing_citation ltx_ref_self">Galles1998</span></cite>.
+</span></span></span>
+Neste quesito, a maior dificuldade será
+estabelecer a distribuição conjunta
+entre os resultados potenciais.
+Para tal, será útil relembrar
+um lema fundamental em simulação:</p>
+</div>
+<div id="Thmtheorem1" class="ltx_theorem ltx_theorem_lemma">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Lema 4.1</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="Thmtheorem1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Considere que <math id="Thmtheorem1.p1.m1" class="ltx_Math" alttext="F(v|Pa(V))" display="inline"><semantics><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>v</mi><mo fence="false">|</mo><mrow><mi>P</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>V</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">F(v|Pa(V))</annotation></semantics></math> é
+uma função de densidade acumulada condicional arbitrária e
+<math id="Thmtheorem1.p1.m2" class="ltx_Math" alttext="U\sim U(0,1)" display="inline"><semantics><mrow><mi>U</mi><mo>∼</mo><mrow><mi>U</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">U\sim U(0,1)</annotation></semantics></math>. Se definirmos,
+<math id="Thmtheorem1.p1.m3" class="ltx_Math" alttext="V\equiv F^{-1}(U|Pa(V))" display="inline"><semantics><mrow><mi>V</mi><mo>≡</mo><mrow><msup><mi>F</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>U</mi><mo fence="false">|</mo><mrow><mi>P</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>V</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">V\equiv F^{-1}(U|Pa(V))</annotation></semantics></math>, então
+<math id="Thmtheorem1.p1.m4" class="ltx_Math" alttext="V|Pa(V)\sim F" display="inline"><semantics><mrow><mrow><mi>V</mi><mo fence="false">|</mo><mrow><mi>P</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>V</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>∼</mo><mi>F</mi></mrow><annotation encoding="application/x-tex">V|Pa(V)\sim F</annotation></semantics></math>.</span></p>
+</div>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p">O <a href="#Thmtheorem1" title="Lema 4.1. ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Lema</span> <span class="ltx_text ltx_ref_tag">4.1</span></a> traz
+várias interpretações que nos serão úteis.
+A primeira interpretação, de caráter técnico, é
+que podemos simular de
+qualquer distribuição multivariada utilizando apenas
+variáveis i.i.d. e funções determinísticas.
+Em particular, podemos
+reescrever um SCM de tal forma que
+cada vértice, <math id="p5.m1" class="ltx_Math" alttext="V" display="inline"><semantics><mi>V</mi><annotation encoding="application/x-tex">V</annotation></semantics></math>, seja função determinística
+de seus pais e uma variável de ruído, <math id="p5.m2" class="ltx_Math" alttext="U_{V}" display="inline"><semantics><msub><mi>U</mi><mi>V</mi></msub><annotation encoding="application/x-tex">U_{V}</annotation></semantics></math>.
+Esta abordagem, que está ligada a
+modelos de equações estruturais, é
+apresentada nas <a href="#Thmtheorem2" title="Definição 4.2. ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Definições</span> <span class="ltx_text ltx_ref_tag">4.2</span></a> e <a href="#Thmtheorem3" title="Definição 4.3. ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.3</span></a>.</p>
+</div>
+<div id="Thmtheorem2" class="ltx_theorem ltx_theorem_definition">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Definição 4.2</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="Thmtheorem2.p1" class="ltx_para">
+<p class="ltx_p">Seja <math id="Thmtheorem2.p1.m1" class="ltx_Math" alttext="{\mathcal{G}}=({\mathcal{V}},{\mathcal{E}})" display="inline"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo>,</mo><mi class="ltx_font_mathcaligraphic">ℰ</mi><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{G}}=({\mathcal{V}},{\mathcal{E}})</annotation></semantics></math> um grafo causal.
+O grafo causal estrutural,
+<math id="Thmtheorem2.p1.m2" class="ltx_Math" alttext="{\mathcal{G}}^{+}=({\mathcal{V}}^{+},{\mathcal{E}}^{+})" display="inline"><semantics><mrow><msup><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>+</mo></msup><mo>=</mo><mrow><mo stretchy="false">(</mo><msup><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo>+</mo></msup><mo>,</mo><msup><mi class="ltx_font_mathcaligraphic">ℰ</mi><mo>+</mo></msup><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{G}}^{+}=({\mathcal{V}}^{+},{\mathcal{E}}^{+})</annotation></semantics></math>, é tal que
+<math id="Thmtheorem2.p1.m3" class="ltx_Math" alttext="{\mathcal{V}}^{+}={\mathcal{V}}\cup(U_{V})_{V\in{\mathcal{V}}}" display="inline"><semantics><mrow><msup><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo>+</mo></msup><mo>=</mo><mrow><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo>∪</mo><msub><mrow><mo stretchy="false">(</mo><msub><mi>U</mi><mi>V</mi></msub><mo stretchy="false">)</mo></mrow><mrow><mi>V</mi><mo>∈</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi></mrow></msub></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{V}}^{+}={\mathcal{V}}\cup(U_{V})_{V\in{\mathcal{V}}}</annotation></semantics></math> e
+<math id="Thmtheorem2.p1.m4" class="ltx_Math" alttext="{\mathcal{E}}^{+}={\mathcal{E}}\cup\{(U_{V},V):V\in{\mathcal{V}}\}" display="inline"><semantics><mrow><msup><mi class="ltx_font_mathcaligraphic">ℰ</mi><mo>+</mo></msup><mo>=</mo><mrow><mi class="ltx_font_mathcaligraphic">ℰ</mi><mo>∪</mo><mrow><mo stretchy="false">{</mo><mrow><mo stretchy="false">(</mo><msub><mi>U</mi><mi>V</mi></msub><mo>,</mo><mi>V</mi><mo rspace="0.278em" stretchy="false">)</mo></mrow><mo rspace="0.278em">:</mo><mrow><mi>V</mi><mo>∈</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi></mrow><mo stretchy="false">}</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{E}}^{+}={\mathcal{E}}\cup\{(U_{V},V):V\in{\mathcal{V}}\}</annotation></semantics></math>.
+Isto é, para cada <math id="Thmtheorem2.p1.m5" class="ltx_Math" alttext="V\in{\mathcal{V}}" display="inline"><semantics><mrow><mi>V</mi><mo>∈</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi></mrow><annotation encoding="application/x-tex">V\in{\mathcal{V}}</annotation></semantics></math>,
+<math id="Thmtheorem2.p1.m6" class="ltx_Math" alttext="{\mathcal{G}}^{+}" display="inline"><semantics><msup><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>+</mo></msup><annotation encoding="application/x-tex">{\mathcal{G}}^{+}</annotation></semantics></math> adiciona uma nova variável <math id="Thmtheorem2.p1.m7" class="ltx_Math" alttext="U_{V}" display="inline"><semantics><msub><mi>U</mi><mi>V</mi></msub><annotation encoding="application/x-tex">U_{V}</annotation></semantics></math> e
+uma aresta de <math id="Thmtheorem2.p1.m8" class="ltx_Math" alttext="U_{V}" display="inline"><semantics><msub><mi>U</mi><mi>V</mi></msub><annotation encoding="application/x-tex">U_{V}</annotation></semantics></math> a <math id="Thmtheorem2.p1.m9" class="ltx_Math" alttext="V" display="inline"><semantics><mi>V</mi><annotation encoding="application/x-tex">V</annotation></semantics></math>.</p>
+</div>
+</div>
+<div id="Thmtheorem3" class="ltx_theorem ltx_theorem_definition">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Definição 4.3</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="Thmtheorem3.p1" class="ltx_para">
+<p class="ltx_p">Seja <math id="Thmtheorem3.p1.m1" class="ltx_Math" alttext="({\mathcal{G}},f)" display="inline"><semantics><mrow><mo stretchy="false">(</mo><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>,</mo><mi>f</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">({\mathcal{G}},f)</annotation></semantics></math> um CM.
+O Modelo Estrutural Causal (SCM) para <math id="Thmtheorem3.p1.m2" class="ltx_Math" alttext="({\mathcal{G}},f)" display="inline"><semantics><mrow><mo stretchy="false">(</mo><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>,</mo><mi>f</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">({\mathcal{G}},f)</annotation></semantics></math>,
+<math id="Thmtheorem3.p1.m3" class="ltx_Math" alttext="({\mathcal{G}}^{+},f^{+})" display="inline"><semantics><mrow><mo stretchy="false">(</mo><msup><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>+</mo></msup><mo>,</mo><msup><mi>f</mi><mo>+</mo></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">({\mathcal{G}}^{+},f^{+})</annotation></semantics></math>, é tal que
+<math id="Thmtheorem3.p1.m4" class="ltx_Math" alttext="{\mathcal{G}}^{+}" display="inline"><semantics><msup><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>+</mo></msup><annotation encoding="application/x-tex">{\mathcal{G}}^{+}</annotation></semantics></math> é o grafo causal estrutural de <math id="Thmtheorem3.p1.m5" class="ltx_Math" alttext="{\mathcal{G}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒢</mi><annotation encoding="application/x-tex">{\mathcal{G}}</annotation></semantics></math>,
+<math id="Thmtheorem3.p1.m6" class="ltx_Math" alttext="(U_{V})_{V\in{\mathcal{V}}}" display="inline"><semantics><msub><mrow><mo stretchy="false">(</mo><msub><mi>U</mi><mi>V</mi></msub><mo stretchy="false">)</mo></mrow><mrow><mi>V</mi><mo>∈</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi></mrow></msub><annotation encoding="application/x-tex">(U_{V})_{V\in{\mathcal{V}}}</annotation></semantics></math> são independentes segundo <math id="Thmtheorem3.p1.m7" class="ltx_Math" alttext="f^{+}" display="inline"><semantics><msup><mi>f</mi><mo>+</mo></msup><annotation encoding="application/x-tex">f^{+}</annotation></semantics></math> e,
+para cada <math id="Thmtheorem3.p1.m8" class="ltx_Math" alttext="V\in{\mathcal{V}}" display="inline"><semantics><mrow><mi>V</mi><mo>∈</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi></mrow><annotation encoding="application/x-tex">V\in{\mathcal{V}}</annotation></semantics></math>, existe uma função determinística,
+<math id="Thmtheorem3.p1.m9" class="ltx_Math" alttext="g_{V}:U_{V}\times Pa(V)\rightarrow\Re" display="inline"><semantics><mrow><msub><mi>g</mi><mi>V</mi></msub><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mrow><mrow><msub><mi>U</mi><mi>V</mi></msub><mo lspace="0.222em" rspace="0.222em">×</mo><mi>P</mi></mrow><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>V</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">→</mo><mi mathvariant="normal">ℜ</mi></mrow></mrow><annotation encoding="application/x-tex">g_{V}:U_{V}\times Pa(V)\rightarrow\Re</annotation></semantics></math>,
+tal que <math id="Thmtheorem3.p1.m10" class="ltx_Math" alttext="f^{+}(V|U_{V},Pa(V))={\mathbb{I}}(V=g_{V}(U_{V},Pa(V)))" display="inline"><semantics><mrow><mrow><msup><mi>f</mi><mo>+</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>V</mi><mo fence="false">|</mo><mrow><msub><mi>U</mi><mi>V</mi></msub><mo>,</mo><mrow><mi>P</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>V</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>𝕀</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>V</mi><mo>=</mo><mrow><msub><mi>g</mi><mi>V</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>U</mi><mi>V</mi></msub><mo>,</mo><mrow><mi>P</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>V</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">f^{+}(V|U_{V},Pa(V))={\mathbb{I}}(V=g_{V}(U_{V},Pa(V)))</annotation></semantics></math> e
+<math id="Thmtheorem3.p1.m11" class="ltx_Math" alttext="f^{+}({\mathcal{V}})=f({\mathcal{V}})" display="inline"><semantics><mrow><mrow><msup><mi>f</mi><mo>+</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">f^{+}({\mathcal{V}})=f({\mathcal{V}})</annotation></semantics></math>.</p>
+</div>
+</div>
+<div id="p6" class="ltx_para">
+<p class="ltx_p">O <a href="#Thmtheorem4" title="Exemplo 4.4. ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Exemplo</span> <span class="ltx_text ltx_ref_tag">4.4</span></a> ilustra
+uma forma de obter
+um SCM em equações estruturais
+a partir de um SCM com dois vértices.</p>
+</div>
+<div id="Thmtheorem4" class="ltx_theorem ltx_theorem_example">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Exemplo 4.4</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="Thmtheorem4.p1" class="ltx_para">
+<p class="ltx_p">Considere que <math id="Thmtheorem4.p1.m1" class="ltx_Math" alttext="X\rightarrow Y" display="inline"><semantics><mrow><mi>X</mi><mo stretchy="false">→</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">X\rightarrow Y</annotation></semantics></math>,
+<math id="Thmtheorem4.p1.m2" class="ltx_Math" alttext="X\sim\text{Exp}(1)" display="inline"><semantics><mrow><mi>X</mi><mo>∼</mo><mrow><mtext>Exp</mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">X\sim\text{Exp}(1)</annotation></semantics></math> e <math id="Thmtheorem4.p1.m3" class="ltx_Math" alttext="Y|X\sim\text{Exp}(X)" display="inline"><semantics><mrow><mrow><mi>Y</mi><mo fence="false">|</mo><mi>X</mi></mrow><mo>∼</mo><mrow><mtext>Exp</mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>X</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">Y|X\sim\text{Exp}(X)</annotation></semantics></math>.
+Neste caso, o grafo estrutural causal é
+dado por <math id="Thmtheorem4.p1.m4" class="ltx_Math" alttext="U_{X}\rightarrow X\rightarrow Y\leftarrow U_{Y}" display="inline"><semantics><mrow><msub><mi>U</mi><mi>X</mi></msub><mo stretchy="false">→</mo><mi>X</mi><mo stretchy="false">→</mo><mi>Y</mi><mo stretchy="false">←</mo><msub><mi>U</mi><mi>Y</mi></msub></mrow><annotation encoding="application/x-tex">U_{X}\rightarrow X\rightarrow Y\leftarrow U_{Y}</annotation></semantics></math>.
+Além disso, existem várias representações do SCM
+em equações estruturais. Uma possibilidade é
+definir que <math id="Thmtheorem4.p1.m5" class="ltx_Math" alttext="U_{X}" display="inline"><semantics><msub><mi>U</mi><mi>X</mi></msub><annotation encoding="application/x-tex">U_{X}</annotation></semantics></math> e <math id="Thmtheorem4.p1.m6" class="ltx_Math" alttext="U_{Y}" display="inline"><semantics><msub><mi>U</mi><mi>Y</mi></msub><annotation encoding="application/x-tex">U_{Y}</annotation></semantics></math> são i.i.d. e <math id="Thmtheorem4.p1.m7" class="ltx_Math" alttext="U(0,1)" display="inline"><semantics><mrow><mi>U</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">U(0,1)</annotation></semantics></math>,
+<math id="Thmtheorem4.p1.m8" class="ltx_Math" alttext="X\equiv-\log(U_{X})" display="inline"><semantics><mrow><mi>X</mi><mo>≡</mo><mrow><mo rspace="0.167em">−</mo><mrow><mi>log</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><msub><mi>U</mi><mi>X</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">X\equiv-\log(U_{X})</annotation></semantics></math> e <math id="Thmtheorem4.p1.m9" class="ltx_Math" alttext="Y\equiv-\log(U_{Y})/X" display="inline"><semantics><mrow><mi>Y</mi><mo>≡</mo><mrow><mo rspace="0.167em">−</mo><mrow><mrow><mi>log</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><msub><mi>U</mi><mi>Y</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>/</mo><mi>X</mi></mrow></mrow></mrow><annotation encoding="application/x-tex">Y\equiv-\log(U_{Y})/X</annotation></semantics></math>.</p>
+</div>
+</div>
+<div id="p7" class="ltx_para">
+<p class="ltx_p">O <a href="#Thmtheorem1" title="Lema 4.1. ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Lema</span> <span class="ltx_text ltx_ref_tag">4.1</span></a> também permite
+uma interpretação de caráter mais filosófico.
+Podemos imaginar que toda variável em um SCM, <math id="p7.m1" class="ltx_Math" alttext="V" display="inline"><semantics><mi>V</mi><annotation encoding="application/x-tex">V</annotation></semantics></math>, é
+uma função determinística de seus pais e
+de <span class="ltx_text ltx_font_italic">condições locais</span> não-observadas, <math id="p7.m2" class="ltx_Math" alttext="U_{V}" display="inline"><semantics><msub><mi>U</mi><mi>V</mi></msub><annotation encoding="application/x-tex">U_{V}</annotation></semantics></math>.
+A expressão “condições locais” indica que
+cada <math id="p7.m3" class="ltx_Math" alttext="U_{V}" display="inline"><semantics><msub><mi>U</mi><mi>V</mi></msub><annotation encoding="application/x-tex">U_{V}</annotation></semantics></math> é usada somente para gerar <math id="p7.m4" class="ltx_Math" alttext="V" display="inline"><semantics><mi>V</mi><annotation encoding="application/x-tex">V</annotation></semantics></math> e que
+as variáveis em <math id="p7.m5" class="ltx_Math" alttext="U" display="inline"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math> são independentes, isto é,
+não trazem informação umas sobre as outras.</p>
+</div>
+<div id="p8" class="ltx_para">
+<p class="ltx_p">A interpretação acima é usada
+na definição de resultados potenciais.
+A ideia principal é que
+as mesmas funções determínistas e
+variáveis de ruído locais são usadas
+para gerar todos os resultados potenciais.
+A única diferença é que,
+para cada resultado potencial,
+o valor das variáveis em que
+houve intervenção é fixado.
+Esta definição é compatível com
+a ideia de que não é possível modificar
+os ruídos locais por meio da intervenção.
+Em outras palavras,
+o resultado potencial é o mais próximo possível
+do resultado observado sob a restrição que
+fixamos os valores das variáveis em que
+houve intervenção.</p>
+</div>
+<div id="Thmtheorem5" class="ltx_theorem ltx_theorem_definition">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Definição 4.5</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="Thmtheorem5.p1" class="ltx_para">
+<p class="ltx_p">Seja <math id="Thmtheorem5.p1.m1" class="ltx_Math" alttext="({\mathcal{G}},f)" display="inline"><semantics><mrow><mo stretchy="false">(</mo><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>,</mo><mi>f</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">({\mathcal{G}},f)</annotation></semantics></math> um CM de grafo causal
+<math id="Thmtheorem5.p1.m2" class="ltx_Math" alttext="{\mathcal{G}}=({\mathcal{V}},{\mathcal{E}})" display="inline"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo>,</mo><mi class="ltx_font_mathcaligraphic">ℰ</mi><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{G}}=({\mathcal{V}},{\mathcal{E}})</annotation></semantics></math> e
+<math id="Thmtheorem5.p1.m3" class="ltx_Math" alttext="({\mathcal{G}}^{+},f^{+})" display="inline"><semantics><mrow><mo stretchy="false">(</mo><msup><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>+</mo></msup><mo>,</mo><msup><mi>f</mi><mo>+</mo></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">({\mathcal{G}}^{+},f^{+})</annotation></semantics></math> o seu SCM.
+O grafo de resultados potenciais dado
+por intervenções em <math id="Thmtheorem5.p1.m4" class="ltx_Math" alttext="{\mathbf{X}}\subseteq{\mathcal{V}}" display="inline"><semantics><mrow><mi>𝐗</mi><mo>⊆</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi></mrow><annotation encoding="application/x-tex">{\mathbf{X}}\subseteq{\mathcal{V}}</annotation></semantics></math>,
+<math id="Thmtheorem5.p1.m5" class="ltx_Math" alttext="{\mathcal{G}}^{*}=({\mathcal{V}}^{*},{\mathcal{E}}^{*})" display="inline"><semantics><mrow><msup><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>∗</mo></msup><mo>=</mo><mrow><mo stretchy="false">(</mo><msup><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo>∗</mo></msup><mo>,</mo><msup><mi class="ltx_font_mathcaligraphic">ℰ</mi><mo>∗</mo></msup><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{G}}^{*}=({\mathcal{V}}^{*},{\mathcal{E}}^{*})</annotation></semantics></math> é tal que</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx56" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="S7.Ex104"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S7.Ex104.m1" class="ltx_Math" alttext="\displaystyle{\mathcal{V}}^{*}" display="inline"><semantics><msup><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo>∗</mo></msup><annotation encoding="application/x-tex">\displaystyle{\mathcal{V}}^{*}</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S7.Ex104.m2" class="ltx_Math" alttext="\displaystyle=\{W_{{\mathbb{V}}={\mathbf{v}}}:W\in{\mathcal{V}},{\mathbb{V}}%
+\subseteq{\mathbf{X}},{\mathbf{v}}\in supp({\mathbb{V}})\}\cup\{U_{W}:W\in{%
+\mathcal{V}}\}," display="inline"><semantics><mrow><mrow><mi></mi><mo>=</mo><mrow><mrow><mo stretchy="false">{</mo><msub><mi>W</mi><mrow><mi>𝕍</mi><mo>=</mo><mi>𝐯</mi></mrow></msub><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mrow><mi>W</mi><mo>∈</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi></mrow><mo>,</mo><mrow><mrow><mi>𝕍</mi><mo>⊆</mo><mi>𝐗</mi></mrow><mo>,</mo><mrow><mi>𝐯</mi><mo>∈</mo><mrow><mi>s</mi><mo>⁢</mo><mi>u</mi><mo>⁢</mo><mi>p</mi><mo>⁢</mo><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝕍</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow><mo stretchy="false">}</mo></mrow><mo>∪</mo><mrow><mo stretchy="false">{</mo><msub><mi>U</mi><mi>W</mi></msub><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mi>W</mi><mo>∈</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi></mrow><mo stretchy="false">}</mo></mrow></mrow></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">\displaystyle=\{W_{{\mathbb{V}}={\mathbf{v}}}:W\in{\mathcal{V}},{\mathbb{V}}%
+\subseteq{\mathbf{X}},{\mathbf{v}}\in supp({\mathbb{V}})\}\cup\{U_{W}:W\in{%
+\mathcal{V}}\},</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="S7.Ex105"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S7.Ex105.m1" class="ltx_Math" alttext="\displaystyle{\mathcal{E}}^{*}" display="inline"><semantics><msup><mi class="ltx_font_mathcaligraphic">ℰ</mi><mo>∗</mo></msup><annotation encoding="application/x-tex">\displaystyle{\mathcal{E}}^{*}</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S7.Ex105.m2" class="ltx_Math" alttext="\displaystyle=\{(W_{{\mathbb{V}}={\mathbf{v}}},Z_{{\mathbb{V}}={\mathbf{v}}}):%
+{\mathbb{V}}\subseteq{\mathbf{X}},{\mathbf{v}}\in supp({\mathbb{V}}),(W,Z)\in{%
+\mathcal{E}}^{+},Z\notin{\mathbb{V}}\}." display="inline"><semantics><mrow><mrow><mi></mi><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mo stretchy="false">(</mo><msub><mi>W</mi><mrow><mi>𝕍</mi><mo>=</mo><mi>𝐯</mi></mrow></msub><mo>,</mo><msub><mi>Z</mi><mrow><mi>𝕍</mi><mo>=</mo><mi>𝐯</mi></mrow></msub><mo rspace="0.278em" stretchy="false">)</mo></mrow><mo rspace="0.278em">:</mo><mrow><mrow><mi>𝕍</mi><mo>⊆</mo><mi>𝐗</mi></mrow><mo>,</mo><mrow><mrow><mi>𝐯</mi><mo>∈</mo><mrow><mi>s</mi><mo>⁢</mo><mi>u</mi><mo>⁢</mo><mi>p</mi><mo>⁢</mo><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝕍</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo><mrow><mrow><mrow><mo stretchy="false">(</mo><mi>W</mi><mo>,</mo><mi>Z</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><msup><mi class="ltx_font_mathcaligraphic">ℰ</mi><mo>+</mo></msup></mrow><mo>,</mo><mrow><mi>Z</mi><mo>∉</mo><mi>𝕍</mi></mrow></mrow></mrow></mrow><mo stretchy="false">}</mo></mrow></mrow><mo lspace="0em">.</mo></mrow><annotation encoding="application/x-tex">\displaystyle=\{(W_{{\mathbb{V}}={\mathbf{v}}},Z_{{\mathbb{V}}={\mathbf{v}}}):%
+{\mathbb{V}}\subseteq{\mathbf{X}},{\mathbf{v}}\in supp({\mathbb{V}}),(W,Z)\in{%
+\mathcal{E}}^{+},Z\notin{\mathbb{V}}\}.</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<p class="ltx_p">Para todo <math id="Thmtheorem5.p1.m6" class="ltx_Math" alttext="W\in{\mathcal{V}}" display="inline"><semantics><mrow><mi>W</mi><mo>∈</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi></mrow><annotation encoding="application/x-tex">W\in{\mathcal{V}}</annotation></semantics></math>, abreviamos <math id="Thmtheorem5.p1.m7" class="ltx_Math" alttext="W_{\emptyset}" display="inline"><semantics><msub><mi>W</mi><mi>∅︀</mi></msub><annotation encoding="application/x-tex">W_{\emptyset}</annotation></semantics></math> por <math id="Thmtheorem5.p1.m8" class="ltx_Math" alttext="W" display="inline"><semantics><mi>W</mi><annotation encoding="application/x-tex">W</annotation></semantics></math>.</p>
+</div>
+</div>
+<div id="p9" class="ltx_para">
+<p class="ltx_p">Em palavras, o grafo de resultados potenciais cria
+uma cópia de <math id="p9.m1" class="ltx_Math" alttext="{\mathcal{G}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒢</mi><annotation encoding="application/x-tex">{\mathcal{G}}</annotation></semantics></math> para cada possível intervenção, <math id="p9.m2" class="ltx_Math" alttext="{\mathbb{V}}={\mathbf{v}}" display="inline"><semantics><mrow><mi>𝕍</mi><mo>=</mo><mi>𝐯</mi></mrow><annotation encoding="application/x-tex">{\mathbb{V}}={\mathbf{v}}</annotation></semantics></math>.
+Além disso, adiciona-se uma aresta de <math id="p9.m3" class="ltx_Math" alttext="U_{W}" display="inline"><semantics><msub><mi>U</mi><mi>W</mi></msub><annotation encoding="application/x-tex">U_{W}</annotation></semantics></math> para cada cópia de <math id="p9.m4" class="ltx_Math" alttext="W" display="inline"><semantics><mi>W</mi><annotation encoding="application/x-tex">W</annotation></semantics></math>.
+Esta construção indica que as mesmas variáveis em <math id="p9.m5" class="ltx_Math" alttext="U" display="inline"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>
+geram todos os resultados potenciais.
+Também, para cada vértice em que
+houve uma intervenção,
+<math id="p9.m6" class="ltx_Math" alttext="W_{{\mathbb{V}}={\mathbf{v}}}\in{\mathbb{V}}_{{\mathbb{V}}={\mathbf{v}}}" display="inline"><semantics><mrow><msub><mi>W</mi><mrow><mi>𝕍</mi><mo>=</mo><mi>𝐯</mi></mrow></msub><mo>∈</mo><msub><mi>𝕍</mi><mrow><mi>𝕍</mi><mo>=</mo><mi>𝐯</mi></mrow></msub></mrow><annotation encoding="application/x-tex">W_{{\mathbb{V}}={\mathbf{v}}}\in{\mathbb{V}}_{{\mathbb{V}}={\mathbf{v}}}</annotation></semantics></math>, removem-se
+todas as arestas que apontam para <math id="p9.m7" class="ltx_Math" alttext="W_{{\mathbb{V}}={\mathbf{v}}}" display="inline"><semantics><msub><mi>W</mi><mrow><mi>𝕍</mi><mo>=</mo><mi>𝐯</mi></mrow></msub><annotation encoding="application/x-tex">W_{{\mathbb{V}}={\mathbf{v}}}</annotation></semantics></math>.
+Esta remoção ocorre porque,
+quando realizamos uma intervenção em <math id="p9.m8" class="ltx_Math" alttext="{\mathbb{V}}" display="inline"><semantics><mi>𝕍</mi><annotation encoding="application/x-tex">{\mathbb{V}}</annotation></semantics></math>
+o valor desta variável é fixado e, assim,
+não é gerado por suas causas em <math id="p9.m9" class="ltx_Math" alttext="{\mathcal{G}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒢</mi><annotation encoding="application/x-tex">{\mathcal{G}}</annotation></semantics></math>.</p>
+</div>
+<div id="Thmtheorem6" class="ltx_theorem ltx_theorem_example">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Exemplo 4.6</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="Thmtheorem6.p1" class="ltx_para">
+<p class="ltx_p">Considere que <math id="Thmtheorem6.p1.m1" class="ltx_Math" alttext="(X,Y)\in\{0,1\}^{2}" display="inline"><semantics><mrow><mrow><mo stretchy="false">(</mo><mi>X</mi><mo>,</mo><mi>Y</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><msup><mrow><mo stretchy="false">{</mo><mn>0,1</mn><mo stretchy="false">}</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">(X,Y)\in\{0,1\}^{2}</annotation></semantics></math> e
+o grafo causal é <math id="Thmtheorem6.p1.m2" class="ltx_Math" alttext="X\rightarrow Y" display="inline"><semantics><mrow><mi>X</mi><mo stretchy="false">→</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">X\rightarrow Y</annotation></semantics></math>.
+Vimos no <a href="#Thmtheorem4" title="Exemplo 4.4. ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Exemplo</span> <span class="ltx_text ltx_ref_tag">4.4</span></a> que
+o grafo causal estrutural é dado por
+<math id="Thmtheorem6.p1.m3" class="ltx_Math" alttext="U_{X}\rightarrow X\rightarrow Y\leftarrow U_{Y}" display="inline"><semantics><mrow><msub><mi>U</mi><mi>X</mi></msub><mo stretchy="false">→</mo><mi>X</mi><mo stretchy="false">→</mo><mi>Y</mi><mo stretchy="false">←</mo><msub><mi>U</mi><mi>Y</mi></msub></mrow><annotation encoding="application/x-tex">U_{X}\rightarrow X\rightarrow Y\leftarrow U_{Y}</annotation></semantics></math>.
+Vamos construir o grafo de resultados potenciais
+dadas intervenções em <math id="Thmtheorem6.p1.m4" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>.
+Neste caso, além dos vértices <math id="Thmtheorem6.p1.m5" class="ltx_Math" alttext="U_{X},U_{Y},X,Y" display="inline"><semantics><mrow><msub><mi>U</mi><mi>X</mi></msub><mo>,</mo><msub><mi>U</mi><mi>Y</mi></msub><mo>,</mo><mi>X</mi><mo>,</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">U_{X},U_{Y},X,Y</annotation></semantics></math>,
+temos também <math id="Thmtheorem6.p1.m6" class="ltx_Math" alttext="X_{X=0},Y_{X=0},X_{X=1},Y_{X=1}" display="inline"><semantics><mrow><msub><mi>X</mi><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow></msub><mo>,</mo><msub><mi>Y</mi><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow></msub><mo>,</mo><msub><mi>X</mi><mrow><mi>X</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>Y</mi><mrow><mi>X</mi><mo>=</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">X_{X=0},Y_{X=0},X_{X=1},Y_{X=1}</annotation></semantics></math>.
+Como não há ambiguidade neste caso,
+podemos abreviar os últimos quatro vértices por
+<math id="Thmtheorem6.p1.m7" class="ltx_Math" alttext="X_{0},Y_{0},X_{1},Y_{1}" display="inline"><semantics><mrow><msub><mi>X</mi><mn>0</mn></msub><mo>,</mo><msub><mi>Y</mi><mn>0</mn></msub><mo>,</mo><msub><mi>X</mi><mn>1</mn></msub><mo>,</mo><msub><mi>Y</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">X_{0},Y_{0},X_{1},Y_{1}</annotation></semantics></math>.</p>
+</div>
+<div id="Thmtheorem6.p2" class="ltx_para">
+<p class="ltx_p">O grafo de resultados potenciais é
+ilustrado na <a href="#S7.F16" title="In Exemplo 4.6. ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">figur</span> <span class="ltx_text ltx_ref_tag">16</span></a>.
+O grafo causal estrutural é a reta horizontal
+de <math id="Thmtheorem6.p2.m1" class="ltx_Math" alttext="U_{X}" display="inline"><semantics><msub><mi>U</mi><mi>X</mi></msub><annotation encoding="application/x-tex">U_{X}</annotation></semantics></math> a <math id="Thmtheorem6.p2.m2" class="ltx_Math" alttext="U_{Y}" display="inline"><semantics><msub><mi>U</mi><mi>Y</mi></msub><annotation encoding="application/x-tex">U_{Y}</annotation></semantics></math>.
+Os resultados potenciais são
+cópias deste grafo que usam
+as mesmas variáveis <math id="Thmtheorem6.p2.m3" class="ltx_Math" alttext="U" display="inline"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math> e
+em que removemos as arestas que
+apontam para a intervenções, <math id="Thmtheorem6.p2.m4" class="ltx_Math" alttext="X_{0}" display="inline"><semantics><msub><mi>X</mi><mn>0</mn></msub><annotation encoding="application/x-tex">X_{0}</annotation></semantics></math> e <math id="Thmtheorem6.p2.m5" class="ltx_Math" alttext="X_{1}" display="inline"><semantics><msub><mi>X</mi><mn>1</mn></msub><annotation encoding="application/x-tex">X_{1}</annotation></semantics></math>.</p>
+</div>
+<figure id="S7.F16" class="ltx_figure"><div class="bml-overflow-wrapper"><img src="x15.png" id="S7.F16.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="400" height="300" alt="Refer to caption"></div>
+<figcaption class="ltx_caption bml_color_585858"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:91%;">Figura 16</span>: </span><span class="ltx_text" style="font-size:91%;">Grafo de resultados potenciais dadas intervenções em <math id="S7.F16.m2" class="ltx_Math" alttext="X\in\{0,1\}" display="inline"><semantics><mrow><mi class="bml_color_585858">X</mi><mo class="bml_color_585858">∈</mo><mrow><mo class="bml_color_585858" stretchy="false">{</mo><mn class="bml_color_585858">0,1</mn><mo class="bml_color_585858" stretchy="false">}</mo></mrow></mrow><annotation encoding="application/x-tex">X\in\{0,1\}</annotation></semantics></math>.</span></figcaption>
+</figure>
+</div>
+<div id="p10" class="ltx_para">
+<p class="ltx_p">Uma vez definido o grafo de resultados potenciais,
+podemos extender a distribuição
+do modelo de equações estruturais para este grafo.
+Esta extensão envolve três etapas.
+Primeiramente, a distribuição de <math id="p10.m1" class="ltx_Math" alttext="U" display="inline"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math> continua a mesma.
+Em segundo lugar, para todo
+vértice do grafo de resultados potenciais, <math id="p10.m2" class="ltx_Math" alttext="W_{{\mathbb{V}}={\mathbf{v}}}" display="inline"><semantics><msub><mi>W</mi><mrow><mi>𝕍</mi><mo>=</mo><mi>𝐯</mi></mrow></msub><annotation encoding="application/x-tex">W_{{\mathbb{V}}={\mathbf{v}}}</annotation></semantics></math>,
+em que não houve uma intervenção,
+este vértice é gerado pelo mesmo mecanismo que <math id="p10.m3" class="ltx_Math" alttext="W" display="inline"><semantics><mi>W</mi><annotation encoding="application/x-tex">W</annotation></semantics></math>.
+Isto é, <math id="p10.m4" class="ltx_Math" alttext="W_{{\mathbb{V}}={\mathbf{v}}}={\mathbb{I}}(g_{W}(U_{W},Pa^{*}(W_{{\mathbb{V}}=%
+{\mathbf{v}}})))" display="inline"><semantics><mrow><msub><mi>W</mi><mrow><mi>𝕍</mi><mo>=</mo><mi>𝐯</mi></mrow></msub><mo>=</mo><mrow><mi>𝕀</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>g</mi><mi>W</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>U</mi><mi>W</mi></msub><mo>,</mo><mrow><mi>P</mi><mo>⁢</mo><msup><mi>a</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>W</mi><mrow><mi>𝕍</mi><mo>=</mo><mi>𝐯</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">W_{{\mathbb{V}}={\mathbf{v}}}={\mathbb{I}}(g_{W}(U_{W},Pa^{*}(W_{{\mathbb{V}}=%
+{\mathbf{v}}})))</annotation></semantics></math>.
+Finalmente, se houve uma intervenção em <math id="p10.m5" class="ltx_Math" alttext="W_{{\mathbb{V}}={\mathbf{v}}}" display="inline"><semantics><msub><mi>W</mi><mrow><mi>𝕍</mi><mo>=</mo><mi>𝐯</mi></mrow></msub><annotation encoding="application/x-tex">W_{{\mathbb{V}}={\mathbf{v}}}</annotation></semantics></math>,
+então ela é uma variável degenerada no valor desta intervenção.
+Esta construção é formalizada na <a href="#Thmtheorem7" title="Definição 4.7. ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Definição</span> <span class="ltx_text ltx_ref_tag">4.7</span></a>.</p>
+</div>
+<div id="Thmtheorem7" class="ltx_theorem ltx_theorem_definition">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Definição 4.7</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="Thmtheorem7.p1" class="ltx_para">
+<p class="ltx_p">Seja <math id="Thmtheorem7.p1.m1" class="ltx_Math" alttext="({\mathcal{G}}^{+},f^{+})" display="inline"><semantics><mrow><mo stretchy="false">(</mo><msup><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>+</mo></msup><mo>,</mo><msup><mi>f</mi><mo>+</mo></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">({\mathcal{G}}^{+},f^{+})</annotation></semantics></math> um
+SCM para <math id="Thmtheorem7.p1.m2" class="ltx_Math" alttext="({\mathcal{G}},f)" display="inline"><semantics><mrow><mo stretchy="false">(</mo><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>,</mo><mi>f</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">({\mathcal{G}},f)</annotation></semantics></math>
+com funções determinísticas, <math id="Thmtheorem7.p1.m3" class="ltx_Math" alttext="g" display="inline"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math>.
+O modelo de resultados potenciais (POM)<span id="footnote4" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">4</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">4</sup>
+              <span class="ltx_tag ltx_tag_note">4</span>
+              
+              
+              
+              
+              
+              
+              
+            
+utilizamos a sigla POM em referência ao
+termo em inglês “potential outcomes model”</span></span></span>
+dado por intervenções em <math id="Thmtheorem7.p1.m4" class="ltx_Math" alttext="{\mathbf{X}}" display="inline"><semantics><mi>𝐗</mi><annotation encoding="application/x-tex">{\mathbf{X}}</annotation></semantics></math>,
+é um modelo probabilístico em um DAG, <math id="Thmtheorem7.p1.m5" class="ltx_Math" alttext="({\mathcal{G}}^{*},f^{*})" display="inline"><semantics><mrow><mo stretchy="false">(</mo><msup><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>∗</mo></msup><mo>,</mo><msup><mi>f</mi><mo>∗</mo></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">({\mathcal{G}}^{*},f^{*})</annotation></semantics></math>, tal que
+<math id="Thmtheorem7.p1.m6" class="ltx_Math" alttext="{\mathcal{G}}^{*}" display="inline"><semantics><msup><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>∗</mo></msup><annotation encoding="application/x-tex">{\mathcal{G}}^{*}</annotation></semantics></math> é o grafo de resultados potenciais
+dado por intervenções em <math id="Thmtheorem7.p1.m7" class="ltx_Math" alttext="{\mathbf{X}}" display="inline"><semantics><mi>𝐗</mi><annotation encoding="application/x-tex">{\mathbf{X}}</annotation></semantics></math> (<a href="#Thmtheorem5" title="Definição 4.5. ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Definição</span> <span class="ltx_text ltx_ref_tag">4.5</span></a>) e</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx57" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="S7.Ex106"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S7.Ex106.m1" class="ltx_Math" alttext="\displaystyle f^{*}(U_{W})" display="inline"><semantics><mrow><msup><mi>f</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>U</mi><mi>W</mi></msub><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle f^{*}(U_{W})</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S7.Ex106.m2" class="ltx_Math" alttext="\displaystyle=f(U_{W})" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>U</mi><mi>W</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle=f(U_{W})</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S7.Ex106.m3" class="ltx_Math" alttext="\displaystyle\text{, para todo }W\in{\mathcal{V}}," display="inline"><semantics><mrow><mrow><mrow><mtext>, para todo </mtext><mo>⁢</mo><mi>W</mi></mrow><mo>∈</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">\displaystyle\text{, para todo }W\in{\mathcal{V}},</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="S7.Ex107"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S7.Ex107.m1" class="ltx_Math" alttext="\displaystyle f^{*}(W_{{\mathbb{V}}={\mathbf{v}}}|Pa^{*}(W_{{\mathbb{V}}={%
+\mathbf{v}}}))" display="inline"><semantics><mrow><msup><mi>f</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>W</mi><mrow><mi>𝕍</mi><mo>=</mo><mi>𝐯</mi></mrow></msub><mo fence="false">|</mo><mrow><mi>P</mi><mo>⁢</mo><msup><mi>a</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>W</mi><mrow><mi>𝕍</mi><mo>=</mo><mi>𝐯</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle f^{*}(W_{{\mathbb{V}}={\mathbf{v}}}|Pa^{*}(W_{{\mathbb{V}}={%
+\mathbf{v}}}))</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S7.Ex107.m2" class="ltx_Math" alttext="\displaystyle=\begin{cases}{\mathbb{I}}(W_{{\mathbb{V}}={\mathbf{v}}}={\mathbf%
+{v}}_{i})&amp;\text{, se }W\equiv{\mathbb{V}}_{i}\\
+{\mathbb{I}}(W_{{\mathbb{V}}={\mathbf{v}}}=g_{W}(U_{W},Pa^{*}(W_{{\mathbb{V}}=%
+{\mathbf{v}}})))&amp;\text{, caso contrário.}\end{cases}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mi>𝕀</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>W</mi><mrow><mi>𝕍</mi><mo>=</mo><mi>𝐯</mi></mrow></msub><mo>=</mo><msub><mi>𝐯</mi><mi>i</mi></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mtext>, se </mtext><mo>⁢</mo><mi>W</mi></mrow><mo>≡</mo><msub><mi>𝕍</mi><mi>i</mi></msub></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mi>𝕀</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>W</mi><mrow><mi>𝕍</mi><mo>=</mo><mi>𝐯</mi></mrow></msub><mo>=</mo><mrow><msub><mi>g</mi><mi>W</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>U</mi><mi>W</mi></msub><mo>,</mo><mrow><mi>P</mi><mo>⁢</mo><msup><mi>a</mi><mo>∗</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>W</mi><mrow><mi>𝕍</mi><mo>=</mo><mi>𝐯</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mtext>, caso contrário.</mtext></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">\displaystyle=\begin{cases}{\mathbb{I}}(W_{{\mathbb{V}}={\mathbf{v}}}={\mathbf%
+{v}}_{i})&amp;\text{, se }W\equiv{\mathbb{V}}_{i}\\
+{\mathbb{I}}(W_{{\mathbb{V}}={\mathbf{v}}}=g_{W}(U_{W},Pa^{*}(W_{{\mathbb{V}}=%
+{\mathbf{v}}})))&amp;\text{, caso contrário.}\end{cases}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright" colspan="2"></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="p11" class="ltx_para">
+<p class="ltx_p">O <a href="#Thmtheorem8" title="Exemplo 4.8. ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Exemplo</span> <span class="ltx_text ltx_ref_tag">4.8</span></a> ilustra
+um modelo de resultados potenciais.</p>
+</div>
+<div id="Thmtheorem8" class="ltx_theorem ltx_theorem_example">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Exemplo 4.8</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="Thmtheorem8.p1" class="ltx_para">
+<p class="ltx_p">Considere o SCM em equações estruturais em <a href="#Thmtheorem4" title="Exemplo 4.4. ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Exemplo</span> <span class="ltx_text ltx_ref_tag">4.4</span></a>.
+Na construção do modelo de resultados potenciais,
+definimos <math id="Thmtheorem8.p1.m1" class="ltx_Math" alttext="X,Y,U_{X},U_{Y}" display="inline"><semantics><mrow><mi>X</mi><mo>,</mo><mi>Y</mi><mo>,</mo><msub><mi>U</mi><mi>X</mi></msub><mo>,</mo><msub><mi>U</mi><mi>Y</mi></msub></mrow><annotation encoding="application/x-tex">X,Y,U_{X},U_{Y}</annotation></semantics></math> igualmente a em <a href="#Thmtheorem4" title="Exemplo 4.4. ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Exemplo</span> <span class="ltx_text ltx_ref_tag">4.4</span></a>.
+Além disso, para cada <math id="Thmtheorem8.p1.m2" class="ltx_Math" alttext="x&gt;0" display="inline"><semantics><mrow><mi>x</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x&gt;0</annotation></semantics></math>,
+<math id="Thmtheorem8.p1.m3" class="ltx_Math" alttext="X_{x}\equiv x" display="inline"><semantics><mrow><msub><mi>X</mi><mi>x</mi></msub><mo>≡</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">X_{x}\equiv x</annotation></semantics></math> e <math id="Thmtheorem8.p1.m4" class="ltx_Math" alttext="Y_{x}\equiv-log(U_{Y})/X_{x}" display="inline"><semantics><mrow><msub><mi>Y</mi><mi>x</mi></msub><mo>≡</mo><mrow><mo>−</mo><mrow><mrow><mi>l</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>U</mi><mi>Y</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>/</mo><msub><mi>X</mi><mi>x</mi></msub></mrow></mrow></mrow><annotation encoding="application/x-tex">Y_{x}\equiv-log(U_{Y})/X_{x}</annotation></semantics></math>.</p>
+</div>
+</div>
+<nav class="ltx_TOC">
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry"><a href="S8.html" title="In Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8 </span>Levando a intuição do SCM ao POM</span></a></li>
+</ol></nav>
+<nav class="ltx_TOC">
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry"><a href="S9.html" title="In Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">9 </span>Variáveis Instrumentais</span></a></li>
+</ol></nav>
+<nav class="ltx_TOC">
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry"><a href="S10.html" title="In Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">10 </span>Contrafactuais</span></a></li>
+</ol></nav>
+</div>
+</section>
+</div>
+</div>
+</div>
+<a href="S7.html" class="navigation navigation-prev" aria-label="Previous page"><i class="fa fa-angle-left"></i></a><a href="S8.html" class="navigation navigation-next" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+</div>
+</div>
+<script src="bookml/gitbook/js/app.min.js"></script>
+<script src="bookml/gitbook/js/jquery.highlight.js"></script>
+<script src="bookml/gitbook/js/plugin-search.js"></script>
+<script src="bookml/gitbook/js/plugin-fontsettings.js"></script>
+<script src="bookml/gitbook/js/plugin-bookdown.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script>
+        MathJax = {
+          startup: {
+            ready() {
+              // do not process equations disabled with \bmlDisableMathJax (code suggested by Davide P. Cervone)
+              class bmlFindMathML extends MathJax._.input.mathml.FindMathML.FindMathML {
+                processMath(set) {
+                  const adaptor = this.adaptor;
+                  for (const node of set.values()) {
+                    if (adaptor.hasClass(node, 'bml_disable_mathjax')) {
+                      set.delete(node);
+                    }
+                  }
+                  return super.processMath(set);
+                }
+              }
+
+              MathJax._.components.global.combineDefaults(MathJax.config, 'mml', {FindMathML: new bmlFindMathML()});
+
+              MathJax.startup.defaultReady();
+
+              // preproces MathML to make MathJax aware of certain LaTeXML and BookML additional info
+              const mmlFilters = MathJax.startup.input[0].mmlFilters;
+
+              // convert the LaTeXML calligraphic (chancery) annotation to a form MathJax understands
+              // since the corresponding Unicode characters render as script (rounded)
+              const script2latin = {
+                '𝒜': 'A', 'ℬ': 'B', '𝒞': 'C', '𝒟': 'D', 'ℰ': 'E', 'ℱ': 'F', '𝒢': 'G',
+                'ℋ': 'H', 'ℐ': 'I', '𝒥': 'J', '𝒦': 'K', 'ℒ': 'L', 'ℳ': 'M', '𝒩': 'N',
+                '𝒪': 'O', '𝒫': 'P', '𝒬': 'Q', 'ℛ': 'R', '𝒮': 'S', '𝒯': 'T', '𝒰': 'U',
+                '𝒱': 'V', '𝒲': 'W', '𝒳': 'X', '𝒴': 'Y', '𝒵': 'Z',
+              };
+
+              mmlFilters.add((args) => {
+                for (const n of args.data.getElementsByClassName('ltx_font_mathcaligraphic')) {
+                  n.classList.add('MJX-tex-calligraphic');
+                  const letter = script2latin[n.textContent];
+                  if (letter !== undefined) { n.textContent = letter; }
+                }
+              });
+
+              // adjust characters based on Unicode variation sequences
+              const replacements = {
+                // MathJax renders the empty set as the U+FE00 variant, so the plain character needs adjusting
+                '∅': { variant: 'variant' },
+                // MathJax renders script characters in rounded style, which is fine for no variation and U+FE00
+                '𝒜\xFE00': { text: 'A', variant: 'tex-calligraphic' },
+                'ℬ\xFE00': { text: 'B', variant: 'tex-calligraphic' },
+                '𝒞\xFE00': { text: 'C', variant: 'tex-calligraphic' },
+                '𝒟\xFE00': { text: 'D', variant: 'tex-calligraphic' },
+                'ℰ\xFE00': { text: 'E', variant: 'tex-calligraphic' },
+                'ℱ\xFE00': { text: 'F', variant: 'tex-calligraphic' },
+                '𝒢\xFE00': { text: 'G', variant: 'tex-calligraphic' },
+                'ℋ\xFE00': { text: 'H', variant: 'tex-calligraphic' },
+                'ℐ\xFE00': { text: 'I', variant: 'tex-calligraphic' },
+                '𝒥\xFE00': { text: 'J', variant: 'tex-calligraphic' },
+                '𝒦\xFE00': { text: 'K', variant: 'tex-calligraphic' },
+                'ℒ\xFE00': { text: 'L', variant: 'tex-calligraphic' },
+                'ℳ\xFE00': { text: 'M', variant: 'tex-calligraphic' },
+                '𝒩\xFE00': { text: 'N', variant: 'tex-calligraphic' },
+                '𝒪\xFE00': { text: 'O', variant: 'tex-calligraphic' },
+                '𝒫\xFE00': { text: 'P', variant: 'tex-calligraphic' },
+                '𝒬\xFE00': { text: 'Q', variant: 'tex-calligraphic' },
+                'ℛ\xFE00': { text: 'R', variant: 'tex-calligraphic' },
+                '𝒮\xFE00': { text: 'S', variant: 'tex-calligraphic' },
+                '𝒯\xFE00': { text: 'T', variant: 'tex-calligraphic' },
+                '𝒰\xFE00': { text: 'U', variant: 'tex-calligraphic' },
+                '𝒱\xFE00': { text: 'V', variant: 'tex-calligraphic' },
+                '𝒲\xFE00': { text: 'W', variant: 'tex-calligraphic' },
+                '𝒳\xFE00': { text: 'X', variant: 'tex-calligraphic' },
+                '𝒴\xFE00': { text: 'Y', variant: 'tex-calligraphic' },
+                '𝒵\xFE00': { text: 'Z', variant: 'tex-calligraphic' }
+              };
+
+              mmlFilters.add((args) => {
+                let nodes = document.evaluate('.//m:mi | .//m:mn | .//m:mo | .//m:ms', args.data,
+                  () => 'http://www.w3.org/1998/Math/MathML', XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE);
+                for (let i = 0; i < nodes.snapshotLength; i++) {
+                  const n = nodes.snapshotItem(i);
+                  const repl = replacements[n.innerHTML];
+                  if (repl !== undefined) {
+                    const variant = repl['variant'];
+                    const text = repl['text'];
+                    if (variant !== undefined) { n.classList.add('MJX-' + variant); n.removeAttribute('mathvariant'); }
+                    if (text !== undefined) { n.innerHTML = text; }
+                  }
+                }
+              });
+            }
+          }
+        };
+      </script>
+<script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-chtml.js"></script>
+<script type="text/javascript">
+                gitbook.require(["gitbook"], function(gitbook) {
+                gitbook.start({
+                  "fontsettings": {
+                    "theme": "white",
+                    "family": "sans",
+                    "size": 2
+                  },
+                  "download": [ [ "book.pdf", "PDF" ], ],
+                  "search": {
+                    "engine": "fuse"
+                  },
+                  "toc": {
+                    "collapse": "none"
+                  }
+                });
+              });
+            </script>
+</body>
+
+</html>

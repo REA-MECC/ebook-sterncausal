@@ -1,0 +1,731 @@
+<!DOCTYPE html><html lang="pt">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>3 Independência Condicional e D-separação ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal</title>
+<!--Generated on Tue Aug 27 12:19:15 2024 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on Última revisão: August 27, 2024.-->
+<style>:root { --bml-ltx-font-size: 10.95; }</style>
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/style.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-table.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-search.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-bookdown.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-fontsettings.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="bookml/CSS/style.css" type="text/css">
+<link rel="stylesheet" href="bookml/CSS/style.gitbook,plain.css" type="text/css">
+<link rel="stylesheet" href="bookml/CSS/style.gitbook.css" type="text/css">
+<link rel="stylesheet" href="bmluser/colors.gitbook-book.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6"></script>
+<link rel="up" href="chapter2.html" title="Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal">
+<link rel="up up" href="index.html" title="Inferência Causal">
+<link rel="start" href="index.html" title="Inferência Causal">
+<link rel="prev" href="S2.html" title="2 Elementos de Modelos Probabilísticos em Grafos ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal">
+<link rel="next" href="chapter3.html" title="Capítulo 3 Intervenções ‣ Inferência Causal">
+<link rel="section" href="S2.html" title="2 Elementos de Modelos Probabilísticos em Grafos ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal">
+<link rel="chapter" href="chapter1.html" title="Capítulo 1 Por que estudar Inferência Causal? ‣ Inferência Causal">
+<link rel="chapter" href="chapter2.html" title="Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal">
+<link rel="chapter" href="chapter3.html" title="Capítulo 3 Intervenções ‣ Inferência Causal">
+<link rel="chapter" href="chapter4.html" title="Capítulo 4 Resultados potenciais ‣ Inferência Causal">
+<link rel="chapter" href="chapter5.html" title="Capítulo 5 Descoberta Causal ‣ Inferência Causal">
+<link rel="chapter" href="chapter6.html" title="Capítulo 6 Demonstrações ‣ Inferência Causal">
+</head>
+<body>
+<div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+<a href="#bml-main-content" tabindex="0" class="bml-skip-to-content">Skip to content.</a>
+<div class="book-summary"><nav class="ltx_page_navbar">
+<ul class="ltx_toclist summary">
+<li>
+<a href="index.html" title="" class="ltx_ref" rel="start">Inferência Causal <span class="ltx_text"> </span></a>
+</li>
+<li class="divider">
+<li data-level="1" data-path="chapter1.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter1.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">1 </span></b>Por que estudar Inferência Causal?</a></li>
+<li data-level="2" data-path="chapter2.html" class="ltx_tocentry ltx_tocentry_chapter  chapter ">
+<a href="chapter2.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">2 </span></b>Modelo Causal (CM)</a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li data-level="2" data-path="S2.html" class="ltx_tocentry ltx_tocentry_section  chapter "><a href="S2.html" title="In Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">2 </span></b>Elementos de Modelos Probabilísticos em Grafos</a></li>
+<li data-level="3" data-path="" class="ltx_tocentry ltx_tocentry_section ltx_ref_self  chapter active">
+<a href="" title="In Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">3 </span></b>Independência Condicional e D-separação</a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li data-level="3.1" data-path="" class="ltx_tocentry ltx_tocentry_subsection  chapter "><a href="#SS1" title="In 3 Independência Condicional e D-separação ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">3.1 </span></b>Independência Condicional</a></li>
+<li data-level="3.2" data-path="" class="ltx_tocentry ltx_tocentry_subsection  chapter "><a href="#SS2" title="In 3 Independência Condicional e D-separação ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">3.2 </span></b>D-separação</a></li>
+<li data-level="3.3" data-path="" class="ltx_tocentry ltx_tocentry_subsection  chapter "><a href="#SS3" title="In 3 Independência Condicional e D-separação ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">3.3 </span></b>Exercícios</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li data-level="3" data-path="chapter3.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter3.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">3 </span></b>Intervenções</a></li>
+<li data-level="4" data-path="chapter4.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter4.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">4 </span></b>Resultados potenciais</a></li>
+<li data-level="5" data-path="chapter5.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter5.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">5 </span></b>Descoberta Causal</a></li>
+<li data-level="6" data-path="chapter6.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter6.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6 </span></b>Demonstrações</a></li>
+</ul>
+</nav></div>
+<div class="ltx_page_main book-body fixed">
+<div class="body-inner">
+<div class="book-header fixed" role="navigation"><h1>Independência Condicional e D-separação</h1></div>
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="ltx_page_content page-inner" id="bml-main-content">
+<section class="ltx_section normal" lang="pt">
+<div class="section level1">
+
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section header-section-number">3</span> Independência Condicional e D-separação</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p">Independência condicional é uma forma fundamental de
+indicar relações entre variáveis aleatórias.
+Se <math id="p1.m1" class="ltx_Math" alttext="{\mathbf{X}}_{1},\ldots,{\mathbf{X}}_{d}" display="inline"><semantics><mrow><msub><mi>𝐗</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>𝐗</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">{\mathbf{X}}_{1},\ldots,{\mathbf{X}}_{d}</annotation></semantics></math> e <math id="p1.m2" class="ltx_Math" alttext="{\mathbf{Y}}" display="inline"><semantics><mi>𝐘</mi><annotation encoding="application/x-tex">{\mathbf{Y}}</annotation></semantics></math> são vetores de variáveis aleatórias,
+definimos que <math id="p1.m3" class="ltx_Math" alttext="({\mathbf{X}}_{1},\ldots,{\mathbf{X}}_{d})|{\mathbf{Y}}" display="inline"><semantics><mrow><mrow><mo stretchy="false">(</mo><msub><mi>𝐗</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>𝐗</mi><mi>d</mi></msub><mo stretchy="false">)</mo></mrow><mo fence="false">|</mo><mi>𝐘</mi></mrow><annotation encoding="application/x-tex">({\mathbf{X}}_{1},\ldots,{\mathbf{X}}_{d})|{\mathbf{Y}}</annotation></semantics></math>, isto é,
+<math id="p1.m4" class="ltx_Math" alttext="{\mathbf{X}}_{1},\ldots,{\mathbf{X}}_{d}" display="inline"><semantics><mrow><msub><mi>𝐗</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>𝐗</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">{\mathbf{X}}_{1},\ldots,{\mathbf{X}}_{d}</annotation></semantics></math> são independentes dado <math id="p1.m5" class="ltx_Math" alttext="{\mathbf{Y}}" display="inline"><semantics><mi>𝐘</mi><annotation encoding="application/x-tex">{\mathbf{Y}}</annotation></semantics></math>, se
+conhecido o valor de <math id="p1.m6" class="ltx_Math" alttext="{\mathbf{Y}}" display="inline"><semantics><mi>𝐘</mi><annotation encoding="application/x-tex">{\mathbf{Y}}</annotation></semantics></math>,
+observar quaisquer valores de <math id="p1.m7" class="ltx_Math" alttext="{\mathbf{X}}" display="inline"><semantics><mi>𝐗</mi><annotation encoding="application/x-tex">{\mathbf{X}}</annotation></semantics></math> não traz
+informação sobre os demais valores.
+Nesta seção veremos que
+as relações de independência condicional em um CM estão diretamente ligadas ao seu grafo.</p>
+</div>
+<section id="SS1" class="ltx_subsection normal">
+<div class="section level2">
+
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection header-section-number">3.1</span> Independência Condicional</h2>
+
+<div id="chapter2.Thmtheorem44" class="ltx_theorem ltx_theorem_definition">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Definição 2.44</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter2.Thmtheorem44.p1" class="ltx_para">
+<p class="ltx_p">Dizemos que <math id="chapter2.Thmtheorem44.p1.m1" class="ltx_Math" alttext="({\mathbf{X}}_{1},\ldots,{\mathbf{X}}_{d})" display="inline"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>𝐗</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>𝐗</mi><mi>d</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">({\mathbf{X}}_{1},\ldots,{\mathbf{X}}_{d})</annotation></semantics></math> são independentes dado <math id="chapter2.Thmtheorem44.p1.m2" class="ltx_Math" alttext="{\mathbf{Y}}" display="inline"><semantics><mi>𝐘</mi><annotation encoding="application/x-tex">{\mathbf{Y}}</annotation></semantics></math> se,
+para qualquer <math id="chapter2.Thmtheorem44.p1.m3" class="ltx_Math" alttext="{\mathbf{x}}_{1},\ldots,{\mathbf{x}}_{n}" display="inline"><semantics><mrow><msub><mi>𝐱</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>𝐱</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">{\mathbf{x}}_{1},\ldots,{\mathbf{x}}_{n}</annotation></semantics></math> e <math id="chapter2.Thmtheorem44.p1.m4" class="ltx_Math" alttext="{\mathbf{y}}" display="inline"><semantics><mi>𝐲</mi><annotation encoding="application/x-tex">{\mathbf{y}}</annotation></semantics></math>,</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx11" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex19"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex19.m1" class="ltx_Math" alttext="\displaystyle f({\mathbf{x}}_{1},\ldots,{\mathbf{x}}_{n}|{\mathbf{y}})" display="inline"><semantics><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>𝐱</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><msub><mi>𝐱</mi><mi>n</mi></msub><mo fence="false">|</mo><mi>𝐲</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle f({\mathbf{x}}_{1},\ldots,{\mathbf{x}}_{n}|{\mathbf{y}})</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex19.m2" class="ltx_Math" alttext="\displaystyle=\prod_{i=1}^{d}f({\mathbf{x}}_{i}|{\mathbf{y}})" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∏</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>d</mi></munderover></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>𝐱</mi><mi>i</mi></msub><mo fence="false">|</mo><mi>𝐲</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle=\prod_{i=1}^{d}f({\mathbf{x}}_{i}|{\mathbf{y}})</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<p class="ltx_p">Em particular, <math id="chapter2.Thmtheorem44.p1.m5" class="ltx_Math" alttext="({\mathbf{X}}_{1},\ldots,{\mathbf{X}}_{d})" display="inline"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>𝐗</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>𝐗</mi><mi>d</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">({\mathbf{X}}_{1},\ldots,{\mathbf{X}}_{d})</annotation></semantics></math> são independentes se,
+para quaiquer <math id="chapter2.Thmtheorem44.p1.m6" class="ltx_Math" alttext="({\mathbf{x}}_{1},\ldots,{\mathbf{x}}_{d})" display="inline"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>𝐱</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>𝐱</mi><mi>d</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">({\mathbf{x}}_{1},\ldots,{\mathbf{x}}_{d})</annotation></semantics></math>,</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx12" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex20"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex20.m1" class="ltx_Math" alttext="\displaystyle f({\mathbf{x}}_{1},\ldots,{\mathbf{x}}_{d})" display="inline"><semantics><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>𝐱</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>𝐱</mi><mi>d</mi></msub><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle f({\mathbf{x}}_{1},\ldots,{\mathbf{x}}_{d})</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex20.m2" class="ltx_Math" alttext="\displaystyle=\prod_{i=1}^{d}f({\mathbf{x}}_{i})" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∏</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>d</mi></munderover></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>𝐱</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle=\prod_{i=1}^{d}f({\mathbf{x}}_{i})</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="SS1.p1" class="ltx_para">
+<p class="ltx_p">Verificar se a <a href="#chapter2.Thmtheorem44" title="Definição 2.44. ‣ 3.1 Independência Condicional ‣ 3 Independência Condicional e D-separação ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Definição</span> <span class="ltx_text ltx_ref_tag">2.44</span></a> está satisfeita nem sempre é fácil.
+A princípio, ela exige obter tanto a distribuição condicional conjunta,
+<math id="SS1.p1.m1" class="ltx_Math" alttext="f({\mathbf{x}}_{1},\ldots,{\mathbf{x}}_{d}|{\mathbf{y}})" display="inline"><semantics><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>𝐱</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><msub><mi>𝐱</mi><mi>d</mi></msub><mo fence="false">|</mo><mi>𝐲</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">f({\mathbf{x}}_{1},\ldots,{\mathbf{x}}_{d}|{\mathbf{y}})</annotation></semantics></math>, quanto cada uma das marginais, <math id="SS1.p1.m2" class="ltx_Math" alttext="f({\mathbf{x}}_{i}|{\mathbf{y}})" display="inline"><semantics><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>𝐱</mi><mi>i</mi></msub><mo fence="false">|</mo><mi>𝐲</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">f({\mathbf{x}}_{i}|{\mathbf{y}})</annotation></semantics></math>.
+O <a href="#chapter2.Thmtheorem45" title="Lema 2.45. ‣ 3.1 Independência Condicional ‣ 3 Independência Condicional e D-separação ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Lema</span> <span class="ltx_text ltx_ref_tag">2.45</span></a> a seguir apresenta outras condições que
+são equivalentes a independência condicional:</p>
+</div>
+<div id="chapter2.Thmtheorem45" class="ltx_theorem ltx_theorem_lemma">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Lema 2.45</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter2.Thmtheorem45.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">As seguintes afirmações são equivalentes:</span></p>
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span><div id="I1.i1.p1" class="ltx_para">​<p class="ltx_p"><math id="I1.i1.p1.m1" class="ltx_Math" alttext="({\mathbf{X}}_{1},\ldots,{\mathbf{X}}_{d})" display="inline"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>𝐗</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>𝐗</mi><mi>d</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">({\mathbf{X}}_{1},\ldots,{\mathbf{X}}_{d})</annotation></semantics></math><span class="ltx_text ltx_font_italic"> são independentes dado </span><math id="I1.i1.p1.m2" class="ltx_Math" alttext="{\mathbf{Y}}" display="inline"><semantics><mi>𝐘</mi><annotation encoding="application/x-tex">{\mathbf{Y}}</annotation></semantics></math><span class="ltx_text ltx_font_italic">,</span></p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span><div id="I1.i2.p1" class="ltx_para">​<p class="ltx_p"><span class="ltx_text ltx_font_italic">Existem funções, </span><math id="I1.i2.p1.m1" class="ltx_Math" alttext="h_{1},\ldots,h_{d}" display="inline"><semantics><mrow><msub><mi>h</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>h</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">h_{1},\ldots,h_{d}</annotation></semantics></math><span class="ltx_text ltx_font_italic"> tais que
+</span><math id="I1.i2.p1.m2" class="ltx_Math" alttext="f({\mathbf{x}}_{1},\ldots,{\mathbf{x}}_{d}|{\mathbf{y}})=\prod_{j=1}^{d}{h_{j}%
+({\mathbf{x}}_{j},{\mathbf{y}})}" display="inline"><semantics><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>𝐱</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><msub><mi>𝐱</mi><mi>d</mi></msub><mo fence="false">|</mo><mi>𝐲</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msubsup><mo>∏</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>d</mi></msubsup><mrow><msub><mi>h</mi><mi>j</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>𝐱</mi><mi>j</mi></msub><mo>,</mo><mi>𝐲</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">f({\mathbf{x}}_{1},\ldots,{\mathbf{x}}_{d}|{\mathbf{y}})=\prod_{j=1}^{d}{h_{j}%
+({\mathbf{x}}_{j},{\mathbf{y}})}</annotation></semantics></math><span class="ltx_text ltx_font_italic">.</span></p>
+</div>
+</li>
+<li id="I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">3.</span><div id="I1.i3.p1" class="ltx_para">​<p class="ltx_p"><span class="ltx_text ltx_font_italic">Para todo </span><math id="I1.i3.p1.m1" class="ltx_Math" alttext="i" display="inline"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math><span class="ltx_text ltx_font_italic">,
+</span><math id="I1.i3.p1.m2" class="ltx_Math" alttext="f({\mathbf{x}}_{i}|{\mathbf{x}}_{-i},{\mathbf{y}})=f({\mathbf{x}}_{i}|{\mathbf%
+{y}})" display="inline"><semantics><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>𝐱</mi><mi>i</mi></msub><mo fence="false">|</mo><mrow><msub><mi>𝐱</mi><mrow><mo>−</mo><mi>i</mi></mrow></msub><mo>,</mo><mi>𝐲</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>𝐱</mi><mi>i</mi></msub><mo fence="false">|</mo><mi>𝐲</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">f({\mathbf{x}}_{i}|{\mathbf{x}}_{-i},{\mathbf{y}})=f({\mathbf{x}}_{i}|{\mathbf%
+{y}})</annotation></semantics></math><span class="ltx_text ltx_font_italic">.</span></p>
+</div>
+</li>
+<li id="I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">4.</span><div id="I1.i4.p1" class="ltx_para">​<p class="ltx_p"><span class="ltx_text ltx_font_italic">Para todo </span><math id="I1.i4.p1.m1" class="ltx_Math" alttext="i" display="inline"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math><span class="ltx_text ltx_font_italic">,
+</span><math id="I1.i4.p1.m2" class="ltx_Math" alttext="f({\mathbf{x}}_{i}|{\mathbf{x}}_{1}^{i-1},{\mathbf{y}})=f({\mathbf{x}}_{i}|{%
+\mathbf{y}})" display="inline"><semantics><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>𝐱</mi><mi>i</mi></msub><mo fence="false">|</mo><mrow><msubsup><mi>𝐱</mi><mn>1</mn><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msubsup><mo>,</mo><mi>𝐲</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>𝐱</mi><mi>i</mi></msub><mo fence="false">|</mo><mi>𝐲</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">f({\mathbf{x}}_{i}|{\mathbf{x}}_{1}^{i-1},{\mathbf{y}})=f({\mathbf{x}}_{i}|{%
+\mathbf{y}})</annotation></semantics></math><span class="ltx_text ltx_font_italic">.</span></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="SS1.p2" class="ltx_para">
+<p class="ltx_p">As condições no <a href="#chapter2.Thmtheorem45" title="Lema 2.45. ‣ 3.1 Independência Condicional ‣ 3 Independência Condicional e D-separação ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Lema</span> <span class="ltx_text ltx_ref_tag">2.45</span></a> são, em geral,
+mais fáceis de verificar do que
+a definição direta de independência condicional.
+A seguir veremos que, em um SMC, pode
+ser mais fácil ainda verificar
+muitas das relações de independência condicional.</p>
+</div>
+</div>
+</section>
+<section id="SS2" class="ltx_subsection normal">
+<div class="section level2">
+
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection header-section-number">3.2</span> D-separação</h2>
+
+<div id="SS2.p1" class="ltx_para">
+<p class="ltx_p">Em um CM , é possível indicar
+as relações de independência incondicional em <math id="SS2.p1.m1" class="ltx_Math" alttext="{\mathcal{V}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒱</mi><annotation encoding="application/x-tex">{\mathcal{V}}</annotation></semantics></math>
+por meio do grafo associado.
+Intuitivamente, haverá uma dependência
+entre <math id="SS2.p1.m2" class="ltx_Math" alttext="V_{1}" display="inline"><semantics><msub><mi>V</mi><mn>1</mn></msub><annotation encoding="application/x-tex">V_{1}</annotation></semantics></math> e <math id="SS2.p1.m3" class="ltx_Math" alttext="V_{2}" display="inline"><semantics><msub><mi>V</mi><mn>2</mn></msub><annotation encoding="application/x-tex">V_{2}</annotation></semantics></math> se for possível
+transmitir a informação de <math id="SS2.p1.m4" class="ltx_Math" alttext="V_{1}" display="inline"><semantics><msub><mi>V</mi><mn>1</mn></msub><annotation encoding="application/x-tex">V_{1}</annotation></semantics></math> para <math id="SS2.p1.m5" class="ltx_Math" alttext="V_{2}" display="inline"><semantics><msub><mi>V</mi><mn>2</mn></msub><annotation encoding="application/x-tex">V_{2}</annotation></semantics></math>
+por um caminho que ligue ambos os vértices.
+Para entender se a informação
+pode ser transmitida por um caminho,
+classificaremos a seguir os vértices que o constituem.</p>
+</div>
+<div id="chapter2.Thmtheorem46" class="ltx_theorem ltx_theorem_definition">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Definição 2.46</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter2.Thmtheorem46.p1" class="ltx_para">
+<p class="ltx_p">Seja <math id="chapter2.Thmtheorem46.p1.m1" class="ltx_Math" alttext="C=(C_{1},\ldots,C_{n})" display="inline"><semantics><mrow><mi>C</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><msub><mi>C</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>C</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">C=(C_{1},\ldots,C_{n})</annotation></semantics></math> um caminho
+em um DAG, <math id="chapter2.Thmtheorem46.p1.m2" class="ltx_Math" alttext="{\mathcal{G}}=({\mathcal{V}},{\mathcal{E}})" display="inline"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo>,</mo><mi class="ltx_font_mathcaligraphic">ℰ</mi><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{G}}=({\mathcal{V}},{\mathcal{E}})</annotation></semantics></math>.
+Para cada <math id="chapter2.Thmtheorem46.p1.m3" class="ltx_Math" alttext="2\leq i\leq n-1" display="inline"><semantics><mrow><mn>2</mn><mo>≤</mo><mi>i</mi><mo>≤</mo><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></mrow><annotation encoding="application/x-tex">2\leq i\leq n-1</annotation></semantics></math>:</p>
+<ul id="I2" class="ltx_itemize">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span><div id="I2.i1.p1" class="ltx_para">​<p class="ltx_p"><math id="I2.i1.p1.m1" class="ltx_Math" alttext="C_{i}" display="inline"><semantics><msub><mi>C</mi><mi>i</mi></msub><annotation encoding="application/x-tex">C_{i}</annotation></semantics></math> é um <span class="ltx_text ltx_font_bold">colisor</span> em <math id="I2.i1.p1.m2" class="ltx_Math" alttext="C" display="inline"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math> se
+<math id="I2.i1.p1.m3" class="ltx_Math" alttext="(C_{i-1},C_{i})\in{\mathcal{E}}" display="inline"><semantics><mrow><mrow><mo stretchy="false">(</mo><msub><mi>C</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>C</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><mo>∈</mo><mi class="ltx_font_mathcaligraphic">ℰ</mi></mrow><annotation encoding="application/x-tex">(C_{i-1},C_{i})\in{\mathcal{E}}</annotation></semantics></math> e <math id="I2.i1.p1.m4" class="ltx_Math" alttext="(C_{i+1},C_{i})\in{\mathcal{E}}" display="inline"><semantics><mrow><mrow><mo stretchy="false">(</mo><msub><mi>C</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>C</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><mo>∈</mo><mi class="ltx_font_mathcaligraphic">ℰ</mi></mrow><annotation encoding="application/x-tex">(C_{i+1},C_{i})\in{\mathcal{E}}</annotation></semantics></math>,
+isto é, existem arestas apontando de <math id="I2.i1.p1.m5" class="ltx_Math" alttext="C_{i-1}" display="inline"><semantics><msub><mi>C</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">C_{i-1}</annotation></semantics></math> e de <math id="I2.i1.p1.m6" class="ltx_Math" alttext="C_{i+1}" display="inline"><semantics><msub><mi>C</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">C_{i+1}</annotation></semantics></math>
+para <math id="I2.i1.p1.m7" class="ltx_Math" alttext="C_{i}" display="inline"><semantics><msub><mi>C</mi><mi>i</mi></msub><annotation encoding="application/x-tex">C_{i}</annotation></semantics></math>. Neste caso, desenhamos
+<math id="I2.i1.p1.m8" class="ltx_Math" alttext="C_{i-1}\rightarrow C_{i}\leftarrow C_{i+1}" display="inline"><semantics><mrow><msub><mi>C</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false">→</mo><msub><mi>C</mi><mi>i</mi></msub><mo stretchy="false">←</mo><msub><mi>C</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">C_{i-1}\rightarrow C_{i}\leftarrow C_{i+1}</annotation></semantics></math>.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div id="SS2.p2" class="ltx_para">
+<p class="ltx_p">Note que a classificação na <a href="#chapter2.Thmtheorem46" title="Definição 2.46. ‣ 3.2 D-separação ‣ 3 Independência Condicional e D-separação ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Definição</span> <span class="ltx_text ltx_ref_tag">2.46</span></a>
+generaliza os exemplos de DAG’s com 3 vértices
+na <a href="S2.html#SS4" title="2.4 Exemplos de Modelo Probabilístico em um DAG ‣ 2 Elementos de Modelos Probabilísticos em Grafos ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">2.4</span></a>.</p>
+</div>
+<div id="SS2.p3" class="ltx_para">
+<p class="ltx_p">Essa classificação é ilustrada com
+o DAG na <a href="#F5" title="In 3.2 D-separação ‣ 3 Independência Condicional e D-separação ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">figur</span> <span class="ltx_text ltx_ref_tag">5</span></a>.
+Existem dois caminhos que vão de <math id="SS2.p3.m1" class="ltx_Math" alttext="V_{1}" display="inline"><semantics><msub><mi>V</mi><mn>1</mn></msub><annotation encoding="application/x-tex">V_{1}</annotation></semantics></math> a <math id="SS2.p3.m2" class="ltx_Math" alttext="V_{4}" display="inline"><semantics><msub><mi>V</mi><mn>4</mn></msub><annotation encoding="application/x-tex">V_{4}</annotation></semantics></math>:
+<math id="SS2.p3.m3" class="ltx_Math" alttext="V_{1}\rightarrow V_{2}\leftarrow V_{4}" display="inline"><semantics><mrow><msub><mi>V</mi><mn>1</mn></msub><mo stretchy="false">→</mo><msub><mi>V</mi><mn>2</mn></msub><mo stretchy="false">←</mo><msub><mi>V</mi><mn>4</mn></msub></mrow><annotation encoding="application/x-tex">V_{1}\rightarrow V_{2}\leftarrow V_{4}</annotation></semantics></math> e
+<math id="SS2.p3.m4" class="ltx_Math" alttext="V_{1}\rightarrow V_{2}\rightarrow V_{3}\leftarrow V_{4}" display="inline"><semantics><mrow><msub><mi>V</mi><mn>1</mn></msub><mo stretchy="false">→</mo><msub><mi>V</mi><mn>2</mn></msub><mo stretchy="false">→</mo><msub><mi>V</mi><mn>3</mn></msub><mo stretchy="false">←</mo><msub><mi>V</mi><mn>4</mn></msub></mrow><annotation encoding="application/x-tex">V_{1}\rightarrow V_{2}\rightarrow V_{3}\leftarrow V_{4}</annotation></semantics></math>.
+No primeiro caminho <math id="SS2.p3.m5" class="ltx_Math" alttext="V_{2}" display="inline"><semantics><msub><mi>V</mi><mn>2</mn></msub><annotation encoding="application/x-tex">V_{2}</annotation></semantics></math> é um colisor, pois
+o caminho passa por duas arestas que apontam para <math id="SS2.p3.m6" class="ltx_Math" alttext="V_{2}" display="inline"><semantics><msub><mi>V</mi><mn>2</mn></msub><annotation encoding="application/x-tex">V_{2}</annotation></semantics></math>.
+Já no segundo caminho <math id="SS2.p3.m7" class="ltx_Math" alttext="V_{2}" display="inline"><semantics><msub><mi>V</mi><mn>2</mn></msub><annotation encoding="application/x-tex">V_{2}</annotation></semantics></math> é uma cadeia e
+<math id="SS2.p3.m8" class="ltx_Math" alttext="V_{3}" display="inline"><semantics><msub><mi>V</mi><mn>3</mn></msub><annotation encoding="application/x-tex">V_{3}</annotation></semantics></math> é um colisor.
+Note que a classificação do vértice depende
+do caminho analisado.
+Enquanto que no primeiro caminho <math id="SS2.p3.m9" class="ltx_Math" alttext="V_{2}" display="inline"><semantics><msub><mi>V</mi><mn>2</mn></msub><annotation encoding="application/x-tex">V_{2}</annotation></semantics></math> é um colisor,
+no segundo <math id="SS2.p3.m10" class="ltx_Math" alttext="V_{2}" display="inline"><semantics><msub><mi>V</mi><mn>2</mn></msub><annotation encoding="application/x-tex">V_{2}</annotation></semantics></math> é uma cadeia</p>
+</div>
+<figure id="F5" class="ltx_figure"><div class="bml-overflow-wrapper"><img src="x5.png" id="F5.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="400" height="300" alt="Refer to caption"></div>
+<figcaption class="ltx_caption bml_color_585858"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:91%;">Figura 5</span>: </span><span class="ltx_text" style="font-size:91%;">Ilustração do conceito de bloqueio de um caminho. No caminho (V1, V2, V4), V2 é um colisor. Isto ocorre pois, para chegar de V1 a V4 passando apenas por V2, as duas arestas apontam para V2. Já no caminho (V1, V2, V3, V4) temos que V2 é uma cadeia. Para chegar de V1 a V3 passando por V2, passa-se por duas arestas, uma entrando e outra saindo de V2. Como V2 é um colisor em (V1, V2, V4), este caminho está bloqueado se e somente se o valor de V2 é desconhecido. Como V2 é uma cadeia em (V1, V2, V3, V4), esse caminho está bloqueado quando o valor de V2 é conhecido.</span></figcaption>
+</figure>
+<div id="SS2.p4" class="ltx_para">
+<p class="ltx_p">Com base nas conclusões da <a href="S2.html#SS4" title="2.4 Exemplos de Modelo Probabilístico em um DAG ‣ 2 Elementos de Modelos Probabilísticos em Grafos ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">2.4</span></a>,
+é possível compreender a racionalidade
+da <a href="#chapter2.Thmtheorem46" title="Definição 2.46. ‣ 3.2 D-separação ‣ 3 Independência Condicional e D-separação ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Definição</span> <span class="ltx_text ltx_ref_tag">2.46</span></a>.
+Na <a href="S2.html#SS4" title="2.4 Exemplos de Modelo Probabilístico em um DAG ‣ 2 Elementos de Modelos Probabilísticos em Grafos ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">2.4</span></a> vimos que,
+se <math id="SS2.p4.m1" class="ltx_Math" alttext="Z" display="inline"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math> não é um colisor entre
+<math id="SS2.p4.m2" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> e <math id="SS2.p4.m3" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>, então
+<math id="SS2.p4.m4" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> e <math id="SS2.p4.m5" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> são independentes dado <math id="SS2.p4.m6" class="ltx_Math" alttext="Z" display="inline"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math>.
+Por analogia, podemos intuir que um vértice que
+não é um colisor num caminho
+não permite a passagem de informação
+quando seu valor é conhecido.
+Similarmente, na <a href="S2.html#SS4" title="2.4 Exemplos de Modelo Probabilístico em um DAG ‣ 2 Elementos de Modelos Probabilísticos em Grafos ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">2.4</span></a>,
+se <math id="SS2.p4.m7" class="ltx_Math" alttext="Z" display="inline"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math> é um colisor entre
+<math id="SS2.p4.m8" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> e <math id="SS2.p4.m9" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>, então
+<math id="SS2.p4.m10" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> e <math id="SS2.p4.m11" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> são independentes.
+Assim, também podemos intuir que um vértice que
+é um colisor em um caminho não permite
+a passagem de informação quando seu valor e
+o de seus descendentes é desconhecido.
+Finalmente, a informação não passa pelo caminho quando
+ela não passa por pelo menos um de seus vértices.
+Neste caso, dizemos que o caminho está <span class="ltx_text ltx_font_italic">bloqueado</span>:</p>
+</div>
+<div id="chapter2.Thmtheorem47" class="ltx_theorem ltx_theorem_definition">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Definição 2.47</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter2.Thmtheorem47.p1" class="ltx_para">
+<p class="ltx_p">Seja <math id="chapter2.Thmtheorem47.p1.m1" class="ltx_Math" alttext="C=(C_{1},\ldots,C_{n})" display="inline"><semantics><mrow><mi>C</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><msub><mi>C</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>C</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">C=(C_{1},\ldots,C_{n})</annotation></semantics></math> um caminho
+em um DAG, <math id="chapter2.Thmtheorem47.p1.m2" class="ltx_Math" alttext="{\mathcal{G}}=({\mathcal{V}},{\mathcal{E}})" display="inline"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo>,</mo><mi class="ltx_font_mathcaligraphic">ℰ</mi><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{G}}=({\mathcal{V}},{\mathcal{E}})</annotation></semantics></math>.
+Dizemos que <math id="chapter2.Thmtheorem47.p1.m3" class="ltx_Math" alttext="C" display="inline"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math> está bloqueado dado <math id="chapter2.Thmtheorem47.p1.m4" class="ltx_Math" alttext="{\mathbf{Z}}\subset{\mathcal{V}}" display="inline"><semantics><mrow><mi>𝐙</mi><mo>⊂</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi></mrow><annotation encoding="application/x-tex">{\mathbf{Z}}\subset{\mathcal{V}}</annotation></semantics></math>, se</p>
+<ol id="I3" class="ltx_enumerate">
+<li id="I3.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span><div id="I3.i1.p1" class="ltx_para">​<p class="ltx_p">Existe algum <math id="I3.i1.p1.m1" class="ltx_Math" alttext="2\leq i\leq n-1" display="inline"><semantics><mrow><mn>2</mn><mo>≤</mo><mi>i</mi><mo>≤</mo><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></mrow><annotation encoding="application/x-tex">2\leq i\leq n-1</annotation></semantics></math> tal que
+<math id="I3.i1.p1.m2" class="ltx_Math" alttext="C_{i}" display="inline"><semantics><msub><mi>C</mi><mi>i</mi></msub><annotation encoding="application/x-tex">C_{i}</annotation></semantics></math> não é um colisor em <math id="I3.i1.p1.m3" class="ltx_Math" alttext="C" display="inline"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math> e <math id="I3.i1.p1.m4" class="ltx_Math" alttext="C_{i}\in{\mathbf{Z}}" display="inline"><semantics><mrow><msub><mi>C</mi><mi>i</mi></msub><mo>∈</mo><mi>𝐙</mi></mrow><annotation encoding="application/x-tex">C_{i}\in{\mathbf{Z}}</annotation></semantics></math>, ou</p>
+</div>
+</li>
+<li id="I3.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span><div id="I3.i2.p1" class="ltx_para">​<p class="ltx_p">Existe algum <math id="I3.i2.p1.m1" class="ltx_Math" alttext="2\leq i\leq n-1" display="inline"><semantics><mrow><mn>2</mn><mo>≤</mo><mi>i</mi><mo>≤</mo><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></mrow><annotation encoding="application/x-tex">2\leq i\leq n-1</annotation></semantics></math> tal que
+<math id="I3.i2.p1.m2" class="ltx_Math" alttext="C_{i}" display="inline"><semantics><msub><mi>C</mi><mi>i</mi></msub><annotation encoding="application/x-tex">C_{i}</annotation></semantics></math> é um colisor em <math id="I3.i2.p1.m3" class="ltx_Math" alttext="C" display="inline"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math> e <math id="I3.i2.p1.m4" class="ltx_Math" alttext="C_{i}\notin Anc({\mathbf{Z}})" display="inline"><semantics><mrow><msub><mi>C</mi><mi>i</mi></msub><mo>∉</mo><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>c</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝐙</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">C_{i}\notin Anc({\mathbf{Z}})</annotation></semantics></math>.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="SS2.p5" class="ltx_para">
+<p class="ltx_p">Finalmente, dizemos que <math id="SS2.p5.m1" class="ltx_Math" alttext="{\mathbb{V}}_{1}" display="inline"><semantics><msub><mi>𝕍</mi><mn>1</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{1}</annotation></semantics></math> está d-separado de <math id="SS2.p5.m2" class="ltx_Math" alttext="{\mathbb{V}}_{2}" display="inline"><semantics><msub><mi>𝕍</mi><mn>2</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{2}</annotation></semantics></math>
+dado <math id="SS2.p5.m3" class="ltx_Math" alttext="{\mathbb{V}}_{3}" display="inline"><semantics><msub><mi>𝕍</mi><mn>3</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{3}</annotation></semantics></math> se todos os caminhos de
+<math id="SS2.p5.m4" class="ltx_Math" alttext="{\mathbb{V}}_{1}" display="inline"><semantics><msub><mi>𝕍</mi><mn>1</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{1}</annotation></semantics></math> a <math id="SS2.p5.m5" class="ltx_Math" alttext="{\mathbb{V}}_{2}" display="inline"><semantics><msub><mi>𝕍</mi><mn>2</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{2}</annotation></semantics></math> estão bloqueados dado <math id="SS2.p5.m6" class="ltx_Math" alttext="{\mathbb{V}}_{3}" display="inline"><semantics><msub><mi>𝕍</mi><mn>3</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{3}</annotation></semantics></math>:</p>
+</div>
+<div id="chapter2.Thmtheorem48" class="ltx_theorem ltx_theorem_definition">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Definição 2.48</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter2.Thmtheorem48.p1" class="ltx_para">
+<p class="ltx_p">Seja <math id="chapter2.Thmtheorem48.p1.m1" class="ltx_Math" alttext="{\mathcal{G}}=({\mathcal{V}},{\mathcal{E}})" display="inline"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo>,</mo><mi class="ltx_font_mathcaligraphic">ℰ</mi><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{G}}=({\mathcal{V}},{\mathcal{E}})</annotation></semantics></math> um DAG.
+Para <math id="chapter2.Thmtheorem48.p1.m2" class="ltx_Math" alttext="{\mathbb{V}}_{1},{\mathbb{V}}_{2},{\mathbb{V}}_{3}\subseteq{\mathcal{V}}" display="inline"><semantics><mrow><mrow><msub><mi>𝕍</mi><mn>1</mn></msub><mo>,</mo><msub><mi>𝕍</mi><mn>2</mn></msub><mo>,</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow><mo>⊆</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi></mrow><annotation encoding="application/x-tex">{\mathbb{V}}_{1},{\mathbb{V}}_{2},{\mathbb{V}}_{3}\subseteq{\mathcal{V}}</annotation></semantics></math>, dizemos que
+<math id="chapter2.Thmtheorem48.p1.m3" class="ltx_Math" alttext="{\mathbb{V}}_{1}" display="inline"><semantics><msub><mi>𝕍</mi><mn>1</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{1}</annotation></semantics></math> está d-separado de <math id="chapter2.Thmtheorem48.p1.m4" class="ltx_Math" alttext="{\mathbb{V}}_{2}" display="inline"><semantics><msub><mi>𝕍</mi><mn>2</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{2}</annotation></semantics></math> dado <math id="chapter2.Thmtheorem48.p1.m5" class="ltx_Math" alttext="{\mathbb{V}}_{3}" display="inline"><semantics><msub><mi>𝕍</mi><mn>3</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{3}</annotation></semantics></math> se,
+para todo caminho <math id="chapter2.Thmtheorem48.p1.m6" class="ltx_Math" alttext="C=(C_{1},\ldots,C_{n})" display="inline"><semantics><mrow><mi>C</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><msub><mi>C</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>C</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">C=(C_{1},\ldots,C_{n})</annotation></semantics></math> tal que
+<math id="chapter2.Thmtheorem48.p1.m7" class="ltx_Math" alttext="C_{1}\in V_{1}" display="inline"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>∈</mo><msub><mi>V</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">C_{1}\in V_{1}</annotation></semantics></math> e <math id="chapter2.Thmtheorem48.p1.m8" class="ltx_Math" alttext="C_{n}\in{\mathbb{V}}_{2}" display="inline"><semantics><mrow><msub><mi>C</mi><mi>n</mi></msub><mo>∈</mo><msub><mi>𝕍</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">C_{n}\in{\mathbb{V}}_{2}</annotation></semantics></math>,
+<math id="chapter2.Thmtheorem48.p1.m9" class="ltx_Math" alttext="C" display="inline"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math> está bloqueado dado <math id="chapter2.Thmtheorem48.p1.m10" class="ltx_Math" alttext="{\mathbb{V}}_{3}" display="inline"><semantics><msub><mi>𝕍</mi><mn>3</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{3}</annotation></semantics></math>.
+Neste caso, escrevemos <math id="chapter2.Thmtheorem48.p1.m11" class="ltx_Math" alttext="{\mathbb{V}}_{1}\perp{\mathbb{V}}_{2}|{\mathbb{V}}_{3}" display="inline"><semantics><mrow><msub><mi>𝕍</mi><mn>1</mn></msub><mo>⟂</mo><mrow><msub><mi>𝕍</mi><mn>2</mn></msub><mo fence="false">|</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{V}}_{1}\perp{\mathbb{V}}_{2}|{\mathbb{V}}_{3}</annotation></semantics></math>.</p>
+</div>
+</div>
+<div id="SS2.p6" class="ltx_para">
+<p class="ltx_p">Intuitivamente, se <math id="SS2.p6.m1" class="ltx_Math" alttext="{\mathbb{V}}_{1}\perp{\mathbb{V}}_{2}|{\mathbb{V}}_{3}" display="inline"><semantics><mrow><msub><mi>𝕍</mi><mn>1</mn></msub><mo>⟂</mo><mrow><msub><mi>𝕍</mi><mn>2</mn></msub><mo fence="false">|</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{V}}_{1}\perp{\mathbb{V}}_{2}|{\mathbb{V}}_{3}</annotation></semantics></math>, então
+não é possível passar informação de <math id="SS2.p6.m2" class="ltx_Math" alttext="{\mathbb{V}}_{1}" display="inline"><semantics><msub><mi>𝕍</mi><mn>1</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{1}</annotation></semantics></math> a <math id="SS2.p6.m3" class="ltx_Math" alttext="{\mathbb{V}}_{2}" display="inline"><semantics><msub><mi>𝕍</mi><mn>2</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{2}</annotation></semantics></math> quando
+<math id="SS2.p6.m4" class="ltx_Math" alttext="{\mathbb{V}}_{3}" display="inline"><semantics><msub><mi>𝕍</mi><mn>3</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{3}</annotation></semantics></math> é conhecido.
+Assim, temos razão para acreditar que
+<math id="SS2.p6.m5" class="ltx_Math" alttext="{\mathbb{V}}_{1}" display="inline"><semantics><msub><mi>𝕍</mi><mn>1</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{1}</annotation></semantics></math> é condicionalmente independente de <math id="SS2.p6.m6" class="ltx_Math" alttext="{\mathbb{V}}_{2}" display="inline"><semantics><msub><mi>𝕍</mi><mn>2</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{2}</annotation></semantics></math> dado <math id="SS2.p6.m7" class="ltx_Math" alttext="{\mathbb{V}}_{3}" display="inline"><semantics><msub><mi>𝕍</mi><mn>3</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{3}</annotation></semantics></math>,
+isto é <math id="SS2.p6.m8" class="ltx_math_unparsed" alttext="{\mathbb{V}}_{1}\perp\!\!\!\!\perp{\mathbb{V}}_{2}|{\mathbb{V}}_{3}" display="inline"><semantics><mrow><msub><mi>𝕍</mi><mn>1</mn></msub><mpadded width="0.080em"><mo>⟂</mo></mpadded><mo>⟂</mo><msub><mi>𝕍</mi><mn>2</mn></msub><mo fence="false" rspace="0.167em" stretchy="false">|</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">{\mathbb{V}}_{1}\perp\!\!\!\!\perp{\mathbb{V}}_{2}|{\mathbb{V}}_{3}</annotation></semantics></math>.
+Esta conclusão é apresentada no
+<a href="#chapter2.Thmtheorem49" title="Teorema 2.49. ‣ 3.2 D-separação ‣ 3 Independência Condicional e D-separação ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Teorema</span> <span class="ltx_text ltx_ref_tag">2.49</span></a> a seguir:</p>
+</div>
+<div id="chapter2.Thmtheorem49" class="ltx_theorem ltx_theorem_theorem">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Teorema 2.49</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter2.Thmtheorem49.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Seja <math id="chapter2.Thmtheorem49.p1.m1" class="ltx_Math" alttext="{\mathcal{G}}=({\mathcal{V}},{\mathcal{E}})" display="inline"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo>,</mo><mi class="ltx_font_mathcaligraphic">ℰ</mi><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{G}}=({\mathcal{V}},{\mathcal{E}})</annotation></semantics></math> um DAG e
+<math id="chapter2.Thmtheorem49.p1.m2" class="ltx_Math" alttext="{\mathcal{V}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒱</mi><annotation encoding="application/x-tex">{\mathcal{V}}</annotation></semantics></math> um conjunto de variáveis aleatórias.
+<math id="chapter2.Thmtheorem49.p1.m3" class="ltx_Math" alttext="{\mathbb{V}}_{1}" display="inline"><semantics><msub><mi>𝕍</mi><mn>1</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{1}</annotation></semantics></math> está d-separado de <math id="chapter2.Thmtheorem49.p1.m4" class="ltx_Math" alttext="{\mathbb{V}}_{2}" display="inline"><semantics><msub><mi>𝕍</mi><mn>2</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{2}</annotation></semantics></math> dado <math id="chapter2.Thmtheorem49.p1.m5" class="ltx_Math" alttext="{\mathbb{V}}_{3}" display="inline"><semantics><msub><mi>𝕍</mi><mn>3</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{3}</annotation></semantics></math>
+se e somente se, para todo <math id="chapter2.Thmtheorem49.p1.m6" class="ltx_Math" alttext="f" display="inline"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math> compatível com <math id="chapter2.Thmtheorem49.p1.m7" class="ltx_Math" alttext="{\mathcal{G}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒢</mi><annotation encoding="application/x-tex">{\mathcal{G}}</annotation></semantics></math>,
+<math id="chapter2.Thmtheorem49.p1.m8" class="ltx_math_unparsed" alttext="{\mathbb{V}}_{1}\perp\!\!\!\!\perp^{f}{\mathbb{V}}_{2}|{\mathbb{V}}_{3}" display="inline"><semantics><mrow><msub><mi>𝕍</mi><mn>1</mn></msub><mpadded width="0.080em"><mo>⟂</mo></mpadded><msup><mo>⟂</mo><mi>f</mi></msup><msub><mi>𝕍</mi><mn>2</mn></msub><mo fence="false" rspace="0.167em" stretchy="false">|</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">{\mathbb{V}}_{1}\perp\!\!\!\!\perp^{f}{\mathbb{V}}_{2}|{\mathbb{V}}_{3}</annotation></semantics></math>.</span></p>
+</div>
+</div>
+<div id="chapter2.Thmtheorem50" class="ltx_theorem ltx_theorem_example">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Exemplo 2.50</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter2.Thmtheorem50.p1" class="ltx_para">
+<p class="ltx_p">Considere o DAG na <a href="#F5" title="In 3.2 D-separação ‣ 3 Independência Condicional e D-separação ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">figur</span> <span class="ltx_text ltx_ref_tag">5</span></a>.
+Para avaliar se <math id="chapter2.Thmtheorem50.p1.m1" class="ltx_Math" alttext="V_{1}" display="inline"><semantics><msub><mi>V</mi><mn>1</mn></msub><annotation encoding="application/x-tex">V_{1}</annotation></semantics></math> e <math id="chapter2.Thmtheorem50.p1.m2" class="ltx_Math" alttext="V_{3}" display="inline"><semantics><msub><mi>V</mi><mn>3</mn></msub><annotation encoding="application/x-tex">V_{3}</annotation></semantics></math> são d-separados,
+precisamos analisar todos os caminhos de um para o outro.
+Estes caminhos são: <math id="chapter2.Thmtheorem50.p1.m3" class="ltx_Math" alttext="V_{1}\rightarrow V_{2}\rightarrow V_{3}" display="inline"><semantics><mrow><msub><mi>V</mi><mn>1</mn></msub><mo stretchy="false">→</mo><msub><mi>V</mi><mn>2</mn></msub><mo stretchy="false">→</mo><msub><mi>V</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">V_{1}\rightarrow V_{2}\rightarrow V_{3}</annotation></semantics></math>, e
+<math id="chapter2.Thmtheorem50.p1.m4" class="ltx_Math" alttext="V_{1}\rightarrow V_{2}\leftarrow V_{4}\rightarrow V_{3}" display="inline"><semantics><mrow><msub><mi>V</mi><mn>1</mn></msub><mo stretchy="false">→</mo><msub><mi>V</mi><mn>2</mn></msub><mo stretchy="false">←</mo><msub><mi>V</mi><mn>4</mn></msub><mo stretchy="false">→</mo><msub><mi>V</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">V_{1}\rightarrow V_{2}\leftarrow V_{4}\rightarrow V_{3}</annotation></semantics></math>.
+No primeiro caminho <math id="chapter2.Thmtheorem50.p1.m5" class="ltx_Math" alttext="V_{2}" display="inline"><semantics><msub><mi>V</mi><mn>2</mn></msub><annotation encoding="application/x-tex">V_{2}</annotation></semantics></math> não é um colisor e, assim,
+o caminho não está bloqueado marginalmente.
+Portanto, <math id="chapter2.Thmtheorem50.p1.m6" class="ltx_Math" alttext="V_{1}" display="inline"><semantics><msub><mi>V</mi><mn>1</mn></msub><annotation encoding="application/x-tex">V_{1}</annotation></semantics></math> e <math id="chapter2.Thmtheorem50.p1.m7" class="ltx_Math" alttext="V_{3}" display="inline"><semantics><msub><mi>V</mi><mn>3</mn></msub><annotation encoding="application/x-tex">V_{3}</annotation></semantics></math> não são d-separados marginalmente.
+Por outro lado, no segundo caminho <math id="chapter2.Thmtheorem50.p1.m8" class="ltx_Math" alttext="V_{2}" display="inline"><semantics><msub><mi>V</mi><mn>2</mn></msub><annotation encoding="application/x-tex">V_{2}</annotation></semantics></math> é um colisor e
+<math id="chapter2.Thmtheorem50.p1.m9" class="ltx_Math" alttext="V_{4}" display="inline"><semantics><msub><mi>V</mi><mn>4</mn></msub><annotation encoding="application/x-tex">V_{4}</annotation></semantics></math> não o é. Assim,
+condicionando em <math id="chapter2.Thmtheorem50.p1.m10" class="ltx_Math" alttext="V_{2}" display="inline"><semantics><msub><mi>V</mi><mn>2</mn></msub><annotation encoding="application/x-tex">V_{2}</annotation></semantics></math>, este caminho não está bloqueado.
+Portanto, <math id="chapter2.Thmtheorem50.p1.m11" class="ltx_Math" alttext="V_{1}" display="inline"><semantics><msub><mi>V</mi><mn>1</mn></msub><annotation encoding="application/x-tex">V_{1}</annotation></semantics></math> e <math id="chapter2.Thmtheorem50.p1.m12" class="ltx_Math" alttext="V_{3}" display="inline"><semantics><msub><mi>V</mi><mn>3</mn></msub><annotation encoding="application/x-tex">V_{3}</annotation></semantics></math> não são d-separados dado <math id="chapter2.Thmtheorem50.p1.m13" class="ltx_Math" alttext="V_{2}" display="inline"><semantics><msub><mi>V</mi><mn>2</mn></msub><annotation encoding="application/x-tex">V_{2}</annotation></semantics></math>.
+Finalmente, dado <math id="chapter2.Thmtheorem50.p1.m14" class="ltx_Math" alttext="V_{2}" display="inline"><semantics><msub><mi>V</mi><mn>2</mn></msub><annotation encoding="application/x-tex">V_{2}</annotation></semantics></math> e <math id="chapter2.Thmtheorem50.p1.m15" class="ltx_Math" alttext="V_{4}" display="inline"><semantics><msub><mi>V</mi><mn>4</mn></msub><annotation encoding="application/x-tex">V_{4}</annotation></semantics></math>,
+ambos os caminhos estão bloqueados,
+pois <math id="chapter2.Thmtheorem50.p1.m16" class="ltx_Math" alttext="V_{2}" display="inline"><semantics><msub><mi>V</mi><mn>2</mn></msub><annotation encoding="application/x-tex">V_{2}</annotation></semantics></math> não é um colisor no primeiro e
+<math id="chapter2.Thmtheorem50.p1.m17" class="ltx_Math" alttext="V_{4}" display="inline"><semantics><msub><mi>V</mi><mn>4</mn></msub><annotation encoding="application/x-tex">V_{4}</annotation></semantics></math> não é um colisor no segundo.
+Assim, <math id="chapter2.Thmtheorem50.p1.m18" class="ltx_Math" alttext="V_{1}" display="inline"><semantics><msub><mi>V</mi><mn>1</mn></msub><annotation encoding="application/x-tex">V_{1}</annotation></semantics></math> e <math id="chapter2.Thmtheorem50.p1.m19" class="ltx_Math" alttext="V_{3}" display="inline"><semantics><msub><mi>V</mi><mn>3</mn></msub><annotation encoding="application/x-tex">V_{3}</annotation></semantics></math> são d-separados dado <math id="chapter2.Thmtheorem50.p1.m20" class="ltx_Math" alttext="(V_{2},V_{4})" display="inline"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>V</mi><mn>2</mn></msub><mo>,</mo><msub><mi>V</mi><mn>4</mn></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(V_{2},V_{4})</annotation></semantics></math>.
+Para treinar este raciocínio,
+continue analisando a d-separação entre <math id="chapter2.Thmtheorem50.p1.m21" class="ltx_Math" alttext="V_{1}" display="inline"><semantics><msub><mi>V</mi><mn>1</mn></msub><annotation encoding="application/x-tex">V_{1}</annotation></semantics></math> e <math id="chapter2.Thmtheorem50.p1.m22" class="ltx_Math" alttext="V_{4}" display="inline"><semantics><msub><mi>V</mi><mn>4</mn></msub><annotation encoding="application/x-tex">V_{4}</annotation></semantics></math>.</p>
+</div>
+<div id="chapter2.Thmtheorem50.p2" class="ltx_para">
+<p class="ltx_p">O algoritmo para testar d-separação está
+implementado em diversos pacotes.
+Além disso, é possível utilizar o
+<a href="#chapter2.Thmtheorem49" title="Teorema 2.49. ‣ 3.2 D-separação ‣ 3 Independência Condicional e D-separação ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Teorema</span> <span class="ltx_text ltx_ref_tag">2.49</span></a> para enunciar
+todas as relações de independência condicional que
+são necessárias em um grafo.
+Estas implementações estão ilustradas abaixo:
+
+<span class="ltx_ERROR undefined">\MakeFramed</span><span class="ltx_text bml_color_585858">
+<pre class="ltx_verbatim ltx_font_typewriter">
+<span class="ltx_text bml_color_AD95AF ltx_font_serif ltx_font_italic"># Especificar o grafo</span>
+grafo <span class="ltx_text bml_color_B05A65">&lt;-</span> <span class="ltx_text bml_color_317ECC">"dag{
+   V1 -&gt; V2 &lt;- V4;
+   V2 -&gt; V3 &lt;- V4
+}"</span>
+
+<span class="ltx_text bml_color_BC5A65 ltx_font_serif ltx_font_bold">dseparated</span>(grafo, <span class="ltx_text bml_color_317ECC">"V1"<span class="ltx_text bml_color_585858">, <span class="ltx_text bml_color_317ECC">"V3"<span class="ltx_text bml_color_585858">, <span class="ltx_text bml_color_BC5A65 ltx_font_serif ltx_font_bold">c</span>(<span class="ltx_text bml_color_317ECC">"V2"<span class="ltx_text bml_color_585858">))
+</span></span></span></span></span></span></pre></span></p>
+<pre class="ltx_verbatim bml_color_585858 ltx_font_typewriter">
+## [1] FALSE
+</pre>
+<pre class="ltx_verbatim bml_color_585858 ltx_font_typewriter">
+<span class="ltx_text bml_color_BC5A65 ltx_font_serif ltx_font_bold">dseparated</span>(grafo, <span class="ltx_text bml_color_317ECC">"V1"<span class="ltx_text bml_color_585858">, <span class="ltx_text bml_color_317ECC">"V3"<span class="ltx_text bml_color_585858">, <span class="ltx_text bml_color_BC5A65 ltx_font_serif ltx_font_bold">c</span>(<span class="ltx_text bml_color_317ECC">"V4"<span class="ltx_text bml_color_585858">))
+</span></span></span></span></span></span></pre>
+<pre class="ltx_verbatim bml_color_585858 ltx_font_typewriter">
+## [1] FALSE
+</pre>
+<pre class="ltx_verbatim bml_color_585858 ltx_font_typewriter">
+<span class="ltx_text bml_color_BC5A65 ltx_font_serif ltx_font_bold">dseparated</span>(grafo, <span class="ltx_text bml_color_317ECC">"V1"<span class="ltx_text bml_color_585858">, <span class="ltx_text bml_color_317ECC">"V3"<span class="ltx_text bml_color_585858">, <span class="ltx_text bml_color_BC5A65 ltx_font_serif ltx_font_bold">c</span>(<span class="ltx_text bml_color_317ECC">"V2"<span class="ltx_text bml_color_585858">, <span class="ltx_text bml_color_317ECC">"V4"<span class="ltx_text bml_color_585858">))
+</span></span></span></span></span></span></span></span></pre>
+<pre class="ltx_verbatim bml_color_585858 ltx_font_typewriter">
+## [1] TRUE
+</pre>
+<pre class="ltx_verbatim bml_color_585858 ltx_font_typewriter">
+<span class="ltx_text bml_color_BC5A65 ltx_font_serif ltx_font_bold">impliedConditionalIndependencies</span>(grafo)
+</pre>
+<pre class="ltx_verbatim bml_color_585858 ltx_font_typewriter">
+## V1 _||_ V3 | V2, V4
+## V1 _||_ V4
+</pre>
+</div>
+<div id="chapter2.Thmtheorem50.p3" class="ltx_para">
+<span class="ltx_ERROR undefined">\endMakeFramed</span>
+</div>
+</div>
+<div id="chapter2.Thmtheorem51" class="ltx_theorem ltx_theorem_example">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Exemplo 2.51</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter2.Thmtheorem51.p1" class="ltx_para">
+<p class="ltx_p">Considere que <math id="chapter2.Thmtheorem51.p1.m1" class="ltx_Math" alttext="{\mathbb{V}}_{1}" display="inline"><semantics><msub><mi>𝕍</mi><mn>1</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{1}</annotation></semantics></math> e <math id="chapter2.Thmtheorem51.p1.m2" class="ltx_Math" alttext="{\mathbb{V}}_{2}" display="inline"><semantics><msub><mi>𝕍</mi><mn>2</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{2}</annotation></semantics></math>
+não são d-separados dado <math id="chapter2.Thmtheorem51.p1.m3" class="ltx_Math" alttext="{\mathbb{V}}_{3}" display="inline"><semantics><msub><mi>𝕍</mi><mn>3</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{3}</annotation></semantics></math>.
+O <a href="#chapter2.Thmtheorem49" title="Teorema 2.49. ‣ 3.2 D-separação ‣ 3 Independência Condicional e D-separação ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Teorema</span> <span class="ltx_text ltx_ref_tag">2.49</span></a> garante apenas que existe
+algum <math id="chapter2.Thmtheorem51.p1.m4" class="ltx_Math" alttext="f" display="inline"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math> compatível com o DAG tal que
+<math id="chapter2.Thmtheorem51.p1.m5" class="ltx_Math" alttext="{\mathbb{V}}_{1}" display="inline"><semantics><msub><mi>𝕍</mi><mn>1</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{1}</annotation></semantics></math> e <math id="chapter2.Thmtheorem51.p1.m6" class="ltx_Math" alttext="{\mathbb{V}}_{2}" display="inline"><semantics><msub><mi>𝕍</mi><mn>2</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{2}</annotation></semantics></math> são
+condicionalmente dependentes dado <math id="chapter2.Thmtheorem51.p1.m7" class="ltx_Math" alttext="{\mathbb{V}}_{3}" display="inline"><semantics><msub><mi>𝕍</mi><mn>3</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{3}</annotation></semantics></math>
+segundo <math id="chapter2.Thmtheorem51.p1.m8" class="ltx_Math" alttext="f" display="inline"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>.
+É possível mostrar que
+o conjunto de <math id="chapter2.Thmtheorem51.p1.m9" class="ltx_Math" alttext="f" display="inline"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>’s compatíveis com o grafo
+em que <math id="chapter2.Thmtheorem51.p1.m10" class="ltx_Math" alttext="{\mathbb{V}}_{1}" display="inline"><semantics><msub><mi>𝕍</mi><mn>1</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{1}</annotation></semantics></math> e <math id="chapter2.Thmtheorem51.p1.m11" class="ltx_Math" alttext="{\mathbb{V}}_{2}" display="inline"><semantics><msub><mi>𝕍</mi><mn>2</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{2}</annotation></semantics></math> são
+condicionalmente independentes dado <math id="chapter2.Thmtheorem51.p1.m12" class="ltx_Math" alttext="{\mathbb{V}}_{3}" display="inline"><semantics><msub><mi>𝕍</mi><mn>3</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{3}</annotation></semantics></math> é
+relativamente pequeno àquele em que
+<math id="chapter2.Thmtheorem51.p1.m13" class="ltx_Math" alttext="{\mathbb{V}}_{1}" display="inline"><semantics><msub><mi>𝕍</mi><mn>1</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{1}</annotation></semantics></math> e <math id="chapter2.Thmtheorem51.p1.m14" class="ltx_Math" alttext="{\mathbb{V}}_{2}" display="inline"><semantics><msub><mi>𝕍</mi><mn>2</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{2}</annotation></semantics></math> são condicionalmente dependentes.
+Estudaremos um caso em que
+é possível observar esta relação em mais detalhe.</p>
+</div>
+<div id="chapter2.Thmtheorem51.p2" class="ltx_para">
+<p class="ltx_p">Considere que <math id="chapter2.Thmtheorem51.p2.m1" class="ltx_Math" alttext="V_{1},V_{2}" display="inline"><semantics><mrow><msub><mi>V</mi><mn>1</mn></msub><mo>,</mo><msub><mi>V</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">V_{1},V_{2}</annotation></semantics></math>, e <math id="chapter2.Thmtheorem51.p2.m2" class="ltx_Math" alttext="Z" display="inline"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math> são binárias e
+formam o grafo <math id="chapter2.Thmtheorem51.p2.m3" class="ltx_Math" alttext="V_{1}\leftarrow Z\rightarrow V_{2}" display="inline"><semantics><mrow><msub><mi>V</mi><mn>1</mn></msub><mo stretchy="false">←</mo><mi>Z</mi><mo stretchy="false">→</mo><msub><mi>V</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">V_{1}\leftarrow Z\rightarrow V_{2}</annotation></semantics></math>,
+isto é, <math id="chapter2.Thmtheorem51.p2.m4" class="ltx_Math" alttext="Z" display="inline"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math> é um confundidor.
+Além disso, <math id="chapter2.Thmtheorem51.p2.m5" class="ltx_Math" alttext="{\mathbb{P}}(Z=1)=0.5" display="inline"><semantics><mrow><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>Z</mi><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">{\mathbb{P}}(Z=1)=0.5</annotation></semantics></math>,
+<math id="chapter2.Thmtheorem51.p2.m6" class="ltx_math_unparsed" alttext="{\mathbb{P}}(V_{i}=1|Z=j)=:p_{j}" display="inline"><semantics><mrow><mi>ℙ</mi><mrow><mo stretchy="false">(</mo><msub><mi>V</mi><mi>i</mi></msub><mo>=</mo><mn>1</mn><mo fence="false" rspace="0.167em" stretchy="false">|</mo><mi>Z</mi><mo>=</mo><mi>j</mi><mo stretchy="false">)</mo></mrow><mo rspace="0em">=</mo><mo rspace="0.278em">:</mo><msub><mi>p</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">{\mathbb{P}}(V_{i}=1|Z=j)=:p_{j}</annotation></semantics></math>.
+Como <math id="chapter2.Thmtheorem51.p2.m7" class="ltx_Math" alttext="V_{3}" display="inline"><semantics><msub><mi>V</mi><mn>3</mn></msub><annotation encoding="application/x-tex">V_{3}</annotation></semantics></math> é um confundidor,
+<math id="chapter2.Thmtheorem51.p2.m8" class="ltx_Math" alttext="V_{1}" display="inline"><semantics><msub><mi>V</mi><mn>1</mn></msub><annotation encoding="application/x-tex">V_{1}</annotation></semantics></math> e <math id="chapter2.Thmtheorem51.p2.m9" class="ltx_Math" alttext="V_{2}" display="inline"><semantics><msub><mi>V</mi><mn>2</mn></msub><annotation encoding="application/x-tex">V_{2}</annotation></semantics></math> não são d-separados marginalmente.
+Para quais valores de <math id="chapter2.Thmtheorem51.p2.m10" class="ltx_Math" alttext="p" display="inline"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math> temos que
+<math id="chapter2.Thmtheorem51.p2.m11" class="ltx_Math" alttext="V_{1}" display="inline"><semantics><msub><mi>V</mi><mn>1</mn></msub><annotation encoding="application/x-tex">V_{1}</annotation></semantics></math> e <math id="chapter2.Thmtheorem51.p2.m12" class="ltx_Math" alttext="V_{2}" display="inline"><semantics><msub><mi>V</mi><mn>2</mn></msub><annotation encoding="application/x-tex">V_{2}</annotation></semantics></math> são marginalmente independentes?
+Para que <math id="chapter2.Thmtheorem51.p2.m13" class="ltx_Math" alttext="V_{1}" display="inline"><semantics><msub><mi>V</mi><mn>1</mn></msub><annotation encoding="application/x-tex">V_{1}</annotation></semantics></math> e <math id="chapter2.Thmtheorem51.p2.m14" class="ltx_Math" alttext="V_{2}" display="inline"><semantics><msub><mi>V</mi><mn>2</mn></msub><annotation encoding="application/x-tex">V_{2}</annotation></semantics></math> sejam independentes,
+é necessário que <math id="chapter2.Thmtheorem51.p2.m15" class="ltx_Math" alttext="Cov[V_{1},V_{2}]=0" display="inline"><semantics><mrow><mrow><mi>C</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><msub><mi>V</mi><mn>1</mn></msub><mo>,</mo><msub><mi>V</mi><mn>2</mn></msub><mo stretchy="false">]</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">Cov[V_{1},V_{2}]=0</annotation></semantics></math>.
+Note que</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx13" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex21"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex21.m1" class="ltx_Math" alttext="\displaystyle{\mathbb{E}}[V_{i}]" display="inline"><semantics><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><msub><mi>V</mi><mi>i</mi></msub><mo stretchy="false">]</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle{\mathbb{E}}[V_{i}]</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex21.m2" class="ltx_Math" alttext="\displaystyle={\mathbb{E}}[{\mathbb{E}}[V_{i}|Z]]=0.5p_{1}+0.5p_{0}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><msub><mi>V</mi><mi>i</mi></msub><mo fence="false">|</mo><mi>Z</mi></mrow><mo stretchy="false">]</mo></mrow></mrow><mo stretchy="false">]</mo></mrow></mrow><mo>=</mo><mrow><mrow><mn>0.5</mn><mo>⁢</mo><msub><mi>p</mi><mn>1</mn></msub></mrow><mo>+</mo><mrow><mn>0.5</mn><mo>⁢</mo><msub><mi>p</mi><mn>0</mn></msub></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle={\mathbb{E}}[{\mathbb{E}}[V_{i}|Z]]=0.5p_{1}+0.5p_{0}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex22"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex22.m1" class="ltx_Math" alttext="\displaystyle{\mathbb{E}}[V_{1}V_{2}]" display="inline"><semantics><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><msub><mi>V</mi><mn>1</mn></msub><mo>⁢</mo><msub><mi>V</mi><mn>2</mn></msub></mrow><mo stretchy="false">]</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle{\mathbb{E}}[V_{1}V_{2}]</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex22.m2" class="ltx_math_unparsed" alttext="\displaystyle={\mathbb{E}}[|E[V_{1}V_{2}|Z]]=0.5p_{1}^{2}+0.5p_{0}^{2}" display="inline"><semantics><mrow><mo>=</mo><mi>𝔼</mi><mrow><mo stretchy="false">[</mo><mo fence="false" rspace="0.167em" stretchy="false">|</mo><mi>E</mi><mrow><mo stretchy="false">[</mo><msub><mi>V</mi><mn>1</mn></msub><msub><mi>V</mi><mn>2</mn></msub><mo fence="false" rspace="0.167em" stretchy="false">|</mo><mi>Z</mi><mo stretchy="false">]</mo></mrow><mo stretchy="false">]</mo></mrow><mo>=</mo><mn>0.5</mn><msubsup><mi>p</mi><mn>1</mn><mn>2</mn></msubsup><mo>+</mo><mn>0.5</mn><msubsup><mi>p</mi><mn>0</mn><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">\displaystyle={\mathbb{E}}[|E[V_{1}V_{2}|Z]]=0.5p_{1}^{2}+0.5p_{0}^{2}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<p class="ltx_p">Assim, para que <math id="chapter2.Thmtheorem51.p2.m16" class="ltx_Math" alttext="Cov[V_{1},V_{2}]=0" display="inline"><semantics><mrow><mrow><mi>C</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><msub><mi>V</mi><mn>1</mn></msub><mo>,</mo><msub><mi>V</mi><mn>2</mn></msub><mo stretchy="false">]</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">Cov[V_{1},V_{2}]=0</annotation></semantics></math>, temos:</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx14" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex23"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex23.m1" class="ltx_Math" alttext="\displaystyle 0.5p^{2}_{1}+0.5p^{2}_{0}" display="inline"><semantics><mrow><mrow><mn>0.5</mn><mo>⁢</mo><msubsup><mi>p</mi><mn>1</mn><mn>2</mn></msubsup></mrow><mo>+</mo><mrow><mn>0.5</mn><mo>⁢</mo><msubsup><mi>p</mi><mn>0</mn><mn>2</mn></msubsup></mrow></mrow><annotation encoding="application/x-tex">\displaystyle 0.5p^{2}_{1}+0.5p^{2}_{0}</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex23.m2" class="ltx_Math" alttext="\displaystyle=(0.5p_{1}+0.5p_{0})(0.5p_{1}+0.5p_{0})" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>0.5</mn><mo>⁢</mo><msub><mi>p</mi><mn>1</mn></msub></mrow><mo>+</mo><mrow><mn>0.5</mn><mo>⁢</mo><msub><mi>p</mi><mn>0</mn></msub></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>0.5</mn><mo>⁢</mo><msub><mi>p</mi><mn>1</mn></msub></mrow><mo>+</mo><mrow><mn>0.5</mn><mo>⁢</mo><msub><mi>p</mi><mn>0</mn></msub></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle=(0.5p_{1}+0.5p_{0})(0.5p_{1}+0.5p_{0})</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex24"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex24.m1" class="ltx_Math" alttext="\displaystyle 0.5p^{2}_{1}+0.5p^{2}_{0}" display="inline"><semantics><mrow><mrow><mn>0.5</mn><mo>⁢</mo><msubsup><mi>p</mi><mn>1</mn><mn>2</mn></msubsup></mrow><mo>+</mo><mrow><mn>0.5</mn><mo>⁢</mo><msubsup><mi>p</mi><mn>0</mn><mn>2</mn></msubsup></mrow></mrow><annotation encoding="application/x-tex">\displaystyle 0.5p^{2}_{1}+0.5p^{2}_{0}</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex24.m2" class="ltx_math_unparsed" alttext="\displaystyle=0.25p_{1}^{2}++0.5p_{1}p_{0}0.25p_{0}^{2}" display="inline"><semantics><mrow><mo>=</mo><mn>0.25</mn><msubsup><mi>p</mi><mn>1</mn><mn>2</mn></msubsup><mo rspace="0em">+</mo><mo lspace="0em">+</mo><mn>0.5</mn><msub><mi>p</mi><mn>1</mn></msub><msub><mi>p</mi><mn>0</mn></msub><mn>0.25</mn><msubsup><mi>p</mi><mn>0</mn><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">\displaystyle=0.25p_{1}^{2}++0.5p_{1}p_{0}0.25p_{0}^{2}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex25"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex25.m1" class="ltx_Math" alttext="\displaystyle 0.25p^{2}_{1}-0.5p_{1}p_{0}+0.25p^{2}_{0}" display="inline"><semantics><mrow><mrow><mrow><mn>0.25</mn><mo>⁢</mo><msubsup><mi>p</mi><mn>1</mn><mn>2</mn></msubsup></mrow><mo>−</mo><mrow><mn>0.5</mn><mo>⁢</mo><msub><mi>p</mi><mn>1</mn></msub><mo>⁢</mo><msub><mi>p</mi><mn>0</mn></msub></mrow></mrow><mo>+</mo><mrow><mn>0.25</mn><mo>⁢</mo><msubsup><mi>p</mi><mn>0</mn><mn>2</mn></msubsup></mrow></mrow><annotation encoding="application/x-tex">\displaystyle 0.25p^{2}_{1}-0.5p_{1}p_{0}+0.25p^{2}_{0}</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex25.m2" class="ltx_Math" alttext="\displaystyle=0" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\displaystyle=0</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex26"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex26.m1" class="ltx_Math" alttext="\displaystyle 0.25(p_{1}-p_{0})^{2}" display="inline"><semantics><mrow><mn>0.25</mn><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mrow><msub><mi>p</mi><mn>1</mn></msub><mo>−</mo><msub><mi>p</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\displaystyle 0.25(p_{1}-p_{0})^{2}</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex26.m2" class="ltx_Math" alttext="\displaystyle=0" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\displaystyle=0</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex27"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex27.m1" class="ltx_Math" alttext="\displaystyle p_{1}" display="inline"><semantics><msub><mi>p</mi><mn>1</mn></msub><annotation encoding="application/x-tex">\displaystyle p_{1}</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex27.m2" class="ltx_Math" alttext="\displaystyle=p_{0}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><msub><mi>p</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\displaystyle=p_{0}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<p class="ltx_p">Em outras palavras, dentre todos <math id="chapter2.Thmtheorem51.p2.m17" class="ltx_Math" alttext="(p_{0},p_{1})" display="inline"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>p</mi><mn>0</mn></msub><mo>,</mo><msub><mi>p</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(p_{0},p_{1})</annotation></semantics></math>
+no quadrado <math id="chapter2.Thmtheorem51.p2.m18" class="ltx_Math" alttext="[0,1]^{2}" display="inline"><semantics><msup><mrow><mo stretchy="false">[</mo><mn>0,1</mn><mo stretchy="false">]</mo></mrow><mn>2</mn></msup><annotation encoding="application/x-tex">[0,1]^{2}</annotation></semantics></math>,
+somente os valores no segmento <math id="chapter2.Thmtheorem51.p2.m19" class="ltx_Math" alttext="p_{1}=p_{0}" display="inline"><semantics><mrow><msub><mi>p</mi><mn>1</mn></msub><mo>=</mo><msub><mi>p</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">p_{1}=p_{0}</annotation></semantics></math>
+tem alguma chance de levarem à
+independência entre <math id="chapter2.Thmtheorem51.p2.m20" class="ltx_Math" alttext="V_{1}" display="inline"><semantics><msub><mi>V</mi><mn>1</mn></msub><annotation encoding="application/x-tex">V_{1}</annotation></semantics></math> e <math id="chapter2.Thmtheorem51.p2.m21" class="ltx_Math" alttext="V_{2}" display="inline"><semantics><msub><mi>V</mi><mn>2</mn></msub><annotation encoding="application/x-tex">V_{2}</annotation></semantics></math>.
+Se imaginarmos que <math id="chapter2.Thmtheorem51.p2.m22" class="ltx_Math" alttext="(p_{0},p_{1})" display="inline"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>p</mi><mn>0</mn></msub><mo>,</mo><msub><mi>p</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(p_{0},p_{1})</annotation></semantics></math> são
+equidistribuídos em <math id="chapter2.Thmtheorem51.p2.m23" class="ltx_Math" alttext="[0,1]^{2}" display="inline"><semantics><msup><mrow><mo stretchy="false">[</mo><mn>0,1</mn><mo stretchy="false">]</mo></mrow><mn>2</mn></msup><annotation encoding="application/x-tex">[0,1]^{2}</annotation></semantics></math>, então
+a probabilidade de sortearmos valores em que
+<math id="chapter2.Thmtheorem51.p2.m24" class="ltx_Math" alttext="V_{1}" display="inline"><semantics><msub><mi>V</mi><mn>1</mn></msub><annotation encoding="application/x-tex">V_{1}</annotation></semantics></math> e <math id="chapter2.Thmtheorem51.p2.m25" class="ltx_Math" alttext="V_{2}" display="inline"><semantics><msub><mi>V</mi><mn>2</mn></msub><annotation encoding="application/x-tex">V_{2}</annotation></semantics></math> são independentes é 0.</p>
+</div>
+<div id="chapter2.Thmtheorem51.p3" class="ltx_para">
+<p class="ltx_p">Em conclusão, como <math id="chapter2.Thmtheorem51.p3.m1" class="ltx_Math" alttext="V_{1}" display="inline"><semantics><msub><mi>V</mi><mn>1</mn></msub><annotation encoding="application/x-tex">V_{1}</annotation></semantics></math> e <math id="chapter2.Thmtheorem51.p3.m2" class="ltx_Math" alttext="V_{2}" display="inline"><semantics><msub><mi>V</mi><mn>2</mn></msub><annotation encoding="application/x-tex">V_{2}</annotation></semantics></math> não são d-separados,
+somente para um conjunto pequeno de possíveis <math id="chapter2.Thmtheorem51.p3.m3" class="ltx_Math" alttext="f" display="inline"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>’s
+temos que <math id="chapter2.Thmtheorem51.p3.m4" class="ltx_Math" alttext="V_{1}" display="inline"><semantics><msub><mi>V</mi><mn>1</mn></msub><annotation encoding="application/x-tex">V_{1}</annotation></semantics></math> e <math id="chapter2.Thmtheorem51.p3.m5" class="ltx_Math" alttext="V_{2}" display="inline"><semantics><msub><mi>V</mi><mn>2</mn></msub><annotation encoding="application/x-tex">V_{2}</annotation></semantics></math> são independentes.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="SS3" class="ltx_subsection normal">
+<div class="section level2">
+
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection header-section-number">3.3</span> Exercícios</h2>
+
+<div id="chapter2.Thmtheorem52" class="ltx_theorem ltx_theorem_exercise">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Exercício 2.52</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter2.Thmtheorem52.p1" class="ltx_para">
+<p class="ltx_p">Considere que <math id="chapter2.Thmtheorem52.p1.m1" class="ltx_Math" alttext="f" display="inline"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math> é uma densidade sobre
+<math id="chapter2.Thmtheorem52.p1.m2" class="ltx_Math" alttext="{\mathcal{V}}=(V_{1},V_{2},V_{3},V_{4})" display="inline"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><msub><mi>V</mi><mn>1</mn></msub><mo>,</mo><msub><mi>V</mi><mn>2</mn></msub><mo>,</mo><msub><mi>V</mi><mn>3</mn></msub><mo>,</mo><msub><mi>V</mi><mn>4</mn></msub><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{V}}=(V_{1},V_{2},V_{3},V_{4})</annotation></semantics></math> que é compatível com
+o grafo em <a href="#F6" title="In Exercício 2.52. ‣ 3.3 Exercícios ‣ 3 Independência Condicional e D-separação ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">figur</span> <span class="ltx_text ltx_ref_tag">6</span></a>.
+Além disso, cada <math id="chapter2.Thmtheorem52.p1.m3" class="ltx_Math" alttext="V_{i}\in\{0,1\}" display="inline"><semantics><mrow><msub><mi>V</mi><mi>i</mi></msub><mo>∈</mo><mrow><mo stretchy="false">{</mo><mn>0,1</mn><mo stretchy="false">}</mo></mrow></mrow><annotation encoding="application/x-tex">V_{i}\in\{0,1\}</annotation></semantics></math>,
+<math id="chapter2.Thmtheorem52.p1.m4" class="ltx_Math" alttext="V_{1},V_{2}\sim\text{Bernoulli}(0.5)" display="inline"><semantics><mrow><mrow><msub><mi>V</mi><mn>1</mn></msub><mo>,</mo><msub><mi>V</mi><mn>2</mn></msub></mrow><mo>∼</mo><mrow><mtext>Bernoulli</mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0.5</mn><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">V_{1},V_{2}\sim\text{Bernoulli}(0.5)</annotation></semantics></math>,
+<math id="chapter2.Thmtheorem52.p1.m5" class="ltx_Math" alttext="V_{3}\equiv V_{1}\cdot V_{2}" display="inline"><semantics><mrow><msub><mi>V</mi><mn>3</mn></msub><mo>≡</mo><mrow><msub><mi>V</mi><mn>1</mn></msub><mo lspace="0.222em" rspace="0.222em">⋅</mo><msub><mi>V</mi><mn>2</mn></msub></mrow></mrow><annotation encoding="application/x-tex">V_{3}\equiv V_{1}\cdot V_{2}</annotation></semantics></math> e
+<math id="chapter2.Thmtheorem52.p1.m6" class="ltx_Math" alttext="{\mathbb{P}}(V_{4}=i|V_{3}=i)=0.9" display="inline"><semantics><mrow><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>V</mi><mn>4</mn></msub><mo>=</mo><mrow><mi>i</mi><mo fence="false">|</mo><msub><mi>V</mi><mn>3</mn></msub></mrow><mo>=</mo><mi>i</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0.9</mn></mrow><annotation encoding="application/x-tex">{\mathbb{P}}(V_{4}=i|V_{3}=i)=0.9</annotation></semantics></math>, para todo <math id="chapter2.Thmtheorem52.p1.m7" class="ltx_Math" alttext="i" display="inline"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>.</p>
+<ol id="I4" class="ltx_enumerate">
+<li id="I4.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">(a)</span><div id="I4.i1.p1" class="ltx_para">​<p class="ltx_p"><math id="I4.i1.p1.m1" class="ltx_Math" alttext="V_{1}" display="inline"><semantics><msub><mi>V</mi><mn>1</mn></msub><annotation encoding="application/x-tex">V_{1}</annotation></semantics></math> e <math id="I4.i1.p1.m2" class="ltx_Math" alttext="V_{2}" display="inline"><semantics><msub><mi>V</mi><mn>2</mn></msub><annotation encoding="application/x-tex">V_{2}</annotation></semantics></math> são d-separados dado <math id="I4.i1.p1.m3" class="ltx_Math" alttext="V_{3}" display="inline"><semantics><msub><mi>V</mi><mn>3</mn></msub><annotation encoding="application/x-tex">V_{3}</annotation></semantics></math>?</p>
+</div>
+</li>
+<li id="I4.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">(b)</span><div id="I4.i2.p1" class="ltx_para">​<p class="ltx_p"><math id="I4.i2.p1.m1" class="ltx_Math" alttext="V_{1}" display="inline"><semantics><msub><mi>V</mi><mn>1</mn></msub><annotation encoding="application/x-tex">V_{1}</annotation></semantics></math> e <math id="I4.i2.p1.m2" class="ltx_Math" alttext="V_{2}" display="inline"><semantics><msub><mi>V</mi><mn>2</mn></msub><annotation encoding="application/x-tex">V_{2}</annotation></semantics></math> são condicionalmente independentes dado <math id="I4.i2.p1.m3" class="ltx_Math" alttext="V_{3}" display="inline"><semantics><msub><mi>V</mi><mn>3</mn></msub><annotation encoding="application/x-tex">V_{3}</annotation></semantics></math>?</p>
+</div>
+</li>
+<li id="I4.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">(c)</span><div id="I4.i3.p1" class="ltx_para">​<p class="ltx_p"><math id="I4.i3.p1.m1" class="ltx_Math" alttext="V_{1}" display="inline"><semantics><msub><mi>V</mi><mn>1</mn></msub><annotation encoding="application/x-tex">V_{1}</annotation></semantics></math> e <math id="I4.i3.p1.m2" class="ltx_Math" alttext="V_{2}" display="inline"><semantics><msub><mi>V</mi><mn>2</mn></msub><annotation encoding="application/x-tex">V_{2}</annotation></semantics></math> são d-separados dado <math id="I4.i3.p1.m3" class="ltx_Math" alttext="V_{4}" display="inline"><semantics><msub><mi>V</mi><mn>4</mn></msub><annotation encoding="application/x-tex">V_{4}</annotation></semantics></math>?</p>
+</div>
+</li>
+<li id="I4.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">(d)</span><div id="I4.i4.p1" class="ltx_para">​<p class="ltx_p"><math id="I4.i4.p1.m1" class="ltx_Math" alttext="V_{1}" display="inline"><semantics><msub><mi>V</mi><mn>1</mn></msub><annotation encoding="application/x-tex">V_{1}</annotation></semantics></math> e <math id="I4.i4.p1.m2" class="ltx_Math" alttext="V_{2}" display="inline"><semantics><msub><mi>V</mi><mn>2</mn></msub><annotation encoding="application/x-tex">V_{2}</annotation></semantics></math> são condicionalmente independentes dado <math id="I4.i4.p1.m3" class="ltx_Math" alttext="V_{4}" display="inline"><semantics><msub><mi>V</mi><mn>4</mn></msub><annotation encoding="application/x-tex">V_{4}</annotation></semantics></math>?</p>
+</div>
+</li>
+</ol>
+</div>
+<figure id="F6" class="ltx_figure"><div class="bml-overflow-wrapper"><img src="x6.png" id="F6.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="400" height="300" alt="Refer to caption"></div>
+<figcaption class="ltx_caption bml_color_585858"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:91%;">Figura 6</span>: </span><span class="ltx_text" style="font-size:91%;">Exemplo em que V4 é um descendente de um colisor, V3.</span></figcaption>
+</figure>
+</div>
+<div id="chapter2.Thmtheorem53" class="ltx_theorem ltx_theorem_exercise">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Exercício 2.53</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter2.Thmtheorem53.p1" class="ltx_para">
+<p class="ltx_p">Prove que se um caminho,
+<math id="chapter2.Thmtheorem53.p1.m1" class="ltx_Math" alttext="C=(C_{1},\ldots,C_{n})" display="inline"><semantics><mrow><mi>C</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><msub><mi>C</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>C</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">C=(C_{1},\ldots,C_{n})</annotation></semantics></math>, está bloqueado
+dado <math id="chapter2.Thmtheorem53.p1.m2" class="ltx_Math" alttext="{\mathbb{V}}" display="inline"><semantics><mi>𝕍</mi><annotation encoding="application/x-tex">{\mathbb{V}}</annotation></semantics></math>, então sempre que <math id="chapter2.Thmtheorem53.p1.m3" class="ltx_Math" alttext="C" display="inline"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math> é um sub-caminho de <math id="chapter2.Thmtheorem53.p1.m4" class="ltx_Math" alttext="C^{*}" display="inline"><semantics><msup><mi>C</mi><mo>∗</mo></msup><annotation encoding="application/x-tex">C^{*}</annotation></semantics></math>,
+isto é, <math id="chapter2.Thmtheorem53.p1.m5" class="ltx_Math" alttext="C^{*}=(A_{1},\ldots,A_{m},C_{1},\ldots,C_{n},B_{1},\ldots,B_{l})" display="inline"><semantics><mrow><msup><mi>C</mi><mo>∗</mo></msup><mo>=</mo><mrow><mo stretchy="false">(</mo><msub><mi>A</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>A</mi><mi>m</mi></msub><mo>,</mo><msub><mi>C</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>C</mi><mi>n</mi></msub><mo>,</mo><msub><mi>B</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>B</mi><mi>l</mi></msub><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">C^{*}=(A_{1},\ldots,A_{m},C_{1},\ldots,C_{n},B_{1},\ldots,B_{l})</annotation></semantics></math>,
+temos que <math id="chapter2.Thmtheorem53.p1.m6" class="ltx_Math" alttext="C^{*}" display="inline"><semantics><msup><mi>C</mi><mo>∗</mo></msup><annotation encoding="application/x-tex">C^{*}</annotation></semantics></math> está bloqueado dado <math id="chapter2.Thmtheorem53.p1.m7" class="ltx_Math" alttext="{\mathbb{V}}" display="inline"><semantics><mi>𝕍</mi><annotation encoding="application/x-tex">{\mathbb{V}}</annotation></semantics></math>.</p>
+</div>
+</div>
+<div id="chapter2.Thmtheorem54" class="ltx_theorem ltx_theorem_exercise">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Exercício 2.54</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter2.Thmtheorem54.p1" class="ltx_para">
+<p class="ltx_p">Prove que se <math id="chapter2.Thmtheorem54.p1.m1" class="ltx_Math" alttext="{\mathbb{V}}_{1}\perp{\mathbb{V}}_{3}|{\mathbb{V}}_{4}" display="inline"><semantics><mrow><msub><mi>𝕍</mi><mn>1</mn></msub><mo>⟂</mo><mrow><msub><mi>𝕍</mi><mn>3</mn></msub><mo fence="false">|</mo><msub><mi>𝕍</mi><mn>4</mn></msub></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{V}}_{1}\perp{\mathbb{V}}_{3}|{\mathbb{V}}_{4}</annotation></semantics></math> e
+<math id="chapter2.Thmtheorem54.p1.m2" class="ltx_Math" alttext="{\mathbb{V}}_{2}\perp{\mathbb{V}}_{3}|{\mathbb{V}}_{4}" display="inline"><semantics><mrow><msub><mi>𝕍</mi><mn>2</mn></msub><mo>⟂</mo><mrow><msub><mi>𝕍</mi><mn>3</mn></msub><mo fence="false">|</mo><msub><mi>𝕍</mi><mn>4</mn></msub></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{V}}_{2}\perp{\mathbb{V}}_{3}|{\mathbb{V}}_{4}</annotation></semantics></math>, então
+<math id="chapter2.Thmtheorem54.p1.m3" class="ltx_Math" alttext="{\mathbb{V}}_{1}\cup{\mathbb{V}}_{2}\perp{\mathbb{V}}_{3}|{\mathbb{V}}_{4}" display="inline"><semantics><mrow><mrow><msub><mi>𝕍</mi><mn>1</mn></msub><mo>∪</mo><msub><mi>𝕍</mi><mn>2</mn></msub></mrow><mo>⟂</mo><mrow><msub><mi>𝕍</mi><mn>3</mn></msub><mo fence="false">|</mo><msub><mi>𝕍</mi><mn>4</mn></msub></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{V}}_{1}\cup{\mathbb{V}}_{2}\perp{\mathbb{V}}_{3}|{\mathbb{V}}_{4}</annotation></semantics></math>.</p>
+</div>
+</div>
+<div id="chapter2.Thmtheorem55" class="ltx_theorem ltx_theorem_exercise">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Exercício 2.55</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter2.Thmtheorem55.p1" class="ltx_para">
+<p class="ltx_p">Prove que se <math id="chapter2.Thmtheorem55.p1.m1" class="ltx_Math" alttext="{\mathbb{V}}_{1}\perp{\mathbb{V}}_{2}|{\mathbb{V}}_{3}" display="inline"><semantics><mrow><msub><mi>𝕍</mi><mn>1</mn></msub><mo>⟂</mo><mrow><msub><mi>𝕍</mi><mn>2</mn></msub><mo fence="false">|</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{V}}_{1}\perp{\mathbb{V}}_{2}|{\mathbb{V}}_{3}</annotation></semantics></math>, então
+para todo <math id="chapter2.Thmtheorem55.p1.m2" class="ltx_Math" alttext="V\in(Anc({\mathbb{V}}_{3})-{\mathbb{V}}_{3})" display="inline"><semantics><mrow><mi>V</mi><mo>∈</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>c</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>𝕍</mi><mn>3</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">V\in(Anc({\mathbb{V}}_{3})-{\mathbb{V}}_{3})</annotation></semantics></math>,
+<math id="chapter2.Thmtheorem55.p1.m3" class="ltx_Math" alttext="V\perp{\mathbb{V}}_{1}|{\mathbb{V}}_{3}" display="inline"><semantics><mrow><mi>V</mi><mo>⟂</mo><mrow><msub><mi>𝕍</mi><mn>1</mn></msub><mo fence="false">|</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow></mrow><annotation encoding="application/x-tex">V\perp{\mathbb{V}}_{1}|{\mathbb{V}}_{3}</annotation></semantics></math> ou
+<math id="chapter2.Thmtheorem55.p1.m4" class="ltx_Math" alttext="V\perp{\mathbb{V}}_{2}|{\mathbb{V}}_{3}" display="inline"><semantics><mrow><mi>V</mi><mo>⟂</mo><mrow><msub><mi>𝕍</mi><mn>2</mn></msub><mo fence="false">|</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow></mrow><annotation encoding="application/x-tex">V\perp{\mathbb{V}}_{2}|{\mathbb{V}}_{3}</annotation></semantics></math>.</p>
+</div>
+</div>
+<div id="chapter2.Thmtheorem56" class="ltx_theorem ltx_theorem_exercise">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Exercício 2.56</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter2.Thmtheorem56.p1" class="ltx_para">
+<p class="ltx_p">Sejam <math id="chapter2.Thmtheorem56.p1.m1" class="ltx_Math" alttext="{\mathcal{G}}_{1}=({\mathcal{V}},{\mathcal{E}}_{1})" display="inline"><semantics><mrow><msub><mi class="ltx_font_mathcaligraphic">𝒢</mi><mn>1</mn></msub><mo>=</mo><mrow><mo stretchy="false">(</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo>,</mo><msub><mi class="ltx_font_mathcaligraphic">ℰ</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{G}}_{1}=({\mathcal{V}},{\mathcal{E}}_{1})</annotation></semantics></math> e
+<math id="chapter2.Thmtheorem56.p1.m2" class="ltx_Math" alttext="{\mathcal{G}}_{2}=({\mathcal{V}},{\mathcal{E}}_{2})" display="inline"><semantics><mrow><msub><mi class="ltx_font_mathcaligraphic">𝒢</mi><mn>2</mn></msub><mo>=</mo><mrow><mo stretchy="false">(</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo>,</mo><msub><mi class="ltx_font_mathcaligraphic">ℰ</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{G}}_{2}=({\mathcal{V}},{\mathcal{E}}_{2})</annotation></semantics></math> grafos
+tais que <math id="chapter2.Thmtheorem56.p1.m3" class="ltx_Math" alttext="{\mathcal{E}}_{1}\subseteq{\mathcal{E}}_{2}" display="inline"><semantics><mrow><msub><mi class="ltx_font_mathcaligraphic">ℰ</mi><mn>1</mn></msub><mo>⊆</mo><msub><mi class="ltx_font_mathcaligraphic">ℰ</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">{\mathcal{E}}_{1}\subseteq{\mathcal{E}}_{2}</annotation></semantics></math>.
+Prove que se <math id="chapter2.Thmtheorem56.p1.m4" class="ltx_Math" alttext="{\mathbb{V}}_{1}\perp^{d}{\mathbb{V}}_{2}|{\mathbb{V}}_{3}" display="inline"><semantics><mrow><msub><mi>𝕍</mi><mn>1</mn></msub><msup><mo>⟂</mo><mi>d</mi></msup><mrow><msub><mi>𝕍</mi><mn>2</mn></msub><mo fence="false">|</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{V}}_{1}\perp^{d}{\mathbb{V}}_{2}|{\mathbb{V}}_{3}</annotation></semantics></math> em <math id="chapter2.Thmtheorem56.p1.m5" class="ltx_Math" alttext="{\mathcal{G}}_{2}" display="inline"><semantics><msub><mi class="ltx_font_mathcaligraphic">𝒢</mi><mn>2</mn></msub><annotation encoding="application/x-tex">{\mathcal{G}}_{2}</annotation></semantics></math>, então
+<math id="chapter2.Thmtheorem56.p1.m6" class="ltx_Math" alttext="{\mathbb{V}}_{1}\perp^{d}{\mathbb{V}}_{2}|{\mathbb{V}}_{3}" display="inline"><semantics><mrow><msub><mi>𝕍</mi><mn>1</mn></msub><msup><mo>⟂</mo><mi>d</mi></msup><mrow><msub><mi>𝕍</mi><mn>2</mn></msub><mo fence="false">|</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{V}}_{1}\perp^{d}{\mathbb{V}}_{2}|{\mathbb{V}}_{3}</annotation></semantics></math> em <math id="chapter2.Thmtheorem56.p1.m7" class="ltx_Math" alttext="{\mathcal{G}}_{1}" display="inline"><semantics><msub><mi class="ltx_font_mathcaligraphic">𝒢</mi><mn>1</mn></msub><annotation encoding="application/x-tex">{\mathcal{G}}_{1}</annotation></semantics></math>.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</section>
+</div>
+</div>
+</div>
+<a href="S2.html" class="navigation navigation-prev" aria-label="Previous page"><i class="fa fa-angle-left"></i></a><a href="chapter3.html" class="navigation navigation-next" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+</div>
+</div>
+<script src="bookml/gitbook/js/app.min.js"></script>
+<script src="bookml/gitbook/js/jquery.highlight.js"></script>
+<script src="bookml/gitbook/js/plugin-search.js"></script>
+<script src="bookml/gitbook/js/plugin-fontsettings.js"></script>
+<script src="bookml/gitbook/js/plugin-bookdown.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script>
+        MathJax = {
+          startup: {
+            ready() {
+              // do not process equations disabled with \bmlDisableMathJax (code suggested by Davide P. Cervone)
+              class bmlFindMathML extends MathJax._.input.mathml.FindMathML.FindMathML {
+                processMath(set) {
+                  const adaptor = this.adaptor;
+                  for (const node of set.values()) {
+                    if (adaptor.hasClass(node, 'bml_disable_mathjax')) {
+                      set.delete(node);
+                    }
+                  }
+                  return super.processMath(set);
+                }
+              }
+
+              MathJax._.components.global.combineDefaults(MathJax.config, 'mml', {FindMathML: new bmlFindMathML()});
+
+              MathJax.startup.defaultReady();
+
+              // preproces MathML to make MathJax aware of certain LaTeXML and BookML additional info
+              const mmlFilters = MathJax.startup.input[0].mmlFilters;
+
+              // convert the LaTeXML calligraphic (chancery) annotation to a form MathJax understands
+              // since the corresponding Unicode characters render as script (rounded)
+              const script2latin = {
+                '𝒜': 'A', 'ℬ': 'B', '𝒞': 'C', '𝒟': 'D', 'ℰ': 'E', 'ℱ': 'F', '𝒢': 'G',
+                'ℋ': 'H', 'ℐ': 'I', '𝒥': 'J', '𝒦': 'K', 'ℒ': 'L', 'ℳ': 'M', '𝒩': 'N',
+                '𝒪': 'O', '𝒫': 'P', '𝒬': 'Q', 'ℛ': 'R', '𝒮': 'S', '𝒯': 'T', '𝒰': 'U',
+                '𝒱': 'V', '𝒲': 'W', '𝒳': 'X', '𝒴': 'Y', '𝒵': 'Z',
+              };
+
+              mmlFilters.add((args) => {
+                for (const n of args.data.getElementsByClassName('ltx_font_mathcaligraphic')) {
+                  n.classList.add('MJX-tex-calligraphic');
+                  const letter = script2latin[n.textContent];
+                  if (letter !== undefined) { n.textContent = letter; }
+                }
+              });
+
+              // adjust characters based on Unicode variation sequences
+              const replacements = {
+                // MathJax renders the empty set as the U+FE00 variant, so the plain character needs adjusting
+                '∅': { variant: 'variant' },
+                // MathJax renders script characters in rounded style, which is fine for no variation and U+FE00
+                '𝒜\xFE00': { text: 'A', variant: 'tex-calligraphic' },
+                'ℬ\xFE00': { text: 'B', variant: 'tex-calligraphic' },
+                '𝒞\xFE00': { text: 'C', variant: 'tex-calligraphic' },
+                '𝒟\xFE00': { text: 'D', variant: 'tex-calligraphic' },
+                'ℰ\xFE00': { text: 'E', variant: 'tex-calligraphic' },
+                'ℱ\xFE00': { text: 'F', variant: 'tex-calligraphic' },
+                '𝒢\xFE00': { text: 'G', variant: 'tex-calligraphic' },
+                'ℋ\xFE00': { text: 'H', variant: 'tex-calligraphic' },
+                'ℐ\xFE00': { text: 'I', variant: 'tex-calligraphic' },
+                '𝒥\xFE00': { text: 'J', variant: 'tex-calligraphic' },
+                '𝒦\xFE00': { text: 'K', variant: 'tex-calligraphic' },
+                'ℒ\xFE00': { text: 'L', variant: 'tex-calligraphic' },
+                'ℳ\xFE00': { text: 'M', variant: 'tex-calligraphic' },
+                '𝒩\xFE00': { text: 'N', variant: 'tex-calligraphic' },
+                '𝒪\xFE00': { text: 'O', variant: 'tex-calligraphic' },
+                '𝒫\xFE00': { text: 'P', variant: 'tex-calligraphic' },
+                '𝒬\xFE00': { text: 'Q', variant: 'tex-calligraphic' },
+                'ℛ\xFE00': { text: 'R', variant: 'tex-calligraphic' },
+                '𝒮\xFE00': { text: 'S', variant: 'tex-calligraphic' },
+                '𝒯\xFE00': { text: 'T', variant: 'tex-calligraphic' },
+                '𝒰\xFE00': { text: 'U', variant: 'tex-calligraphic' },
+                '𝒱\xFE00': { text: 'V', variant: 'tex-calligraphic' },
+                '𝒲\xFE00': { text: 'W', variant: 'tex-calligraphic' },
+                '𝒳\xFE00': { text: 'X', variant: 'tex-calligraphic' },
+                '𝒴\xFE00': { text: 'Y', variant: 'tex-calligraphic' },
+                '𝒵\xFE00': { text: 'Z', variant: 'tex-calligraphic' }
+              };
+
+              mmlFilters.add((args) => {
+                let nodes = document.evaluate('.//m:mi | .//m:mn | .//m:mo | .//m:ms', args.data,
+                  () => 'http://www.w3.org/1998/Math/MathML', XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE);
+                for (let i = 0; i < nodes.snapshotLength; i++) {
+                  const n = nodes.snapshotItem(i);
+                  const repl = replacements[n.innerHTML];
+                  if (repl !== undefined) {
+                    const variant = repl['variant'];
+                    const text = repl['text'];
+                    if (variant !== undefined) { n.classList.add('MJX-' + variant); n.removeAttribute('mathvariant'); }
+                    if (text !== undefined) { n.innerHTML = text; }
+                  }
+                }
+              });
+            }
+          }
+        };
+      </script>
+<script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-chtml.js"></script>
+<script type="text/javascript">
+                gitbook.require(["gitbook"], function(gitbook) {
+                gitbook.start({
+                  "fontsettings": {
+                    "theme": "white",
+                    "family": "sans",
+                    "size": 2
+                  },
+                  "download": [ [ "book.pdf", "PDF" ], ],
+                  "search": {
+                    "engine": "fuse"
+                  },
+                  "toc": {
+                    "collapse": "none"
+                  }
+                });
+              });
+            </script>
+</body>
+
+</html>

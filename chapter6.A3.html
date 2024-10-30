@@ -1,0 +1,723 @@
+<!DOCTYPE html><html lang="pt">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Apêndice 6.C Seção 3 (3 Independência Condicional e D-separação) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal</title>
+<!--Generated on Tue Aug 27 12:19:15 2024 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on Última revisão: August 27, 2024.-->
+<style>:root { --bml-ltx-font-size: 10.95; }</style>
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/style.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-table.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-search.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-bookdown.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-fontsettings.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="bookml/CSS/style.css" type="text/css">
+<link rel="stylesheet" href="bookml/CSS/style.gitbook,plain.css" type="text/css">
+<link rel="stylesheet" href="bookml/CSS/style.gitbook.css" type="text/css">
+<link rel="stylesheet" href="bmluser/colors.gitbook-book.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6"></script>
+<link rel="up" href="chapter6.html" title="Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="up up" href="index.html" title="Inferência Causal">
+<link rel="start" href="index.html" title="Inferência Causal">
+<link rel="prev" href="chapter6.A2.html" title="Apêndice 6.B Seção 2.5 (2.5 Modelo Causal (Causal Model)) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="next" href="chapter6.A4.html" title="Apêndice 6.D Relativas à Seção 4 (4 O modelo de probabilidade para intervenções) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="appendix" href="chapter6.A1.html" title="Apêndice 6.A Seção 2.4 (2.4 Exemplos de Modelo Probabilístico em um DAG) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="appendix" href="chapter6.A2.html" title="Apêndice 6.B Seção 2.5 (2.5 Modelo Causal (Causal Model)) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="appendix" href="chapter6.A4.html" title="Apêndice 6.D Relativas à Seção 4 (4 O modelo de probabilidade para intervenções) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="appendix" href="chapter6.A5.html" title="Apêndice 6.E Seção 5 (5 Controlando confundidores (critério backdoor)) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="appendix" href="chapter6.A6.html" title="Apêndice 6.F Seções 6 e 7 (6 Controlando mediadores (critério frontdoor)) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="appendix" href="chapter6.A7.html" title="Apêndice 6.G Seção 8 (8 Levando a intuição do SCM ao POM) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="appendix" href="chapter6.A8.html" title="Apêndice 6.H Seção 9 (9 Variáveis Instrumentais) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="appendix" href="chapter6.A9.html" title="Apêndice 6.I Seção 10 (10 Contrafactuais) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="appendix" href="chapter6.A10.html" title="Apêndice 6.J Seção 11 (11 Identificabilidade na Descoberta Causal) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal">
+<link rel="chapter" href="chapter1.html" title="Capítulo 1 Por que estudar Inferência Causal? ‣ Inferência Causal">
+<link rel="chapter" href="chapter2.html" title="Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal">
+<link rel="chapter" href="chapter3.html" title="Capítulo 3 Intervenções ‣ Inferência Causal">
+<link rel="chapter" href="chapter4.html" title="Capítulo 4 Resultados potenciais ‣ Inferência Causal">
+<link rel="chapter" href="chapter5.html" title="Capítulo 5 Descoberta Causal ‣ Inferência Causal">
+<link rel="chapter" href="chapter6.html" title="Capítulo 6 Demonstrações ‣ Inferência Causal">
+</head>
+<body>
+<div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+<a href="#bml-main-content" tabindex="0" class="bml-skip-to-content">Skip to content.</a>
+<div class="book-summary"><nav class="ltx_page_navbar">
+<ul class="ltx_toclist summary">
+<li>
+<a href="index.html" title="" class="ltx_ref" rel="start">Inferência Causal <span class="ltx_text"> </span></a>
+</li>
+<li class="divider">
+<li data-level="1" data-path="chapter1.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter1.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">1 </span></b>Por que estudar Inferência Causal?</a></li>
+<li data-level="2" data-path="chapter2.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter2.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">2 </span></b>Modelo Causal (CM)</a></li>
+<li data-level="3" data-path="chapter3.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter3.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">3 </span></b>Intervenções</a></li>
+<li data-level="4" data-path="chapter4.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter4.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">4 </span></b>Resultados potenciais</a></li>
+<li data-level="5" data-path="chapter5.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter5.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">5 </span></b>Descoberta Causal</a></li>
+<li data-level="6" data-path="chapter6.html" class="ltx_tocentry ltx_tocentry_chapter  chapter ">
+<a href="chapter6.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6 </span></b>Demonstrações</a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li data-level="6.A" data-path="chapter6.A1.html" class="ltx_tocentry ltx_tocentry_appendix  chapter "><a href="chapter6.A1.html" title="In Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6.A </span></b><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">2.4</span> (<b><span class="ltx_tag ltx_tag_text">2.4 </span></b>Exemplos de Modelo Probabilístico em um DAG)</a></li>
+<li data-level="6.B" data-path="chapter6.A2.html" class="ltx_tocentry ltx_tocentry_appendix  chapter "><a href="chapter6.A2.html" title="In Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6.B </span></b><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">2.5</span> (<b><span class="ltx_tag ltx_tag_text">2.5 </span></b>Modelo Causal (Causal Model))</a></li>
+<li data-level="6.C" data-path="" class="ltx_tocentry ltx_tocentry_appendix ltx_ref_self  chapter active">
+<a href="" title="In Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6.C </span></b><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">3</span> (<b><span class="ltx_tag ltx_tag_text">3 </span></b>Independência Condicional e D-separação)</a>
+<ol class="ltx_toclist ltx_toclist_appendix">
+<li data-level="6.C.1" data-path="" class="ltx_tocentry ltx_tocentry_subsection  chapter "><a href="#SS1" title="In Apêndice 6.C Seção 3 (3 Independência Condicional e D-separação) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6.C.1 </span></b>Relativas ao <span class="ltx_text ltx_ref_tag">Lema</span> <span class="ltx_text ltx_ref_tag">2.45</span></a></li>
+<li data-level="6.C.2" data-path="" class="ltx_tocentry ltx_tocentry_subsection  chapter "><a href="#SS2" title="In Apêndice 6.C Seção 3 (3 Independência Condicional e D-separação) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6.C.2 </span></b><span class="ltx_text ltx_ref_tag">Teorema</span> <span class="ltx_text ltx_ref_tag">2.49</span></a></li>
+</ol>
+</li>
+<li data-level="6.D" data-path="chapter6.A4.html" class="ltx_tocentry ltx_tocentry_appendix  chapter "><a href="chapter6.A4.html" title="In Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6.D </span></b>Relativas à <span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">4</span> (<b><span class="ltx_tag ltx_tag_text">4 </span></b>O modelo de probabilidade para intervenções)</a></li>
+<li data-level="6.E" data-path="chapter6.A5.html" class="ltx_tocentry ltx_tocentry_appendix  chapter "><a href="chapter6.A5.html" title="In Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6.E </span></b><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">5</span> (<b><span class="ltx_tag ltx_tag_text">5 </span></b>Controlando confundidores (critério <span class="ltx_text ltx_font_italic">backdoor</span>))</a></li>
+<li data-level="6.F" data-path="chapter6.A6.html" class="ltx_tocentry ltx_tocentry_appendix  chapter "><a href="chapter6.A6.html" title="In Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6.F </span></b><span class="ltx_text ltx_ref_tag">Seções</span> <span class="ltx_text ltx_ref_tag">6</span> e <span class="ltx_text ltx_ref_tag">7</span> (<b><span class="ltx_tag ltx_tag_text">6 </span></b>Controlando mediadores (critério frontdoor))</a></li>
+<li data-level="6.G" data-path="chapter6.A7.html" class="ltx_tocentry ltx_tocentry_appendix  chapter "><a href="chapter6.A7.html" title="In Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6.G </span></b><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">8</span> (<b><span class="ltx_tag ltx_tag_text">8 </span></b>Levando a intuição do SCM ao POM)</a></li>
+<li data-level="6.H" data-path="chapter6.A8.html" class="ltx_tocentry ltx_tocentry_appendix  chapter "><a href="chapter6.A8.html" title="In Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6.H </span></b><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">9</span> (<b><span class="ltx_tag ltx_tag_text">9 </span></b>Variáveis Instrumentais)</a></li>
+<li data-level="6.I" data-path="chapter6.A9.html" class="ltx_tocentry ltx_tocentry_appendix  chapter "><a href="chapter6.A9.html" title="In Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6.I </span></b><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">10</span> (<b><span class="ltx_tag ltx_tag_text">10 </span></b>Contrafactuais)</a></li>
+<li data-level="6.J" data-path="chapter6.A10.html" class="ltx_tocentry ltx_tocentry_appendix  chapter "><a href="chapter6.A10.html" title="In Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6.J </span></b><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">11</span> (<b><span class="ltx_tag ltx_tag_text">11 </span></b>Identificabilidade na Descoberta Causal)</a></li>
+</ol>
+</li>
+</ul>
+</nav></div>
+<div class="ltx_page_main book-body fixed">
+<div class="body-inner">
+<div class="book-header fixed" role="navigation"><h1> (</h1></div>
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="ltx_page_content page-inner" id="bml-main-content">
+<section class="ltx_appendix normal" lang="pt">
+<div class="section level1">
+
+<h1 class="ltx_title ltx_title_appendix">
+<span class="ltx_tag ltx_tag_appendix header-section-number">Apêndice 6.C</span> <a href="S3.html" title="3 Independência Condicional e D-separação ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">3</span></a> (<a href="S3.html" title="In Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref ltx_refmacro_nameref"><span class="ltx_text ltx_ref_title">Independência Condicional e D-separação</span></a>)</h1>
+
+<section id="SS1" class="ltx_subsection normal">
+<div class="section level2">
+
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection header-section-number">6.C.1</span> Relativas ao <a href="S3.html#chapter2.Thmtheorem45" title="Lema 2.45. ‣ 3.1 Independência Condicional ‣ 3 Independência Condicional e D-separação ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Lema</span> <span class="ltx_text ltx_ref_tag">2.45</span></a>
+</h2>
+
+<div class="ltx_proof">
+
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Prova do <a href="S3.html#chapter2.Thmtheorem45" title="Lema 2.45. ‣ 3.1 Independência Condicional ‣ 3 Independência Condicional e D-separação ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Lema</span> <span class="ltx_text ltx_ref_tag">2.45</span></a>.</h6>
+<div id="SS1.p1" class="ltx_para">
+<p class="ltx_p">A prova consistirá em demonstrar que,
+para cada <math id="SS1.p1.m1" class="ltx_Math" alttext="i" display="inline"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>, a afirmação <math id="SS1.p1.m2" class="ltx_Math" alttext="i" display="inline"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math> decorre da afirmação <math id="SS1.p1.m3" class="ltx_Math" alttext="i-1" display="inline"><semantics><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">i-1</annotation></semantics></math>.
+Finalmente, a afirmação <math id="SS1.p1.m4" class="ltx_Math" alttext="1" display="inline"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math> decorre da afirmação <math id="SS1.p1.m5" class="ltx_Math" alttext="4" display="inline"><semantics><mn>4</mn><annotation encoding="application/x-tex">4</annotation></semantics></math>.
+Os símbolos <math id="SS1.p1.m6" class="ltx_Math" alttext="{\mathbf{X}}" display="inline"><semantics><mi>𝐗</mi><annotation encoding="application/x-tex">{\mathbf{X}}</annotation></semantics></math> e <math id="SS1.p1.m7" class="ltx_Math" alttext="{\mathbf{x}}" display="inline"><semantics><mi>𝐱</mi><annotation encoding="application/x-tex">{\mathbf{x}}</annotation></semantics></math> referem-se a
+<math id="SS1.p1.m8" class="ltx_Math" alttext="({\mathbf{X}}_{1},\ldots,{\mathbf{X}}_{d})" display="inline"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>𝐗</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>𝐗</mi><mi>d</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">({\mathbf{X}}_{1},\ldots,{\mathbf{X}}_{d})</annotation></semantics></math> e <math id="SS1.p1.m9" class="ltx_Math" alttext="({\mathbf{x}}_{1},\ldots,{\mathbf{x}}_{d})" display="inline"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>𝐱</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>𝐱</mi><mi>d</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">({\mathbf{x}}_{1},\ldots,{\mathbf{x}}_{d})</annotation></semantics></math>.</p>
+<ul id="I1" class="ltx_itemize">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span><div id="I1.i1.p1" class="ltx_para">​<p class="ltx_p"><math id="I1.i1.p1.m1" class="ltx_Math" alttext="(1\Longrightarrow 2)" display="inline"><semantics><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo stretchy="false">⟹</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(1\Longrightarrow 2)</annotation></semantics></math></p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx83" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex161"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex161.m1" class="ltx_Math" alttext="\displaystyle f({\mathbf{x}}|{\mathbf{y}})" display="inline"><semantics><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>𝐱</mi><mo fence="false">|</mo><mi>𝐲</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle f({\mathbf{x}}|{\mathbf{y}})</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex161.m2" class="ltx_Math" alttext="\displaystyle=\prod_{j=1}^{d}{f({\mathbf{x}}_{j}|{\mathbf{y}})}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∏</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>d</mi></munderover></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>𝐱</mi><mi>j</mi></msub><mo fence="false">|</mo><mi>𝐲</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle=\prod_{j=1}^{d}{f({\mathbf{x}}_{j}|{\mathbf{y}})}</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex161.m3" class="ltx_Math" alttext="\displaystyle(1)" display="inline"><semantics><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\displaystyle(1)</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex162"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex162.m1" class="ltx_Math" alttext="\displaystyle=\prod_{j=1}^{d}{h({\mathbf{x}}_{j},{\mathbf{y}})}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∏</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>d</mi></munderover></mstyle><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>𝐱</mi><mi>j</mi></msub><mo>,</mo><mi>𝐲</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle=\prod_{j=1}^{d}{h({\mathbf{x}}_{j},{\mathbf{y}})}</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex162.m2" class="ltx_Math" alttext="\displaystyle h({\mathbf{x}}_{j},{\mathbf{y}})=f({\mathbf{x}}_{j}|{\mathbf{y}})" display="inline"><semantics><mrow><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>𝐱</mi><mi>j</mi></msub><mo>,</mo><mi>𝐲</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>𝐱</mi><mi>j</mi></msub><mo fence="false">|</mo><mi>𝐲</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle h({\mathbf{x}}_{j},{\mathbf{y}})=f({\mathbf{x}}_{j}|{\mathbf{y}})</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span><div id="I1.i2.p1" class="ltx_para">​<p class="ltx_p"><math id="I1.i2.p1.m1" class="ltx_Math" alttext="(2\Longrightarrow 3)" display="inline"><semantics><mrow><mo stretchy="false">(</mo><mrow><mn>2</mn><mo stretchy="false">⟹</mo><mn>3</mn></mrow><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(2\Longrightarrow 3)</annotation></semantics></math> Note que,</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx84" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex163"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex163.m1" class="ltx_Math" alttext="\displaystyle f({\mathbf{x}}_{i}|{\mathbf{x}}_{-i},{\mathbf{y}})" display="inline"><semantics><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>𝐱</mi><mi>i</mi></msub><mo fence="false">|</mo><mrow><msub><mi>𝐱</mi><mrow><mo>−</mo><mi>i</mi></mrow></msub><mo>,</mo><mi>𝐲</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle f({\mathbf{x}}_{i}|{\mathbf{x}}_{-i},{\mathbf{y}})</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex163.m2" class="ltx_Math" alttext="\displaystyle=\frac{f({\mathbf{x}}|{\mathbf{y}})}{f({\mathbf{x}}_{1},\ldots,{%
+\mathbf{x}}_{i-1},{\mathbf{x}}_{i+1},\ldots{\mathbf{x}}_{d}|{\mathbf{y}})}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>𝐱</mi><mo fence="false">|</mo><mi>𝐲</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>𝐱</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>𝐱</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>𝐱</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><mrow><mrow><mi mathvariant="normal">…</mi><mo>⁢</mo><msub><mi>𝐱</mi><mi>d</mi></msub></mrow><mo fence="false">|</mo><mi>𝐲</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle=\frac{f({\mathbf{x}}|{\mathbf{y}})}{f({\mathbf{x}}_{1},\ldots,{%
+\mathbf{x}}_{i-1},{\mathbf{x}}_{i+1},\ldots{\mathbf{x}}_{d}|{\mathbf{y}})}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright" colspan="2"></td>
+</tr></tbody>
+<tbody id="Ex164"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex164.m1" class="ltx_Math" alttext="\displaystyle=\frac{f({\mathbf{x}}|{\mathbf{y}})}{\int_{\mathbb{R}}{f({\mathbf%
+{x}}|{\mathbf{y}})d{\mathbf{x}}_{i}}}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>𝐱</mi><mo fence="false">|</mo><mi>𝐲</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><msub><mo>∫</mo><mi>ℝ</mi></msub><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>𝐱</mi><mo fence="false">|</mo><mi>𝐲</mi></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><msub><mi>𝐱</mi><mi>i</mi></msub></mrow></mrow></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle=\frac{f({\mathbf{x}}|{\mathbf{y}})}{\int_{\mathbb{R}}{f({\mathbf%
+{x}}|{\mathbf{y}})d{\mathbf{x}}_{i}}}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright" colspan="2"></td>
+</tr></tbody>
+<tbody id="Ex165"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex165.m1" class="ltx_Math" alttext="\displaystyle=\frac{\prod_{j=1}^{d}{h_{j}({\mathbf{x}}_{j},{\mathbf{y}})}}{%
+\int_{\mathbb{R}}{\prod_{j=1}^{d}{h_{j}({\mathbf{x}}_{j},{\mathbf{y}})}d{%
+\mathbf{x}}_{i}}}(2)" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mrow><msubsup><mo>∏</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>d</mi></msubsup><mrow><msub><mi>h</mi><mi>j</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>𝐱</mi><mi>j</mi></msub><mo>,</mo><mi>𝐲</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mrow><msub><mo>∫</mo><mi>ℝ</mi></msub><mrow><msubsup><mo lspace="0.167em">∏</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>d</mi></msubsup><mrow><msub><mi>h</mi><mi>j</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>𝐱</mi><mi>j</mi></msub><mo>,</mo><mi>𝐲</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>d</mi><mo>⁢</mo><msub><mi>𝐱</mi><mi>i</mi></msub></mrow></mrow></mrow></mfrac></mstyle><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle=\frac{\prod_{j=1}^{d}{h_{j}({\mathbf{x}}_{j},{\mathbf{y}})}}{%
+\int_{\mathbb{R}}{\prod_{j=1}^{d}{h_{j}({\mathbf{x}}_{j},{\mathbf{y}})}d{%
+\mathbf{x}}_{i}}}(2)</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright" colspan="2"></td>
+</tr></tbody>
+<tbody id="Ex166"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex166.m1" class="ltx_Math" alttext="\displaystyle=\frac{\prod_{j=1}^{d}{h_{j}({\mathbf{x}}_{j},{\mathbf{y}})}}{%
+\prod_{j\neq i}{h_{j}({\mathbf{x}}_{j},{\mathbf{y}})}\int_{\mathbb{R}}{h_{i}({%
+\mathbf{x}}_{i},{\mathbf{y}})d{\mathbf{x}}_{i}}}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><msubsup><mo>∏</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>d</mi></msubsup><mrow><msub><mi>h</mi><mi>j</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>𝐱</mi><mi>j</mi></msub><mo>,</mo><mi>𝐲</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mrow><msub><mo>∏</mo><mrow><mi>j</mi><mo>≠</mo><mi>i</mi></mrow></msub><mrow><msub><mi>h</mi><mi>j</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>𝐱</mi><mi>j</mi></msub><mo>,</mo><mi>𝐲</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><msub><mo>∫</mo><mi>ℝ</mi></msub><mrow><msub><mi>h</mi><mi>i</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>𝐱</mi><mi>i</mi></msub><mo>,</mo><mi>𝐲</mi><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><msub><mi>𝐱</mi><mi>i</mi></msub></mrow></mrow></mrow></mrow></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle=\frac{\prod_{j=1}^{d}{h_{j}({\mathbf{x}}_{j},{\mathbf{y}})}}{%
+\prod_{j\neq i}{h_{j}({\mathbf{x}}_{j},{\mathbf{y}})}\int_{\mathbb{R}}{h_{i}({%
+\mathbf{x}}_{i},{\mathbf{y}})d{\mathbf{x}}_{i}}}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright" colspan="2"></td>
+</tr></tbody>
+<tbody id="Ex167"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex167.m1" class="ltx_Math" alttext="\displaystyle=\frac{\tilde{h}_{i}({\mathbf{x}}_{i},{\mathbf{y}})}{\int_{%
+\mathbb{R}}{h_{i}({\mathbf{x}}_{i},{\mathbf{y}})d{\mathbf{x}}_{i}}}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><msub><mover accent="true"><mi>h</mi><mo>~</mo></mover><mi>i</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>𝐱</mi><mi>i</mi></msub><mo>,</mo><mi>𝐲</mi><mo stretchy="false">)</mo></mrow></mrow><mrow><msub><mo>∫</mo><mi>ℝ</mi></msub><mrow><msub><mi>h</mi><mi>i</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>𝐱</mi><mi>i</mi></msub><mo>,</mo><mi>𝐲</mi><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><msub><mi>𝐱</mi><mi>i</mi></msub></mrow></mrow></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle=\frac{\tilde{h}_{i}({\mathbf{x}}_{i},{\mathbf{y}})}{\int_{%
+\mathbb{R}}{h_{i}({\mathbf{x}}_{i},{\mathbf{y}})d{\mathbf{x}}_{i}}}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright" colspan="2"></td>
+</tr></tbody>
+<tbody id="Ex168"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex168.m1" class="ltx_Math" alttext="\displaystyle=\frac{\prod_{j\neq i}{\int_{\mathbb{R}}{h_{j}({\mathbf{x}}_{j},{%
+\mathbf{y}})d{\mathbf{x}}_{j}}}}{\prod_{j\neq i}{\int_{\mathbb{R}}{h_{j}({%
+\mathbf{x}}_{j},{\mathbf{y}})d{\mathbf{x}}_{j}}}}\cdot\frac{h_{i}({\mathbf{x}}%
+_{i},{\mathbf{y}})}{\int_{\mathbb{R}}{h_{i}({\mathbf{x}}_{i},{\mathbf{y}})d{%
+\mathbf{x}}_{i}}}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mrow><msub><mo>∏</mo><mrow><mi>j</mi><mo>≠</mo><mi>i</mi></mrow></msub><mrow><msub><mo lspace="0.167em">∫</mo><mi>ℝ</mi></msub><mrow><msub><mi>h</mi><mi>j</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>𝐱</mi><mi>j</mi></msub><mo>,</mo><mi>𝐲</mi><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><msub><mi>𝐱</mi><mi>j</mi></msub></mrow></mrow></mrow></mrow><mrow><msub><mo>∏</mo><mrow><mi>j</mi><mo>≠</mo><mi>i</mi></mrow></msub><mrow><msub><mo lspace="0.167em">∫</mo><mi>ℝ</mi></msub><mrow><msub><mi>h</mi><mi>j</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>𝐱</mi><mi>j</mi></msub><mo>,</mo><mi>𝐲</mi><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><msub><mi>𝐱</mi><mi>j</mi></msub></mrow></mrow></mrow></mrow></mfrac></mstyle><mo lspace="0.222em" rspace="0.222em">⋅</mo><mstyle displaystyle="true"><mfrac><mrow><msub><mi>h</mi><mi>i</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>𝐱</mi><mi>i</mi></msub><mo>,</mo><mi>𝐲</mi><mo stretchy="false">)</mo></mrow></mrow><mrow><msub><mo>∫</mo><mi>ℝ</mi></msub><mrow><msub><mi>h</mi><mi>i</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>𝐱</mi><mi>i</mi></msub><mo>,</mo><mi>𝐲</mi><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><msub><mi>𝐱</mi><mi>i</mi></msub></mrow></mrow></mrow></mfrac></mstyle></mrow></mrow><annotation encoding="application/x-tex">\displaystyle=\frac{\prod_{j\neq i}{\int_{\mathbb{R}}{h_{j}({\mathbf{x}}_{j},{%
+\mathbf{y}})d{\mathbf{x}}_{j}}}}{\prod_{j\neq i}{\int_{\mathbb{R}}{h_{j}({%
+\mathbf{x}}_{j},{\mathbf{y}})d{\mathbf{x}}_{j}}}}\cdot\frac{h_{i}({\mathbf{x}}%
+_{i},{\mathbf{y}})}{\int_{\mathbb{R}}{h_{i}({\mathbf{x}}_{i},{\mathbf{y}})d{%
+\mathbf{x}}_{i}}}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright" colspan="2"></td>
+</tr></tbody>
+<tbody id="Ex169"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex169.m1" class="ltx_Math" alttext="\displaystyle=\frac{\int_{\mathbb{R}^{d-1}}{\prod_{j=1}^{d}{h_{j}({\mathbf{x}}%
+_{j},{\mathbf{y}})}d{\mathbf{x}}_{-i}}}{\int_{\mathbb{R}^{d}}{\prod_{j=1}^{d}{%
+h_{j}({\mathbf{x}}_{j},{\mathbf{y}})}d{\mathbf{x}}}}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><msub><mo>∫</mo><msup><mi>ℝ</mi><mrow><mi>d</mi><mo>−</mo><mn>1</mn></mrow></msup></msub><mrow><msubsup><mo lspace="0.167em">∏</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>d</mi></msubsup><mrow><msub><mi>h</mi><mi>j</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>𝐱</mi><mi>j</mi></msub><mo>,</mo><mi>𝐲</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>d</mi><mo>⁢</mo><msub><mi>𝐱</mi><mrow><mo>−</mo><mi>i</mi></mrow></msub></mrow></mrow></mrow><mrow><msub><mo>∫</mo><msup><mi>ℝ</mi><mi>d</mi></msup></msub><mrow><msubsup><mo lspace="0.167em">∏</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>d</mi></msubsup><mrow><msub><mi>h</mi><mi>j</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>𝐱</mi><mi>j</mi></msub><mo>,</mo><mi>𝐲</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>𝐱</mi></mrow></mrow></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle=\frac{\int_{\mathbb{R}^{d-1}}{\prod_{j=1}^{d}{h_{j}({\mathbf{x}}%
+_{j},{\mathbf{y}})}d{\mathbf{x}}_{-i}}}{\int_{\mathbb{R}^{d}}{\prod_{j=1}^{d}{%
+h_{j}({\mathbf{x}}_{j},{\mathbf{y}})}d{\mathbf{x}}}}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright" colspan="2"></td>
+</tr></tbody>
+<tbody id="Ex170"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex170.m1" class="ltx_Math" alttext="\displaystyle=\frac{\int_{\mathbb{R}^{d-1}}{f({\mathbf{x}}|{\mathbf{y}})d{%
+\mathbf{x}}_{-i}}}{\int_{\mathbb{R}^{d}}{f({\mathbf{x}}|{\mathbf{y}})d{\mathbf%
+{x}}}}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><msub><mo>∫</mo><msup><mi>ℝ</mi><mrow><mi>d</mi><mo>−</mo><mn>1</mn></mrow></msup></msub><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>𝐱</mi><mo fence="false">|</mo><mi>𝐲</mi></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><msub><mi>𝐱</mi><mrow><mo>−</mo><mi>i</mi></mrow></msub></mrow></mrow></mrow><mrow><msub><mo>∫</mo><msup><mi>ℝ</mi><mi>d</mi></msup></msub><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>𝐱</mi><mo fence="false">|</mo><mi>𝐲</mi></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>𝐱</mi></mrow></mrow></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle=\frac{\int_{\mathbb{R}^{d-1}}{f({\mathbf{x}}|{\mathbf{y}})d{%
+\mathbf{x}}_{-i}}}{\int_{\mathbb{R}^{d}}{f({\mathbf{x}}|{\mathbf{y}})d{\mathbf%
+{x}}}}</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex170.m2" class="ltx_Math" alttext="\displaystyle(2)" display="inline"><semantics><mrow><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\displaystyle(2)</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex171"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex171.m1" class="ltx_Math" alttext="\displaystyle=f({\mathbf{x}}_{i}|{\mathbf{y}})" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>𝐱</mi><mi>i</mi></msub><mo fence="false">|</mo><mi>𝐲</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle=f({\mathbf{x}}_{i}|{\mathbf{y}})</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright" colspan="2"></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+</li>
+<li id="I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span><div id="I1.i3.p1" class="ltx_para">​<p class="ltx_p"><math id="I1.i3.p1.m1" class="ltx_Math" alttext="(3\Longrightarrow 4)" display="inline"><semantics><mrow><mo stretchy="false">(</mo><mrow><mn>3</mn><mo stretchy="false">⟹</mo><mn>4</mn></mrow><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(3\Longrightarrow 4)</annotation></semantics></math></p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx85" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex172"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex172.m1" class="ltx_Math" alttext="\displaystyle f({\mathbf{x}}_{i}|{\mathbf{x}}_{1}^{i-1},{\mathbf{y}})" display="inline"><semantics><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>𝐱</mi><mi>i</mi></msub><mo fence="false">|</mo><mrow><msubsup><mi>𝐱</mi><mn>1</mn><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msubsup><mo>,</mo><mi>𝐲</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle f({\mathbf{x}}_{i}|{\mathbf{x}}_{1}^{i-1},{\mathbf{y}})</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex172.m2" class="ltx_Math" alttext="\displaystyle=\frac{f({\mathbf{x}}_{1}^{i}|{\mathbf{y}})}{f({\mathbf{x}}_{1}^{%
+i-1}|{\mathbf{y}})}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msubsup><mi>𝐱</mi><mn>1</mn><mi>i</mi></msubsup><mo fence="false">|</mo><mi>𝐲</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msubsup><mi>𝐱</mi><mn>1</mn><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msubsup><mo fence="false">|</mo><mi>𝐲</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle=\frac{f({\mathbf{x}}_{1}^{i}|{\mathbf{y}})}{f({\mathbf{x}}_{1}^{%
+i-1}|{\mathbf{y}})}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright" colspan="2"></td>
+</tr></tbody>
+<tbody id="Ex173"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex173.m1" class="ltx_Math" alttext="\displaystyle=\frac{\int_{\mathbb{R}^{d-i}}{f({\mathbf{x}}|{\mathbf{y}})}d{%
+\mathbf{x}}_{i+1}^{d}}{f({\mathbf{x}}_{1}^{i-1}|{\mathbf{y}})}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><msub><mo>∫</mo><msup><mi>ℝ</mi><mrow><mi>d</mi><mo>−</mo><mi>i</mi></mrow></msup></msub><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>𝐱</mi><mo fence="false">|</mo><mi>𝐲</mi></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><msubsup><mi>𝐱</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow><mi>d</mi></msubsup></mrow></mrow></mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msubsup><mi>𝐱</mi><mn>1</mn><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msubsup><mo fence="false">|</mo><mi>𝐲</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle=\frac{\int_{\mathbb{R}^{d-i}}{f({\mathbf{x}}|{\mathbf{y}})}d{%
+\mathbf{x}}_{i+1}^{d}}{f({\mathbf{x}}_{1}^{i-1}|{\mathbf{y}})}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright" colspan="2"></td>
+</tr></tbody>
+<tbody id="Ex174"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex174.m1" class="ltx_Math" alttext="\displaystyle=\frac{\int_{\mathbb{R}^{d-i}}{f({\mathbf{x}}_{-i}|{\mathbf{y}})f%
+({\mathbf{x}}_{i}|{\mathbf{x}}_{-i},{\mathbf{y}})d{\mathbf{x}}_{i+1}^{d}}}{f({%
+\mathbf{x}}_{1}^{i-1}|{\mathbf{y}})}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><msub><mo>∫</mo><msup><mi>ℝ</mi><mrow><mi>d</mi><mo>−</mo><mi>i</mi></mrow></msup></msub><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>𝐱</mi><mrow><mo>−</mo><mi>i</mi></mrow></msub><mo fence="false">|</mo><mi>𝐲</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>𝐱</mi><mi>i</mi></msub><mo fence="false">|</mo><mrow><msub><mi>𝐱</mi><mrow><mo>−</mo><mi>i</mi></mrow></msub><mo>,</mo><mi>𝐲</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><msubsup><mi>𝐱</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow><mi>d</mi></msubsup></mrow></mrow></mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msubsup><mi>𝐱</mi><mn>1</mn><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msubsup><mo fence="false">|</mo><mi>𝐲</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle=\frac{\int_{\mathbb{R}^{d-i}}{f({\mathbf{x}}_{-i}|{\mathbf{y}})f%
+({\mathbf{x}}_{i}|{\mathbf{x}}_{-i},{\mathbf{y}})d{\mathbf{x}}_{i+1}^{d}}}{f({%
+\mathbf{x}}_{1}^{i-1}|{\mathbf{y}})}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright" colspan="2"></td>
+</tr></tbody>
+<tbody id="Ex175"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex175.m1" class="ltx_Math" alttext="\displaystyle=\frac{f({\mathbf{x}}_{i}|{\mathbf{y}})\int_{\mathbb{R}^{d-i}}{f(%
+{\mathbf{x}}_{-i}|{\mathbf{y}})d{\mathbf{x}}_{i+1}^{d}}}{f({\mathbf{x}}_{1}^{i%
+-1}|{\mathbf{y}})}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>𝐱</mi><mi>i</mi></msub><mo fence="false">|</mo><mi>𝐲</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><msub><mo>∫</mo><msup><mi>ℝ</mi><mrow><mi>d</mi><mo>−</mo><mi>i</mi></mrow></msup></msub><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>𝐱</mi><mrow><mo>−</mo><mi>i</mi></mrow></msub><mo fence="false">|</mo><mi>𝐲</mi></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><msubsup><mi>𝐱</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow><mi>d</mi></msubsup></mrow></mrow></mrow></mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msubsup><mi>𝐱</mi><mn>1</mn><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msubsup><mo fence="false">|</mo><mi>𝐲</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle=\frac{f({\mathbf{x}}_{i}|{\mathbf{y}})\int_{\mathbb{R}^{d-i}}{f(%
+{\mathbf{x}}_{-i}|{\mathbf{y}})d{\mathbf{x}}_{i+1}^{d}}}{f({\mathbf{x}}_{1}^{i%
+-1}|{\mathbf{y}})}</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex175.m2" class="ltx_Math" alttext="\displaystyle(3)" display="inline"><semantics><mrow><mo stretchy="false">(</mo><mn>3</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\displaystyle(3)</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex176"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex176.m1" class="ltx_Math" alttext="\displaystyle=\frac{f({\mathbf{x}}_{i}|{\mathbf{y}})f({\mathbf{x}}_{1}^{i-1}|{%
+\mathbf{y}})}{f({\mathbf{x}}_{1}^{i-1}|{\mathbf{y}})}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>𝐱</mi><mi>i</mi></msub><mo fence="false">|</mo><mi>𝐲</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msubsup><mi>𝐱</mi><mn>1</mn><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msubsup><mo fence="false">|</mo><mi>𝐲</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msubsup><mi>𝐱</mi><mn>1</mn><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msubsup><mo fence="false">|</mo><mi>𝐲</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle=\frac{f({\mathbf{x}}_{i}|{\mathbf{y}})f({\mathbf{x}}_{1}^{i-1}|{%
+\mathbf{y}})}{f({\mathbf{x}}_{1}^{i-1}|{\mathbf{y}})}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright" colspan="2"></td>
+</tr></tbody>
+<tbody id="Ex177"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex177.m1" class="ltx_Math" alttext="\displaystyle=f({\mathbf{x}}_{i}|{\mathbf{y}})" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>𝐱</mi><mi>i</mi></msub><mo fence="false">|</mo><mi>𝐲</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle=f({\mathbf{x}}_{i}|{\mathbf{y}})</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright" colspan="2"></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+</li>
+<li id="I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span><div id="I1.i4.p1" class="ltx_para">​<p class="ltx_p"><math id="I1.i4.p1.m1" class="ltx_Math" alttext="(4\Longrightarrow 1)" display="inline"><semantics><mrow><mo stretchy="false">(</mo><mrow><mn>4</mn><mo stretchy="false">⟹</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(4\Longrightarrow 1)</annotation></semantics></math></p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx86" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex178"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex178.m1" class="ltx_Math" alttext="\displaystyle f({\mathbf{x}}|{\mathbf{y}})" display="inline"><semantics><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>𝐱</mi><mo fence="false">|</mo><mi>𝐲</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle f({\mathbf{x}}|{\mathbf{y}})</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex178.m2" class="ltx_Math" alttext="\displaystyle=\prod_{i=1}^{d}{f({\mathbf{x}}_{i}|{\mathbf{x}}_{1}^{i-1},{%
+\mathbf{y}})}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∏</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>d</mi></munderover></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>𝐱</mi><mi>i</mi></msub><mo fence="false">|</mo><mrow><msubsup><mi>𝐱</mi><mn>1</mn><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msubsup><mo>,</mo><mi>𝐲</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle=\prod_{i=1}^{d}{f({\mathbf{x}}_{i}|{\mathbf{x}}_{1}^{i-1},{%
+\mathbf{y}})}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright" colspan="2"></td>
+</tr></tbody>
+<tbody id="Ex179"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex179.m1" class="ltx_Math" alttext="\displaystyle=\prod_{i=1}^{d}{f({\mathbf{x}}_{i}|{\mathbf{y}})}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∏</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>d</mi></munderover></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>𝐱</mi><mi>i</mi></msub><mo fence="false">|</mo><mi>𝐲</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle=\prod_{i=1}^{d}{f({\mathbf{x}}_{i}|{\mathbf{y}})}</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex179.m2" class="ltx_Math" alttext="\displaystyle(4)" display="inline"><semantics><mrow><mo stretchy="false">(</mo><mn>4</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\displaystyle(4)</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+</li>
+</ul>
+<p class="ltx_p">∎</p>
+</div>
+</div>
+</div>
+</section>
+<section id="SS2" class="ltx_subsection normal">
+<div class="section level2">
+
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection header-section-number">6.C.2</span> <a href="S3.html#chapter2.Thmtheorem49" title="Teorema 2.49. ‣ 3.2 D-separação ‣ 3 Independência Condicional e D-separação ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Teorema</span> <span class="ltx_text ltx_ref_tag">2.49</span></a>
+</h2>
+
+<div id="chapter6.Thmtheorem1" class="ltx_theorem ltx_theorem_lemma">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Lema 6.1</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter6.Thmtheorem1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Seja <math id="chapter6.Thmtheorem1.p1.m1" class="ltx_Math" alttext="{\mathcal{G}}=({\mathcal{V}},{\mathcal{E}})" display="inline"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo>,</mo><mi class="ltx_font_mathcaligraphic">ℰ</mi><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{G}}=({\mathcal{V}},{\mathcal{E}})</annotation></semantics></math> um DAG.
+Se <math id="chapter6.Thmtheorem1.p1.m2" class="ltx_Math" alttext="{\mathcal{A}}={\mathbb{V}}_{1}\cup{\mathbb{V}}_{2}\cup{\mathbb{V}}_{3}" display="inline"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒜</mi><mo>=</mo><mrow><msub><mi>𝕍</mi><mn>1</mn></msub><mo>∪</mo><msub><mi>𝕍</mi><mn>2</mn></msub><mo>∪</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{A}}={\mathbb{V}}_{1}\cup{\mathbb{V}}_{2}\cup{\mathbb{V}}_{3}</annotation></semantics></math> é ancestral e
+<math id="chapter6.Thmtheorem1.p1.m3" class="ltx_Math" alttext="{\mathbb{V}}_{1}\perp{\mathbb{V}}_{2}|{\mathbb{V}}_{3}" display="inline"><semantics><mrow><msub><mi>𝕍</mi><mn>1</mn></msub><mo>⟂</mo><mrow><msub><mi>𝕍</mi><mn>2</mn></msub><mo fence="false">|</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{V}}_{1}\perp{\mathbb{V}}_{2}|{\mathbb{V}}_{3}</annotation></semantics></math>, então,
+para todo <math id="chapter6.Thmtheorem1.p1.m4" class="ltx_Math" alttext="f" display="inline"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math> compatível com <math id="chapter6.Thmtheorem1.p1.m5" class="ltx_Math" alttext="{\mathcal{G}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒢</mi><annotation encoding="application/x-tex">{\mathcal{G}}</annotation></semantics></math>,
+<math id="chapter6.Thmtheorem1.p1.m6" class="ltx_math_unparsed" alttext="{\mathbb{V}}_{1}\perp\!\!\!\!\perp^{f}{\mathbb{V}}_{2}|{\mathbb{V}}_{3}" display="inline"><semantics><mrow><msub><mi>𝕍</mi><mn>1</mn></msub><mpadded width="0.080em"><mo>⟂</mo></mpadded><msup><mo>⟂</mo><mi>f</mi></msup><msub><mi>𝕍</mi><mn>2</mn></msub><mo fence="false" rspace="0.167em" stretchy="false">|</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">{\mathbb{V}}_{1}\perp\!\!\!\!\perp^{f}{\mathbb{V}}_{2}|{\mathbb{V}}_{3}</annotation></semantics></math>.</span></p>
+</div>
+</div>
+<div class="ltx_proof">
+
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Demonstração.</h6>
+<div id="SS2.p1" class="ltx_para">
+<p class="ltx_p">Defina <math id="SS2.p1.m1" class="ltx_Math" alttext="{\mathbb{V}}^{*}_{1}=\{V\in{\mathcal{A}}:V\in{\mathbb{V}}_{1}\text{ ou }V_{1}%
+\rightarrow V,\text{ para algum }V_{1}\in{\mathbb{V}}_{1}\}" display="inline"><semantics><mrow><msubsup><mi>𝕍</mi><mn>1</mn><mo>∗</mo></msubsup><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mi>V</mi><mo>∈</mo><mi class="ltx_font_mathcaligraphic">𝒜</mi></mrow><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mrow><mi>V</mi><mo>∈</mo><mrow><msub><mi>𝕍</mi><mn>1</mn></msub><mo>⁢</mo><mtext> ou </mtext><mo>⁢</mo><msub><mi>V</mi><mn>1</mn></msub></mrow><mo stretchy="false">→</mo><mi>V</mi></mrow><mo>,</mo><mrow><mrow><mtext> para algum </mtext><mo>⁢</mo><msub><mi>V</mi><mn>1</mn></msub></mrow><mo>∈</mo><msub><mi>𝕍</mi><mn>1</mn></msub></mrow></mrow><mo stretchy="false">}</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{V}}^{*}_{1}=\{V\in{\mathcal{A}}:V\in{\mathbb{V}}_{1}\text{ ou }V_{1}%
+\rightarrow V,\text{ para algum }V_{1}\in{\mathbb{V}}_{1}\}</annotation></semantics></math> e
+<math id="SS2.p1.m2" class="ltx_Math" alttext="{\mathbb{V}}^{*}_{2}={\mathcal{A}}-{\mathbb{V}}^{*}_{1}" display="inline"><semantics><mrow><msubsup><mi>𝕍</mi><mn>2</mn><mo>∗</mo></msubsup><mo>=</mo><mrow><mi class="ltx_font_mathcaligraphic">𝒜</mi><mo>−</mo><msubsup><mi>𝕍</mi><mn>1</mn><mo>∗</mo></msubsup></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{V}}^{*}_{2}={\mathcal{A}}-{\mathbb{V}}^{*}_{1}</annotation></semantics></math>.
+Como <math id="SS2.p1.m3" class="ltx_Math" alttext="{\mathbb{V}}_{1}\perp{\mathbb{V}}_{2}|{\mathbb{V}}_{3}" display="inline"><semantics><mrow><msub><mi>𝕍</mi><mn>1</mn></msub><mo>⟂</mo><mrow><msub><mi>𝕍</mi><mn>2</mn></msub><mo fence="false">|</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{V}}_{1}\perp{\mathbb{V}}_{2}|{\mathbb{V}}_{3}</annotation></semantics></math>, decorre de
+<a href="S3.html#chapter2.Thmtheorem48" title="Definição 2.48. ‣ 3.2 D-separação ‣ 3 Independência Condicional e D-separação ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Definição</span> <span class="ltx_text ltx_ref_tag">2.48</span></a> que não existe
+<math id="SS2.p1.m4" class="ltx_Math" alttext="V_{1}\in{\mathbb{V}}_{1}" display="inline"><semantics><mrow><msub><mi>V</mi><mn>1</mn></msub><mo>∈</mo><msub><mi>𝕍</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">V_{1}\in{\mathbb{V}}_{1}</annotation></semantics></math> e <math id="SS2.p1.m5" class="ltx_Math" alttext="V_{2}\in{\mathbb{V}}_{2}" display="inline"><semantics><mrow><msub><mi>V</mi><mn>2</mn></msub><mo>∈</mo><msub><mi>𝕍</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">V_{2}\in{\mathbb{V}}_{2}</annotation></semantics></math> tal que
+<math id="SS2.p1.m6" class="ltx_Math" alttext="V_{1}\rightarrow V_{2}" display="inline"><semantics><mrow><msub><mi>V</mi><mn>1</mn></msub><mo stretchy="false">→</mo><msub><mi>V</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">V_{1}\rightarrow V_{2}</annotation></semantics></math>. Portanto,</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx87" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="E8"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="E8.m1" class="ltx_Math" alttext="\displaystyle{\mathbb{V}}^{*}_{1}\subseteq{\mathbb{V}}_{1}\cup{\mathbb{V}}_{3}%
+\text{ e }{\mathbb{V}}^{*}_{2}\subseteq{\mathbb{V}}_{2}\cup{\mathbb{V}}_{3}" display="inline"><semantics><mrow><msubsup><mi>𝕍</mi><mn>1</mn><mo>∗</mo></msubsup><mo>⊆</mo><mrow><msub><mi>𝕍</mi><mn>1</mn></msub><mo>∪</mo><mrow><msub><mi>𝕍</mi><mn>3</mn></msub><mo>⁢</mo><mtext> e </mtext><mo>⁢</mo><msubsup><mi>𝕍</mi><mn>2</mn><mo>∗</mo></msubsup></mrow></mrow><mo>⊆</mo><mrow><msub><mi>𝕍</mi><mn>2</mn></msub><mo>∪</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow></mrow><annotation encoding="application/x-tex">\displaystyle{\mathbb{V}}^{*}_{1}\subseteq{\mathbb{V}}_{1}\cup{\mathbb{V}}_{3}%
+\text{ e }{\mathbb{V}}^{*}_{2}\subseteq{\mathbb{V}}_{2}\cup{\mathbb{V}}_{3}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(8)</span></td>
+</tr></tbody>
+</table>
+</div>
+<p class="ltx_p">A seguir, demonstraremos que</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx88" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="E9"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="E9.m1" class="ltx_Math" alttext="\displaystyle\forall i\in\{1,2\}\text{ e }V^{*}_{i}\in{\mathbb{V}}^{*}_{i}:Pa(%
+V^{*}_{i})\subseteq{\mathbb{V}}_{i}\cup{\mathbb{V}}_{3}" display="inline"><semantics><mrow><mrow><mrow><mo rspace="0.167em">∀</mo><mi>i</mi></mrow><mo>∈</mo><mrow><mrow><mo stretchy="false">{</mo><mn>1,2</mn><mo stretchy="false">}</mo></mrow><mo>⁢</mo><mtext> e </mtext><mo>⁢</mo><msubsup><mi>V</mi><mi>i</mi><mo>∗</mo></msubsup></mrow><mo>∈</mo><msubsup><mi>𝕍</mi><mi>i</mi><mo>∗</mo></msubsup></mrow><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mrow><mi>P</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msubsup><mi>V</mi><mi>i</mi><mo>∗</mo></msubsup><mo stretchy="false">)</mo></mrow></mrow><mo>⊆</mo><mrow><msub><mi>𝕍</mi><mi>i</mi></msub><mo>∪</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle\forall i\in\{1,2\}\text{ e }V^{*}_{i}\in{\mathbb{V}}^{*}_{i}:Pa(%
+V^{*}_{i})\subseteq{\mathbb{V}}_{i}\cup{\mathbb{V}}_{3}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(9)</span></td>
+</tr></tbody>
+</table>
+</div>
+<p class="ltx_p">Tome <math id="SS2.p1.m7" class="ltx_Math" alttext="V^{*}_{1}\in{\mathbb{V}}^{*}_{1}" display="inline"><semantics><mrow><msubsup><mi>V</mi><mn>1</mn><mo>∗</mo></msubsup><mo>∈</mo><msubsup><mi>𝕍</mi><mn>1</mn><mo>∗</mo></msubsup></mrow><annotation encoding="application/x-tex">V^{*}_{1}\in{\mathbb{V}}^{*}_{1}</annotation></semantics></math>.
+Como <math id="SS2.p1.m8" class="ltx_Math" alttext="V^{*}_{1}\in{\mathcal{A}}" display="inline"><semantics><mrow><msubsup><mi>V</mi><mn>1</mn><mo>∗</mo></msubsup><mo>∈</mo><mi class="ltx_font_mathcaligraphic">𝒜</mi></mrow><annotation encoding="application/x-tex">V^{*}_{1}\in{\mathcal{A}}</annotation></semantics></math> e <math id="SS2.p1.m9" class="ltx_Math" alttext="{\mathcal{A}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒜</mi><annotation encoding="application/x-tex">{\mathcal{A}}</annotation></semantics></math> é ancestral,
+decorre da <a href="S2.html#chapter2.Thmtheorem9" title="Definição 2.9. ‣ 2.2 Grafo Direcionado Acíclico (DAG) ‣ 2 Elementos de Modelos Probabilísticos em Grafos ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Definição</span> <span class="ltx_text ltx_ref_tag">2.9</span></a> que
+<math id="SS2.p1.m10" class="ltx_Math" alttext="Pa(V^{*}_{1})\subseteq{\mathcal{A}}" display="inline"><semantics><mrow><mrow><mi>P</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msubsup><mi>V</mi><mn>1</mn><mo>∗</mo></msubsup><mo stretchy="false">)</mo></mrow></mrow><mo>⊆</mo><mi class="ltx_font_mathcaligraphic">𝒜</mi></mrow><annotation encoding="application/x-tex">Pa(V^{*}_{1})\subseteq{\mathcal{A}}</annotation></semantics></math>.
+Assim, basta demonstrar que
+<math id="SS2.p1.m11" class="ltx_Math" alttext="Pa(V^{*}_{1})\cap{\mathbb{V}}_{2}=\emptyset" display="inline"><semantics><mrow><mrow><mrow><mi>P</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msubsup><mi>V</mi><mn>1</mn><mo>∗</mo></msubsup><mo stretchy="false">)</mo></mrow></mrow><mo>∩</mo><msub><mi>𝕍</mi><mn>2</mn></msub></mrow><mo>=</mo><mi>∅︀</mi></mrow><annotation encoding="application/x-tex">Pa(V^{*}_{1})\cap{\mathbb{V}}_{2}=\emptyset</annotation></semantics></math>.
+Se <math id="SS2.p1.m12" class="ltx_Math" alttext="V^{*}_{1}\in{\mathbb{V}}_{1}" display="inline"><semantics><mrow><msubsup><mi>V</mi><mn>1</mn><mo>∗</mo></msubsup><mo>∈</mo><msub><mi>𝕍</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">V^{*}_{1}\in{\mathbb{V}}_{1}</annotation></semantics></math>, então decorre de
+<a href="S3.html#chapter2.Thmtheorem48" title="Definição 2.48. ‣ 3.2 D-separação ‣ 3 Independência Condicional e D-separação ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Definição</span> <span class="ltx_text ltx_ref_tag">2.48</span></a> que não existe
+<math id="SS2.p1.m13" class="ltx_Math" alttext="V_{2}\in{\mathbb{V}}_{2}" display="inline"><semantics><mrow><msub><mi>V</mi><mn>2</mn></msub><mo>∈</mo><msub><mi>𝕍</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">V_{2}\in{\mathbb{V}}_{2}</annotation></semantics></math> tal que <math id="SS2.p1.m14" class="ltx_Math" alttext="V_{2}\rightarrow V^{*}_{1}" display="inline"><semantics><mrow><msub><mi>V</mi><mn>2</mn></msub><mo stretchy="false">→</mo><msubsup><mi>V</mi><mn>1</mn><mo>∗</mo></msubsup></mrow><annotation encoding="application/x-tex">V_{2}\rightarrow V^{*}_{1}</annotation></semantics></math>.
+Caso contrário, se <math id="SS2.p1.m15" class="ltx_Math" alttext="V^{*}_{1}\in{\mathbb{V}}_{3}" display="inline"><semantics><mrow><msubsup><mi>V</mi><mn>1</mn><mo>∗</mo></msubsup><mo>∈</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">V^{*}_{1}\in{\mathbb{V}}_{3}</annotation></semantics></math>,
+então existe <math id="SS2.p1.m16" class="ltx_Math" alttext="V_{1}\in{\mathbb{V}}_{1}" display="inline"><semantics><mrow><msub><mi>V</mi><mn>1</mn></msub><mo>∈</mo><msub><mi>𝕍</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">V_{1}\in{\mathbb{V}}_{1}</annotation></semantics></math> tal que
+<math id="SS2.p1.m17" class="ltx_Math" alttext="V_{1}\rightarrow V^{*}_{1}" display="inline"><semantics><mrow><msub><mi>V</mi><mn>1</mn></msub><mo stretchy="false">→</mo><msubsup><mi>V</mi><mn>1</mn><mo>∗</mo></msubsup></mrow><annotation encoding="application/x-tex">V_{1}\rightarrow V^{*}_{1}</annotation></semantics></math>.
+Decorre de <a href="S3.html#chapter2.Thmtheorem48" title="Definição 2.48. ‣ 3.2 D-separação ‣ 3 Independência Condicional e D-separação ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Definição</span> <span class="ltx_text ltx_ref_tag">2.48</span></a> que não existe
+<math id="SS2.p1.m18" class="ltx_Math" alttext="V_{1}\in{\mathbb{V}}_{1}" display="inline"><semantics><mrow><msub><mi>V</mi><mn>1</mn></msub><mo>∈</mo><msub><mi>𝕍</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">V_{1}\in{\mathbb{V}}_{1}</annotation></semantics></math>, <math id="SS2.p1.m19" class="ltx_Math" alttext="V_{2}\in{\mathbb{V}}_{2}" display="inline"><semantics><mrow><msub><mi>V</mi><mn>2</mn></msub><mo>∈</mo><msub><mi>𝕍</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">V_{2}\in{\mathbb{V}}_{2}</annotation></semantics></math> e
+<math id="SS2.p1.m20" class="ltx_Math" alttext="V_{3}\in{\mathbb{V}}_{3}" display="inline"><semantics><mrow><msub><mi>V</mi><mn>3</mn></msub><mo>∈</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">V_{3}\in{\mathbb{V}}_{3}</annotation></semantics></math> tais que <math id="SS2.p1.m21" class="ltx_Math" alttext="V_{3}" display="inline"><semantics><msub><mi>V</mi><mn>3</mn></msub><annotation encoding="application/x-tex">V_{3}</annotation></semantics></math> é
+um colisor entre <math id="SS2.p1.m22" class="ltx_Math" alttext="V_{1}" display="inline"><semantics><msub><mi>V</mi><mn>1</mn></msub><annotation encoding="application/x-tex">V_{1}</annotation></semantics></math> e <math id="SS2.p1.m23" class="ltx_Math" alttext="V_{2}" display="inline"><semantics><msub><mi>V</mi><mn>2</mn></msub><annotation encoding="application/x-tex">V_{2}</annotation></semantics></math>, isto é,
+<math id="SS2.p1.m24" class="ltx_Math" alttext="V_{1}\rightarrow V_{3}\leftarrow V_{2}" display="inline"><semantics><mrow><msub><mi>V</mi><mn>1</mn></msub><mo stretchy="false">→</mo><msub><mi>V</mi><mn>3</mn></msub><mo stretchy="false">←</mo><msub><mi>V</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">V_{1}\rightarrow V_{3}\leftarrow V_{2}</annotation></semantics></math>.
+Portanto, não existe <math id="SS2.p1.m25" class="ltx_Math" alttext="V_{2}\in{\mathbb{V}}_{2}" display="inline"><semantics><mrow><msub><mi>V</mi><mn>2</mn></msub><mo>∈</mo><msub><mi>𝕍</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">V_{2}\in{\mathbb{V}}_{2}</annotation></semantics></math> tal que
+<math id="SS2.p1.m26" class="ltx_Math" alttext="V_{2}\rightarrow V^{*}_{1}" display="inline"><semantics><mrow><msub><mi>V</mi><mn>2</mn></msub><mo stretchy="false">→</mo><msubsup><mi>V</mi><mn>1</mn><mo>∗</mo></msubsup></mrow><annotation encoding="application/x-tex">V_{2}\rightarrow V^{*}_{1}</annotation></semantics></math>.
+Conclua que <math id="SS2.p1.m27" class="ltx_Math" alttext="Pa(V^{*}_{1})\subseteq{\mathbb{V}}_{1}\cup{\mathbb{V}}_{3}" display="inline"><semantics><mrow><mrow><mi>P</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msubsup><mi>V</mi><mn>1</mn><mo>∗</mo></msubsup><mo stretchy="false">)</mo></mrow></mrow><mo>⊆</mo><mrow><msub><mi>𝕍</mi><mn>1</mn></msub><mo>∪</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow></mrow><annotation encoding="application/x-tex">Pa(V^{*}_{1})\subseteq{\mathbb{V}}_{1}\cup{\mathbb{V}}_{3}</annotation></semantics></math>.</p>
+</div>
+<div id="SS2.p2" class="ltx_para">
+<p class="ltx_p">A seguir, note que
+pela definição de <math id="SS2.p2.m1" class="ltx_Math" alttext="{\mathbb{V}}^{*}_{1}" display="inline"><semantics><msubsup><mi>𝕍</mi><mn>1</mn><mo>∗</mo></msubsup><annotation encoding="application/x-tex">{\mathbb{V}}^{*}_{1}</annotation></semantics></math>,
+se <math id="SS2.p2.m2" class="ltx_Math" alttext="V\in{\mathcal{A}}" display="inline"><semantics><mrow><mi>V</mi><mo>∈</mo><mi class="ltx_font_mathcaligraphic">𝒜</mi></mrow><annotation encoding="application/x-tex">V\in{\mathcal{A}}</annotation></semantics></math> é tal que
+existe <math id="SS2.p2.m3" class="ltx_Math" alttext="V_{1}\in{\mathbb{V}}_{1}" display="inline"><semantics><mrow><msub><mi>V</mi><mn>1</mn></msub><mo>∈</mo><msub><mi>𝕍</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">V_{1}\in{\mathbb{V}}_{1}</annotation></semantics></math> com
+<math id="SS2.p2.m4" class="ltx_Math" alttext="V_{1}\rightarrow V" display="inline"><semantics><mrow><msub><mi>V</mi><mn>1</mn></msub><mo stretchy="false">→</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">V_{1}\rightarrow V</annotation></semantics></math>, então
+<math id="SS2.p2.m5" class="ltx_Math" alttext="V\in{\mathbb{V}}^{*}_{1}" display="inline"><semantics><mrow><mi>V</mi><mo>∈</mo><msubsup><mi>𝕍</mi><mn>1</mn><mo>∗</mo></msubsup></mrow><annotation encoding="application/x-tex">V\in{\mathbb{V}}^{*}_{1}</annotation></semantics></math>. Portanto,
+como <math id="SS2.p2.m6" class="ltx_Math" alttext="{\mathbb{V}}^{*}_{2}={\mathcal{V}}-{\mathbb{V}}^{*}_{1}" display="inline"><semantics><mrow><msubsup><mi>𝕍</mi><mn>2</mn><mo>∗</mo></msubsup><mo>=</mo><mrow><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo>−</mo><msubsup><mi>𝕍</mi><mn>1</mn><mo>∗</mo></msubsup></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{V}}^{*}_{2}={\mathcal{V}}-{\mathbb{V}}^{*}_{1}</annotation></semantics></math>,
+para todo <math id="SS2.p2.m7" class="ltx_Math" alttext="V^{*}_{2}\in{\mathbb{V}}^{*}_{2}" display="inline"><semantics><mrow><msubsup><mi>V</mi><mn>2</mn><mo>∗</mo></msubsup><mo>∈</mo><msubsup><mi>𝕍</mi><mn>2</mn><mo>∗</mo></msubsup></mrow><annotation encoding="application/x-tex">V^{*}_{2}\in{\mathbb{V}}^{*}_{2}</annotation></semantics></math>,
+não existe <math id="SS2.p2.m8" class="ltx_Math" alttext="V_{1}\in{\mathbb{V}}_{1}" display="inline"><semantics><mrow><msub><mi>V</mi><mn>1</mn></msub><mo>∈</mo><msub><mi>𝕍</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">V_{1}\in{\mathbb{V}}_{1}</annotation></semantics></math> tal que
+<math id="SS2.p2.m9" class="ltx_Math" alttext="V_{1}\rightarrow V^{*}_{2}" display="inline"><semantics><mrow><msub><mi>V</mi><mn>1</mn></msub><mo stretchy="false">→</mo><msubsup><mi>V</mi><mn>2</mn><mo>∗</mo></msubsup></mrow><annotation encoding="application/x-tex">V_{1}\rightarrow V^{*}_{2}</annotation></semantics></math>.
+Isto é, <math id="SS2.p2.m10" class="ltx_Math" alttext="Pa(V^{*}_{2})\subseteq{\mathcal{V}}-{\mathbb{V}}_{1}" display="inline"><semantics><mrow><mrow><mi>P</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msubsup><mi>V</mi><mn>2</mn><mo>∗</mo></msubsup><mo stretchy="false">)</mo></mrow></mrow><mo>⊆</mo><mrow><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo>−</mo><msub><mi>𝕍</mi><mn>1</mn></msub></mrow></mrow><annotation encoding="application/x-tex">Pa(V^{*}_{2})\subseteq{\mathcal{V}}-{\mathbb{V}}_{1}</annotation></semantics></math>.
+Como <math id="SS2.p2.m11" class="ltx_Math" alttext="V^{*}_{2}\in{\mathcal{A}}" display="inline"><semantics><mrow><msubsup><mi>V</mi><mn>2</mn><mo>∗</mo></msubsup><mo>∈</mo><mi class="ltx_font_mathcaligraphic">𝒜</mi></mrow><annotation encoding="application/x-tex">V^{*}_{2}\in{\mathcal{A}}</annotation></semantics></math> e <math id="SS2.p2.m12" class="ltx_Math" alttext="{\mathcal{A}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒜</mi><annotation encoding="application/x-tex">{\mathcal{A}}</annotation></semantics></math> é ancestral,
+conclua da <a href="S2.html#chapter2.Thmtheorem9" title="Definição 2.9. ‣ 2.2 Grafo Direcionado Acíclico (DAG) ‣ 2 Elementos de Modelos Probabilísticos em Grafos ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Definição</span> <span class="ltx_text ltx_ref_tag">2.9</span></a> que
+<math id="SS2.p2.m13" class="ltx_Math" alttext="Pa(V^{*}_{2})\subseteq{\mathcal{A}}" display="inline"><semantics><mrow><mrow><mi>P</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msubsup><mi>V</mi><mn>2</mn><mo>∗</mo></msubsup><mo stretchy="false">)</mo></mrow></mrow><mo>⊆</mo><mi class="ltx_font_mathcaligraphic">𝒜</mi></mrow><annotation encoding="application/x-tex">Pa(V^{*}_{2})\subseteq{\mathcal{A}}</annotation></semantics></math>.
+Combinando as duas últimas frases,
+<math id="SS2.p2.m14" class="ltx_Math" alttext="Pa(V^{*}_{2})\subseteq{\mathbb{V}}_{2}\cup{\mathbb{V}}_{3}" display="inline"><semantics><mrow><mrow><mi>P</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msubsup><mi>V</mi><mn>2</mn><mo>∗</mo></msubsup><mo stretchy="false">)</mo></mrow></mrow><mo>⊆</mo><mrow><msub><mi>𝕍</mi><mn>2</mn></msub><mo>∪</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow></mrow><annotation encoding="application/x-tex">Pa(V^{*}_{2})\subseteq{\mathbb{V}}_{2}\cup{\mathbb{V}}_{3}</annotation></semantics></math>.</p>
+</div>
+<div id="SS2.p3" class="ltx_para">
+<p class="ltx_p">Decorre da conclusão dos dois últimos parágrafos que
+<a href="#E9" title="In 6.C.2 Teorema 2.49 ‣ Apêndice 6.C Seção 3 (3 Independência Condicional e D-separação) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">likning</span> <span class="ltx_text ltx_ref_tag">9</span></a> está demonstrado.</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx89" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex180"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex180.m1" class="ltx_Math" alttext="\displaystyle f({\mathbb{V}}_{1},{\mathbb{V}}_{2}|{\mathbb{V}}_{3})" display="inline"><semantics><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>𝕍</mi><mn>1</mn></msub><mo>,</mo><mrow><msub><mi>𝕍</mi><mn>2</mn></msub><mo fence="false">|</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle f({\mathbb{V}}_{1},{\mathbb{V}}_{2}|{\mathbb{V}}_{3})</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex180.m2" class="ltx_Math" alttext="\displaystyle=\frac{f({\mathbb{V}}_{1},{\mathbb{V}}_{2},{\mathbb{V}}_{3})}{f({%
+\mathbb{V}}_{3})}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>𝕍</mi><mn>1</mn></msub><mo>,</mo><msub><mi>𝕍</mi><mn>2</mn></msub><mo>,</mo><msub><mi>𝕍</mi><mn>3</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>𝕍</mi><mn>3</mn></msub><mo stretchy="false">)</mo></mrow></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle=\frac{f({\mathbb{V}}_{1},{\mathbb{V}}_{2},{\mathbb{V}}_{3})}{f({%
+\mathbb{V}}_{3})}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright" colspan="2"></td>
+</tr></tbody>
+<tbody id="Ex181"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex181.m1" class="ltx_Math" alttext="\displaystyle=\frac{\prod_{V\in{\mathcal{A}}}f(V|Pa(V))}{f({\mathbb{V}}_{3})}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><msub><mo>∏</mo><mrow><mi>V</mi><mo>∈</mo><mi class="ltx_font_mathcaligraphic">𝒜</mi></mrow></msub><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>V</mi><mo fence="false">|</mo><mrow><mi>P</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>V</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>𝕍</mi><mn>3</mn></msub><mo stretchy="false">)</mo></mrow></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle=\frac{\prod_{V\in{\mathcal{A}}}f(V|Pa(V))}{f({\mathbb{V}}_{3})}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright" colspan="2"></td>
+</tr></tbody>
+<tbody id="Ex182"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex182.m1" class="ltx_Math" alttext="\displaystyle=\frac{\left(\prod_{V^{*}_{1}\in{\mathbb{V}}^{*}_{1}}f(V^{*}_{1}|%
+Pa(V^{*}_{1}))\right)\left(\prod_{V^{*}_{2}\in{\mathbb{V}}^{*}_{2}}f(V^{*}_{2}%
+|Pa(V^{*}_{2}))\right)}{f({\mathbb{V}}_{3})}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mrow><mo>(</mo><mrow><msub><mo lspace="0em">∏</mo><mrow><msubsup><mi>V</mi><mn>1</mn><mo>∗</mo></msubsup><mo>∈</mo><msubsup><mi>𝕍</mi><mn>1</mn><mo>∗</mo></msubsup></mrow></msub><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msubsup><mi>V</mi><mn>1</mn><mo>∗</mo></msubsup><mo fence="false">|</mo><mrow><mi>P</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msubsup><mi>V</mi><mn>1</mn><mo>∗</mo></msubsup><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>)</mo></mrow><mo>⁢</mo><mrow><mo>(</mo><mrow><msub><mo lspace="0em">∏</mo><mrow><msubsup><mi>V</mi><mn>2</mn><mo>∗</mo></msubsup><mo>∈</mo><msubsup><mi>𝕍</mi><mn>2</mn><mo>∗</mo></msubsup></mrow></msub><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msubsup><mi>V</mi><mn>2</mn><mo>∗</mo></msubsup><mo fence="false">|</mo><mrow><mi>P</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msubsup><mi>V</mi><mn>2</mn><mo>∗</mo></msubsup><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>)</mo></mrow></mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>𝕍</mi><mn>3</mn></msub><mo stretchy="false">)</mo></mrow></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle=\frac{\left(\prod_{V^{*}_{1}\in{\mathbb{V}}^{*}_{1}}f(V^{*}_{1}|%
+Pa(V^{*}_{1}))\right)\left(\prod_{V^{*}_{2}\in{\mathbb{V}}^{*}_{2}}f(V^{*}_{2}%
+|Pa(V^{*}_{2}))\right)}{f({\mathbb{V}}_{3})}</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex182.m2" class="ltx_Math" alttext="\displaystyle{\mathbb{V}}^{*}_{1}\text{ e }{\mathbb{V}}^{*}_{2}\text{ %
+particionam }{\mathcal{A}}" display="inline"><semantics><mrow><msubsup><mi>𝕍</mi><mn>1</mn><mo>∗</mo></msubsup><mo>⁢</mo><mtext> e </mtext><mo>⁢</mo><msubsup><mi>𝕍</mi><mn>2</mn><mo>∗</mo></msubsup><mo>⁢</mo><mtext> particionam </mtext><mo>⁢</mo><mi class="ltx_font_mathcaligraphic">𝒜</mi></mrow><annotation encoding="application/x-tex">\displaystyle{\mathbb{V}}^{*}_{1}\text{ e }{\mathbb{V}}^{*}_{2}\text{ %
+particionam }{\mathcal{A}}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex183"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex183.m1" class="ltx_Math" alttext="\displaystyle=h_{1}({\mathbb{V}}_{1},{\mathbb{V}}_{3})h_{2}({\mathbb{V}}_{2},{%
+\mathbb{V}}_{3})" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><msub><mi>h</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>𝕍</mi><mn>1</mn></msub><mo>,</mo><msub><mi>𝕍</mi><mn>3</mn></msub><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>h</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>𝕍</mi><mn>2</mn></msub><mo>,</mo><msub><mi>𝕍</mi><mn>3</mn></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle=h_{1}({\mathbb{V}}_{1},{\mathbb{V}}_{3})h_{2}({\mathbb{V}}_{2},{%
+\mathbb{V}}_{3})</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><span class="ltx_text ltx_markedasmath"><a href="#E8" title="In 6.C.2 Teorema 2.49 ‣ Apêndice 6.C Seção 3 (3 Independência Condicional e D-separação) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">likningene</span> <span class="ltx_text ltx_ref_tag">8</span></a> e <a href="#E9" title="Likning 9 ‣ 6.C.2 Teorema 2.49 ‣ Apêndice 6.C Seção 3 (3 Independência Condicional e D-separação) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">9</span></a></span></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<p class="ltx_p">Assim, decorre do <a href="S3.html#chapter2.Thmtheorem45" title="Lema 2.45. ‣ 3.1 Independência Condicional ‣ 3 Independência Condicional e D-separação ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Lema</span> <span class="ltx_text ltx_ref_tag">2.45</span></a> que
+<math id="SS2.p3.m1" class="ltx_math_unparsed" alttext="{\mathbb{V}}_{1}\perp\!\!\!\!\perp^{f}{\mathbb{V}}_{2}|{\mathbb{V}}_{3}" display="inline"><semantics><mrow><msub><mi>𝕍</mi><mn>1</mn></msub><mpadded width="0.080em"><mo>⟂</mo></mpadded><msup><mo>⟂</mo><mi>f</mi></msup><msub><mi>𝕍</mi><mn>2</mn></msub><mo fence="false" rspace="0.167em" stretchy="false">|</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">{\mathbb{V}}_{1}\perp\!\!\!\!\perp^{f}{\mathbb{V}}_{2}|{\mathbb{V}}_{3}</annotation></semantics></math>.
+∎</p>
+</div>
+</div>
+<div id="chapter6.Thmtheorem2" class="ltx_theorem ltx_theorem_lemma">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Lema 6.2</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter6.Thmtheorem2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Se <math id="chapter6.Thmtheorem2.p1.m1" class="ltx_Math" alttext="f" display="inline"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math> é compatível com <math id="chapter6.Thmtheorem2.p1.m2" class="ltx_Math" alttext="{\mathcal{G}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒢</mi><annotation encoding="application/x-tex">{\mathcal{G}}</annotation></semantics></math> e
+<math id="chapter6.Thmtheorem2.p1.m3" class="ltx_Math" alttext="{\mathbb{V}}_{1}\perp{\mathbb{V}}_{2}|{\mathbb{V}}_{3}" display="inline"><semantics><mrow><msub><mi>𝕍</mi><mn>1</mn></msub><mo>⟂</mo><mrow><msub><mi>𝕍</mi><mn>2</mn></msub><mo fence="false">|</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{V}}_{1}\perp{\mathbb{V}}_{2}|{\mathbb{V}}_{3}</annotation></semantics></math>, então
+<math id="chapter6.Thmtheorem2.p1.m4" class="ltx_math_unparsed" alttext="{\mathbb{V}}_{1}\perp\!\!\!\!\perp^{f}{\mathbb{V}}_{2}|{\mathbb{V}}_{3}" display="inline"><semantics><mrow><msub><mi>𝕍</mi><mn>1</mn></msub><mpadded width="0.080em"><mo>⟂</mo></mpadded><msup><mo>⟂</mo><mi>f</mi></msup><msub><mi>𝕍</mi><mn>2</mn></msub><mo fence="false" rspace="0.167em" stretchy="false">|</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">{\mathbb{V}}_{1}\perp\!\!\!\!\perp^{f}{\mathbb{V}}_{2}|{\mathbb{V}}_{3}</annotation></semantics></math>.</span></p>
+</div>
+</div>
+<div class="ltx_proof">
+
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Demonstração.</h6>
+<div id="SS2.p4" class="ltx_para">
+<p class="ltx_p">Defina <math id="SS2.p4.m1" class="ltx_Math" alttext="{\mathcal{A}}=Anc({\mathbb{V}}_{1}\cup{\mathbb{V}}_{2}\cup{\mathbb{V}}_{3})" display="inline"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒜</mi><mo>=</mo><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>c</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>𝕍</mi><mn>1</mn></msub><mo>∪</mo><msub><mi>𝕍</mi><mn>2</mn></msub><mo>∪</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{A}}=Anc({\mathbb{V}}_{1}\cup{\mathbb{V}}_{2}\cup{\mathbb{V}}_{3})</annotation></semantics></math>,
+<math id="SS2.p4.m2" class="ltx_Math" alttext="{\mathbb{V}}^{*}_{1}=\{V\in{\mathcal{A}}:V\text{ não é d-separado de }{\mathbb%
+{V}}_{1}|{\mathbb{V}}_{3}\}" display="inline"><semantics><mrow><msubsup><mi>𝕍</mi><mn>1</mn><mo>∗</mo></msubsup><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mi>V</mi><mo>∈</mo><mi class="ltx_font_mathcaligraphic">𝒜</mi></mrow><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mrow><mi>V</mi><mo>⁢</mo><mtext> não é d-separado de </mtext><mo>⁢</mo><msub><mi>𝕍</mi><mn>1</mn></msub></mrow><mo fence="false">|</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow><mo stretchy="false">}</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{V}}^{*}_{1}=\{V\in{\mathcal{A}}:V\text{ não é d-separado de }{\mathbb%
+{V}}_{1}|{\mathbb{V}}_{3}\}</annotation></semantics></math>, e <math id="SS2.p4.m3" class="ltx_Math" alttext="{\mathbb{V}}^{*}_{2}={\mathcal{A}}-{\mathbb{V}}^{*}_{1}" display="inline"><semantics><mrow><msubsup><mi>𝕍</mi><mn>2</mn><mo>∗</mo></msubsup><mo>=</mo><mrow><mi class="ltx_font_mathcaligraphic">𝒜</mi><mo>−</mo><msubsup><mi>𝕍</mi><mn>1</mn><mo>∗</mo></msubsup></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{V}}^{*}_{2}={\mathcal{A}}-{\mathbb{V}}^{*}_{1}</annotation></semantics></math>.
+Por definição,</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx90" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="E10"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="E10.m1" class="ltx_Math" alttext="\displaystyle{\mathbb{V}}_{1}\subseteq{\mathbb{V}}^{*}_{1}\text{ e }{\mathbb{V%
+}}_{2}\subseteq{\mathbb{V}}^{*}_{2}" display="inline"><semantics><mrow><msub><mi>𝕍</mi><mn>1</mn></msub><mo>⊆</mo><mrow><msubsup><mi>𝕍</mi><mn>1</mn><mo>∗</mo></msubsup><mo>⁢</mo><mtext> e </mtext><mo>⁢</mo><msub><mi>𝕍</mi><mn>2</mn></msub></mrow><mo>⊆</mo><msubsup><mi>𝕍</mi><mn>2</mn><mo>∗</mo></msubsup></mrow><annotation encoding="application/x-tex">\displaystyle{\mathbb{V}}_{1}\subseteq{\mathbb{V}}^{*}_{1}\text{ e }{\mathbb{V%
+}}_{2}\subseteq{\mathbb{V}}^{*}_{2}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(10)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div id="SS2.p5" class="ltx_para">
+<p class="ltx_p">O primeiro é provar que
+<math id="SS2.p5.m1" class="ltx_Math" alttext="{\mathbb{V}}^{*}_{1}\perp{\mathbb{V}}^{*}_{2}|{\mathbb{V}}_{3}" display="inline"><semantics><mrow><msubsup><mi>𝕍</mi><mn>1</mn><mo>∗</mo></msubsup><mo>⟂</mo><mrow><msubsup><mi>𝕍</mi><mn>2</mn><mo>∗</mo></msubsup><mo fence="false">|</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{V}}^{*}_{1}\perp{\mathbb{V}}^{*}_{2}|{\mathbb{V}}_{3}</annotation></semantics></math>.
+Pela definição de <math id="SS2.p5.m2" class="ltx_Math" alttext="{\mathbb{V}}^{*}_{2}" display="inline"><semantics><msubsup><mi>𝕍</mi><mn>2</mn><mo>∗</mo></msubsup><annotation encoding="application/x-tex">{\mathbb{V}}^{*}_{2}</annotation></semantics></math>,
+para todo <math id="SS2.p5.m3" class="ltx_Math" alttext="V_{1}\in{\mathbb{V}}_{1}" display="inline"><semantics><mrow><msub><mi>V</mi><mn>1</mn></msub><mo>∈</mo><msub><mi>𝕍</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">V_{1}\in{\mathbb{V}}_{1}</annotation></semantics></math> e <math id="SS2.p5.m4" class="ltx_Math" alttext="V^{*}_{2}\in{\mathbb{V}}^{*}_{2}" display="inline"><semantics><mrow><msubsup><mi>V</mi><mn>2</mn><mo>∗</mo></msubsup><mo>∈</mo><msubsup><mi>𝕍</mi><mn>2</mn><mo>∗</mo></msubsup></mrow><annotation encoding="application/x-tex">V^{*}_{2}\in{\mathbb{V}}^{*}_{2}</annotation></semantics></math>,
+<math id="SS2.p5.m5" class="ltx_Math" alttext="V_{1}\perp V^{*}_{2}|{\mathbb{V}}_{3}" display="inline"><semantics><mrow><msub><mi>V</mi><mn>1</mn></msub><mo>⟂</mo><mrow><msubsup><mi>V</mi><mn>2</mn><mo>∗</mo></msubsup><mo fence="false">|</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow></mrow><annotation encoding="application/x-tex">V_{1}\perp V^{*}_{2}|{\mathbb{V}}_{3}</annotation></semantics></math>, isto é,</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx91" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="E11"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="E11.m1" class="ltx_Math" alttext="\displaystyle{\mathbb{V}}_{1}\perp{\mathbb{V}}^{*}_{2}|{\mathbb{V}}_{3}" display="inline"><semantics><mrow><msub><mi>𝕍</mi><mn>1</mn></msub><mo>⟂</mo><mrow><msubsup><mi>𝕍</mi><mn>2</mn><mo>∗</mo></msubsup><mo fence="false">|</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow></mrow><annotation encoding="application/x-tex">\displaystyle{\mathbb{V}}_{1}\perp{\mathbb{V}}^{*}_{2}|{\mathbb{V}}_{3}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(11)</span></td>
+</tr></tbody>
+</table>
+</div>
+<p class="ltx_p">Suponha por absurdo que existam
+<math id="SS2.p5.m6" class="ltx_Math" alttext="V^{*}_{1}\in{\mathbb{V}}^{*}_{1}" display="inline"><semantics><mrow><msubsup><mi>V</mi><mn>1</mn><mo>∗</mo></msubsup><mo>∈</mo><msubsup><mi>𝕍</mi><mn>1</mn><mo>∗</mo></msubsup></mrow><annotation encoding="application/x-tex">V^{*}_{1}\in{\mathbb{V}}^{*}_{1}</annotation></semantics></math> e <math id="SS2.p5.m7" class="ltx_Math" alttext="V^{*}_{2}\in{\mathbb{V}}^{*}_{2}" display="inline"><semantics><mrow><msubsup><mi>V</mi><mn>2</mn><mo>∗</mo></msubsup><mo>∈</mo><msubsup><mi>𝕍</mi><mn>2</mn><mo>∗</mo></msubsup></mrow><annotation encoding="application/x-tex">V^{*}_{2}\in{\mathbb{V}}^{*}_{2}</annotation></semantics></math>
+tais que <math id="SS2.p5.m8" class="ltx_Math" alttext="V^{*}_{1}" display="inline"><semantics><msubsup><mi>V</mi><mn>1</mn><mo>∗</mo></msubsup><annotation encoding="application/x-tex">V^{*}_{1}</annotation></semantics></math> e <math id="SS2.p5.m9" class="ltx_Math" alttext="V^{*}_{2}" display="inline"><semantics><msubsup><mi>V</mi><mn>2</mn><mo>∗</mo></msubsup><annotation encoding="application/x-tex">V^{*}_{2}</annotation></semantics></math>
+não são d-separados dado <math id="SS2.p5.m10" class="ltx_Math" alttext="{\mathbb{V}}_{3}" display="inline"><semantics><msub><mi>𝕍</mi><mn>3</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{3}</annotation></semantics></math>.
+Portanto, existe um caminho ativo dado <math id="SS2.p5.m11" class="ltx_Math" alttext="{\mathbb{V}}_{3}" display="inline"><semantics><msub><mi>𝕍</mi><mn>3</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{3}</annotation></semantics></math>,
+<math id="SS2.p5.m12" class="ltx_Math" alttext="(V^{*}_{1},C_{2},\ldots,C_{n-1},V^{*}_{2})" display="inline"><semantics><mrow><mo stretchy="false">(</mo><msubsup><mi>V</mi><mn>1</mn><mo>∗</mo></msubsup><mo>,</mo><msub><mi>C</mi><mn>2</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>C</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>,</mo><msubsup><mi>V</mi><mn>2</mn><mo>∗</mo></msubsup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(V^{*}_{1},C_{2},\ldots,C_{n-1},V^{*}_{2})</annotation></semantics></math>.
+Pela definição de <math id="SS2.p5.m13" class="ltx_Math" alttext="{\mathbb{V}}^{*}_{1}" display="inline"><semantics><msubsup><mi>𝕍</mi><mn>1</mn><mo>∗</mo></msubsup><annotation encoding="application/x-tex">{\mathbb{V}}^{*}_{1}</annotation></semantics></math>, existe
+<math id="SS2.p5.m14" class="ltx_Math" alttext="V_{1}\in{\mathbb{V}}_{1}" display="inline"><semantics><mrow><msub><mi>V</mi><mn>1</mn></msub><mo>∈</mo><msub><mi>𝕍</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">V_{1}\in{\mathbb{V}}_{1}</annotation></semantics></math> e um caminho ativo dado <math id="SS2.p5.m15" class="ltx_Math" alttext="{\mathbb{V}}_{3}" display="inline"><semantics><msub><mi>𝕍</mi><mn>3</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{3}</annotation></semantics></math>,
+<math id="SS2.p5.m16" class="ltx_Math" alttext="(V_{1},C^{*}_{2},\ldots,C^{*}_{m-1},V^{*}_{1})" display="inline"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>V</mi><mn>1</mn></msub><mo>,</mo><msubsup><mi>C</mi><mn>2</mn><mo>∗</mo></msubsup><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msubsup><mi>C</mi><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow><mo>∗</mo></msubsup><mo>,</mo><msubsup><mi>V</mi><mn>1</mn><mo>∗</mo></msubsup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(V_{1},C^{*}_{2},\ldots,C^{*}_{m-1},V^{*}_{1})</annotation></semantics></math>. Assim,
+<math id="SS2.p5.m17" class="ltx_Math" alttext="(V_{1},C^{*}_{2},\ldots,C^{*}_{m-1},V^{*}_{1},C_{2},\ldots,C_{n-1},V^{*}_{2})" display="inline"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>V</mi><mn>1</mn></msub><mo>,</mo><msubsup><mi>C</mi><mn>2</mn><mo>∗</mo></msubsup><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msubsup><mi>C</mi><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow><mo>∗</mo></msubsup><mo>,</mo><msubsup><mi>V</mi><mn>1</mn><mo>∗</mo></msubsup><mo>,</mo><msub><mi>C</mi><mn>2</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>C</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>,</mo><msubsup><mi>V</mi><mn>2</mn><mo>∗</mo></msubsup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(V_{1},C^{*}_{2},\ldots,C^{*}_{m-1},V^{*}_{1},C_{2},\ldots,C_{n-1},V^{*}_{2})</annotation></semantics></math> é
+é um caminho ativo dado <math id="SS2.p5.m18" class="ltx_Math" alttext="{\mathbb{V}}_{3}" display="inline"><semantics><msub><mi>𝕍</mi><mn>3</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{3}</annotation></semantics></math> de
+<math id="SS2.p5.m19" class="ltx_Math" alttext="V_{1}" display="inline"><semantics><msub><mi>V</mi><mn>1</mn></msub><annotation encoding="application/x-tex">V_{1}</annotation></semantics></math> a <math id="SS2.p5.m20" class="ltx_Math" alttext="V^{*}_{2}" display="inline"><semantics><msubsup><mi>V</mi><mn>2</mn><mo>∗</mo></msubsup><annotation encoding="application/x-tex">V^{*}_{2}</annotation></semantics></math>, uma contradição com
+<a href="#E11" title="In 6.C.2 Teorema 2.49 ‣ Apêndice 6.C Seção 3 (3 Independência Condicional e D-separação) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">likning</span> <span class="ltx_text ltx_ref_tag">11</span></a>. Conclua que
+<math id="SS2.p5.m21" class="ltx_Math" alttext="{\mathbb{V}}^{*}_{1}\perp{\mathbb{V}}^{*}_{2}|{\mathbb{V}}_{3}" display="inline"><semantics><mrow><msubsup><mi>𝕍</mi><mn>1</mn><mo>∗</mo></msubsup><mo>⟂</mo><mrow><msubsup><mi>𝕍</mi><mn>2</mn><mo>∗</mo></msubsup><mo fence="false">|</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{V}}^{*}_{1}\perp{\mathbb{V}}^{*}_{2}|{\mathbb{V}}_{3}</annotation></semantics></math>.</p>
+</div>
+<div id="SS2.p6" class="ltx_para">
+<p class="ltx_p">A seguir, provaremos que
+<math id="SS2.p6.m1" class="ltx_math_unparsed" alttext="{\mathbb{V}}^{*}_{1}\perp\!\!\!\!\perp^{f}{\mathbb{V}}^{*}_{2}|{\mathbb{V}}_{3}" display="inline"><semantics><mrow><msubsup><mi>𝕍</mi><mn>1</mn><mo>∗</mo></msubsup><mpadded width="0.080em"><mo>⟂</mo></mpadded><msup><mo>⟂</mo><mi>f</mi></msup><msubsup><mi>𝕍</mi><mn>2</mn><mo>∗</mo></msubsup><mo fence="false" rspace="0.167em" stretchy="false">|</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">{\mathbb{V}}^{*}_{1}\perp\!\!\!\!\perp^{f}{\mathbb{V}}^{*}_{2}|{\mathbb{V}}_{3}</annotation></semantics></math>.
+Como <math id="SS2.p6.m2" class="ltx_Math" alttext="{\mathcal{A}}=Anc({\mathbb{V}}_{1}\cup{\mathbb{V}}_{2}\cup{\mathbb{V}}_{3})" display="inline"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒜</mi><mo>=</mo><mrow><mi>A</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>c</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>𝕍</mi><mn>1</mn></msub><mo>∪</mo><msub><mi>𝕍</mi><mn>2</mn></msub><mo>∪</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{A}}=Anc({\mathbb{V}}_{1}\cup{\mathbb{V}}_{2}\cup{\mathbb{V}}_{3})</annotation></semantics></math>,
+decorre do <a href="S2.html#chapter2.Thmtheorem10" title="Lema 2.10. ‣ 2.2 Grafo Direcionado Acíclico (DAG) ‣ 2 Elementos de Modelos Probabilísticos em Grafos ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Lema</span> <span class="ltx_text ltx_ref_tag">2.10</span></a> que
+<math id="SS2.p6.m3" class="ltx_Math" alttext="{\mathcal{A}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒜</mi><annotation encoding="application/x-tex">{\mathcal{A}}</annotation></semantics></math> é ancestral. Portanto, como
+<math id="SS2.p6.m4" class="ltx_Math" alttext="{\mathcal{A}}={\mathbb{V}}^{*}_{1}\cup{\mathbb{V}}^{*}_{2}\cup{\mathbb{V}}_{3}" display="inline"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒜</mi><mo>=</mo><mrow><msubsup><mi>𝕍</mi><mn>1</mn><mo>∗</mo></msubsup><mo>∪</mo><msubsup><mi>𝕍</mi><mn>2</mn><mo>∗</mo></msubsup><mo>∪</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{A}}={\mathbb{V}}^{*}_{1}\cup{\mathbb{V}}^{*}_{2}\cup{\mathbb{V}}_{3}</annotation></semantics></math> e
+<math id="SS2.p6.m5" class="ltx_Math" alttext="{\mathbb{V}}^{*}_{1}\perp{\mathbb{V}}^{*}_{2}|{\mathbb{V}}_{3}" display="inline"><semantics><mrow><msubsup><mi>𝕍</mi><mn>1</mn><mo>∗</mo></msubsup><mo>⟂</mo><mrow><msubsup><mi>𝕍</mi><mn>2</mn><mo>∗</mo></msubsup><mo fence="false">|</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{V}}^{*}_{1}\perp{\mathbb{V}}^{*}_{2}|{\mathbb{V}}_{3}</annotation></semantics></math>, decorre do
+<a href="#chapter6.Thmtheorem1" title="Lema 6.1. ‣ 6.C.2 Teorema 2.49 ‣ Apêndice 6.C Seção 3 (3 Independência Condicional e D-separação) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Lema</span> <span class="ltx_text ltx_ref_tag">6.1</span></a> que
+<math id="SS2.p6.m6" class="ltx_math_unparsed" alttext="{\mathbb{V}}^{*}_{1}\perp\!\!\!\!\perp^{f}{\mathbb{V}}^{*}_{2}|{\mathbb{V}}_{3}" display="inline"><semantics><mrow><msubsup><mi>𝕍</mi><mn>1</mn><mo>∗</mo></msubsup><mpadded width="0.080em"><mo>⟂</mo></mpadded><msup><mo>⟂</mo><mi>f</mi></msup><msubsup><mi>𝕍</mi><mn>2</mn><mo>∗</mo></msubsup><mo fence="false" rspace="0.167em" stretchy="false">|</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">{\mathbb{V}}^{*}_{1}\perp\!\!\!\!\perp^{f}{\mathbb{V}}^{*}_{2}|{\mathbb{V}}_{3}</annotation></semantics></math>.</p>
+</div>
+<div id="SS2.p7" class="ltx_para">
+<p class="ltx_p">Como <math id="SS2.p7.m1" class="ltx_math_unparsed" alttext="{\mathbb{V}}^{*}_{1}\perp\!\!\!\!\perp^{f}{\mathbb{V}}^{*}_{2}|{\mathbb{V}}_{3}" display="inline"><semantics><mrow><msubsup><mi>𝕍</mi><mn>1</mn><mo>∗</mo></msubsup><mpadded width="0.080em"><mo>⟂</mo></mpadded><msup><mo>⟂</mo><mi>f</mi></msup><msubsup><mi>𝕍</mi><mn>2</mn><mo>∗</mo></msubsup><mo fence="false" rspace="0.167em" stretchy="false">|</mo><msub><mi>𝕍</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">{\mathbb{V}}^{*}_{1}\perp\!\!\!\!\perp^{f}{\mathbb{V}}^{*}_{2}|{\mathbb{V}}_{3}</annotation></semantics></math>,
+a conclusão do lema decorre do fato de que
+<math id="SS2.p7.m2" class="ltx_Math" alttext="{\mathbb{V}}_{1}\subseteq{\mathbb{V}}^{*}_{1}" display="inline"><semantics><mrow><msub><mi>𝕍</mi><mn>1</mn></msub><mo>⊆</mo><msubsup><mi>𝕍</mi><mn>1</mn><mo>∗</mo></msubsup></mrow><annotation encoding="application/x-tex">{\mathbb{V}}_{1}\subseteq{\mathbb{V}}^{*}_{1}</annotation></semantics></math> e
+<math id="SS2.p7.m3" class="ltx_Math" alttext="{\mathbb{V}}_{2}\subseteq{\mathbb{V}}^{*}_{2}" display="inline"><semantics><mrow><msub><mi>𝕍</mi><mn>2</mn></msub><mo>⊆</mo><msubsup><mi>𝕍</mi><mn>2</mn><mo>∗</mo></msubsup></mrow><annotation encoding="application/x-tex">{\mathbb{V}}_{2}\subseteq{\mathbb{V}}^{*}_{2}</annotation></semantics></math>.
+∎</p>
+</div>
+</div>
+<div id="chapter6.Thmtheorem3" class="ltx_theorem ltx_theorem_theorem">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Teorema 6.3</span></span><span class="ltx_text ltx_font_bold"> </span>(<cite class="ltx_cite ltx_citemacro_citet"><span class="ltx_ref ltx_missing_citation ltx_ref_self">Spirtes2000</span></cite>[p.66)<span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter6.Thmtheorem3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">]
+
+Considere que <math id="chapter6.Thmtheorem3.p1.m1" class="ltx_Math" alttext="({\mathcal{G}},f_{\beta})" display="inline"><semantics><mrow><mo stretchy="false">(</mo><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>,</mo><msub><mi>f</mi><mi>β</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">({\mathcal{G}},f_{\beta})</annotation></semantics></math> é um CM linear Gaussiano (<a href="S2.html#chapter2.Thmtheorem25" title="Definição 2.25. ‣ 2.5 Modelo Causal (Causal Model) ‣ 2 Elementos de Modelos Probabilísticos em Grafos ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Definição</span> <span class="ltx_text ltx_ref_tag">2.25</span></a>)
+de parâmetros <math id="chapter6.Thmtheorem3.p1.m2" class="ltx_Math" alttext="\sigma^{2}=1" display="inline"><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\sigma^{2}=1</annotation></semantics></math>, <math id="chapter6.Thmtheorem3.p1.m3" class="ltx_Math" alttext="\beta" display="inline"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math> e <math id="chapter6.Thmtheorem3.p1.m4" class="ltx_Math" alttext="\mu=0" display="inline"><semantics><mrow><mi>μ</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\mu=0</annotation></semantics></math>.
+Para qualquer distribuição contínua sobre <math id="chapter6.Thmtheorem3.p1.m5" class="ltx_Math" alttext="\beta" display="inline"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math>,
+tem probabilidade <math id="chapter6.Thmtheorem3.p1.m6" class="ltx_Math" alttext="0" display="inline"><mn>0</mn></math> a ocorrência de valores de <math id="chapter6.Thmtheorem3.p1.m7" class="ltx_Math" alttext="\beta" display="inline"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math> tais que
+existam <math id="chapter6.Thmtheorem3.p1.m8" class="ltx_Math" alttext="{\mathbf{X}},{\mathbf{Y}},{\mathbf{Z}}" display="inline"><semantics><mrow><mi>𝐗</mi><mo>,</mo><mi>𝐘</mi><mo>,</mo><mi>𝐙</mi></mrow><annotation encoding="application/x-tex">{\mathbf{X}},{\mathbf{Y}},{\mathbf{Z}}</annotation></semantics></math> com <math id="chapter6.Thmtheorem3.p1.m9" class="ltx_math_unparsed" alttext="{\mathbf{X}}\perp\!\!\!\!\perp^{f_{\beta}}{\mathbf{Y}}|{\mathbf{Z}}" display="inline"><semantics><mrow><mi>𝐗</mi><mpadded width="0.080em"><mo>⟂</mo></mpadded><msup><mo>⟂</mo><msub><mi>f</mi><mi>β</mi></msub></msup><mi>𝐘</mi><mo fence="false" rspace="0.167em" stretchy="false">|</mo><mi>𝐙</mi></mrow><annotation encoding="application/x-tex">{\mathbf{X}}\perp\!\!\!\!\perp^{f_{\beta}}{\mathbf{Y}}|{\mathbf{Z}}</annotation></semantics></math> mas
+<math id="chapter6.Thmtheorem3.p1.m10" class="ltx_Math" alttext="{\mathbf{X}}" display="inline"><semantics><mi>𝐗</mi><annotation encoding="application/x-tex">{\mathbf{X}}</annotation></semantics></math> e <math id="chapter6.Thmtheorem3.p1.m11" class="ltx_Math" alttext="{\mathbf{Y}}" display="inline"><semantics><mi>𝐘</mi><annotation encoding="application/x-tex">{\mathbf{Y}}</annotation></semantics></math> não serem d-separados dado <math id="chapter6.Thmtheorem3.p1.m12" class="ltx_Math" alttext="{\mathbf{Z}}" display="inline"><semantics><mi>𝐙</mi><annotation encoding="application/x-tex">{\mathbf{Z}}</annotation></semantics></math> em <math id="chapter6.Thmtheorem3.p1.m13" class="ltx_Math" alttext="{\mathcal{G}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒢</mi><annotation encoding="application/x-tex">{\mathcal{G}}</annotation></semantics></math>.</span></p>
+</div>
+</div>
+<div id="chapter6.Thmtheorem4" class="ltx_theorem ltx_theorem_lemma">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Lema 6.4</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter6.Thmtheorem4.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Se <math id="chapter6.Thmtheorem4.p1.m1" class="ltx_Math" alttext="{\mathbb{V}}_{1}" display="inline"><semantics><msub><mi>𝕍</mi><mn>1</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{1}</annotation></semantics></math> não é d-separado de <math id="chapter6.Thmtheorem4.p1.m2" class="ltx_Math" alttext="{\mathbb{V}}_{2}" display="inline"><semantics><msub><mi>𝕍</mi><mn>2</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{2}</annotation></semantics></math>
+dado <math id="chapter6.Thmtheorem4.p1.m3" class="ltx_Math" alttext="{\mathbb{V}}_{3}" display="inline"><semantics><msub><mi>𝕍</mi><mn>3</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{3}</annotation></semantics></math> segundo o DAG <math id="chapter6.Thmtheorem4.p1.m4" class="ltx_Math" alttext="{\mathcal{G}}=({\mathcal{V}},{\mathcal{E}})" display="inline"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo>,</mo><mi class="ltx_font_mathcaligraphic">ℰ</mi><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{G}}=({\mathcal{V}},{\mathcal{E}})</annotation></semantics></math>, então
+existe <math id="chapter6.Thmtheorem4.p1.m5" class="ltx_Math" alttext="f" display="inline"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math> compatível com <math id="chapter6.Thmtheorem4.p1.m6" class="ltx_Math" alttext="{\mathcal{G}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒢</mi><annotation encoding="application/x-tex">{\mathcal{G}}</annotation></semantics></math> tal que
+<math id="chapter6.Thmtheorem4.p1.m7" class="ltx_Math" alttext="{\mathbb{V}}_{1}" display="inline"><semantics><msub><mi>𝕍</mi><mn>1</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{1}</annotation></semantics></math> e <math id="chapter6.Thmtheorem4.p1.m8" class="ltx_Math" alttext="{\mathbb{V}}_{2}" display="inline"><semantics><msub><mi>𝕍</mi><mn>2</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{2}</annotation></semantics></math> são condicionalmente dependentes
+dado <math id="chapter6.Thmtheorem4.p1.m9" class="ltx_Math" alttext="{\mathbb{V}}_{3}" display="inline"><semantics><msub><mi>𝕍</mi><mn>3</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{3}</annotation></semantics></math> segundo <math id="chapter6.Thmtheorem4.p1.m10" class="ltx_Math" alttext="f" display="inline"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math></span></p>
+</div>
+</div>
+<div class="ltx_proof">
+
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Demonstração.</h6>
+<div id="SS2.p8" class="ltx_para">
+<p class="ltx_p">Decorre do <a href="#chapter6.Thmtheorem3" title="Teorema 6.3 (Spirtes2000[p.66). ‣ 6.C.2 Teorema 2.49 ‣ Apêndice 6.C Seção 3 (3 Independência Condicional e D-separação) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Teorema</span> <span class="ltx_text ltx_ref_tag">6.3</span></a>.
+∎</p>
+</div>
+</div>
+<div class="ltx_proof">
+
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Prova do <a href="S3.html#chapter2.Thmtheorem49" title="Teorema 2.49. ‣ 3.2 D-separação ‣ 3 Independência Condicional e D-separação ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Teorema</span> <span class="ltx_text ltx_ref_tag">2.49</span></a>.</h6>
+<div id="SS2.p9" class="ltx_para">
+<p class="ltx_p">Decorre dos
+<a href="#chapter6.Thmtheorem2" title="Lema 6.2. ‣ 6.C.2 Teorema 2.49 ‣ Apêndice 6.C Seção 3 (3 Independência Condicional e D-separação) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Lemas</span> <span class="ltx_text ltx_ref_tag">6.2</span></a> e <a href="#chapter6.Thmtheorem4" title="Lema 6.4. ‣ 6.C.2 Teorema 2.49 ‣ Apêndice 6.C Seção 3 (3 Independência Condicional e D-separação) ‣ Capítulo 6 Demonstrações ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">6.4</span></a>.
+∎</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</section>
+</div>
+</div>
+</div>
+<a href="chapter6.A2.html" class="navigation navigation-prev" aria-label="Previous page"><i class="fa fa-angle-left"></i></a><a href="chapter6.A4.html" class="navigation navigation-next" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+</div>
+</div>
+<script src="bookml/gitbook/js/app.min.js"></script>
+<script src="bookml/gitbook/js/jquery.highlight.js"></script>
+<script src="bookml/gitbook/js/plugin-search.js"></script>
+<script src="bookml/gitbook/js/plugin-fontsettings.js"></script>
+<script src="bookml/gitbook/js/plugin-bookdown.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script>
+        MathJax = {
+          startup: {
+            ready() {
+              // do not process equations disabled with \bmlDisableMathJax (code suggested by Davide P. Cervone)
+              class bmlFindMathML extends MathJax._.input.mathml.FindMathML.FindMathML {
+                processMath(set) {
+                  const adaptor = this.adaptor;
+                  for (const node of set.values()) {
+                    if (adaptor.hasClass(node, 'bml_disable_mathjax')) {
+                      set.delete(node);
+                    }
+                  }
+                  return super.processMath(set);
+                }
+              }
+
+              MathJax._.components.global.combineDefaults(MathJax.config, 'mml', {FindMathML: new bmlFindMathML()});
+
+              MathJax.startup.defaultReady();
+
+              // preproces MathML to make MathJax aware of certain LaTeXML and BookML additional info
+              const mmlFilters = MathJax.startup.input[0].mmlFilters;
+
+              // convert the LaTeXML calligraphic (chancery) annotation to a form MathJax understands
+              // since the corresponding Unicode characters render as script (rounded)
+              const script2latin = {
+                '𝒜': 'A', 'ℬ': 'B', '𝒞': 'C', '𝒟': 'D', 'ℰ': 'E', 'ℱ': 'F', '𝒢': 'G',
+                'ℋ': 'H', 'ℐ': 'I', '𝒥': 'J', '𝒦': 'K', 'ℒ': 'L', 'ℳ': 'M', '𝒩': 'N',
+                '𝒪': 'O', '𝒫': 'P', '𝒬': 'Q', 'ℛ': 'R', '𝒮': 'S', '𝒯': 'T', '𝒰': 'U',
+                '𝒱': 'V', '𝒲': 'W', '𝒳': 'X', '𝒴': 'Y', '𝒵': 'Z',
+              };
+
+              mmlFilters.add((args) => {
+                for (const n of args.data.getElementsByClassName('ltx_font_mathcaligraphic')) {
+                  n.classList.add('MJX-tex-calligraphic');
+                  const letter = script2latin[n.textContent];
+                  if (letter !== undefined) { n.textContent = letter; }
+                }
+              });
+
+              // adjust characters based on Unicode variation sequences
+              const replacements = {
+                // MathJax renders the empty set as the U+FE00 variant, so the plain character needs adjusting
+                '∅': { variant: 'variant' },
+                // MathJax renders script characters in rounded style, which is fine for no variation and U+FE00
+                '𝒜\xFE00': { text: 'A', variant: 'tex-calligraphic' },
+                'ℬ\xFE00': { text: 'B', variant: 'tex-calligraphic' },
+                '𝒞\xFE00': { text: 'C', variant: 'tex-calligraphic' },
+                '𝒟\xFE00': { text: 'D', variant: 'tex-calligraphic' },
+                'ℰ\xFE00': { text: 'E', variant: 'tex-calligraphic' },
+                'ℱ\xFE00': { text: 'F', variant: 'tex-calligraphic' },
+                '𝒢\xFE00': { text: 'G', variant: 'tex-calligraphic' },
+                'ℋ\xFE00': { text: 'H', variant: 'tex-calligraphic' },
+                'ℐ\xFE00': { text: 'I', variant: 'tex-calligraphic' },
+                '𝒥\xFE00': { text: 'J', variant: 'tex-calligraphic' },
+                '𝒦\xFE00': { text: 'K', variant: 'tex-calligraphic' },
+                'ℒ\xFE00': { text: 'L', variant: 'tex-calligraphic' },
+                'ℳ\xFE00': { text: 'M', variant: 'tex-calligraphic' },
+                '𝒩\xFE00': { text: 'N', variant: 'tex-calligraphic' },
+                '𝒪\xFE00': { text: 'O', variant: 'tex-calligraphic' },
+                '𝒫\xFE00': { text: 'P', variant: 'tex-calligraphic' },
+                '𝒬\xFE00': { text: 'Q', variant: 'tex-calligraphic' },
+                'ℛ\xFE00': { text: 'R', variant: 'tex-calligraphic' },
+                '𝒮\xFE00': { text: 'S', variant: 'tex-calligraphic' },
+                '𝒯\xFE00': { text: 'T', variant: 'tex-calligraphic' },
+                '𝒰\xFE00': { text: 'U', variant: 'tex-calligraphic' },
+                '𝒱\xFE00': { text: 'V', variant: 'tex-calligraphic' },
+                '𝒲\xFE00': { text: 'W', variant: 'tex-calligraphic' },
+                '𝒳\xFE00': { text: 'X', variant: 'tex-calligraphic' },
+                '𝒴\xFE00': { text: 'Y', variant: 'tex-calligraphic' },
+                '𝒵\xFE00': { text: 'Z', variant: 'tex-calligraphic' }
+              };
+
+              mmlFilters.add((args) => {
+                let nodes = document.evaluate('.//m:mi | .//m:mn | .//m:mo | .//m:ms', args.data,
+                  () => 'http://www.w3.org/1998/Math/MathML', XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE);
+                for (let i = 0; i < nodes.snapshotLength; i++) {
+                  const n = nodes.snapshotItem(i);
+                  const repl = replacements[n.innerHTML];
+                  if (repl !== undefined) {
+                    const variant = repl['variant'];
+                    const text = repl['text'];
+                    if (variant !== undefined) { n.classList.add('MJX-' + variant); n.removeAttribute('mathvariant'); }
+                    if (text !== undefined) { n.innerHTML = text; }
+                  }
+                }
+              });
+            }
+          }
+        };
+      </script>
+<script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-chtml.js"></script>
+<script type="text/javascript">
+                gitbook.require(["gitbook"], function(gitbook) {
+                gitbook.start({
+                  "fontsettings": {
+                    "theme": "white",
+                    "family": "sans",
+                    "size": 2
+                  },
+                  "download": [ [ "book.pdf", "PDF" ], ],
+                  "search": {
+                    "engine": "fuse"
+                  },
+                  "toc": {
+                    "collapse": "none"
+                  }
+                });
+              });
+            </script>
+</body>
+
+</html>

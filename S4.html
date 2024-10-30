@@ -1,0 +1,960 @@
+<!DOCTYPE html><html lang="pt">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>4 O modelo de probabilidade para intervenções ‣ Capítulo 3 Intervenções ‣ Inferência Causal</title>
+<!--Generated on Tue Aug 27 12:19:15 2024 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on Última revisão: August 27, 2024.-->
+<style>:root { --bml-ltx-font-size: 10.95; }</style>
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/style.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-table.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-search.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-bookdown.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-fontsettings.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="bookml/CSS/style.css" type="text/css">
+<link rel="stylesheet" href="bookml/CSS/style.gitbook,plain.css" type="text/css">
+<link rel="stylesheet" href="bookml/CSS/style.gitbook.css" type="text/css">
+<link rel="stylesheet" href="bmluser/colors.gitbook-book.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6"></script>
+<link rel="up" href="chapter3.html" title="Capítulo 3 Intervenções ‣ Inferência Causal">
+<link rel="up up" href="index.html" title="Inferência Causal">
+<link rel="start" href="index.html" title="Inferência Causal">
+<link rel="prev" href="chapter3.html" title="Capítulo 3 Intervenções ‣ Inferência Causal">
+<link rel="next" href="S5.html" title="5 Controlando confundidores (critério backdoor) ‣ Capítulo 3 Intervenções ‣ Inferência Causal">
+<link rel="section" href="S5.html" title="5 Controlando confundidores (critério backdoor) ‣ Capítulo 3 Intervenções ‣ Inferência Causal">
+<link rel="section" href="S6.html" title="6 Controlando mediadores (critério frontdoor) ‣ Capítulo 3 Intervenções ‣ Inferência Causal">
+<link rel="section" href="S7.html" title="7 Do-calculus ‣ Capítulo 3 Intervenções ‣ Inferência Causal">
+<link rel="chapter" href="chapter1.html" title="Capítulo 1 Por que estudar Inferência Causal? ‣ Inferência Causal">
+<link rel="chapter" href="chapter2.html" title="Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal">
+<link rel="chapter" href="chapter3.html" title="Capítulo 3 Intervenções ‣ Inferência Causal">
+<link rel="chapter" href="chapter4.html" title="Capítulo 4 Resultados potenciais ‣ Inferência Causal">
+<link rel="chapter" href="chapter5.html" title="Capítulo 5 Descoberta Causal ‣ Inferência Causal">
+<link rel="chapter" href="chapter6.html" title="Capítulo 6 Demonstrações ‣ Inferência Causal">
+</head>
+<body>
+<div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+<a href="#bml-main-content" tabindex="0" class="bml-skip-to-content">Skip to content.</a>
+<div class="book-summary"><nav class="ltx_page_navbar">
+<ul class="ltx_toclist summary">
+<li>
+<a href="index.html" title="" class="ltx_ref" rel="start">Inferência Causal <span class="ltx_text"> </span></a>
+</li>
+<li class="divider">
+<li data-level="1" data-path="chapter1.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter1.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">1 </span></b>Por que estudar Inferência Causal?</a></li>
+<li data-level="2" data-path="chapter2.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter2.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">2 </span></b>Modelo Causal (CM)</a></li>
+<li data-level="3" data-path="chapter3.html" class="ltx_tocentry ltx_tocentry_chapter  chapter ">
+<a href="chapter3.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">3 </span></b>Intervenções</a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li data-level="4" data-path="" class="ltx_tocentry ltx_tocentry_section ltx_ref_self  chapter active">
+<a href="" title="In Capítulo 3 Intervenções ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">4 </span></b>O modelo de probabilidade para intervenções</a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li data-level="4.1" data-path="" class="ltx_tocentry ltx_tocentry_subsection  chapter "><a href="#SS1" title="In 4 O modelo de probabilidade para intervenções ‣ Capítulo 3 Intervenções ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">4.1 </span></b>Exercícios</a></li>
+</ol>
+</li>
+<li data-level="5" data-path="S5.html" class="ltx_tocentry ltx_tocentry_section  chapter "><a href="S5.html" title="In Capítulo 3 Intervenções ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">5 </span></b>Controlando confundidores (critério <span class="ltx_text ltx_font_italic">backdoor</span>)</a></li>
+<li data-level="6" data-path="S6.html" class="ltx_tocentry ltx_tocentry_section  chapter "><a href="S6.html" title="In Capítulo 3 Intervenções ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6 </span></b>Controlando mediadores (critério frontdoor)</a></li>
+<li data-level="7" data-path="S7.html" class="ltx_tocentry ltx_tocentry_section  chapter "><a href="S7.html" title="In Capítulo 3 Intervenções ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">7 </span></b>Do-calculus</a></li>
+</ol>
+</li>
+<li data-level="4" data-path="chapter4.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter4.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">4 </span></b>Resultados potenciais</a></li>
+<li data-level="5" data-path="chapter5.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter5.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">5 </span></b>Descoberta Causal</a></li>
+<li data-level="6" data-path="chapter6.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter6.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6 </span></b>Demonstrações</a></li>
+</ul>
+</nav></div>
+<div class="ltx_page_main book-body fixed">
+<div class="body-inner">
+<div class="book-header fixed" role="navigation"><h1>O modelo de probabilidade para intervenções</h1></div>
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="ltx_page_content page-inner" id="bml-main-content">
+<section class="ltx_section normal" lang="pt">
+<div class="section level1">
+
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section header-section-number">4</span> O modelo de probabilidade para intervenções</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p">Com base no modelo estrutural causal discutido
+no <a href="chapter2.html" title="Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">capítulo</span> <span class="ltx_text ltx_ref_tag">2</span></a>, agora estabeleceremos
+um significado para o efeito causal
+de uma variável em outra.</p>
+</div>
+<figure id="F7" class="ltx_figure"><div class="bml-overflow-wrapper"><img src="x7.png" id="F7.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="400" height="300" alt="Refer to caption"></div>
+<figcaption class="ltx_caption bml_color_585858"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:91%;">Figura 7</span>: </span><span class="ltx_text" style="font-size:91%;">Grafo que representa as relações causais entre Z (Sexo), X (Tratamento), e Y (Cura).</span></figcaption>
+</figure>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">Para iniciar esta discussão, considere
+as variáveis <math id="p2.m1" class="ltx_Math" alttext="Z" display="inline"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math> (Sexo), <math id="p2.m2" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> (Tratamento),
+e <math id="p2.m3" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> (Cura), discutidas no <a href="chapter1.html" title="Capítulo 1 Por que estudar Inferência Causal? ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">capítulo</span> <span class="ltx_text ltx_ref_tag">1</span></a>.
+Podemos considerar que <math id="p2.m4" class="ltx_Math" alttext="Z" display="inline"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math> é uma causa
+tanto de <math id="p2.m5" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> quanto de <math id="p2.m6" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> e que
+<math id="p2.m7" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> é uma causa de <math id="p2.m8" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>. Assim,
+podemos representar as relações causais
+entre estas variáveis por meio do grafo
+na <a href="#F7" title="In 4 O modelo de probabilidade para intervenções ‣ Capítulo 3 Intervenções ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">figur</span> <span class="ltx_text ltx_ref_tag">7</span></a>.
+Usando este grafo, podemos
+discutir mais a fundo porque
+a probabilidade condicional de cura dado tratamento é
+distinta do efeito causal do tratamento na cura.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">Quando calculamos a probabilidade condicional
+de cura dado o tratamento, estamos perguntando:
+“Qual é a probabilidade de que um indivíduo selecionado
+aleatoriamente da população se cure dado que
+<span class="ltx_text ltx_font_bold">aprendemos</span> que recebeu o tratamento?”
+Para responder a esta pergunta, propagamos
+a informação do tratamento usado em
+todos os caminhos do tratamento para a cura.
+Assim, além do efeito direto que o tratamento tem na cura,
+o tratamento também está associado ao sexo do paciente,
+o que indiretamente traz mais informação sobre a cura deste.
+Isto é, neste caso o tratamento traz informação
+tanto sobre seus efeitos (cura),
+quanto sobre suas causas (sexo).
+Uma outra maneira de verificar estas afirmações é
+calculando diretamente <math id="p3.m1" class="ltx_Math" alttext="f(y|x)" display="inline"><semantics><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>y</mi><mo fence="false">|</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(y|x)</annotation></semantics></math>:</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx15" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex28"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex28.m1" class="ltx_Math" alttext="\displaystyle f(y|x)" display="inline"><semantics><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>y</mi><mo fence="false">|</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle f(y|x)</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex28.m2" class="ltx_Math" alttext="\displaystyle=\sum_{s}f(z,y|x)" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mi>s</mi></munder></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>z</mi><mo>,</mo><mrow><mi>y</mi><mo fence="false">|</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle=\sum_{s}f(z,y|x)</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex29"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex29.m1" class="ltx_Math" alttext="\displaystyle=\sum_{s}\frac{f(z,y,x)}{f(x)}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mi>s</mi></munder></mstyle><mstyle displaystyle="true"><mfrac><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>z</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mfrac></mstyle></mrow></mrow><annotation encoding="application/x-tex">\displaystyle=\sum_{s}\frac{f(z,y,x)}{f(x)}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex30"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex30.m1" class="ltx_Math" alttext="\displaystyle=\sum_{s}\frac{f(z,x)f(y|z,x)}{f(x)}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mi>s</mi></munder></mstyle><mstyle displaystyle="true"><mfrac><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>z</mi><mo>,</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>y</mi><mo fence="false">|</mo><mrow><mi>z</mi><mo>,</mo><mi>x</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mfrac></mstyle></mrow></mrow><annotation encoding="application/x-tex">\displaystyle=\sum_{s}\frac{f(z,x)f(y|z,x)}{f(x)}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="E2"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="E2.m1" class="ltx_Math" alttext="\displaystyle=\sum_{s}f(z|x)f(y|z,x)" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mi>s</mi></munder></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>z</mi><mo fence="false">|</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>y</mi><mo fence="false">|</mo><mrow><mi>z</mi><mo>,</mo><mi>x</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle=\sum_{s}f(z|x)f(y|z,x)</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2)</span></td>
+</tr></tbody>
+</table>
+</div>
+<p class="ltx_p">Notamos na <a href="#Ex28" title="4 O modelo de probabilidade para intervenções ‣ Capítulo 3 Intervenções ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">4</span></a> que
+<math id="p3.m2" class="ltx_Math" alttext="f(y|x)" display="inline"><semantics><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>y</mi><mo fence="false">|</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(y|x)</annotation></semantics></math> é a média das probabilidades de cura em
+cada sexo, <math id="p3.m3" class="ltx_Math" alttext="f(y|z,x)" display="inline"><semantics><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>y</mi><mo fence="false">|</mo><mrow><mi>z</mi><mo>,</mo><mi>x</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(y|z,x)</annotation></semantics></math>,
+ponderadas pela distribuição do sexo
+após aprender o tratamento do indivíduo, <math id="p3.m4" class="ltx_Math" alttext="f(z|x)" display="inline"><semantics><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>z</mi><mo fence="false">|</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(z|x)</annotation></semantics></math>.</p>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">A probabilidade condicional de cura dado tratamento
+não corresponde àquilo que entendemos por
+efeito causal de tratamento em cura.
+Este efeito é a resposta para a pergunta:
+“Qual a probabilidade de que um indivíduo selecionado
+aleatoriamente da população se cure dado que
+<span class="ltx_text ltx_font_bold">prescrevemos</span> a ele o tratamento?”.
+Ao contrário da primeira pergunta,
+em que apenas <span class="ltx_text ltx_font_bold">observamos</span> a população,
+nesta segunda fazemos uma <span class="ltx_text ltx_font_bold">intervenção</span> sobre
+o comportamento do indivíduo.
+Assim, estamos fazendo uma pergunta sobre
+uma distribuição de probabilidade diferente,
+em que estamos agindo sobre a unidade amostral.
+Por exemplo, suponha que prescreveríamos o tratamento
+a qualquer indivíduo que fosse amostrado.
+Neste caso, saber qual tratamento foi aplicado
+não traria qualquer informação sobre o sexo do indivíduo.
+Em outras palavras, se chamarmos <math id="p4.m1" class="ltx_Math" alttext="f(y|do(x))" display="inline"><semantics><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>y</mi><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(y|do(x))</annotation></semantics></math> como
+a probabilidade de cura dado que fazemos uma intervenção no tratamento,
+faria sentido obtermos:</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx16" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="E3"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="E3.m1" class="ltx_Math" alttext="\displaystyle f(y|do(x))" display="inline"><semantics><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>y</mi><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle f(y|do(x))</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="E3.m2" class="ltx_Math" alttext="\displaystyle=\sum_{s}f(z)f(y|z,x)" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mi>s</mi></munder></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>y</mi><mo fence="false">|</mo><mrow><mi>z</mi><mo>,</mo><mi>x</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle=\sum_{s}f(z)f(y|z,x)</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3)</span></td>
+</tr></tbody>
+</table>
+</div>
+<p class="ltx_p">Na <a href="#E3" title="In 4 O modelo de probabilidade para intervenções ‣ Capítulo 3 Intervenções ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">likning</span> <span class="ltx_text ltx_ref_tag">3</span></a> temos que o efeito causal
+do tratamento na cura é a média ponderada
+das probabilidades de cura em cada sexo ponderada
+pelas probabilidades de sexo
+de um indivíduo retirado aleatoriamente da população.
+Isto é, ao contrário da <a href="#Ex28" title="4 O modelo de probabilidade para intervenções ‣ Capítulo 3 Intervenções ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">4</span></a>,
+a distribuição do sexo do indivíduo não é alterada quando
+fazemos uma intervenção sobre o tratamento.</p>
+</div>
+<figure id="F8" class="ltx_figure"><div class="bml-overflow-wrapper"><img src="x8.png" id="F8.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="400" height="300" alt="Refer to caption"></div>
+<figcaption class="ltx_caption bml_color_585858"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:91%;">Figura 8</span>: </span><span class="ltx_text" style="font-size:91%;">Grafo que representa as relações causais entre S (Sexo), T (Tratamento), e C (Cura) quando há uma intervenção sobre T.</span></figcaption>
+</figure>
+<div id="p5" class="ltx_para">
+<p class="ltx_p">Com base neste exemplo, podemos generalizar
+o que entendemos por intervenção.
+Quando fazemos uma intervenção em uma variável, <math id="p5.m1" class="ltx_Math" alttext="V_{1}" display="inline"><semantics><msub><mi>V</mi><mn>1</mn></msub><annotation encoding="application/x-tex">V_{1}</annotation></semantics></math>,
+tomamos uma ação para que <math id="p5.m2" class="ltx_Math" alttext="V_{1}" display="inline"><semantics><msub><mi>V</mi><mn>1</mn></msub><annotation encoding="application/x-tex">V_{1}</annotation></semantics></math> assuma um determinado valor.
+Assim, as demais variáveis que comumente seriam
+causas de <math id="p5.m3" class="ltx_Math" alttext="V_{1}" display="inline"><semantics><msub><mi>V</mi><mn>1</mn></msub><annotation encoding="application/x-tex">V_{1}</annotation></semantics></math> deixam de sê-lo.
+Por exemplo, para o caso na <a href="#F7" title="In 4 O modelo de probabilidade para intervenções ‣ Capítulo 3 Intervenções ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">figur</span> <span class="ltx_text ltx_ref_tag">7</span></a>,
+o modelo de intervenção removeria a aresta de
+Sexo para Tratamento, resultado na <a href="#F8" title="In 4 O modelo de probabilidade para intervenções ‣ Capítulo 3 Intervenções ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">figur</span> <span class="ltx_text ltx_ref_tag">8</span></a>.</p>
+</div>
+<div id="p6" class="ltx_para">
+<p class="ltx_p">Com base nas observações acima, finalmente
+podemos definir o modelo de probabilidade sob intervenção:</p>
+</div>
+<div id="chapter3.Thmtheorem1" class="ltx_theorem ltx_theorem_definition">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Definição 3.1</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter3.Thmtheorem1.p1" class="ltx_para">
+<p class="ltx_p">Seja <math id="chapter3.Thmtheorem1.p1.m1" class="ltx_Math" alttext="{\mathcal{G}}=({\mathcal{V}},{\mathcal{E}})" display="inline"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo>,</mo><mi class="ltx_font_mathcaligraphic">ℰ</mi><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{G}}=({\mathcal{V}},{\mathcal{E}})</annotation></semantics></math> um DAG,
+<math id="chapter3.Thmtheorem1.p1.m2" class="ltx_Math" alttext="({\mathcal{G}},f)" display="inline"><semantics><mrow><mo stretchy="false">(</mo><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>,</mo><mi>f</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">({\mathcal{G}},f)</annotation></semantics></math> um CM (<a href="S2.html#chapter2.Thmtheorem24" title="Definição 2.24. ‣ 2.5 Modelo Causal (Causal Model) ‣ 2 Elementos de Modelos Probabilísticos em Grafos ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Definição</span> <span class="ltx_text ltx_ref_tag">2.24</span></a>), e
+<math id="chapter3.Thmtheorem1.p1.m3" class="ltx_Math" alttext="{\mathbb{V}}_{1}\subseteq{\mathcal{V}}" display="inline"><semantics><mrow><msub><mi>𝕍</mi><mn>1</mn></msub><mo>⊆</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi></mrow><annotation encoding="application/x-tex">{\mathbb{V}}_{1}\subseteq{\mathcal{V}}</annotation></semantics></math>.
+O modelo de probabilidade obtido após
+uma intervenção em <math id="chapter3.Thmtheorem1.p1.m4" class="ltx_Math" alttext="{\mathbb{V}}_{1}" display="inline"><semantics><msub><mi>𝕍</mi><mn>1</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{1}</annotation></semantics></math> é dado por:</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx17" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex31"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex31.m1" class="ltx_Math" alttext="\displaystyle f({\mathcal{V}}|do({\mathbb{V}}_{1}))" display="inline"><semantics><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>𝕍</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle f({\mathcal{V}}|do({\mathbb{V}}_{1}))</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex31.m2" class="ltx_Math" alttext="\displaystyle:=\prod_{V_{2}\in{\mathbb{V}}_{2}}f(V_{2}|Pa(V_{2}))" display="inline"><semantics><mrow><mi></mi><mo lspace="0.278em" rspace="0.278em">:=</mo><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∏</mo><mrow><msub><mi>V</mi><mn>2</mn></msub><mo>∈</mo><msub><mi>𝕍</mi><mn>2</mn></msub></mrow></munder></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>V</mi><mn>2</mn></msub><mo fence="false">|</mo><mrow><mi>P</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>V</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle:=\prod_{V_{2}\in{\mathbb{V}}_{2}}f(V_{2}|Pa(V_{2}))</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><span class="ltx_text ltx_markedasmath">, ou equivalentemente</span></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex32"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex32.m1" class="ltx_Math" alttext="\displaystyle f({\mathcal{V}}|do({\mathbb{V}}_{1}={\mathbf{v}}_{1}))" display="inline"><semantics><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>𝕍</mi><mn>1</mn></msub><mo>=</mo><msub><mi>𝐯</mi><mn>1</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle f({\mathcal{V}}|do({\mathbb{V}}_{1}={\mathbf{v}}_{1}))</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex32.m2" class="ltx_Math" alttext="\displaystyle:=\left(\prod_{(v_{1},V_{1})\in({\mathbf{v}}_{1},{\mathbb{V}}_{1}%
+)}{\mathbb{I}}(V_{1}=v_{1})\right)\cdot\left(\prod_{V_{2}\notin{\mathbb{V}}_{1%
+}}f(V_{2}|Pa(V_{2}))\right)" display="inline"><semantics><mrow><mi></mi><mo lspace="0.278em" rspace="0.278em">:=</mo><mrow><mrow><mo>(</mo><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∏</mo><mrow><mrow><mo stretchy="false">(</mo><msub><mi>v</mi><mn>1</mn></msub><mo>,</mo><msub><mi>V</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow><mo>∈</mo><mrow><mo stretchy="false">(</mo><msub><mi>𝐯</mi><mn>1</mn></msub><mo>,</mo><msub><mi>𝕍</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mrow></munder></mstyle><mrow><mi>𝕀</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>V</mi><mn>1</mn></msub><mo>=</mo><msub><mi>v</mi><mn>1</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="0.055em">)</mo></mrow><mo rspace="0.222em">⋅</mo><mrow><mo>(</mo><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∏</mo><mrow><msub><mi>V</mi><mn>2</mn></msub><mo>∉</mo><msub><mi>𝕍</mi><mn>1</mn></msub></mrow></munder></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>V</mi><mn>2</mn></msub><mo fence="false">|</mo><mrow><mi>P</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>V</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle:=\left(\prod_{(v_{1},V_{1})\in({\mathbf{v}}_{1},{\mathbb{V}}_{1}%
+)}{\mathbb{I}}(V_{1}=v_{1})\right)\cdot\left(\prod_{V_{2}\notin{\mathbb{V}}_{1%
+}}f(V_{2}|Pa(V_{2}))\right)</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright" colspan="2"></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="p7" class="ltx_para">
+<p class="ltx_p">Para compreender a <a href="#chapter3.Thmtheorem1" title="Definição 3.1. ‣ 4 O modelo de probabilidade para intervenções ‣ Capítulo 3 Intervenções ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Definição</span> <span class="ltx_text ltx_ref_tag">3.1</span></a>,
+podemos comparar o modelo de intervenção com
+o modelo observacional:</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx18" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex33"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex33.m1" class="ltx_Math" alttext="\displaystyle f({\mathbb{V}}_{2}|{\mathbb{V}}_{1})" display="inline"><semantics><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>𝕍</mi><mn>2</mn></msub><mo fence="false">|</mo><msub><mi>𝕍</mi><mn>1</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle f({\mathbb{V}}_{2}|{\mathbb{V}}_{1})</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex33.m2" class="ltx_math_unparsed" alttext="\displaystyle\propto f({\mathbb{V}}_{1},{\mathbb{V}}_{2})=\left(\prod_{V_{1}%
+\in{\mathbb{V}}_{1}}f(V_{1}|Pa(V_{1})\right)\cdot\left(\prod_{V_{2}\in{\mathbb%
+{V}}_{2}}f(V_{2}|Pa(V_{2})\right)" display="inline"><semantics><mrow><mo>∝</mo><mi>f</mi><mrow><mo stretchy="false">(</mo><msub><mi>𝕍</mi><mn>1</mn></msub><mo>,</mo><msub><mi>𝕍</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow><mo>=</mo><mrow><mo>(</mo><mstyle displaystyle="true"><munder><mo movablelimits="false">∏</mo><mrow><msub><mi>V</mi><mn>1</mn></msub><mo>∈</mo><msub><mi>𝕍</mi><mn>1</mn></msub></mrow></munder></mstyle><mi>f</mi><mrow><mo stretchy="false">(</mo><msub><mi>V</mi><mn>1</mn></msub><mo fence="false" rspace="0.167em" stretchy="false">|</mo><mi>P</mi><mi>a</mi><mrow><mo stretchy="false">(</mo><msub><mi>V</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow><mo rspace="0.055em">)</mo></mrow><mo rspace="0.222em">⋅</mo><mrow><mo>(</mo><mstyle displaystyle="true"><munder><mo movablelimits="false">∏</mo><mrow><msub><mi>V</mi><mn>2</mn></msub><mo>∈</mo><msub><mi>𝕍</mi><mn>2</mn></msub></mrow></munder></mstyle><mi>f</mi><mrow><mo stretchy="false">(</mo><msub><mi>V</mi><mn>2</mn></msub><mo fence="false" rspace="0.167em" stretchy="false">|</mo><mi>P</mi><mi>a</mi><mrow><mo stretchy="false">(</mo><msub><mi>V</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow><mo>)</mo></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle\propto f({\mathbb{V}}_{1},{\mathbb{V}}_{2})=\left(\prod_{V_{1}%
+\in{\mathbb{V}}_{1}}f(V_{1}|Pa(V_{1})\right)\cdot\left(\prod_{V_{2}\in{\mathbb%
+{V}}_{2}}f(V_{2}|Pa(V_{2})\right)</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<p class="ltx_p">No modelo observacional, a densidade de <math id="p7.m1" class="ltx_Math" alttext="{\mathbb{V}}_{2}" display="inline"><semantics><msub><mi>𝕍</mi><mn>2</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{2}</annotation></semantics></math> dado <math id="p7.m2" class="ltx_Math" alttext="{\mathbb{V}}_{1}" display="inline"><semantics><msub><mi>𝕍</mi><mn>1</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{1}</annotation></semantics></math> é
+proporcional ao produto, para todos os vértices,
+da densidade do vértice dadas suas causas.
+Ao contrário, no modelo de intervenção supomos que
+os vértices em <math id="p7.m3" class="ltx_Math" alttext="{\mathbb{V}}_{1}" display="inline"><semantics><msub><mi>𝕍</mi><mn>1</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{1}</annotation></semantics></math> são pré-fixados e, assim,
+não são gerados por suas causas usuais.
+Assim, na <a href="#chapter3.Thmtheorem1" title="Definição 3.1. ‣ 4 O modelo de probabilidade para intervenções ‣ Capítulo 3 Intervenções ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Definição</span> <span class="ltx_text ltx_ref_tag">3.1</span></a>,
+a densidade de <math id="p7.m4" class="ltx_Math" alttext="{\mathbb{V}}_{2}" display="inline"><semantics><msub><mi>𝕍</mi><mn>2</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{2}</annotation></semantics></math> dada uma intervenção em <math id="p7.m5" class="ltx_Math" alttext="{\mathbb{V}}_{1}" display="inline"><semantics><msub><mi>𝕍</mi><mn>1</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{1}</annotation></semantics></math> é
+dada o produto somente nos vértices de <math id="p7.m6" class="ltx_Math" alttext="{\mathbb{V}}_{2}" display="inline"><semantics><msub><mi>𝕍</mi><mn>2</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{2}</annotation></semantics></math>
+das densidades do vértice dadas suas causas.</p>
+</div>
+<div id="p8" class="ltx_para">
+<p class="ltx_p">Esta análise é formalizada no <a href="#chapter3.Thmtheorem2" title="Lema 3.2. ‣ 4 O modelo de probabilidade para intervenções ‣ Capítulo 3 Intervenções ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Lema</span> <span class="ltx_text ltx_ref_tag">3.2</span></a>:</p>
+</div>
+<div id="chapter3.Thmtheorem2" class="ltx_theorem ltx_theorem_lemma">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Lema 3.2</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter3.Thmtheorem2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Seja <math id="chapter3.Thmtheorem2.p1.m1" class="ltx_Math" alttext="{\mathcal{G}}(\bar{{\mathbf{X}}})" display="inline"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>𝐗</mi><mo>¯</mo></mover><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{G}}(\bar{{\mathbf{X}}})</annotation></semantics></math> o grafo obtido
+retirando-se de <math id="chapter3.Thmtheorem2.p1.m2" class="ltx_Math" alttext="{\mathcal{G}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒢</mi><annotation encoding="application/x-tex">{\mathcal{G}}</annotation></semantics></math>
+todas as arestas que apontam para
+algum vértice em <math id="chapter3.Thmtheorem2.p1.m3" class="ltx_Math" alttext="{\mathbf{X}}" display="inline"><semantics><mi>𝐗</mi><annotation encoding="application/x-tex">{\mathbf{X}}</annotation></semantics></math>.
+A densidade <math id="chapter3.Thmtheorem2.p1.m4" class="ltx_Math" alttext="f^{*}\equiv f({\mathcal{V}}|do({\mathbf{X}}={\mathbf{x}}))" display="inline"><semantics><mrow><msup><mi>f</mi><mo>∗</mo></msup><mo>≡</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>𝐗</mi><mo>=</mo><mi>𝐱</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">f^{*}\equiv f({\mathcal{V}}|do({\mathbf{X}}={\mathbf{x}}))</annotation></semantics></math> é
+compatível com <math id="chapter3.Thmtheorem2.p1.m5" class="ltx_Math" alttext="{\mathcal{G}}(\bar{{\mathbf{X}}})" display="inline"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>𝐗</mi><mo>¯</mo></mover><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{G}}(\bar{{\mathbf{X}}})</annotation></semantics></math>.
+Além disso, <math id="chapter3.Thmtheorem2.p1.m6" class="ltx_Math" alttext="{\mathbf{X}}" display="inline"><semantics><mi>𝐗</mi><annotation encoding="application/x-tex">{\mathbf{X}}</annotation></semantics></math> é degenerada em <math id="chapter3.Thmtheorem2.p1.m7" class="ltx_Math" alttext="{\mathbf{x}}" display="inline"><semantics><mi>𝐱</mi><annotation encoding="application/x-tex">{\mathbf{x}}</annotation></semantics></math> segundo <math id="chapter3.Thmtheorem2.p1.m8" class="ltx_Math" alttext="f^{*}" display="inline"><semantics><msup><mi>f</mi><mo>∗</mo></msup><annotation encoding="application/x-tex">f^{*}</annotation></semantics></math>.</span></p>
+</div>
+</div>
+<div id="p9" class="ltx_para">
+<p class="ltx_p">Com base na discussão acima, podemos definir
+o <span class="ltx_text ltx_font_bold">efeito causal</span> que um conjunto de variáveis, <math id="p9.m1" class="ltx_Math" alttext="{\mathbf{X}}" display="inline"><semantics><mi>𝐗</mi><annotation encoding="application/x-tex">{\mathbf{X}}</annotation></semantics></math>,
+tem em outro conjunto, <math id="p9.m2" class="ltx_Math" alttext="{\mathbf{Y}}" display="inline"><semantics><mi>𝐘</mi><annotation encoding="application/x-tex">{\mathbf{Y}}</annotation></semantics></math>:</p>
+</div>
+<div id="chapter3.Thmtheorem3" class="ltx_theorem ltx_theorem_definition">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Definição 3.3</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter3.Thmtheorem3.p1" class="ltx_para">
+<p class="ltx_p"><math id="chapter3.Thmtheorem3.p1.m1" class="ltx_Math" alttext="{\mathbb{E}}[{\mathbf{Y}}|do({\mathbf{X}})]:=\int{\mathbf{y}}\cdot f({\mathbf{%
+y}}|do({\mathbf{X}}))d{\mathbf{y}}" display="inline"><semantics><mrow><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>𝐘</mi><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝐗</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="0.278em" stretchy="false">]</mo></mrow></mrow><mo rspace="0.111em">:=</mo><mrow><mo>∫</mo><mrow><mrow><mi>𝐲</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><mi>f</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>𝐲</mi><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝐗</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>𝐲</mi></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{E}}[{\mathbf{Y}}|do({\mathbf{X}})]:=\int{\mathbf{y}}\cdot f({\mathbf{%
+y}}|do({\mathbf{X}}))d{\mathbf{y}}</annotation></semantics></math>.</p>
+</div>
+</div>
+<div id="chapter3.Thmtheorem4" class="ltx_theorem ltx_theorem_definition">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Definição 3.4</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter3.Thmtheorem4.p1" class="ltx_para">
+<p class="ltx_p">O efeito causal médio, ACE<sub class="ltx_sub"><span class="ltx_text ltx_font_italic">X,Y</span></sub>,<span id="footnote1" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">1</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">1</sup>
+                <span class="ltx_tag ltx_tag_note">1</span>
+                
+                
+                
+                
+                
+                
+                
+              
+A sigla ACE tem como origem a expressão em inglês,
+<span class="ltx_text ltx_font_italic">Average Causal Effect</span>. Optamos por manter a sigla
+sem tradução para facilitar a comparação com artigos da área.
+Em outros contextos, este termo também é chamado de
+<span class="ltx_text ltx_font_italic">Average Treatment Effect</span> e recebe o acrônimo ATE.</span></span></span>
+de <math id="chapter3.Thmtheorem4.p1.m2" class="ltx_Math" alttext="X\in\Re" display="inline"><semantics><mrow><mi>X</mi><mo>∈</mo><mi mathvariant="normal">ℜ</mi></mrow><annotation encoding="application/x-tex">X\in\Re</annotation></semantics></math> em <math id="chapter3.Thmtheorem4.p1.m3" class="ltx_Math" alttext="Y\in\Re" display="inline"><semantics><mrow><mi>Y</mi><mo>∈</mo><mi mathvariant="normal">ℜ</mi></mrow><annotation encoding="application/x-tex">Y\in\Re</annotation></semantics></math> é dado por:</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx19" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex34"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex34.m1" class="ltx_Math" alttext="\displaystyle{ACE}_{X,Y}" display="inline"><semantics><mrow><mi>A</mi><mo>⁢</mo><mi>C</mi><mo>⁢</mo><msub><mi>E</mi><mrow><mi>X</mi><mo>,</mo><mi>Y</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\displaystyle{ACE}_{X,Y}</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex34.m2" class="ltx_Math" alttext="\displaystyle=\begin{cases}{\mathbb{E}}[Y|do(X=1)]-{\mathbb{E}}[Y|do(X=0)]&amp;%
+\text{, se $X$ é binário},\\
+\frac{d{\mathbb{E}}[Y|do(X=x)]}{dx}&amp;\text{, se $X$ é contínuo}.\end{cases}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>Y</mi><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">]</mo></mrow></mrow><mo>−</mo><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>Y</mi><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">]</mo></mrow></mrow></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mtext>, se </mtext><mi>X</mi><mtext> é binário</mtext></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mfrac><mrow><mi>d</mi><mo>⁢</mo><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>Y</mi><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">]</mo></mrow></mrow><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mtext>, se </mtext><mi>X</mi><mtext> é contínuo</mtext></mrow><mo lspace="0em">.</mo></mrow></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">\displaystyle=\begin{cases}{\mathbb{E}}[Y|do(X=1)]-{\mathbb{E}}[Y|do(X=0)]&amp;%
+\text{, se $X$ é binário},\\
+\frac{d{\mathbb{E}}[Y|do(X=x)]}{dx}&amp;\text{, se $X$ é contínuo}.\end{cases}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<p class="ltx_p">Quando não há ambiguidade, escrevemos simplesmente
+<math id="chapter3.Thmtheorem4.p1.m4" class="ltx_Math" alttext="{ACE}" display="inline"><semantics><mrow><mi>A</mi><mo>⁢</mo><mi>C</mi><mo>⁢</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">{ACE}</annotation></semantics></math> ao invés de <math id="chapter3.Thmtheorem4.p1.m5" class="ltx_Math" alttext="{ACE}_{X,Y}" display="inline"><semantics><mrow><mi>A</mi><mo>⁢</mo><mi>C</mi><mo>⁢</mo><msub><mi>E</mi><mrow><mi>X</mi><mo>,</mo><mi>Y</mi></mrow></msub></mrow><annotation encoding="application/x-tex">{ACE}_{X,Y}</annotation></semantics></math>.</p>
+</div>
+</div>
+<div id="p10" class="ltx_para">
+<p class="ltx_p">Com a <a href="#chapter3.Thmtheorem4" title="Definição 3.4. ‣ 4 O modelo de probabilidade para intervenções ‣ Capítulo 3 Intervenções ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Definição</span> <span class="ltx_text ltx_ref_tag">3.4</span></a> podemos finalmente desvendar
+o Paradoxo de Simpson discutido no <a href="chapter1.html" title="Capítulo 1 Por que estudar Inferência Causal? ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">capítulo</span> <span class="ltx_text ltx_ref_tag">1</span></a>.
+Veremos que o método que desenvolvemos resolve
+a questão com simplicidade,
+assim trazendo clareza ao Paradoxo.</p>
+</div>
+<div id="chapter3.Thmtheorem5" class="ltx_theorem ltx_theorem_example">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Exemplo 3.5</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter3.Thmtheorem5.p1" class="ltx_para">
+<p class="ltx_p">Considere que <math id="chapter3.Thmtheorem5.p1.m1" class="ltx_Math" alttext="(X,Y,Z)\in\Re^{3}" display="inline"><semantics><mrow><mrow><mo stretchy="false">(</mo><mi>X</mi><mo>,</mo><mi>Y</mi><mo>,</mo><mi>Z</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><msup><mi mathvariant="normal">ℜ</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">(X,Y,Z)\in\Re^{3}</annotation></semantics></math> são tais que
+<math id="chapter3.Thmtheorem5.p1.m2" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> e <math id="chapter3.Thmtheorem5.p1.m3" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> são as indicadores de que, respectivamente,
+o paciente recebeu o tratamento e se curou.
+Além disso, suponha que a distribuição conjunta de <math id="chapter3.Thmtheorem5.p1.m4" class="ltx_Math" alttext="(X,Y,Z)" display="inline"><semantics><mrow><mo stretchy="false">(</mo><mi>X</mi><mo>,</mo><mi>Y</mi><mo>,</mo><mi>Z</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(X,Y,Z)</annotation></semantics></math> é
+dada pelas frequências na <a href="S1.html#T1" title="In 1 O Paradoxo de Simpson ‣ Capítulo 1 Por que estudar Inferência Causal? ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">tabela</span> <span class="ltx_text ltx_ref_tag">1</span></a>. Isto é:</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx20" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex35"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex35.m1" class="ltx_Math" alttext="\displaystyle{\mathbb{P}}(Z=1)=\frac{25+55+71+192}{700}\approx 0.49" display="inline"><semantics><mrow><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>Z</mi><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mn>25</mn><mo>+</mo><mn>55</mn><mo>+</mo><mn>71</mn><mo>+</mo><mn>192</mn></mrow><mn>700</mn></mfrac></mstyle><mo>≈</mo><mn>0.49</mn></mrow><annotation encoding="application/x-tex">\displaystyle{\mathbb{P}}(Z=1)=\frac{25+55+71+192}{700}\approx 0.49</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex36"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex36.m1" class="ltx_Math" alttext="\displaystyle{\mathbb{P}}(Z=0)=1-{\mathbb{P}}(Z=1)\approx 0.51" display="inline"><semantics><mrow><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>Z</mi><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mn>1</mn><mo>−</mo><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>Z</mi><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>≈</mo><mn>0.51</mn></mrow><annotation encoding="application/x-tex">\displaystyle{\mathbb{P}}(Z=0)=1-{\mathbb{P}}(Z=1)\approx 0.51</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex37"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex37.m1" class="ltx_Math" alttext="\displaystyle{\mathbb{P}}(Z=1|X=0)=\frac{25+55}{25+55+36+234}\approx 0.23" display="inline"><semantics><mrow><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>Z</mi><mo>=</mo><mrow><mn>1</mn><mo fence="false">|</mo><mi>X</mi></mrow><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mn>25</mn><mo>+</mo><mn>55</mn></mrow><mrow><mn>25</mn><mo>+</mo><mn>55</mn><mo>+</mo><mn>36</mn><mo>+</mo><mn>234</mn></mrow></mfrac></mstyle><mo>≈</mo><mn>0.23</mn></mrow><annotation encoding="application/x-tex">\displaystyle{\mathbb{P}}(Z=1|X=0)=\frac{25+55}{25+55+36+234}\approx 0.23</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex38"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex38.m1" class="ltx_Math" alttext="\displaystyle{\mathbb{P}}(Z=1|X=1)=\frac{71+192}{71+192+6+81}\approx 0.75" display="inline"><semantics><mrow><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>Z</mi><mo>=</mo><mrow><mn>1</mn><mo fence="false">|</mo><mi>X</mi></mrow><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mn>71</mn><mo>+</mo><mn>192</mn></mrow><mrow><mn>71</mn><mo>+</mo><mn>192</mn><mo>+</mo><mn>6</mn><mo>+</mo><mn>81</mn></mrow></mfrac></mstyle><mo>≈</mo><mn>0.75</mn></mrow><annotation encoding="application/x-tex">\displaystyle{\mathbb{P}}(Z=1|X=1)=\frac{71+192}{71+192+6+81}\approx 0.75</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex39"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex39.m1" class="ltx_math_unparsed" alttext="\displaystyle{\mathbb{P}}(Y=1|X=0,Z=0)=\frac{234}{234+36}\approx 0.87" display="inline"><semantics><mrow><mi>ℙ</mi><mrow><mo stretchy="false">(</mo><mi>Y</mi><mo>=</mo><mn>1</mn><mo fence="false" rspace="0.167em" stretchy="false">|</mo><mi>X</mi><mo>=</mo><mn>0</mn><mo>,</mo><mi>Z</mi><mo>=</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>234</mn><mrow><mn>234</mn><mo>+</mo><mn>36</mn></mrow></mfrac></mstyle><mo>≈</mo><mn>0.87</mn></mrow><annotation encoding="application/x-tex">\displaystyle{\mathbb{P}}(Y=1|X=0,Z=0)=\frac{234}{234+36}\approx 0.87</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex40"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex40.m1" class="ltx_math_unparsed" alttext="\displaystyle{\mathbb{P}}(Y=1|X=1,Z=0)=\frac{81}{81+6}\approx 0.93" display="inline"><semantics><mrow><mi>ℙ</mi><mrow><mo stretchy="false">(</mo><mi>Y</mi><mo>=</mo><mn>1</mn><mo fence="false" rspace="0.167em" stretchy="false">|</mo><mi>X</mi><mo>=</mo><mn>1</mn><mo>,</mo><mi>Z</mi><mo>=</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>81</mn><mrow><mn>81</mn><mo>+</mo><mn>6</mn></mrow></mfrac></mstyle><mo>≈</mo><mn>0.93</mn></mrow><annotation encoding="application/x-tex">\displaystyle{\mathbb{P}}(Y=1|X=1,Z=0)=\frac{81}{81+6}\approx 0.93</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex41"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex41.m1" class="ltx_math_unparsed" alttext="\displaystyle{\mathbb{P}}(Y=1|X=0,Z=1)=\frac{55}{25+55}\approx 0.69" display="inline"><semantics><mrow><mi>ℙ</mi><mrow><mo stretchy="false">(</mo><mi>Y</mi><mo>=</mo><mn>1</mn><mo fence="false" rspace="0.167em" stretchy="false">|</mo><mi>X</mi><mo>=</mo><mn>0</mn><mo>,</mo><mi>Z</mi><mo>=</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>55</mn><mrow><mn>25</mn><mo>+</mo><mn>55</mn></mrow></mfrac></mstyle><mo>≈</mo><mn>0.69</mn></mrow><annotation encoding="application/x-tex">\displaystyle{\mathbb{P}}(Y=1|X=0,Z=1)=\frac{55}{25+55}\approx 0.69</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex42"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex42.m1" class="ltx_math_unparsed" alttext="\displaystyle{\mathbb{P}}(Y=1|X=1,Z=1)=\frac{192}{71+192}\approx 0.73" display="inline"><semantics><mrow><mi>ℙ</mi><mrow><mo stretchy="false">(</mo><mi>Y</mi><mo>=</mo><mn>1</mn><mo fence="false" rspace="0.167em" stretchy="false">|</mo><mi>X</mi><mo>=</mo><mn>1</mn><mo>,</mo><mi>Z</mi><mo>=</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>192</mn><mrow><mn>71</mn><mo>+</mo><mn>192</mn></mrow></mfrac></mstyle><mo>≈</mo><mn>0.73</mn></mrow><annotation encoding="application/x-tex">\displaystyle{\mathbb{P}}(Y=1|X=1,Z=1)=\frac{192}{71+192}\approx 0.73</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<p class="ltx_p">Agora, veremos que a probabilidade de <math id="chapter3.Thmtheorem5.p1.m5" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>
+dada uma intervenção em <math id="chapter3.Thmtheorem5.p1.m6" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> depende do DAG usado
+no modelo causal estrutural.</p>
+</div>
+<div id="chapter3.Thmtheorem5.p2" class="ltx_para">
+<p class="ltx_p">Suponha que <math id="chapter3.Thmtheorem5.p2.m1" class="ltx_Math" alttext="Z" display="inline"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math> é a indicadora de que
+o sexo do paciente é masculino.
+Neste caso, utilizaremos como
+grafo causal aquele em <a href="#F7" title="In 4 O modelo de probabilidade para intervenções ‣ Capítulo 3 Intervenções ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">figur</span> <span class="ltx_text ltx_ref_tag">7</span></a>.
+este grafo, obtemos:</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx21" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="E4"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="E4.m1" class="ltx_Math" alttext="\displaystyle{\mathbb{P}}_{1}(Y=i,Z=j|do(X=k))" display="inline"><semantics><mrow><msub><mi>ℙ</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>Y</mi><mo>=</mo><mi>i</mi></mrow><mo>,</mo><mrow><mi>Z</mi><mo>=</mo><mrow><mi>j</mi><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mi>k</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle{\mathbb{P}}_{1}(Y=i,Z=j|do(X=k))</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="E4.m2" class="ltx_math_unparsed" alttext="\displaystyle={\mathbb{P}}(Z=j){\mathbb{P}}(Y=i|X=k,Z=j)" display="inline"><semantics><mrow><mo>=</mo><mi>ℙ</mi><mrow><mo stretchy="false">(</mo><mi>Z</mi><mo>=</mo><mi>j</mi><mo stretchy="false">)</mo></mrow><mi>ℙ</mi><mrow><mo stretchy="false">(</mo><mi>Y</mi><mo>=</mo><mi>i</mi><mo fence="false" rspace="0.167em" stretchy="false">|</mo><mi>X</mi><mo>=</mo><mi>k</mi><mo>,</mo><mi>Z</mi><mo>=</mo><mi>j</mi><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle={\mathbb{P}}(Z=j){\mathbb{P}}(Y=i|X=k,Z=j)</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4)</span></td>
+</tr></tbody>
+</table>
+</div>
+<p class="ltx_p">Assim,</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx22" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex43"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex43.m1" class="ltx_Math" alttext="\displaystyle{\mathbb{P}}_{1}(Y=1|do(X=1))" display="inline"><semantics><mrow><msub><mi>ℙ</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>Y</mi><mo>=</mo><mrow><mn>1</mn><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle{\mathbb{P}}_{1}(Y=1|do(X=1))</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex43.m2" class="ltx_Math" alttext="\displaystyle={\mathbb{P}}_{1}(Y=1,Z=0|do(X=1))+{\mathbb{P}}_{1}(Y=1,Z=1|do(X=%
+1))" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mrow><msub><mi>ℙ</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>Y</mi><mo>=</mo><mn>1</mn></mrow><mo>,</mo><mrow><mi>Z</mi><mo>=</mo><mrow><mn>0</mn><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><msub><mi>ℙ</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>Y</mi><mo>=</mo><mn>1</mn></mrow><mo>,</mo><mrow><mi>Z</mi><mo>=</mo><mrow><mn>1</mn><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle={\mathbb{P}}_{1}(Y=1,Z=0|do(X=1))+{\mathbb{P}}_{1}(Y=1,Z=1|do(X=%
+1))</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex44"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex44.m1" class="ltx_math_unparsed" alttext="\displaystyle={\mathbb{P}}(Z=0){\mathbb{P}}(Y=1|X=1,Z=0)+{\mathbb{P}}(Z=1){%
+\mathbb{P}}(Y=1|X=1,Z=1)" display="inline"><semantics><mrow><mo>=</mo><mi>ℙ</mi><mrow><mo stretchy="false">(</mo><mi>Z</mi><mo>=</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><mi>ℙ</mi><mrow><mo stretchy="false">(</mo><mi>Y</mi><mo>=</mo><mn>1</mn><mo fence="false" rspace="0.167em" stretchy="false">|</mo><mi>X</mi><mo>=</mo><mn>1</mn><mo>,</mo><mi>Z</mi><mo>=</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><mo>+</mo><mi>ℙ</mi><mrow><mo stretchy="false">(</mo><mi>Z</mi><mo>=</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mi>ℙ</mi><mrow><mo stretchy="false">(</mo><mi>Y</mi><mo>=</mo><mn>1</mn><mo fence="false" rspace="0.167em" stretchy="false">|</mo><mi>X</mi><mo>=</mo><mn>1</mn><mo>,</mo><mi>Z</mi><mo>=</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle={\mathbb{P}}(Z=0){\mathbb{P}}(Y=1|X=1,Z=0)+{\mathbb{P}}(Z=1){%
+\mathbb{P}}(Y=1|X=1,Z=1)</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex45"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex45.m1" class="ltx_Math" alttext="\displaystyle\approx 0.51\cdot 0.93+0.49\cdot 0.73\approx 0.83" display="inline"><semantics><mrow><mi></mi><mo>≈</mo><mrow><mrow><mn>0.51</mn><mo lspace="0.222em" rspace="0.222em">⋅</mo><mn>0.93</mn></mrow><mo>+</mo><mrow><mn>0.49</mn><mo lspace="0.222em" rspace="0.222em">⋅</mo><mn>0.73</mn></mrow></mrow><mo>≈</mo><mn>0.83</mn></mrow><annotation encoding="application/x-tex">\displaystyle\approx 0.51\cdot 0.93+0.49\cdot 0.73\approx 0.83</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex46"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex46.m1" class="ltx_Math" alttext="\displaystyle{\mathbb{P}}_{1}(Y=1|do(X=0))" display="inline"><semantics><mrow><msub><mi>ℙ</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>Y</mi><mo>=</mo><mrow><mn>1</mn><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle{\mathbb{P}}_{1}(Y=1|do(X=0))</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex46.m2" class="ltx_Math" alttext="\displaystyle={\mathbb{P}}_{1}(Y=1,Z=0|do(X=0))+{\mathbb{P}}_{1}(Y=1,Z=1|do(X=%
+0))" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mrow><msub><mi>ℙ</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>Y</mi><mo>=</mo><mn>1</mn></mrow><mo>,</mo><mrow><mi>Z</mi><mo>=</mo><mrow><mn>0</mn><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><msub><mi>ℙ</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>Y</mi><mo>=</mo><mn>1</mn></mrow><mo>,</mo><mrow><mi>Z</mi><mo>=</mo><mrow><mn>1</mn><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle={\mathbb{P}}_{1}(Y=1,Z=0|do(X=0))+{\mathbb{P}}_{1}(Y=1,Z=1|do(X=%
+0))</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex47"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex47.m1" class="ltx_math_unparsed" alttext="\displaystyle={\mathbb{P}}(Z=0){\mathbb{P}}(Y=1|X=0,Z=0)+{\mathbb{P}}(Z=1){%
+\mathbb{P}}(Y=1|X=0,Z=1)" display="inline"><semantics><mrow><mo>=</mo><mi>ℙ</mi><mrow><mo stretchy="false">(</mo><mi>Z</mi><mo>=</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><mi>ℙ</mi><mrow><mo stretchy="false">(</mo><mi>Y</mi><mo>=</mo><mn>1</mn><mo fence="false" rspace="0.167em" stretchy="false">|</mo><mi>X</mi><mo>=</mo><mn>0</mn><mo>,</mo><mi>Z</mi><mo>=</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><mo>+</mo><mi>ℙ</mi><mrow><mo stretchy="false">(</mo><mi>Z</mi><mo>=</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mi>ℙ</mi><mrow><mo stretchy="false">(</mo><mi>Y</mi><mo>=</mo><mn>1</mn><mo fence="false" rspace="0.167em" stretchy="false">|</mo><mi>X</mi><mo>=</mo><mn>0</mn><mo>,</mo><mi>Z</mi><mo>=</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle={\mathbb{P}}(Z=0){\mathbb{P}}(Y=1|X=0,Z=0)+{\mathbb{P}}(Z=1){%
+\mathbb{P}}(Y=1|X=0,Z=1)</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex48"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex48.m1" class="ltx_Math" alttext="\displaystyle\approx 0.51\cdot 0.87+0.49\cdot 0.69\approx 0.78" display="inline"><semantics><mrow><mi></mi><mo>≈</mo><mrow><mrow><mn>0.51</mn><mo lspace="0.222em" rspace="0.222em">⋅</mo><mn>0.87</mn></mrow><mo>+</mo><mrow><mn>0.49</mn><mo lspace="0.222em" rspace="0.222em">⋅</mo><mn>0.69</mn></mrow></mrow><mo>≈</mo><mn>0.78</mn></mrow><annotation encoding="application/x-tex">\displaystyle\approx 0.51\cdot 0.87+0.49\cdot 0.69\approx 0.78</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<p class="ltx_p">Portanto, o efeito causal do tratamento na cura quando
+<math id="chapter3.Thmtheorem5.p2.m2" class="ltx_Math" alttext="Z" display="inline"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math> é o sexo do paciente é obtido abaixo:</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx23" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex50"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex50.m1" class="ltx_Math" alttext="\displaystyle{ACE}_{1}" display="inline"><semantics><mrow><mi>A</mi><mo>⁢</mo><mi>C</mi><mo>⁢</mo><msub><mi>E</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">\displaystyle{ACE}_{1}</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex50.m2" class="ltx_Math" alttext="\displaystyle={\mathbb{E}}_{1}[Y|do(X=1)]-{\mathbb{E}}_{1}[Y|do(X=0)]" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mrow><msub><mi>𝔼</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>Y</mi><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">]</mo></mrow></mrow><mo>−</mo><mrow><msub><mi>𝔼</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>Y</mi><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">]</mo></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle={\mathbb{E}}_{1}[Y|do(X=1)]-{\mathbb{E}}_{1}[Y|do(X=0)]</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex51"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex51.m1" class="ltx_Math" alttext="\displaystyle={\mathbb{P}}_{1}(Y=1|do(X=1))-{\mathbb{P}}_{1}(Y=1|do(X=0))%
+\approx 0.05" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mrow><msub><mi>ℙ</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>Y</mi><mo>=</mo><mrow><mn>1</mn><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><msub><mi>ℙ</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>Y</mi><mo>=</mo><mrow><mn>1</mn><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>≈</mo><mn>0.05</mn></mrow><annotation encoding="application/x-tex">\displaystyle={\mathbb{P}}_{1}(Y=1|do(X=1))-{\mathbb{P}}_{1}(Y=1|do(X=0))%
+\approx 0.05</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<p class="ltx_p">Como esperado da discussão na <a href="S1.html" title="1 O Paradoxo de Simpson ‣ Capítulo 1 Por que estudar Inferência Causal? ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">1</span></a>,
+o tratamento tem efeito causal médio positivo, isto é,
+ele aumenta a probabilidade de cura do paciente.</p>
+</div>
+<figure id="F9" class="ltx_figure"><div class="bml-overflow-wrapper"><img src="x9.png" id="F9.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="400" height="300" alt="Refer to caption"></div>
+<figcaption class="ltx_caption bml_color_585858"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:91%;">Figura 9</span>: </span><span class="ltx_text" style="font-size:91%;">Grafo que representa as relações causais entre Z (Pressão sanguínea elevada), X (Tratamento), e Y (Cura).</span></figcaption>
+</figure>
+<div id="chapter3.Thmtheorem5.p3" class="ltx_para">
+<p class="ltx_p">A seguir, consideramos que <math id="chapter3.Thmtheorem5.p3.m1" class="ltx_Math" alttext="Z" display="inline"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math> é
+a indicadora de pressão sanguínea elevada do paciente.
+Assim, tomamos o grafo causal como
+aquele na <a href="#F9" title="In Exemplo 3.5. ‣ 4 O modelo de probabilidade para intervenções ‣ Capítulo 3 Intervenções ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">figur</span> <span class="ltx_text ltx_ref_tag">9</span></a>.
+Utilizando este grafo, obtemos:</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx24" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="E5"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="E5.m1" class="ltx_Math" alttext="\displaystyle{\mathbb{P}}_{2}(Y=i,Z=j|do(X=k))" display="inline"><semantics><mrow><msub><mi>ℙ</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>Y</mi><mo>=</mo><mi>i</mi></mrow><mo>,</mo><mrow><mi>Z</mi><mo>=</mo><mrow><mi>j</mi><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mi>k</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle{\mathbb{P}}_{2}(Y=i,Z=j|do(X=k))</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="E5.m2" class="ltx_math_unparsed" alttext="\displaystyle={\mathbb{P}}(Z=j|X=k){\mathbb{P}}_{1}(Y=i|X=k,Z=j)" display="inline"><semantics><mrow><mo>=</mo><mi>ℙ</mi><mrow><mo stretchy="false">(</mo><mi>Z</mi><mo>=</mo><mi>j</mi><mo fence="false" rspace="0.167em" stretchy="false">|</mo><mi>X</mi><mo>=</mo><mi>k</mi><mo stretchy="false">)</mo></mrow><msub><mi>ℙ</mi><mn>1</mn></msub><mrow><mo stretchy="false">(</mo><mi>Y</mi><mo>=</mo><mi>i</mi><mo fence="false" rspace="0.167em" stretchy="false">|</mo><mi>X</mi><mo>=</mo><mi>k</mi><mo>,</mo><mi>Z</mi><mo>=</mo><mi>j</mi><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle={\mathbb{P}}(Z=j|X=k){\mathbb{P}}_{1}(Y=i|X=k,Z=j)</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5)</span></td>
+</tr></tbody>
+</table>
+</div>
+<p class="ltx_p">Assim,</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx25" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex52"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex52.m1" class="ltx_Math" alttext="\displaystyle{\mathbb{P}}_{2}(Y=1|do(X=1))" display="inline"><semantics><mrow><msub><mi>ℙ</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>Y</mi><mo>=</mo><mrow><mn>1</mn><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle{\mathbb{P}}_{2}(Y=1|do(X=1))</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex52.m2" class="ltx_Math" alttext="\displaystyle={\mathbb{P}}_{2}(Y=1,Z=0|do(X=1))+{\mathbb{P}}_{2}(Y=1,Z=1|do(X=%
+1))" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mrow><msub><mi>ℙ</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>Y</mi><mo>=</mo><mn>1</mn></mrow><mo>,</mo><mrow><mi>Z</mi><mo>=</mo><mrow><mn>0</mn><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><msub><mi>ℙ</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>Y</mi><mo>=</mo><mn>1</mn></mrow><mo>,</mo><mrow><mi>Z</mi><mo>=</mo><mrow><mn>1</mn><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle={\mathbb{P}}_{2}(Y=1,Z=0|do(X=1))+{\mathbb{P}}_{2}(Y=1,Z=1|do(X=%
+1))</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex53"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex53.m1" class="ltx_math_unparsed" alttext="\displaystyle={\mathbb{P}}(Z=0|X=1){\mathbb{P}}(Y=1|X=1,Z=0)+{\mathbb{P}}(Z=1|%
+X=1){\mathbb{P}}(Y=1|X=1,Z=1)" display="inline"><semantics><mrow><mo>=</mo><mi>ℙ</mi><mrow><mo stretchy="false">(</mo><mi>Z</mi><mo>=</mo><mn>0</mn><mo fence="false" rspace="0.167em" stretchy="false">|</mo><mi>X</mi><mo>=</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mi>ℙ</mi><mrow><mo stretchy="false">(</mo><mi>Y</mi><mo>=</mo><mn>1</mn><mo fence="false" rspace="0.167em" stretchy="false">|</mo><mi>X</mi><mo>=</mo><mn>1</mn><mo>,</mo><mi>Z</mi><mo>=</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><mo>+</mo><mi>ℙ</mi><mrow><mo stretchy="false">(</mo><mi>Z</mi><mo>=</mo><mn>1</mn><mo fence="false" rspace="0.167em" stretchy="false">|</mo><mi>X</mi><mo>=</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mi>ℙ</mi><mrow><mo stretchy="false">(</mo><mi>Y</mi><mo>=</mo><mn>1</mn><mo fence="false" rspace="0.167em" stretchy="false">|</mo><mi>X</mi><mo>=</mo><mn>1</mn><mo>,</mo><mi>Z</mi><mo>=</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle={\mathbb{P}}(Z=0|X=1){\mathbb{P}}(Y=1|X=1,Z=0)+{\mathbb{P}}(Z=1|%
+X=1){\mathbb{P}}(Y=1|X=1,Z=1)</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex54"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex54.m1" class="ltx_Math" alttext="\displaystyle\approx 0.25\cdot 0.93+0.75\cdot 0.73\approx 0.78" display="inline"><semantics><mrow><mi></mi><mo>≈</mo><mrow><mrow><mn>0.25</mn><mo lspace="0.222em" rspace="0.222em">⋅</mo><mn>0.93</mn></mrow><mo>+</mo><mrow><mn>0.75</mn><mo lspace="0.222em" rspace="0.222em">⋅</mo><mn>0.73</mn></mrow></mrow><mo>≈</mo><mn>0.78</mn></mrow><annotation encoding="application/x-tex">\displaystyle\approx 0.25\cdot 0.93+0.75\cdot 0.73\approx 0.78</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex55"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex55.m1" class="ltx_Math" alttext="\displaystyle{\mathbb{P}}_{2}(Y=1|do(X=0))" display="inline"><semantics><mrow><msub><mi>ℙ</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>Y</mi><mo>=</mo><mrow><mn>1</mn><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle{\mathbb{P}}_{2}(Y=1|do(X=0))</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex55.m2" class="ltx_Math" alttext="\displaystyle={\mathbb{P}}_{2}(Y=1,Z=0|do(X=0))+{\mathbb{P}}_{2}(Y=1,Z=1|do(X=%
+0))" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mrow><msub><mi>ℙ</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>Y</mi><mo>=</mo><mn>1</mn></mrow><mo>,</mo><mrow><mi>Z</mi><mo>=</mo><mrow><mn>0</mn><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><msub><mi>ℙ</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>Y</mi><mo>=</mo><mn>1</mn></mrow><mo>,</mo><mrow><mi>Z</mi><mo>=</mo><mrow><mn>1</mn><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle={\mathbb{P}}_{2}(Y=1,Z=0|do(X=0))+{\mathbb{P}}_{2}(Y=1,Z=1|do(X=%
+0))</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex56"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex56.m1" class="ltx_math_unparsed" alttext="\displaystyle={\mathbb{P}}(Z=0|X=0){\mathbb{P}}(Y=1|X=0,Z=0)+{\mathbb{P}}(Z=1|%
+X=0){\mathbb{P}}(Y=1|X=0,Z=1)" display="inline"><semantics><mrow><mo>=</mo><mi>ℙ</mi><mrow><mo stretchy="false">(</mo><mi>Z</mi><mo>=</mo><mn>0</mn><mo fence="false" rspace="0.167em" stretchy="false">|</mo><mi>X</mi><mo>=</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><mi>ℙ</mi><mrow><mo stretchy="false">(</mo><mi>Y</mi><mo>=</mo><mn>1</mn><mo fence="false" rspace="0.167em" stretchy="false">|</mo><mi>X</mi><mo>=</mo><mn>0</mn><mo>,</mo><mi>Z</mi><mo>=</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><mo>+</mo><mi>ℙ</mi><mrow><mo stretchy="false">(</mo><mi>Z</mi><mo>=</mo><mn>1</mn><mo fence="false" rspace="0.167em" stretchy="false">|</mo><mi>X</mi><mo>=</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><mi>ℙ</mi><mrow><mo stretchy="false">(</mo><mi>Y</mi><mo>=</mo><mn>1</mn><mo fence="false" rspace="0.167em" stretchy="false">|</mo><mi>X</mi><mo>=</mo><mn>0</mn><mo>,</mo><mi>Z</mi><mo>=</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle={\mathbb{P}}(Z=0|X=0){\mathbb{P}}(Y=1|X=0,Z=0)+{\mathbb{P}}(Z=1|%
+X=0){\mathbb{P}}(Y=1|X=0,Z=1)</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex57"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex57.m1" class="ltx_Math" alttext="\displaystyle\approx 0.77\cdot 0.87+0.23\cdot 0.69\approx 0.83" display="inline"><semantics><mrow><mi></mi><mo>≈</mo><mrow><mrow><mn>0.77</mn><mo lspace="0.222em" rspace="0.222em">⋅</mo><mn>0.87</mn></mrow><mo>+</mo><mrow><mn>0.23</mn><mo lspace="0.222em" rspace="0.222em">⋅</mo><mn>0.69</mn></mrow></mrow><mo>≈</mo><mn>0.83</mn></mrow><annotation encoding="application/x-tex">\displaystyle\approx 0.77\cdot 0.87+0.23\cdot 0.69\approx 0.83</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<p class="ltx_p">Portanto, o efeito causal do tratamento na cura quando
+<math id="chapter3.Thmtheorem5.p3.m2" class="ltx_Math" alttext="Z" display="inline"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math> é a pressão sanguínea do paciente é obtido abaixo:</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx26" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex59"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex59.m1" class="ltx_Math" alttext="\displaystyle{ACE}_{1}" display="inline"><semantics><mrow><mi>A</mi><mo>⁢</mo><mi>C</mi><mo>⁢</mo><msub><mi>E</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">\displaystyle{ACE}_{1}</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex59.m2" class="ltx_Math" alttext="\displaystyle={\mathbb{E}}_{2}[Y|do(X=1)]-{\mathbb{E}}_{2}[Y|do(X=0)]" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mrow><msub><mi>𝔼</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>Y</mi><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">]</mo></mrow></mrow><mo>−</mo><mrow><msub><mi>𝔼</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>Y</mi><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">]</mo></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">\displaystyle={\mathbb{E}}_{2}[Y|do(X=1)]-{\mathbb{E}}_{2}[Y|do(X=0)]</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex60"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex60.m1" class="ltx_Math" alttext="\displaystyle={\mathbb{P}}_{2}(Y=1|do(X=1))-{\mathbb{P}}_{2}(Y=1|do(X=0))%
+\approx-0.05" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mrow><msub><mi>ℙ</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>Y</mi><mo>=</mo><mrow><mn>1</mn><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><msub><mi>ℙ</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>Y</mi><mo>=</mo><mrow><mn>1</mn><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>≈</mo><mrow><mo>−</mo><mn>0.05</mn></mrow></mrow><annotation encoding="application/x-tex">\displaystyle={\mathbb{P}}_{2}(Y=1|do(X=1))-{\mathbb{P}}_{2}(Y=1|do(X=0))%
+\approx-0.05</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<p class="ltx_p">Como esperado da discussão na <a href="S1.html" title="1 O Paradoxo de Simpson ‣ Capítulo 1 Por que estudar Inferência Causal? ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">1</span></a>,
+o tratamento tem efeito causal médio negativo, isto é,
+ele tem como efeito colateral grave a
+elevação da pressão sanguínea do paciente,
+reduzindo a probabilidade de cura deste.</p>
+</div>
+<div id="chapter3.Thmtheorem5.p4" class="ltx_para">
+<p class="ltx_p">Comparando as expressões obtidas em <math id="chapter3.Thmtheorem5.p4.m1" class="ltx_Math" alttext="{ACE}_{1}" display="inline"><semantics><mrow><mi>A</mi><mo>⁢</mo><mi>C</mi><mo>⁢</mo><msub><mi>E</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">{ACE}_{1}</annotation></semantics></math> e <math id="chapter3.Thmtheorem5.p4.m2" class="ltx_Math" alttext="{ACE}_{2}" display="inline"><semantics><mrow><mi>A</mi><mo>⁢</mo><mi>C</mi><mo>⁢</mo><msub><mi>E</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">{ACE}_{2}</annotation></semantics></math>,
+verificamos que o grafo causal desempenha papel fundamental
+na determinação do modelo de probabilidade sob intervenção.
+Ademais, o uso do grafo causal adequado em cada situação formaliza
+a discussão qualitativa desenvolvida na <a href="S1.html" title="1 O Paradoxo de Simpson ‣ Capítulo 1 Por que estudar Inferência Causal? ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Seção</span> <span class="ltx_text ltx_ref_tag">1</span></a>.
+Não há paradoxo!</p>
+</div>
+</div>
+<div id="p11" class="ltx_para">
+<p class="ltx_p">Se <math id="p11.m1" class="ltx_Math" alttext="({\mathcal{G}},f)" display="inline"><semantics><mrow><mo stretchy="false">(</mo><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>,</mo><mi>f</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">({\mathcal{G}},f)</annotation></semantics></math> é um CM linear Gaussiano, então é
+possível obter uma equação direta para o <math id="p11.m2" class="ltx_Math" alttext="{ACE}" display="inline"><semantics><mrow><mi>A</mi><mo>⁢</mo><mi>C</mi><mo>⁢</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">{ACE}</annotation></semantics></math>.
+Este resultado é apresentado no <a href="#chapter3.Thmtheorem6" title="Teorema 3.6. ‣ 4 O modelo de probabilidade para intervenções ‣ Capítulo 3 Intervenções ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Teorema</span> <span class="ltx_text ltx_ref_tag">3.6</span></a> abaixo.</p>
+</div>
+<div id="chapter3.Thmtheorem6" class="ltx_theorem ltx_theorem_theorem">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Teorema 3.6</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter3.Thmtheorem6.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Se <math id="chapter3.Thmtheorem6.p1.m1" class="ltx_Math" alttext="({\mathcal{G}},f)" display="inline"><semantics><mrow><mo stretchy="false">(</mo><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>,</mo><mi>f</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">({\mathcal{G}},f)</annotation></semantics></math> é um CM linear Gaussiano
+de parâmetros <math id="chapter3.Thmtheorem6.p1.m2" class="ltx_Math" alttext="\mu" display="inline"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math> e <math id="chapter3.Thmtheorem6.p1.m3" class="ltx_Math" alttext="\beta" display="inline"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math> e
+<math id="chapter3.Thmtheorem6.p1.m4" class="ltx_Math" alttext="\mathbb{C}_{X,Y}" display="inline"><semantics><msub><mi>ℂ</mi><mrow><mi>X</mi><mo>,</mo><mi>Y</mi></mrow></msub><annotation encoding="application/x-tex">\mathbb{C}_{X,Y}</annotation></semantics></math> é o conjunto de
+todos os caminhos direcionados de <math id="chapter3.Thmtheorem6.p1.m5" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> a <math id="chapter3.Thmtheorem6.p1.m6" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>, então</span></p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx27" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex61"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex61.m1" class="ltx_Math" alttext="\displaystyle{ACE}_{X,Y}" display="inline"><semantics><mrow><mi>A</mi><mo>⁢</mo><mi>C</mi><mo>⁢</mo><msub><mi>E</mi><mrow><mi>X</mi><mo>,</mo><mi>Y</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\displaystyle{ACE}_{X,Y}</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex61.m2" class="ltx_Math" alttext="\displaystyle=\sum_{C\in\mathbb{C}_{X,Y}}\prod_{i=1}^{|C|-1}\beta_{C_{i+1},C_{%
+i}}." display="inline"><semantics><mrow><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mrow><mi>C</mi><mo>∈</mo><msub><mi>ℂ</mi><mrow><mi>X</mi><mo>,</mo><mi>Y</mi></mrow></msub></mrow></munder></mstyle><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∏</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mrow><mo stretchy="false">|</mo><mi>C</mi><mo stretchy="false">|</mo></mrow><mo>−</mo><mn>1</mn></mrow></munderover></mstyle><msub><mi>β</mi><mrow><msub><mi>C</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>C</mi><mi>i</mi></msub></mrow></msub></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow><annotation encoding="application/x-tex">\displaystyle=\sum_{C\in\mathbb{C}_{X,Y}}\prod_{i=1}^{|C|-1}\beta_{C_{i+1},C_{%
+i}}.</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="p12" class="ltx_para">
+<p class="ltx_p">O <a href="#chapter3.Thmtheorem6" title="Teorema 3.6. ‣ 4 O modelo de probabilidade para intervenções ‣ Capítulo 3 Intervenções ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Teorema</span> <span class="ltx_text ltx_ref_tag">3.6</span></a> indica um algoritmo
+para calcular o <math id="p12.m1" class="ltx_Math" alttext="{ACE}_{X,Y}" display="inline"><semantics><mrow><mi>A</mi><mo>⁢</mo><mi>C</mi><mo>⁢</mo><msub><mi>E</mi><mrow><mi>X</mi><mo>,</mo><mi>Y</mi></mrow></msub></mrow><annotation encoding="application/x-tex">{ACE}_{X,Y}</annotation></semantics></math> em um CM linear Gaussiano.
+Primeiramente, para cada caminho direcionado
+de <math id="p12.m2" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> em <math id="p12.m3" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> calcula-se
+o produto dos coeficientes de regressão ligados a este caminho.
+Se imaginarmos os vértices no meio do caminho como mediadores, então
+estamos combinando o efeito de <math id="p12.m4" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> em <math id="p12.m5" class="ltx_Math" alttext="C_{2}" display="inline"><semantics><msub><mi>C</mi><mn>2</mn></msub><annotation encoding="application/x-tex">C_{2}</annotation></semantics></math>, de <math id="p12.m6" class="ltx_Math" alttext="C_{2}" display="inline"><semantics><msub><mi>C</mi><mn>2</mn></msub><annotation encoding="application/x-tex">C_{2}</annotation></semantics></math> em <math id="p12.m7" class="ltx_Math" alttext="C_{3}" display="inline"><semantics><msub><mi>C</mi><mn>3</mn></msub><annotation encoding="application/x-tex">C_{3}</annotation></semantics></math> …e de <math id="p12.m8" class="ltx_Math" alttext="C_{m-1}" display="inline"><semantics><msub><mi>C</mi><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">C_{m-1}</annotation></semantics></math> em <math id="p12.m9" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> para obter
+o efeito total de <math id="p12.m10" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> em <math id="p12.m11" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> por este caminho.
+Ao final, somamos os efeitos totais obtidos por todos os caminhos.
+Cada caminho direcionado indica uma forma em que <math id="p12.m12" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> pode ter efeito sobre <math id="p12.m13" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>.
+Ao levarmos todoas as formas em consideração,
+obtemos o efeito causal médio.</p>
+</div>
+<div id="p13" class="ltx_para">
+<p class="ltx_p">Além do efeito causal médio,
+às vezes desejamos determinar
+o efeito causal de <math id="p13.m1" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> em <math id="p13.m2" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> quando
+observamos que a unidade amostral
+faz parte de determinado estrato da população.
+Em outras palavras, desejamos saber
+o efeito causal de <math id="p13.m3" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> em <math id="p13.m4" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> quando observamos que
+outras variáveis, <math id="p13.m5" class="ltx_Math" alttext="{\mathbf{Z}}" display="inline"><semantics><mi>𝐙</mi><annotation encoding="application/x-tex">{\mathbf{Z}}</annotation></semantics></math>, assumem um determinado valor.</p>
+</div>
+<div id="chapter3.Thmtheorem7" class="ltx_theorem ltx_theorem_definition">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Definição 3.7</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter3.Thmtheorem7.p1" class="ltx_para">
+<p class="ltx_p">O efeito causal médio condicional, CACE,
+de <math id="chapter3.Thmtheorem7.p1.m1" class="ltx_Math" alttext="X\in\Re" display="inline"><semantics><mrow><mi>X</mi><mo>∈</mo><mi mathvariant="normal">ℜ</mi></mrow><annotation encoding="application/x-tex">X\in\Re</annotation></semantics></math> em <math id="chapter3.Thmtheorem7.p1.m2" class="ltx_Math" alttext="Y\in\Re" display="inline"><semantics><mrow><mi>Y</mi><mo>∈</mo><mi mathvariant="normal">ℜ</mi></mrow><annotation encoding="application/x-tex">Y\in\Re</annotation></semantics></math> dado <math id="chapter3.Thmtheorem7.p1.m3" class="ltx_Math" alttext="{\mathbf{Z}}" display="inline"><semantics><mi>𝐙</mi><annotation encoding="application/x-tex">{\mathbf{Z}}</annotation></semantics></math> é:</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx28" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex62"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex62.m1" class="ltx_Math" alttext="\displaystyle{CACE}({\mathbf{Z}})" display="inline"><semantics><mrow><mi>C</mi><mo>⁢</mo><mi>A</mi><mo>⁢</mo><mi>C</mi><mo>⁢</mo><mi>E</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝐙</mi><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle{CACE}({\mathbf{Z}})</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex62.m2" class="ltx_Math" alttext="\displaystyle=\begin{cases}{\mathbb{E}}[Y|do(X=1),{\mathbf{Z}}]-{\mathbb{E}}[Y%
+|do(X=0),{\mathbf{Z}}]&amp;\text{, se $X$ é binário},\\
+\frac{d{\mathbb{E}}[Y|do(X=x),{\mathbf{Z}}]}{dx}&amp;\text{, se $X$ é contínuo}.%
+\end{cases}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>Y</mi><mo fence="false">|</mo><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mi>𝐙</mi></mrow></mrow><mo stretchy="false">]</mo></mrow></mrow><mo>−</mo><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>Y</mi><mo fence="false">|</mo><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mi>𝐙</mi></mrow></mrow><mo stretchy="false">]</mo></mrow></mrow></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mtext>, se </mtext><mi>X</mi><mtext> é binário</mtext></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mfrac><mrow><mi>d</mi><mo>⁢</mo><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>Y</mi><mo fence="false">|</mo><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mi>𝐙</mi></mrow></mrow><mo stretchy="false">]</mo></mrow></mrow><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mtext>, se </mtext><mi>X</mi><mtext> é contínuo</mtext></mrow><mo lspace="0em">.</mo></mrow></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">\displaystyle=\begin{cases}{\mathbb{E}}[Y|do(X=1),{\mathbf{Z}}]-{\mathbb{E}}[Y%
+|do(X=0),{\mathbf{Z}}]&amp;\text{, se $X$ é binário},\\
+\frac{d{\mathbb{E}}[Y|do(X=x),{\mathbf{Z}}]}{dx}&amp;\text{, se $X$ é contínuo}.%
+\end{cases}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="p14" class="ltx_para">
+<p class="ltx_p">Uma vez estabelecido o modelo de probabilidade
+utilizado quando estudamos intervenções,
+agora podemos fazer inferência sobre o efeito causal.
+Para realizar tal inferência,
+em geral teremos de abordar duas questões:</p>
+</div>
+<div id="p15" class="ltx_para">
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span><div id="I1.i1.p1" class="ltx_para">​<p class="ltx_p"><span class="ltx_text ltx_font_bold">Identificação causal</span>: Temos acesso a dados que
+são gerados segundo a distribuição observacional.
+Como é possível determinar o efeito causal
+em termos da distribuição observacional?</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span><div id="I1.i2.p1" class="ltx_para">​<p class="ltx_p"><span class="ltx_text ltx_font_bold">Estimação</span>: Uma vez estabelecida
+uma ligação entre a distribuição observacional dos dados e
+o efeito causal, como é possível estimá-lo?</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="p16" class="ltx_para">
+<p class="ltx_p">Nas próximas seções estudaremos
+algumas estratégias gerais para
+a resolução destas questões.
+Consideraremos que desejamos medir
+o efeito causal de <math id="p16.m1" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> em <math id="p16.m2" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>,
+onde <math id="p16.m3" class="ltx_Math" alttext="X,Y\in{\mathcal{V}}" display="inline"><semantics><mrow><mrow><mi>X</mi><mo>,</mo><mi>Y</mi></mrow><mo>∈</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi></mrow><annotation encoding="application/x-tex">X,Y\in{\mathcal{V}}</annotation></semantics></math>.</p>
+</div>
+<section id="SS1" class="ltx_subsection normal">
+<div class="section level2">
+
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection header-section-number">4.1</span> Exercícios</h2>
+
+<div id="chapter3.Thmtheorem8" class="ltx_theorem ltx_theorem_exercise">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Exercício 3.8</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter3.Thmtheorem8.p1" class="ltx_para">
+<p class="ltx_p">Considere que <math id="chapter3.Thmtheorem8.p1.m1" class="ltx_Math" alttext="X_{1}" display="inline"><semantics><msub><mi>X</mi><mn>1</mn></msub><annotation encoding="application/x-tex">X_{1}</annotation></semantics></math> e <math id="chapter3.Thmtheorem8.p1.m2" class="ltx_Math" alttext="X_{2}" display="inline"><semantics><msub><mi>X</mi><mn>2</mn></msub><annotation encoding="application/x-tex">X_{2}</annotation></semantics></math> são variáveis binárias.
+Também considere as seguintes definições:
+<span class="ltx_text ltx_font_bold">ACE</span> := <math id="chapter3.Thmtheorem8.p1.m3" class="ltx_Math" alttext="{\mathbb{P}}(X_{2}=1|do(X_{1}=1))-{\mathbb{P}}(X_{2}=1|do(X_{1}=0))" display="inline"><semantics><mrow><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>X</mi><mn>2</mn></msub><mo>=</mo><mrow><mn>1</mn><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>X</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>X</mi><mn>2</mn></msub><mo>=</mo><mrow><mn>1</mn><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>X</mi><mn>1</mn></msub><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{P}}(X_{2}=1|do(X_{1}=1))-{\mathbb{P}}(X_{2}=1|do(X_{1}=0))</annotation></semantics></math>, e
+<span class="ltx_text ltx_font_bold">RD</span> := <math id="chapter3.Thmtheorem8.p1.m4" class="ltx_Math" alttext="{\mathbb{P}}(X_{2}=1|X_{1}=1)-{\mathbb{P}}(X_{2}=1|X_{1}=0)" display="inline"><semantics><mrow><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>X</mi><mn>2</mn></msub><mo>=</mo><mrow><mn>1</mn><mo fence="false">|</mo><msub><mi>X</mi><mn>1</mn></msub></mrow><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>X</mi><mn>2</mn></msub><mo>=</mo><mrow><mn>1</mn><mo fence="false">|</mo><msub><mi>X</mi><mn>1</mn></msub></mrow><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{P}}(X_{2}=1|X_{1}=1)-{\mathbb{P}}(X_{2}=1|X_{1}=0)</annotation></semantics></math>.
+Explique em palavras a diferença entre ACE e RD e
+apresente um exemplo em que essa diferença ocorre.</p>
+</div>
+</div>
+<div id="chapter3.Thmtheorem9" class="ltx_theorem ltx_theorem_exercise">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Exercício 3.9</span></span><span class="ltx_text ltx_font_bold"> </span>(<cite class="ltx_cite ltx_citemacro_citet"><span class="ltx_ref ltx_missing_citation ltx_ref_self">Glymour2016</span></cite>[p.32])<span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter3.Thmtheorem9.p1" class="ltx_para">
+<p class="ltx_p"><math id="chapter3.Thmtheorem9.p1.m1" class="ltx_Math" alttext="(X_{1},X_{2},X_{3},X_{4})" display="inline"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>X</mi><mn>1</mn></msub><mo>,</mo><msub><mi>X</mi><mn>2</mn></msub><mo>,</mo><msub><mi>X</mi><mn>3</mn></msub><mo>,</mo><msub><mi>X</mi><mn>4</mn></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(X_{1},X_{2},X_{3},X_{4})</annotation></semantics></math> são
+variáveis binárias tais que
+<math id="chapter3.Thmtheorem9.p1.m2" class="ltx_Math" alttext="X_{i-1}" display="inline"><semantics><msub><mi>X</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">X_{i-1}</annotation></semantics></math> é a única causa imediata de <math id="chapter3.Thmtheorem9.p1.m3" class="ltx_Math" alttext="X_{i}" display="inline"><semantics><msub><mi>X</mi><mi>i</mi></msub><annotation encoding="application/x-tex">X_{i}</annotation></semantics></math>.
+Além disso, <math id="chapter3.Thmtheorem9.p1.m4" class="ltx_Math" alttext="{\mathbb{P}}(X_{1}=1)=0.5" display="inline"><semantics><mrow><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>X</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">{\mathbb{P}}(X_{1}=1)=0.5</annotation></semantics></math>,
+<math id="chapter3.Thmtheorem9.p1.m5" class="ltx_Math" alttext="{\mathbb{P}}(X_{i}=1|X_{i-1}=1)=p_{11}" display="inline"><semantics><mrow><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>X</mi><mi>i</mi></msub><mo>=</mo><mrow><mn>1</mn><mo fence="false">|</mo><msub><mi>X</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msub><mi>p</mi><mn>11</mn></msub></mrow><annotation encoding="application/x-tex">{\mathbb{P}}(X_{i}=1|X_{i-1}=1)=p_{11}</annotation></semantics></math> e
+<math id="chapter3.Thmtheorem9.p1.m6" class="ltx_Math" alttext="{\mathbb{P}}(X_{i}=1|X_{i-1}=0)=p_{01}" display="inline"><semantics><mrow><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>X</mi><mi>i</mi></msub><mo>=</mo><mrow><mn>1</mn><mo fence="false">|</mo><msub><mi>X</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msub><mi>p</mi><mn>01</mn></msub></mrow><annotation encoding="application/x-tex">{\mathbb{P}}(X_{i}=1|X_{i-1}=0)=p_{01}</annotation></semantics></math>.
+Calcule:</p>
+<ol id="I2" class="ltx_enumerate">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">(a)</span><div id="I2.i1.p1" class="ltx_para">​<p class="ltx_p"><math id="I2.i1.p1.m1" class="ltx_Math" alttext="{\mathbb{P}}(X_{1}=1,X_{2}=0,X_{3}=1,X_{4}=0)" display="inline"><semantics><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><msub><mi>X</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn></mrow><mo>,</mo><mrow><mrow><msub><mi>X</mi><mn>2</mn></msub><mo>=</mo><mn>0</mn></mrow><mo>,</mo><mrow><mrow><msub><mi>X</mi><mn>3</mn></msub><mo>=</mo><mn>1</mn></mrow><mo>,</mo><mrow><msub><mi>X</mi><mn>4</mn></msub><mo>=</mo><mn>0</mn></mrow></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{P}}(X_{1}=1,X_{2}=0,X_{3}=1,X_{4}=0)</annotation></semantics></math>,</p>
+</div>
+</li>
+<li id="I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">(b)</span><div id="I2.i2.p1" class="ltx_para">​<p class="ltx_p"><math id="I2.i2.p1.m1" class="ltx_Math" alttext="{\mathbb{P}}(X_{4}=1|X_{1}=1)" display="inline"><semantics><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>X</mi><mn>4</mn></msub><mo>=</mo><mrow><mn>1</mn><mo fence="false">|</mo><msub><mi>X</mi><mn>1</mn></msub></mrow><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{P}}(X_{4}=1|X_{1}=1)</annotation></semantics></math>, <math id="I2.i2.p1.m2" class="ltx_math_unparsed" alttext="{\mathbb{P}}(X_{4}=1|do(X_{1}=1)" display="inline"><semantics><mrow><mi>ℙ</mi><mrow><mo stretchy="false">(</mo><msub><mi>X</mi><mn>4</mn></msub><mo>=</mo><mn>1</mn><mo fence="false" rspace="0.167em" stretchy="false">|</mo><mi>d</mi><mi>o</mi><mrow><mo stretchy="false">(</mo><msub><mi>X</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{P}}(X_{4}=1|do(X_{1}=1)</annotation></semantics></math>,</p>
+</div>
+</li>
+<li id="I2.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">(c)</span><div id="I2.i3.p1" class="ltx_para">​<p class="ltx_p"><math id="I2.i3.p1.m1" class="ltx_Math" alttext="{\mathbb{P}}(X_{1}=1|X_{4}=1)" display="inline"><semantics><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>X</mi><mn>1</mn></msub><mo>=</mo><mrow><mn>1</mn><mo fence="false">|</mo><msub><mi>X</mi><mn>4</mn></msub></mrow><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{P}}(X_{1}=1|X_{4}=1)</annotation></semantics></math>, <math id="I2.i3.p1.m2" class="ltx_math_unparsed" alttext="{\mathbb{P}}(X_{1}=1|do(X_{4}=1)" display="inline"><semantics><mrow><mi>ℙ</mi><mrow><mo stretchy="false">(</mo><msub><mi>X</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn><mo fence="false" rspace="0.167em" stretchy="false">|</mo><mi>d</mi><mi>o</mi><mrow><mo stretchy="false">(</mo><msub><mi>X</mi><mn>4</mn></msub><mo>=</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{P}}(X_{1}=1|do(X_{4}=1)</annotation></semantics></math>, e</p>
+</div>
+</li>
+<li id="I2.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">(d)</span><div id="I2.i4.p1" class="ltx_para">​<p class="ltx_p"><math id="I2.i4.p1.m1" class="ltx_math_unparsed" alttext="{\mathbb{P}}(X_{3}=1|X_{1}=0,X_{4}=1)" display="inline"><semantics><mrow><mi>ℙ</mi><mrow><mo stretchy="false">(</mo><msub><mi>X</mi><mn>3</mn></msub><mo>=</mo><mn>1</mn><mo fence="false" rspace="0.167em" stretchy="false">|</mo><msub><mi>X</mi><mn>1</mn></msub><mo>=</mo><mn>0</mn><mo>,</mo><msub><mi>X</mi><mn>4</mn></msub><mo>=</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{P}}(X_{3}=1|X_{1}=0,X_{4}=1)</annotation></semantics></math></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="chapter3.Thmtheorem10" class="ltx_theorem ltx_theorem_exercise">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Exercício 3.10</span></span><span class="ltx_text ltx_font_bold"> </span>(<cite class="ltx_cite ltx_citemacro_citet"><span class="ltx_ref ltx_missing_citation ltx_ref_self">Glymour2016</span></cite>[p.29])<span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter3.Thmtheorem10.p1" class="ltx_para">
+<p class="ltx_p">Considere que <math id="chapter3.Thmtheorem10.p1.m1" class="ltx_Math" alttext="(U_{1},U_{2},U_{3})" display="inline"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>U</mi><mn>1</mn></msub><mo>,</mo><msub><mi>U</mi><mn>2</mn></msub><mo>,</mo><msub><mi>U</mi><mn>3</mn></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(U_{1},U_{2},U_{3})</annotation></semantics></math> são independentes e
+tais que <math id="chapter3.Thmtheorem10.p1.m2" class="ltx_Math" alttext="U_{i}\sim N(0,1)" display="inline"><semantics><mrow><msub><mi>U</mi><mi>i</mi></msub><mo>∼</mo><mrow><mi>N</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">U_{i}\sim N(0,1)</annotation></semantics></math>. Também,
+<math id="chapter3.Thmtheorem10.p1.m3" class="ltx_Math" alttext="X_{1}\equiv U_{1}" display="inline"><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo>≡</mo><msub><mi>U</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">X_{1}\equiv U_{1}</annotation></semantics></math>,
+<math id="chapter3.Thmtheorem10.p1.m4" class="ltx_Math" alttext="X_{2}\equiv 3^{-1}X_{1}+U_{2}" display="inline"><semantics><mrow><msub><mi>X</mi><mn>2</mn></msub><mo>≡</mo><mrow><mrow><msup><mn>3</mn><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><msub><mi>X</mi><mn>1</mn></msub></mrow><mo>+</mo><msub><mi>U</mi><mn>2</mn></msub></mrow></mrow><annotation encoding="application/x-tex">X_{2}\equiv 3^{-1}X_{1}+U_{2}</annotation></semantics></math>, e
+<math id="chapter3.Thmtheorem10.p1.m5" class="ltx_Math" alttext="X_{3}\equiv 2^{-4}X_{2}+U_{3}" display="inline"><semantics><mrow><msub><mi>X</mi><mn>3</mn></msub><mo>≡</mo><mrow><mrow><msup><mn>2</mn><mrow><mo>−</mo><mn>4</mn></mrow></msup><mo>⁢</mo><msub><mi>X</mi><mn>2</mn></msub></mrow><mo>+</mo><msub><mi>U</mi><mn>3</mn></msub></mrow></mrow><annotation encoding="application/x-tex">X_{3}\equiv 2^{-4}X_{2}+U_{3}</annotation></semantics></math>.
+Considere que <math id="chapter3.Thmtheorem10.p1.m6" class="ltx_Math" alttext="X_{1}" display="inline"><semantics><msub><mi>X</mi><mn>1</mn></msub><annotation encoding="application/x-tex">X_{1}</annotation></semantics></math> é
+a causa imediata de <math id="chapter3.Thmtheorem10.p1.m7" class="ltx_Math" alttext="X_{2}" display="inline"><semantics><msub><mi>X</mi><mn>2</mn></msub><annotation encoding="application/x-tex">X_{2}</annotation></semantics></math>,
+que por sua vez é a causa imediata de <math id="chapter3.Thmtheorem10.p1.m8" class="ltx_Math" alttext="X_{3}" display="inline"><semantics><msub><mi>X</mi><mn>3</mn></msub><annotation encoding="application/x-tex">X_{3}</annotation></semantics></math>.
+Além disso, cada <math id="chapter3.Thmtheorem10.p1.m9" class="ltx_Math" alttext="U_{i}" display="inline"><semantics><msub><mi>U</mi><mi>i</mi></msub><annotation encoding="application/x-tex">U_{i}</annotation></semantics></math> influencia diretamente somente <math id="chapter3.Thmtheorem10.p1.m10" class="ltx_Math" alttext="X_{i}" display="inline"><semantics><msub><mi>X</mi><mi>i</mi></msub><annotation encoding="application/x-tex">X_{i}</annotation></semantics></math>.</p>
+<ol id="I3" class="ltx_enumerate">
+<li id="I3.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">(a)</span><div id="I3.i1.p1" class="ltx_para">​<p class="ltx_p">Desenhe o DAG que representa
+a estrutura causal indicada no enunciado.</p>
+</div>
+</li>
+<li id="I3.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">(b)</span><div id="I3.i2.p1" class="ltx_para">​<p class="ltx_p">Calcule <math id="I3.i2.p1.m1" class="ltx_Math" alttext="{\mathbb{E}}[X_{2}|X_{1}=3]" display="inline"><semantics><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mrow><msub><mi>X</mi><mn>2</mn></msub><mo fence="false">|</mo><msub><mi>X</mi><mn>1</mn></msub></mrow><mo>=</mo><mn>3</mn></mrow><mo stretchy="false">]</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{E}}[X_{2}|X_{1}=3]</annotation></semantics></math> e <math id="I3.i2.p1.m2" class="ltx_Math" alttext="{\mathbb{E}}[X_{2}|do(X_{1}=3)]" display="inline"><semantics><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><msub><mi>X</mi><mn>2</mn></msub><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>X</mi><mn>1</mn></msub><mo>=</mo><mn>3</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">]</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{E}}[X_{2}|do(X_{1}=3)]</annotation></semantics></math>.</p>
+</div>
+</li>
+<li id="I3.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">(c)</span><div id="I3.i3.p1" class="ltx_para">​<p class="ltx_p">Calcule <math id="I3.i3.p1.m1" class="ltx_Math" alttext="{\mathbb{E}}[X_{3}|X_{1}=6]" display="inline"><semantics><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mrow><msub><mi>X</mi><mn>3</mn></msub><mo fence="false">|</mo><msub><mi>X</mi><mn>1</mn></msub></mrow><mo>=</mo><mn>6</mn></mrow><mo stretchy="false">]</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{E}}[X_{3}|X_{1}=6]</annotation></semantics></math> e <math id="I3.i3.p1.m2" class="ltx_Math" alttext="{\mathbb{E}}[X_{3}|do(X_{1}=6)]" display="inline"><semantics><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><msub><mi>X</mi><mn>3</mn></msub><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>X</mi><mn>1</mn></msub><mo>=</mo><mn>6</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">]</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{E}}[X_{3}|do(X_{1}=6)]</annotation></semantics></math>.</p>
+</div>
+</li>
+<li id="I3.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">(d)</span><div id="I3.i4.p1" class="ltx_para">​<p class="ltx_p">Calcule <math id="I3.i4.p1.m1" class="ltx_Math" alttext="{\mathbb{E}}[X_{1}|X_{2}=1]" display="inline"><semantics><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mrow><msub><mi>X</mi><mn>1</mn></msub><mo fence="false">|</mo><msub><mi>X</mi><mn>2</mn></msub></mrow><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">]</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{E}}[X_{1}|X_{2}=1]</annotation></semantics></math> e <math id="I3.i4.p1.m2" class="ltx_Math" alttext="{\mathbb{E}}[X_{1}|do(X_{2}=1)]" display="inline"><semantics><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><msub><mi>X</mi><mn>1</mn></msub><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>X</mi><mn>2</mn></msub><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">]</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{E}}[X_{1}|do(X_{2}=1)]</annotation></semantics></math>.</p>
+</div>
+</li>
+<li id="I3.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">(e)</span><div id="I3.i5.p1" class="ltx_para">​<p class="ltx_p">Calcule <math id="I3.i5.p1.m1" class="ltx_Math" alttext="{\mathbb{E}}[X_{2}|X_{1}=1,X_{3}=3]" display="inline"><semantics><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mrow><mrow><msub><mi>X</mi><mn>2</mn></msub><mo fence="false">|</mo><msub><mi>X</mi><mn>1</mn></msub></mrow><mo>=</mo><mn>1</mn></mrow><mo>,</mo><mrow><msub><mi>X</mi><mn>3</mn></msub><mo>=</mo><mn>3</mn></mrow></mrow><mo stretchy="false">]</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{E}}[X_{2}|X_{1}=1,X_{3}=3]</annotation></semantics></math>,
+<math id="I3.i5.p1.m2" class="ltx_Math" alttext="{\mathbb{E}}[X_{2}|X_{1}=1,do(X_{3}=3)]" display="inline"><semantics><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mrow><msub><mi>X</mi><mn>2</mn></msub><mo fence="false">|</mo><msub><mi>X</mi><mn>1</mn></msub></mrow><mo>=</mo><mrow><mn>1</mn><mo>,</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>X</mi><mn>3</mn></msub><mo>=</mo><mn>3</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo stretchy="false">]</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{E}}[X_{2}|X_{1}=1,do(X_{3}=3)]</annotation></semantics></math>, e
+<math id="I3.i5.p1.m3" class="ltx_Math" alttext="{\mathbb{E}}[X_{2}|do(X_{1}=1),X_{3}=3]" display="inline"><semantics><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mrow><msub><mi>X</mi><mn>2</mn></msub><mo fence="false">|</mo><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>X</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><msub><mi>X</mi><mn>3</mn></msub></mrow></mrow><mo>=</mo><mn>3</mn></mrow><mo stretchy="false">]</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{E}}[X_{2}|do(X_{1}=1),X_{3}=3]</annotation></semantics></math>.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+</div>
+</section>
+</div>
+</div>
+</div>
+<a href="chapter3.html" class="navigation navigation-prev" aria-label="Previous page"><i class="fa fa-angle-left"></i></a><a href="S5.html" class="navigation navigation-next" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+</div>
+</div>
+<script src="bookml/gitbook/js/app.min.js"></script>
+<script src="bookml/gitbook/js/jquery.highlight.js"></script>
+<script src="bookml/gitbook/js/plugin-search.js"></script>
+<script src="bookml/gitbook/js/plugin-fontsettings.js"></script>
+<script src="bookml/gitbook/js/plugin-bookdown.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script>
+        MathJax = {
+          startup: {
+            ready() {
+              // do not process equations disabled with \bmlDisableMathJax (code suggested by Davide P. Cervone)
+              class bmlFindMathML extends MathJax._.input.mathml.FindMathML.FindMathML {
+                processMath(set) {
+                  const adaptor = this.adaptor;
+                  for (const node of set.values()) {
+                    if (adaptor.hasClass(node, 'bml_disable_mathjax')) {
+                      set.delete(node);
+                    }
+                  }
+                  return super.processMath(set);
+                }
+              }
+
+              MathJax._.components.global.combineDefaults(MathJax.config, 'mml', {FindMathML: new bmlFindMathML()});
+
+              MathJax.startup.defaultReady();
+
+              // preproces MathML to make MathJax aware of certain LaTeXML and BookML additional info
+              const mmlFilters = MathJax.startup.input[0].mmlFilters;
+
+              // convert the LaTeXML calligraphic (chancery) annotation to a form MathJax understands
+              // since the corresponding Unicode characters render as script (rounded)
+              const script2latin = {
+                '𝒜': 'A', 'ℬ': 'B', '𝒞': 'C', '𝒟': 'D', 'ℰ': 'E', 'ℱ': 'F', '𝒢': 'G',
+                'ℋ': 'H', 'ℐ': 'I', '𝒥': 'J', '𝒦': 'K', 'ℒ': 'L', 'ℳ': 'M', '𝒩': 'N',
+                '𝒪': 'O', '𝒫': 'P', '𝒬': 'Q', 'ℛ': 'R', '𝒮': 'S', '𝒯': 'T', '𝒰': 'U',
+                '𝒱': 'V', '𝒲': 'W', '𝒳': 'X', '𝒴': 'Y', '𝒵': 'Z',
+              };
+
+              mmlFilters.add((args) => {
+                for (const n of args.data.getElementsByClassName('ltx_font_mathcaligraphic')) {
+                  n.classList.add('MJX-tex-calligraphic');
+                  const letter = script2latin[n.textContent];
+                  if (letter !== undefined) { n.textContent = letter; }
+                }
+              });
+
+              // adjust characters based on Unicode variation sequences
+              const replacements = {
+                // MathJax renders the empty set as the U+FE00 variant, so the plain character needs adjusting
+                '∅': { variant: 'variant' },
+                // MathJax renders script characters in rounded style, which is fine for no variation and U+FE00
+                '𝒜\xFE00': { text: 'A', variant: 'tex-calligraphic' },
+                'ℬ\xFE00': { text: 'B', variant: 'tex-calligraphic' },
+                '𝒞\xFE00': { text: 'C', variant: 'tex-calligraphic' },
+                '𝒟\xFE00': { text: 'D', variant: 'tex-calligraphic' },
+                'ℰ\xFE00': { text: 'E', variant: 'tex-calligraphic' },
+                'ℱ\xFE00': { text: 'F', variant: 'tex-calligraphic' },
+                '𝒢\xFE00': { text: 'G', variant: 'tex-calligraphic' },
+                'ℋ\xFE00': { text: 'H', variant: 'tex-calligraphic' },
+                'ℐ\xFE00': { text: 'I', variant: 'tex-calligraphic' },
+                '𝒥\xFE00': { text: 'J', variant: 'tex-calligraphic' },
+                '𝒦\xFE00': { text: 'K', variant: 'tex-calligraphic' },
+                'ℒ\xFE00': { text: 'L', variant: 'tex-calligraphic' },
+                'ℳ\xFE00': { text: 'M', variant: 'tex-calligraphic' },
+                '𝒩\xFE00': { text: 'N', variant: 'tex-calligraphic' },
+                '𝒪\xFE00': { text: 'O', variant: 'tex-calligraphic' },
+                '𝒫\xFE00': { text: 'P', variant: 'tex-calligraphic' },
+                '𝒬\xFE00': { text: 'Q', variant: 'tex-calligraphic' },
+                'ℛ\xFE00': { text: 'R', variant: 'tex-calligraphic' },
+                '𝒮\xFE00': { text: 'S', variant: 'tex-calligraphic' },
+                '𝒯\xFE00': { text: 'T', variant: 'tex-calligraphic' },
+                '𝒰\xFE00': { text: 'U', variant: 'tex-calligraphic' },
+                '𝒱\xFE00': { text: 'V', variant: 'tex-calligraphic' },
+                '𝒲\xFE00': { text: 'W', variant: 'tex-calligraphic' },
+                '𝒳\xFE00': { text: 'X', variant: 'tex-calligraphic' },
+                '𝒴\xFE00': { text: 'Y', variant: 'tex-calligraphic' },
+                '𝒵\xFE00': { text: 'Z', variant: 'tex-calligraphic' }
+              };
+
+              mmlFilters.add((args) => {
+                let nodes = document.evaluate('.//m:mi | .//m:mn | .//m:mo | .//m:ms', args.data,
+                  () => 'http://www.w3.org/1998/Math/MathML', XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE);
+                for (let i = 0; i < nodes.snapshotLength; i++) {
+                  const n = nodes.snapshotItem(i);
+                  const repl = replacements[n.innerHTML];
+                  if (repl !== undefined) {
+                    const variant = repl['variant'];
+                    const text = repl['text'];
+                    if (variant !== undefined) { n.classList.add('MJX-' + variant); n.removeAttribute('mathvariant'); }
+                    if (text !== undefined) { n.innerHTML = text; }
+                  }
+                }
+              });
+            }
+          }
+        };
+      </script>
+<script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-chtml.js"></script>
+<script type="text/javascript">
+                gitbook.require(["gitbook"], function(gitbook) {
+                gitbook.start({
+                  "fontsettings": {
+                    "theme": "white",
+                    "family": "sans",
+                    "size": 2
+                  },
+                  "download": [ [ "book.pdf", "PDF" ], ],
+                  "search": {
+                    "engine": "fuse"
+                  },
+                  "toc": {
+                    "collapse": "none"
+                  }
+                });
+              });
+            </script>
+</body>
+
+</html>

@@ -1,0 +1,436 @@
+<!DOCTYPE html><html lang="pt">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>9 Variáveis Instrumentais ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal</title>
+<!--Generated on Tue Aug 27 12:19:15 2024 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on Última revisão: August 27, 2024.-->
+<style>:root { --bml-ltx-font-size: 10.95; }</style>
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/style.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-table.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-search.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-bookdown.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-fontsettings.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="bookml/CSS/style.css" type="text/css">
+<link rel="stylesheet" href="bookml/CSS/style.gitbook,plain.css" type="text/css">
+<link rel="stylesheet" href="bookml/CSS/style.gitbook.css" type="text/css">
+<link rel="stylesheet" href="bmluser/colors.gitbook-book.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6"></script>
+<link rel="up" href="chapter4.html" title="Capítulo 4 Resultados potenciais ‣ Inferência Causal">
+<link rel="up up" href="index.html" title="Inferência Causal">
+<link rel="start" href="index.html" title="Inferência Causal">
+<link rel="prev" href="S8.html" title="8 Levando a intuição do SCM ao POM ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal">
+<link rel="next" href="S10.html" title="10 Contrafactuais ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal">
+<link rel="section" href="S8.html" title="8 Levando a intuição do SCM ao POM ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal">
+<link rel="section" href="S10.html" title="10 Contrafactuais ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal">
+<link rel="chapter" href="chapter1.html" title="Capítulo 1 Por que estudar Inferência Causal? ‣ Inferência Causal">
+<link rel="chapter" href="chapter2.html" title="Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal">
+<link rel="chapter" href="chapter3.html" title="Capítulo 3 Intervenções ‣ Inferência Causal">
+<link rel="chapter" href="chapter4.html" title="Capítulo 4 Resultados potenciais ‣ Inferência Causal">
+<link rel="chapter" href="chapter5.html" title="Capítulo 5 Descoberta Causal ‣ Inferência Causal">
+<link rel="chapter" href="chapter6.html" title="Capítulo 6 Demonstrações ‣ Inferência Causal">
+</head>
+<body>
+<div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+<a href="#bml-main-content" tabindex="0" class="bml-skip-to-content">Skip to content.</a>
+<div class="book-summary"><nav class="ltx_page_navbar">
+<ul class="ltx_toclist summary">
+<li>
+<a href="index.html" title="" class="ltx_ref" rel="start">Inferência Causal <span class="ltx_text"> </span></a>
+</li>
+<li class="divider">
+<li data-level="1" data-path="chapter1.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter1.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">1 </span></b>Por que estudar Inferência Causal?</a></li>
+<li data-level="2" data-path="chapter2.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter2.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">2 </span></b>Modelo Causal (CM)</a></li>
+<li data-level="3" data-path="chapter3.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter3.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">3 </span></b>Intervenções</a></li>
+<li data-level="4" data-path="chapter4.html" class="ltx_tocentry ltx_tocentry_chapter  chapter ">
+<a href="chapter4.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">4 </span></b>Resultados potenciais</a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li data-level="8" data-path="S8.html" class="ltx_tocentry ltx_tocentry_section  chapter "><a href="S8.html" title="In Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">8 </span></b>Levando a intuição do SCM ao POM</a></li>
+<li data-level="9" data-path="" class="ltx_tocentry ltx_tocentry_section ltx_ref_self  chapter active"><a href="" title="In Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">9 </span></b>Variáveis Instrumentais</a></li>
+<li data-level="10" data-path="S10.html" class="ltx_tocentry ltx_tocentry_section  chapter "><a href="S10.html" title="In Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">10 </span></b>Contrafactuais</a></li>
+</ol>
+</li>
+<li data-level="5" data-path="chapter5.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter5.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">5 </span></b>Descoberta Causal</a></li>
+<li data-level="6" data-path="chapter6.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter6.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6 </span></b>Demonstrações</a></li>
+</ul>
+</nav></div>
+<div class="ltx_page_main book-body fixed">
+<div class="body-inner">
+<div class="book-header fixed" role="navigation"><h1>Variáveis Instrumentais</h1></div>
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="ltx_page_content page-inner" id="bml-main-content">
+<section class="ltx_section normal" lang="pt">
+<div class="section level1">
+
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section header-section-number">9</span> Variáveis Instrumentais</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p">Há situações em que
+não nos sentimentos confortáveis com
+a suposição de que observamos
+todos os confundidores ou
+todos os mediadores de <math id="p1.m1" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> a <math id="p1.m2" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>.
+Nestes casos, não é possível
+justificar os métodos baseados
+nos critérios backdoor e frontdoor
+vistos na <a href="chapter3.html" title="Capítulo 3 Intervenções ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">capítulo</span> <span class="ltx_text ltx_ref_tag">3</span></a>.
+Variáveis instrumentais são
+um modo de evitar esse tipo de suposição.</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">Intuitivamente, uma variável instrumental, <math id="p2.m1" class="ltx_Math" alttext="I" display="inline"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math>, tem
+todo o seu efeito causal sobre <math id="p2.m2" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> mediado por <math id="p2.m3" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>.
+Em outra palavras, a única forma em que <math id="p2.m4" class="ltx_Math" alttext="I" display="inline"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math> tem
+efeito sobre <math id="p2.m5" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> é na medida em que
+<math id="p2.m6" class="ltx_Math" alttext="I" display="inline"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math> tem efeito sobre <math id="p2.m7" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> e, por sua vez,
+<math id="p2.m8" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> tem efeito sobre <math id="p2.m9" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>.
+Por exemplo, <cite class="ltx_cite ltx_citemacro_citet"><span class="ltx_ref ltx_missing_citation ltx_ref_self">Angrist1990</span></cite> estuda
+como participar da guerra do Vietnam, <math id="p2.m10" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>,
+tem efeito sobre a renda de um indivíduo, <math id="p2.m11" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>.
+Para tal, o estudo considera
+os sorteios que foram realizados para
+determinar quem era recrutado para a guerra.
+O único efeito que o sorteio tem
+sobre a renda de um indivíduo é indireto,
+apenas na medida em que afeta
+a probabilidade de este indivíduo ir para a guerra.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">Com base neste tipo de variável,
+sob certas circunstâncias
+é possível estimar o efeito causal de <math id="p3.m1" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> em <math id="p3.m2" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>.
+A ideia básica é a de que,
+fazendo intervenções em <math id="p3.m3" class="ltx_Math" alttext="I" display="inline"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math>,
+vemos mudanças tanto em <math id="p3.m4" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> quanto em <math id="p3.m5" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>.
+Como as mudanças em <math id="p3.m6" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> devem-se apenas
+às mudanças que ocorreram em <math id="p3.m7" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>,
+pode ser possível estimar o efeito causal de <math id="p3.m8" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> em <math id="p3.m9" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>.</p>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">Dada esta intuição, podemos
+definir formalmente uma variável instrumental.
+Para tal, iremos seguir de perto
+a abordagem em <cite class="ltx_cite ltx_citemacro_citet"><span class="ltx_ref ltx_missing_citation ltx_ref_self">Angrist1996</span></cite>.</p>
+</div>
+<div id="chapter4.Thmtheorem22" class="ltx_theorem ltx_theorem_definition">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Definição 4.22</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter4.Thmtheorem22.p1" class="ltx_para">
+<p class="ltx_p">Dizemos que <math id="chapter4.Thmtheorem22.p1.m1" class="ltx_Math" alttext="I" display="inline"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math> é um instrumento para
+medir o efeito causal de <math id="chapter4.Thmtheorem22.p1.m2" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> em <math id="chapter4.Thmtheorem22.p1.m3" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> se</p>
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span><div id="I1.i1.p1" class="ltx_para">​<p class="ltx_p"><math id="I1.i1.p1.m1" class="ltx_Math" alttext="I" display="inline"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math> é ignorável para medir o efeito em <math id="I1.i1.p1.m2" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>.</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span><div id="I1.i2.p1" class="ltx_para">​<p class="ltx_p"><math id="I1.i2.p1.m1" class="ltx_Math" alttext="Y_{I=i,X=x}\equiv Y_{X=x}" display="inline"><semantics><mrow><msub><mi>Y</mi><mrow><mrow><mi>I</mi><mo>=</mo><mi>i</mi></mrow><mo>,</mo><mrow><mi>X</mi><mo>=</mo><mi>x</mi></mrow></mrow></msub><mo>≡</mo><msub><mi>Y</mi><mrow><mi>X</mi><mo>=</mo><mi>x</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Y_{I=i,X=x}\equiv Y_{X=x}</annotation></semantics></math>,
+para todo <math id="I1.i2.p1.m2" class="ltx_Math" alttext="f" display="inline"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math> compatível com <math id="I1.i2.p1.m3" class="ltx_Math" alttext="{\mathcal{G}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒢</mi><annotation encoding="application/x-tex">{\mathcal{G}}</annotation></semantics></math>.</p>
+</div>
+</li>
+<li id="I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">3.</span><div id="I1.i3.p1" class="ltx_para">​<p class="ltx_p"><math id="I1.i3.p1.m1" class="ltx_Math" alttext="Cov[I,X]\neq 0" display="inline"><semantics><mrow><mrow><mi>C</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>I</mi><mo>,</mo><mi>X</mi><mo stretchy="false">]</mo></mrow></mrow><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">Cov[I,X]\neq 0</annotation></semantics></math>.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p">Apesar de as condições na <a href="#chapter4.Thmtheorem22" title="Definição 4.22. ‣ 9 Variáveis Instrumentais ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Definição</span> <span class="ltx_text ltx_ref_tag">4.22</span></a> terem sido
+utilizadas originalmente por <cite class="ltx_cite ltx_citemacro_citet"><span class="ltx_ref ltx_missing_citation ltx_ref_self">Angrist1996</span></cite>,
+é possível reinterpretá-las utilizando o grafo causal.
+Já vimos no <a href="S8.html#chapter4.Thmtheorem13" title="Lema 4.13. ‣ 8 Levando a intuição do SCM ao POM ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Lema</span> <span class="ltx_text ltx_ref_tag">4.13</span></a> que
+a primeira condição é equivalente a dizer que
+<math id="p5.m1" class="ltx_Math" alttext="\emptyset" display="inline"><semantics><mi>∅︀</mi><annotation encoding="application/x-tex">\emptyset</annotation></semantics></math> satisfaz o critério backdoor para
+medir o efeito causal de <math id="p5.m2" class="ltx_Math" alttext="I" display="inline"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math> em <math id="p5.m3" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>.
+Isto é, <math id="p5.m4" class="ltx_Math" alttext="I" display="inline"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math> e <math id="p5.m5" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> não tem
+ascendentes em comum no grafo causal.
+Além disso, a segunda condição é
+equivalente a afirmar que no grafo causal
+todo caminho direcionado de <math id="p5.m6" class="ltx_Math" alttext="I" display="inline"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math> a <math id="p5.m7" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>
+passa por <math id="p5.m8" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>. Isto é,
+<math id="p5.m9" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> é o mediador do efeito causal de <math id="p5.m10" class="ltx_Math" alttext="I" display="inline"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math> em <math id="p5.m11" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>.
+Este resultado é apresentado no <a href="#chapter4.Thmtheorem23" title="Lema 4.23. ‣ 9 Variáveis Instrumentais ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Lema</span> <span class="ltx_text ltx_ref_tag">4.23</span></a>.</p>
+</div>
+<div id="chapter4.Thmtheorem23" class="ltx_theorem ltx_theorem_lemma">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Lema 4.23</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter4.Thmtheorem23.p1" class="ltx_para">
+<p class="ltx_p"><math id="chapter4.Thmtheorem23.p1.m1" class="ltx_Math" alttext="Y_{I=i,X=x}\equiv Y_{X=x}" display="inline"><semantics><mrow><msub><mi>Y</mi><mrow><mrow><mi>I</mi><mo>=</mo><mi>i</mi></mrow><mo>,</mo><mrow><mi>X</mi><mo>=</mo><mi>x</mi></mrow></mrow></msub><mo>≡</mo><msub><mi>Y</mi><mrow><mi>X</mi><mo>=</mo><mi>x</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Y_{I=i,X=x}\equiv Y_{X=x}</annotation></semantics></math><span class="ltx_text ltx_font_italic">,
+para todo <math id="chapter4.Thmtheorem23.p1.m2" class="ltx_Math" alttext="f" display="inline"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math> compatível com <math id="chapter4.Thmtheorem23.p1.m3" class="ltx_Math" alttext="{\mathcal{G}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒢</mi><annotation encoding="application/x-tex">{\mathcal{G}}</annotation></semantics></math> se e somente se
+todo caminho direcionado de <math id="chapter4.Thmtheorem23.p1.m4" class="ltx_Math" alttext="I" display="inline"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math> a <math id="chapter4.Thmtheorem23.p1.m5" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>, <math id="chapter4.Thmtheorem23.p1.m6" class="ltx_Math" alttext="C" display="inline"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>,
+é tal que existe <math id="chapter4.Thmtheorem23.p1.m7" class="ltx_Math" alttext="j" display="inline"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math> com <math id="chapter4.Thmtheorem23.p1.m8" class="ltx_Math" alttext="C_{j}=X" display="inline"><semantics><mrow><msub><mi>C</mi><mi>j</mi></msub><mo>=</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">C_{j}=X</annotation></semantics></math>.</span></p>
+</div>
+</div>
+<div id="p6" class="ltx_para">
+<p class="ltx_p">Sob algumas circunstâncias,
+a existência de um instrumento é
+suficiente para que
+seja possível identificar o efeito causal.
+Uma suposição usual é de que
+estamos analisando um
+CM linear Gaussiano (<a href="S2.html#chapter2.Thmtheorem25" title="Definição 2.25. ‣ 2.5 Modelo Causal (Causal Model) ‣ 2 Elementos de Modelos Probabilísticos em Grafos ‣ Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Definição</span> <span class="ltx_text ltx_ref_tag">2.25</span></a>).</p>
+</div>
+<div id="chapter4.Thmtheorem24" class="ltx_theorem ltx_theorem_theorem">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Teorema 4.24</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter4.Thmtheorem24.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Se <math id="chapter4.Thmtheorem24.p1.m1" class="ltx_Math" alttext="({\mathcal{G}},f)" display="inline"><semantics><mrow><mo stretchy="false">(</mo><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>,</mo><mi>f</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">({\mathcal{G}},f)</annotation></semantics></math> é um CM linear Gaussiano e
+<math id="chapter4.Thmtheorem24.p1.m2" class="ltx_Math" alttext="I" display="inline"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math> é um instrumento para
+medir o efeito causal de <math id="chapter4.Thmtheorem24.p1.m3" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> em <math id="chapter4.Thmtheorem24.p1.m4" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>, então</span></p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx62" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex112"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex112.m1" class="ltx_Math" alttext="\displaystyle{ACE}" display="inline"><semantics><mrow><mi>A</mi><mo>⁢</mo><mi>C</mi><mo>⁢</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">\displaystyle{ACE}</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex112.m2" class="ltx_Math" alttext="\displaystyle=\frac{Cov[I,Y]}{Cov[I,X]}" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mi>C</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>I</mi><mo>,</mo><mi>Y</mi><mo stretchy="false">]</mo></mrow></mrow><mrow><mi>C</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>I</mi><mo>,</mo><mi>X</mi><mo stretchy="false">]</mo></mrow></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle=\frac{Cov[I,Y]}{Cov[I,X]}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="p7" class="ltx_para">
+<p class="ltx_p">Caso o modelo causal não seja linear Gaussiano,
+então mais suposições são necessárias
+para identificar o efeito causal
+com base em um instrumento,
+Uma suposição usual é
+a de monotonicidade do instrumento.
+Segundo esta, ao aumentar
+o valor do instrumento por uma intervenção,
+o valor de <math id="p7.m1" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> necessariamente irá aumentar</p>
+</div>
+<div id="chapter4.Thmtheorem25" class="ltx_theorem ltx_theorem_definition">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Definição 4.25</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter4.Thmtheorem25.p1" class="ltx_para">
+<p class="ltx_p"><math id="chapter4.Thmtheorem25.p1.m1" class="ltx_Math" alttext="I" display="inline"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math> é um instrumento monotônico para
+medir o efeito causal de <math id="chapter4.Thmtheorem25.p1.m2" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> em <math id="chapter4.Thmtheorem25.p1.m3" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> se,
+para todo <math id="chapter4.Thmtheorem25.p1.m4" class="ltx_Math" alttext="i_{1}&gt;i_{0}" display="inline"><semantics><mrow><msub><mi>i</mi><mn>1</mn></msub><mo>&gt;</mo><msub><mi>i</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">i_{1}&gt;i_{0}</annotation></semantics></math>,</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx63" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex113"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex113.m1" class="ltx_Math" alttext="\displaystyle{\mathbb{P}}(X_{I=i_{1}}&gt;X_{I=i_{0}})=1." display="inline"><semantics><mrow><mrow><mrow><mi>ℙ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>X</mi><mrow><mi>I</mi><mo>=</mo><msub><mi>i</mi><mn>1</mn></msub></mrow></msub><mo>&gt;</mo><msub><mi>X</mi><mrow><mi>I</mi><mo>=</mo><msub><mi>i</mi><mn>0</mn></msub></mrow></msub></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow><mo lspace="0em">.</mo></mrow><annotation encoding="application/x-tex">\displaystyle{\mathbb{P}}(X_{I=i_{1}}&gt;X_{I=i_{0}})=1.</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="p8" class="ltx_para">
+<p class="ltx_p">O Instrumento monotônico foi originalmente contextualizado
+em uma aplicação a alistados na Guerra do Vietnam <cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_ref ltx_missing_citation ltx_ref_self">Angrist1990</span></cite>.
+Pode-se imaginar que a população é dividida em <math id="p8.m1" class="ltx_Math" alttext="4" display="inline"><semantics><mn>4</mn><annotation encoding="application/x-tex">4</annotation></semantics></math> grupos.
+Pessoas que sempre iriam à guerra (always-taker),
+que nunca iriam à guerra (never-taker),
+que iriam à guerra somente se alistados (compliers),
+e que iriam à guerra somente se não alistados (defiers).
+Neste caso, o alistamento ser um instrumento monotônico corresponde
+a afirmar que não existem pessoas no último grupo.</p>
+</div>
+<div id="p9" class="ltx_para">
+<p class="ltx_p">Quando o instrumento é monotônico e
+<math id="p9.m1" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> e <math id="p9.m2" class="ltx_Math" alttext="I" display="inline"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math> são binários, é
+possível identificar o efeito causal de
+<math id="p9.m3" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> em <math id="p9.m4" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> em uma sub-população.
+Especificamente, é possível identificar
+o efeito de <math id="p9.m5" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> em <math id="p9.m6" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> na sub-população em que
+o resultado potencial de <math id="p9.m7" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> é
+diferente para cada intervenção em <math id="p9.m8" class="ltx_Math" alttext="I" display="inline"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math>.
+No exemplo da Guerra do Vietnam,
+esta é a sub-população dos <span class="ltx_text ltx_font_italic">compliers</span>, isto é,
+indivíduos que iriam à guerra somente se alistados.
+A definição de Local Average Treatment Effect (LATE)
+é formalizada abaixo:</p>
+</div>
+<div id="chapter4.Thmtheorem26" class="ltx_theorem ltx_theorem_definition">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Definição 4.26</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter4.Thmtheorem26.p1" class="ltx_para">
+<p class="ltx_p">Se <math id="chapter4.Thmtheorem26.p1.m1" class="ltx_Math" alttext="X,I\in\{0,1\}" display="inline"><semantics><mrow><mrow><mi>X</mi><mo>,</mo><mi>I</mi></mrow><mo>∈</mo><mrow><mo stretchy="false">{</mo><mn>0,1</mn><mo stretchy="false">}</mo></mrow></mrow><annotation encoding="application/x-tex">X,I\in\{0,1\}</annotation></semantics></math>, então</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx64" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex114"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex114.m1" class="ltx_Math" alttext="\displaystyle{LATE}" display="inline"><semantics><mrow><mi>L</mi><mo>⁢</mo><mi>A</mi><mo>⁢</mo><mi>T</mi><mo>⁢</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">\displaystyle{LATE}</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex114.m2" class="ltx_Math" alttext="\displaystyle={\mathbb{E}}[Y_{X=1}-Y_{X=0}|X_{I=1}-X_{I=0}=1]." display="inline"><semantics><mrow><mrow><mi></mi><mo>=</mo><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mrow><msub><mi>Y</mi><mrow><mi>X</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>−</mo><mrow><msub><mi>Y</mi><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow></msub><mo fence="false">|</mo><mrow><msub><mi>X</mi><mrow><mi>I</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>X</mi><mrow><mi>I</mi><mo>=</mo><mn>0</mn></mrow></msub></mrow></mrow></mrow><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">]</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow><annotation encoding="application/x-tex">\displaystyle={\mathbb{E}}[Y_{X=1}-Y_{X=0}|X_{I=1}-X_{I=0}=1].</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="p10" class="ltx_para">
+<p class="ltx_p">O <a href="#chapter4.Thmtheorem27" title="Teorema 4.27. ‣ 9 Variáveis Instrumentais ‣ Capítulo 4 Resultados potenciais ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Teorema</span> <span class="ltx_text ltx_ref_tag">4.27</span></a> mostra como
+identificar o LATE por meio de um instrumento monotônico.</p>
+</div>
+<div id="chapter4.Thmtheorem27" class="ltx_theorem ltx_theorem_theorem">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Teorema 4.27</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter4.Thmtheorem27.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Se <math id="chapter4.Thmtheorem27.p1.m1" class="ltx_Math" alttext="I\in\ \{0,1\}" display="inline"><semantics><mrow><mi>I</mi><mo rspace="0.828em">∈</mo><mrow><mo stretchy="false">{</mo><mn>0,1</mn><mo stretchy="false">}</mo></mrow></mrow><annotation encoding="application/x-tex">I\in\ \{0,1\}</annotation></semantics></math> é um instrumento monotônico para
+o efeito causal de <math id="chapter4.Thmtheorem27.p1.m2" class="ltx_Math" alttext="X\in\{0,1\}" display="inline"><semantics><mrow><mi>X</mi><mo>∈</mo><mrow><mo stretchy="false">{</mo><mn>0,1</mn><mo stretchy="false">}</mo></mrow></mrow><annotation encoding="application/x-tex">X\in\{0,1\}</annotation></semantics></math> em <math id="chapter4.Thmtheorem27.p1.m3" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>, então</span></p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx65" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex115"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex115.m1" class="ltx_Math" alttext="\displaystyle{LATE}" display="inline"><semantics><mrow><mi>L</mi><mo>⁢</mo><mi>A</mi><mo>⁢</mo><mi>T</mi><mo>⁢</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">\displaystyle{LATE}</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex115.m2" class="ltx_Math" alttext="\displaystyle=\frac{{\mathbb{E}}[Y|I=1]-{\mathbb{E}}[Y|I=0]}{{\mathbb{E}}[X|I=%
+1]-{\mathbb{E}}[X|I=0]}." display="inline"><semantics><mrow><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mrow><mi>Y</mi><mo fence="false">|</mo><mi>I</mi></mrow><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">]</mo></mrow></mrow><mo>−</mo><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mrow><mi>Y</mi><mo fence="false">|</mo><mi>I</mi></mrow><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">]</mo></mrow></mrow></mrow><mrow><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mrow><mi>X</mi><mo fence="false">|</mo><mi>I</mi></mrow><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">]</mo></mrow></mrow><mo>−</mo><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mrow><mi>X</mi><mo fence="false">|</mo><mi>I</mi></mrow><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">]</mo></mrow></mrow></mrow></mfrac></mstyle></mrow><mo lspace="0em">.</mo></mrow><annotation encoding="application/x-tex">\displaystyle=\frac{{\mathbb{E}}[Y|I=1]-{\mathbb{E}}[Y|I=0]}{{\mathbb{E}}[X|I=%
+1]-{\mathbb{E}}[X|I=0]}.</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<a href="S8.html" class="navigation navigation-prev" aria-label="Previous page"><i class="fa fa-angle-left"></i></a><a href="S10.html" class="navigation navigation-next" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+</div>
+</div>
+<script src="bookml/gitbook/js/app.min.js"></script>
+<script src="bookml/gitbook/js/jquery.highlight.js"></script>
+<script src="bookml/gitbook/js/plugin-search.js"></script>
+<script src="bookml/gitbook/js/plugin-fontsettings.js"></script>
+<script src="bookml/gitbook/js/plugin-bookdown.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script>
+        MathJax = {
+          startup: {
+            ready() {
+              // do not process equations disabled with \bmlDisableMathJax (code suggested by Davide P. Cervone)
+              class bmlFindMathML extends MathJax._.input.mathml.FindMathML.FindMathML {
+                processMath(set) {
+                  const adaptor = this.adaptor;
+                  for (const node of set.values()) {
+                    if (adaptor.hasClass(node, 'bml_disable_mathjax')) {
+                      set.delete(node);
+                    }
+                  }
+                  return super.processMath(set);
+                }
+              }
+
+              MathJax._.components.global.combineDefaults(MathJax.config, 'mml', {FindMathML: new bmlFindMathML()});
+
+              MathJax.startup.defaultReady();
+
+              // preproces MathML to make MathJax aware of certain LaTeXML and BookML additional info
+              const mmlFilters = MathJax.startup.input[0].mmlFilters;
+
+              // convert the LaTeXML calligraphic (chancery) annotation to a form MathJax understands
+              // since the corresponding Unicode characters render as script (rounded)
+              const script2latin = {
+                '𝒜': 'A', 'ℬ': 'B', '𝒞': 'C', '𝒟': 'D', 'ℰ': 'E', 'ℱ': 'F', '𝒢': 'G',
+                'ℋ': 'H', 'ℐ': 'I', '𝒥': 'J', '𝒦': 'K', 'ℒ': 'L', 'ℳ': 'M', '𝒩': 'N',
+                '𝒪': 'O', '𝒫': 'P', '𝒬': 'Q', 'ℛ': 'R', '𝒮': 'S', '𝒯': 'T', '𝒰': 'U',
+                '𝒱': 'V', '𝒲': 'W', '𝒳': 'X', '𝒴': 'Y', '𝒵': 'Z',
+              };
+
+              mmlFilters.add((args) => {
+                for (const n of args.data.getElementsByClassName('ltx_font_mathcaligraphic')) {
+                  n.classList.add('MJX-tex-calligraphic');
+                  const letter = script2latin[n.textContent];
+                  if (letter !== undefined) { n.textContent = letter; }
+                }
+              });
+
+              // adjust characters based on Unicode variation sequences
+              const replacements = {
+                // MathJax renders the empty set as the U+FE00 variant, so the plain character needs adjusting
+                '∅': { variant: 'variant' },
+                // MathJax renders script characters in rounded style, which is fine for no variation and U+FE00
+                '𝒜\xFE00': { text: 'A', variant: 'tex-calligraphic' },
+                'ℬ\xFE00': { text: 'B', variant: 'tex-calligraphic' },
+                '𝒞\xFE00': { text: 'C', variant: 'tex-calligraphic' },
+                '𝒟\xFE00': { text: 'D', variant: 'tex-calligraphic' },
+                'ℰ\xFE00': { text: 'E', variant: 'tex-calligraphic' },
+                'ℱ\xFE00': { text: 'F', variant: 'tex-calligraphic' },
+                '𝒢\xFE00': { text: 'G', variant: 'tex-calligraphic' },
+                'ℋ\xFE00': { text: 'H', variant: 'tex-calligraphic' },
+                'ℐ\xFE00': { text: 'I', variant: 'tex-calligraphic' },
+                '𝒥\xFE00': { text: 'J', variant: 'tex-calligraphic' },
+                '𝒦\xFE00': { text: 'K', variant: 'tex-calligraphic' },
+                'ℒ\xFE00': { text: 'L', variant: 'tex-calligraphic' },
+                'ℳ\xFE00': { text: 'M', variant: 'tex-calligraphic' },
+                '𝒩\xFE00': { text: 'N', variant: 'tex-calligraphic' },
+                '𝒪\xFE00': { text: 'O', variant: 'tex-calligraphic' },
+                '𝒫\xFE00': { text: 'P', variant: 'tex-calligraphic' },
+                '𝒬\xFE00': { text: 'Q', variant: 'tex-calligraphic' },
+                'ℛ\xFE00': { text: 'R', variant: 'tex-calligraphic' },
+                '𝒮\xFE00': { text: 'S', variant: 'tex-calligraphic' },
+                '𝒯\xFE00': { text: 'T', variant: 'tex-calligraphic' },
+                '𝒰\xFE00': { text: 'U', variant: 'tex-calligraphic' },
+                '𝒱\xFE00': { text: 'V', variant: 'tex-calligraphic' },
+                '𝒲\xFE00': { text: 'W', variant: 'tex-calligraphic' },
+                '𝒳\xFE00': { text: 'X', variant: 'tex-calligraphic' },
+                '𝒴\xFE00': { text: 'Y', variant: 'tex-calligraphic' },
+                '𝒵\xFE00': { text: 'Z', variant: 'tex-calligraphic' }
+              };
+
+              mmlFilters.add((args) => {
+                let nodes = document.evaluate('.//m:mi | .//m:mn | .//m:mo | .//m:ms', args.data,
+                  () => 'http://www.w3.org/1998/Math/MathML', XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE);
+                for (let i = 0; i < nodes.snapshotLength; i++) {
+                  const n = nodes.snapshotItem(i);
+                  const repl = replacements[n.innerHTML];
+                  if (repl !== undefined) {
+                    const variant = repl['variant'];
+                    const text = repl['text'];
+                    if (variant !== undefined) { n.classList.add('MJX-' + variant); n.removeAttribute('mathvariant'); }
+                    if (text !== undefined) { n.innerHTML = text; }
+                  }
+                }
+              });
+            }
+          }
+        };
+      </script>
+<script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-chtml.js"></script>
+<script type="text/javascript">
+                gitbook.require(["gitbook"], function(gitbook) {
+                gitbook.start({
+                  "fontsettings": {
+                    "theme": "white",
+                    "family": "sans",
+                    "size": 2
+                  },
+                  "download": [ [ "book.pdf", "PDF" ], ],
+                  "search": {
+                    "engine": "fuse"
+                  },
+                  "toc": {
+                    "collapse": "none"
+                  }
+                });
+              });
+            </script>
+</body>
+
+</html>

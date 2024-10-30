@@ -1,0 +1,425 @@
+<!DOCTYPE html><html lang="pt">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>7 Do-calculus ‣ Capítulo 3 Intervenções ‣ Inferência Causal</title>
+<!--Generated on Tue Aug 27 12:19:15 2024 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on Última revisão: August 27, 2024.-->
+<style>:root { --bml-ltx-font-size: 10.95; }</style>
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/style.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-table.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-search.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-bookdown.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-fontsettings.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="bookml/CSS/style.css" type="text/css">
+<link rel="stylesheet" href="bookml/CSS/style.gitbook,plain.css" type="text/css">
+<link rel="stylesheet" href="bookml/CSS/style.gitbook.css" type="text/css">
+<link rel="stylesheet" href="bmluser/colors.gitbook-book.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6"></script>
+<link rel="up" href="chapter3.html" title="Capítulo 3 Intervenções ‣ Inferência Causal">
+<link rel="up up" href="index.html" title="Inferência Causal">
+<link rel="start" href="index.html" title="Inferência Causal">
+<link rel="prev" href="S6.html" title="6 Controlando mediadores (critério frontdoor) ‣ Capítulo 3 Intervenções ‣ Inferência Causal">
+<link rel="next" href="chapter4.html" title="Capítulo 4 Resultados potenciais ‣ Inferência Causal">
+<link rel="section" href="S4.html" title="4 O modelo de probabilidade para intervenções ‣ Capítulo 3 Intervenções ‣ Inferência Causal">
+<link rel="section" href="S5.html" title="5 Controlando confundidores (critério backdoor) ‣ Capítulo 3 Intervenções ‣ Inferência Causal">
+<link rel="section" href="S6.html" title="6 Controlando mediadores (critério frontdoor) ‣ Capítulo 3 Intervenções ‣ Inferência Causal">
+<link rel="chapter" href="chapter1.html" title="Capítulo 1 Por que estudar Inferência Causal? ‣ Inferência Causal">
+<link rel="chapter" href="chapter2.html" title="Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal">
+<link rel="chapter" href="chapter3.html" title="Capítulo 3 Intervenções ‣ Inferência Causal">
+<link rel="chapter" href="chapter4.html" title="Capítulo 4 Resultados potenciais ‣ Inferência Causal">
+<link rel="chapter" href="chapter5.html" title="Capítulo 5 Descoberta Causal ‣ Inferência Causal">
+<link rel="chapter" href="chapter6.html" title="Capítulo 6 Demonstrações ‣ Inferência Causal">
+</head>
+<body>
+<div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+<a href="#bml-main-content" tabindex="0" class="bml-skip-to-content">Skip to content.</a>
+<div class="book-summary"><nav class="ltx_page_navbar">
+<ul class="ltx_toclist summary">
+<li>
+<a href="index.html" title="" class="ltx_ref" rel="start">Inferência Causal <span class="ltx_text"> </span></a>
+</li>
+<li class="divider">
+<li data-level="1" data-path="chapter1.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter1.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">1 </span></b>Por que estudar Inferência Causal?</a></li>
+<li data-level="2" data-path="chapter2.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter2.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">2 </span></b>Modelo Causal (CM)</a></li>
+<li data-level="3" data-path="chapter3.html" class="ltx_tocentry ltx_tocentry_chapter  chapter ">
+<a href="chapter3.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">3 </span></b>Intervenções</a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li data-level="4" data-path="S4.html" class="ltx_tocentry ltx_tocentry_section  chapter "><a href="S4.html" title="In Capítulo 3 Intervenções ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">4 </span></b>O modelo de probabilidade para intervenções</a></li>
+<li data-level="5" data-path="S5.html" class="ltx_tocentry ltx_tocentry_section  chapter "><a href="S5.html" title="In Capítulo 3 Intervenções ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">5 </span></b>Controlando confundidores (critério <span class="ltx_text ltx_font_italic">backdoor</span>)</a></li>
+<li data-level="6" data-path="S6.html" class="ltx_tocentry ltx_tocentry_section  chapter "><a href="S6.html" title="In Capítulo 3 Intervenções ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6 </span></b>Controlando mediadores (critério frontdoor)</a></li>
+<li data-level="7" data-path="" class="ltx_tocentry ltx_tocentry_section ltx_ref_self  chapter active">
+<a href="" title="In Capítulo 3 Intervenções ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">7 </span></b>Do-calculus</a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li data-level="7.1" data-path="" class="ltx_tocentry ltx_tocentry_subsection  chapter "><a href="#SS1" title="In 7 Do-calculus ‣ Capítulo 3 Intervenções ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">7.1 </span></b>Exercícios</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li data-level="4" data-path="chapter4.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter4.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">4 </span></b>Resultados potenciais</a></li>
+<li data-level="5" data-path="chapter5.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter5.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">5 </span></b>Descoberta Causal</a></li>
+<li data-level="6" data-path="chapter6.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter6.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6 </span></b>Demonstrações</a></li>
+</ul>
+</nav></div>
+<div class="ltx_page_main book-body fixed">
+<div class="body-inner">
+<div class="book-header fixed" role="navigation"><h1>Do-calculus</h1></div>
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="ltx_page_content page-inner" id="bml-main-content">
+<section class="ltx_section normal" lang="pt">
+<div class="section level1">
+
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section header-section-number">7</span> Do-calculus</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p">O <span class="ltx_text ltx_font_italic">do calculus</span> consiste em
+um conjunto de regras para
+alterar densidade envolvend o operador “do”.
+Por exemplo, o do calculus explica
+como remover o operador do,
+trocá-lo pelo condicionamento simples, ou
+remover algum condicionamento simples.
+Para apresentar o do calculus,
+é necessário primeiramente definir
+algumas modificações sobre o grafo causal.</p>
+</div>
+<div id="chapter3.Thmtheorem47" class="ltx_theorem ltx_theorem_definition">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Definição 3.47</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter3.Thmtheorem47.p1" class="ltx_para">
+<p class="ltx_p">Seja <math id="chapter3.Thmtheorem47.p1.m1" class="ltx_Math" alttext="({\mathcal{G}},f)" display="inline"><semantics><mrow><mo stretchy="false">(</mo><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>,</mo><mi>f</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">({\mathcal{G}},f)</annotation></semantics></math> um CM tal que <math id="chapter3.Thmtheorem47.p1.m2" class="ltx_Math" alttext="{\mathcal{G}}=({\mathcal{V}},{\mathcal{E}})" display="inline"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo>,</mo><mi class="ltx_font_mathcaligraphic">ℰ</mi><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{G}}=({\mathcal{V}},{\mathcal{E}})</annotation></semantics></math>:</p>
+<div class="bml-overflow-wrapper">
+<table id="chapter6.A10.EGx55" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex101"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex101.m1" class="ltx_Math" alttext="\displaystyle{\mathcal{G}}(\bar{{\mathbb{V}}})" display="inline"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>𝕍</mi><mo>¯</mo></mover><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle{\mathcal{G}}(\bar{{\mathbb{V}}})</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex101.m2" class="ltx_Math" alttext="\displaystyle:=({\mathcal{V}},\{E\in{\mathcal{E}}:E_{2}\notin{\mathbb{V}}\})" display="inline"><semantics><mrow><mi></mi><mo lspace="0.278em" rspace="0.278em">:=</mo><mrow><mo stretchy="false">(</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo>,</mo><mrow><mo stretchy="false">{</mo><mrow><mi>E</mi><mo>∈</mo><mi class="ltx_font_mathcaligraphic">ℰ</mi></mrow><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><msub><mi>E</mi><mn>2</mn></msub><mo>∉</mo><mi>𝕍</mi></mrow><mo stretchy="false">}</mo></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle:=({\mathcal{V}},\{E\in{\mathcal{E}}:E_{2}\notin{\mathbb{V}}\})</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex102"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex102.m1" class="ltx_Math" alttext="\displaystyle{\mathcal{G}}(\bar{{\mathbb{V}}}_{1},\underline{{\mathbb{V}}}_{2})" display="inline"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mover accent="true"><mi>𝕍</mi><mo>¯</mo></mover><mn>1</mn></msub><mo>,</mo><msub><munder accentunder="true"><mi>𝕍</mi><mo>¯</mo></munder><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle{\mathcal{G}}(\bar{{\mathbb{V}}}_{1},\underline{{\mathbb{V}}}_{2})</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex102.m2" class="ltx_Math" alttext="\displaystyle:=({\mathcal{V}},\{E\in{\mathcal{E}}:E_{2}\notin{\mathbb{V}}_{1}%
+\text{ e }E_{1}\notin{\mathbb{V}}_{2}\})" display="inline"><semantics><mrow><mi></mi><mo lspace="0.278em" rspace="0.278em">:=</mo><mrow><mo stretchy="false">(</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo>,</mo><mrow><mo stretchy="false">{</mo><mrow><mi>E</mi><mo>∈</mo><mi class="ltx_font_mathcaligraphic">ℰ</mi></mrow><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><msub><mi>E</mi><mn>2</mn></msub><mo>∉</mo><mrow><msub><mi>𝕍</mi><mn>1</mn></msub><mo>⁢</mo><mtext> e </mtext><mo>⁢</mo><msub><mi>E</mi><mn>1</mn></msub></mrow><mo>∉</mo><msub><mi>𝕍</mi><mn>2</mn></msub></mrow><mo stretchy="false">}</mo></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle:=({\mathcal{V}},\{E\in{\mathcal{E}}:E_{2}\notin{\mathbb{V}}_{1}%
+\text{ e }E_{1}\notin{\mathbb{V}}_{2}\})</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex103"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex103.m1" class="ltx_Math" alttext="\displaystyle{\mathcal{G}}(\bar{{\mathbb{V}}}_{1},{\mathbb{V}}_{2}^{+})" display="inline"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mover accent="true"><mi>𝕍</mi><mo>¯</mo></mover><mn>1</mn></msub><mo>,</mo><msubsup><mi>𝕍</mi><mn>2</mn><mo>+</mo></msubsup><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle{\mathcal{G}}(\bar{{\mathbb{V}}}_{1},{\mathbb{V}}_{2}^{+})</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex103.m2" class="ltx_Math" alttext="\displaystyle=({\mathcal{V}}\cup\{I_{V}:V\in{\mathbb{V}}_{2}\},\{E\in{\mathcal%
+{E}}:E_{2}\notin{\mathbb{V}}_{1}\}\cup\{(I_{V},V):V\in{\mathbb{V}}_{2}\})" display="inline"><semantics><mrow><mi></mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mrow><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo>∪</mo><mrow><mo stretchy="false">{</mo><msub><mi>I</mi><mi>V</mi></msub><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mi>V</mi><mo>∈</mo><msub><mi>𝕍</mi><mn>2</mn></msub></mrow><mo stretchy="false">}</mo></mrow></mrow><mo>,</mo><mrow><mrow><mo stretchy="false">{</mo><mrow><mi>E</mi><mo>∈</mo><mi class="ltx_font_mathcaligraphic">ℰ</mi></mrow><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><msub><mi>E</mi><mn>2</mn></msub><mo>∉</mo><msub><mi>𝕍</mi><mn>1</mn></msub></mrow><mo stretchy="false">}</mo></mrow><mo>∪</mo><mrow><mo stretchy="false">{</mo><mrow><mo stretchy="false">(</mo><msub><mi>I</mi><mi>V</mi></msub><mo>,</mo><mi>V</mi><mo rspace="0.278em" stretchy="false">)</mo></mrow><mo rspace="0.278em">:</mo><mrow><mi>V</mi><mo>∈</mo><msub><mi>𝕍</mi><mn>2</mn></msub></mrow><mo stretchy="false">}</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle=({\mathcal{V}}\cup\{I_{V}:V\in{\mathbb{V}}_{2}\},\{E\in{\mathcal%
+{E}}:E_{2}\notin{\mathbb{V}}_{1}\}\cup\{(I_{V},V):V\in{\mathbb{V}}_{2}\})</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<p class="ltx_p">Isto é, <math id="chapter3.Thmtheorem47.p1.m3" class="ltx_Math" alttext="{\mathcal{G}}(\bar{{\mathbb{V}}})" display="inline"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>𝕍</mi><mo>¯</mo></mover><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{G}}(\bar{{\mathbb{V}}})</annotation></semantics></math> é
+o grafo obtido retirando de <math id="chapter3.Thmtheorem47.p1.m4" class="ltx_Math" alttext="{\mathcal{G}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒢</mi><annotation encoding="application/x-tex">{\mathcal{G}}</annotation></semantics></math> as arestas que apontam para <math id="chapter3.Thmtheorem47.p1.m5" class="ltx_Math" alttext="{\mathbb{V}}" display="inline"><semantics><mi>𝕍</mi><annotation encoding="application/x-tex">{\mathbb{V}}</annotation></semantics></math>,
+<math id="chapter3.Thmtheorem47.p1.m6" class="ltx_Math" alttext="{\mathcal{G}}(\bar{{\mathbb{V}}}_{1},\underline{{\mathbb{V}}}_{2})" display="inline"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mover accent="true"><mi>𝕍</mi><mo>¯</mo></mover><mn>1</mn></msub><mo>,</mo><msub><munder accentunder="true"><mi>𝕍</mi><mo>¯</mo></munder><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{G}}(\bar{{\mathbb{V}}}_{1},\underline{{\mathbb{V}}}_{2})</annotation></semantics></math> é
+o grafo obtido retirando de <math id="chapter3.Thmtheorem47.p1.m7" class="ltx_Math" alttext="{\mathcal{G}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒢</mi><annotation encoding="application/x-tex">{\mathcal{G}}</annotation></semantics></math>
+todas as arestas que apontam para <math id="chapter3.Thmtheorem47.p1.m8" class="ltx_Math" alttext="{\mathbb{V}}_{1}" display="inline"><semantics><msub><mi>𝕍</mi><mn>1</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{1}</annotation></semantics></math> ou
+que saem de <math id="chapter3.Thmtheorem47.p1.m9" class="ltx_Math" alttext="{\mathbb{V}}_{2}" display="inline"><semantics><msub><mi>𝕍</mi><mn>2</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{2}</annotation></semantics></math>, e
+<math id="chapter3.Thmtheorem47.p1.m10" class="ltx_Math" alttext="{\mathcal{G}}(\bar{{\mathbb{V}}}_{1},{\mathbb{V}}_{2}^{+})" display="inline"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mover accent="true"><mi>𝕍</mi><mo>¯</mo></mover><mn>1</mn></msub><mo>,</mo><msubsup><mi>𝕍</mi><mn>2</mn><mo>+</mo></msubsup><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{G}}(\bar{{\mathbb{V}}}_{1},{\mathbb{V}}_{2}^{+})</annotation></semantics></math> é
+o grafo obtido adicionando a <math id="chapter3.Thmtheorem47.p1.m11" class="ltx_Math" alttext="{\mathcal{G}}" display="inline"><semantics><mi class="ltx_font_mathcaligraphic">𝒢</mi><annotation encoding="application/x-tex">{\mathcal{G}}</annotation></semantics></math> um novo vértice <math id="chapter3.Thmtheorem47.p1.m12" class="ltx_Math" alttext="I_{V}" display="inline"><semantics><msub><mi>I</mi><mi>V</mi></msub><annotation encoding="application/x-tex">I_{V}</annotation></semantics></math> e
+uma aresta <math id="chapter3.Thmtheorem47.p1.m13" class="ltx_Math" alttext="I_{V}\rightarrow V" display="inline"><semantics><mrow><msub><mi>I</mi><mi>V</mi></msub><mo stretchy="false">→</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">I_{V}\rightarrow V</annotation></semantics></math>, para todo <math id="chapter3.Thmtheorem47.p1.m14" class="ltx_Math" alttext="V\in{\mathbb{V}}_{2}" display="inline"><semantics><mrow><mi>V</mi><mo>∈</mo><msub><mi>𝕍</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">V\in{\mathbb{V}}_{2}</annotation></semantics></math>, e
+retirando todas as arestas que apontam para <math id="chapter3.Thmtheorem47.p1.m15" class="ltx_Math" alttext="{\mathbb{V}}_{1}" display="inline"><semantics><msub><mi>𝕍</mi><mn>1</mn></msub><annotation encoding="application/x-tex">{\mathbb{V}}_{1}</annotation></semantics></math>.</p>
+</div>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">Com base na <a href="#chapter3.Thmtheorem47" title="Definição 3.47. ‣ 7 Do-calculus ‣ Capítulo 3 Intervenções ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Definição</span> <span class="ltx_text ltx_ref_tag">3.47</span></a>,
+é possível apresentar o do calculus:</p>
+</div>
+<div id="chapter3.Thmtheorem48" class="ltx_theorem ltx_theorem_theorem">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Teorema 3.48</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter3.Thmtheorem48.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Seja <math id="chapter3.Thmtheorem48.p1.m1" class="ltx_Math" alttext="({\mathcal{G}},f)" display="inline"><semantics><mrow><mo stretchy="false">(</mo><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>,</mo><mi>f</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">({\mathcal{G}},f)</annotation></semantics></math> um CM e <math id="chapter3.Thmtheorem48.p1.m2" class="ltx_Math" alttext="{\mathbf{X}}" display="inline"><semantics><mi>𝐗</mi><annotation encoding="application/x-tex">{\mathbf{X}}</annotation></semantics></math>, <math id="chapter3.Thmtheorem48.p1.m3" class="ltx_Math" alttext="{\mathbf{Y}}" display="inline"><semantics><mi>𝐘</mi><annotation encoding="application/x-tex">{\mathbf{Y}}</annotation></semantics></math>, <math id="chapter3.Thmtheorem48.p1.m4" class="ltx_Math" alttext="{\mathbf{W}}" display="inline"><semantics><mi>𝐖</mi><annotation encoding="application/x-tex">{\mathbf{W}}</annotation></semantics></math> e <math id="chapter3.Thmtheorem48.p1.m5" class="ltx_Math" alttext="{\mathbf{Z}}" display="inline"><semantics><mi>𝐙</mi><annotation encoding="application/x-tex">{\mathbf{Z}}</annotation></semantics></math>
+conjuntos de vértices disjuntos:</span></p>
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span><div id="I1.i1.p1" class="ltx_para">​<p class="ltx_p"><span class="ltx_text ltx_font_italic">Se </span><math id="I1.i1.p1.m1" class="ltx_Math" alttext="{\mathbf{Y}}\perp^{d}{\mathbf{Z}}|{\mathbf{X}}\cup{\mathbf{W}}" display="inline"><semantics><mrow><mi>𝐘</mi><msup><mo>⟂</mo><mi>d</mi></msup><mrow><mi>𝐙</mi><mo fence="false">|</mo><mrow><mi>𝐗</mi><mo>∪</mo><mi>𝐖</mi></mrow></mrow></mrow><annotation encoding="application/x-tex">{\mathbf{Y}}\perp^{d}{\mathbf{Z}}|{\mathbf{X}}\cup{\mathbf{W}}</annotation></semantics></math><span class="ltx_text ltx_font_italic"> em </span><math id="I1.i1.p1.m2" class="ltx_Math" alttext="{\mathcal{G}}(\bar{{\mathbf{X}}})" display="inline"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>𝐗</mi><mo>¯</mo></mover><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{G}}(\bar{{\mathbf{X}}})</annotation></semantics></math><span class="ltx_text ltx_font_italic">, então
+</span><math id="I1.i1.p1.m3" class="ltx_Math" alttext="f({\mathbf{Y}}|do({\mathbf{X}}),{\mathbf{Z}},{\mathbf{W}})=f({\mathbf{Y}}|do({%
+\mathbf{X}}),{\mathbf{W}})" display="inline"><semantics><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>𝐘</mi><mo fence="false">|</mo><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝐗</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mi>𝐙</mi><mo>,</mo><mi>𝐖</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>𝐘</mi><mo fence="false">|</mo><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝐗</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mi>𝐖</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">f({\mathbf{Y}}|do({\mathbf{X}}),{\mathbf{Z}},{\mathbf{W}})=f({\mathbf{Y}}|do({%
+\mathbf{X}}),{\mathbf{W}})</annotation></semantics></math><span class="ltx_text ltx_font_italic">.</span></p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span><div id="I1.i2.p1" class="ltx_para">​<p class="ltx_p"><span class="ltx_text ltx_font_italic">Se </span><math id="I1.i2.p1.m1" class="ltx_Math" alttext="{\mathbf{Y}}\perp^{d}{\mathbf{W}}|{\mathbf{Z}}\cup{\mathbf{X}}" display="inline"><semantics><mrow><mi>𝐘</mi><msup><mo>⟂</mo><mi>d</mi></msup><mrow><mi>𝐖</mi><mo fence="false">|</mo><mrow><mi>𝐙</mi><mo>∪</mo><mi>𝐗</mi></mrow></mrow></mrow><annotation encoding="application/x-tex">{\mathbf{Y}}\perp^{d}{\mathbf{W}}|{\mathbf{Z}}\cup{\mathbf{X}}</annotation></semantics></math><span class="ltx_text ltx_font_italic"> em </span><math id="I1.i2.p1.m2" class="ltx_Math" alttext="{\mathcal{G}}(\bar{{\mathbf{X}}},\underline{{\mathbf{W}}})" display="inline"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>𝐗</mi><mo>¯</mo></mover><mo>,</mo><munder accentunder="true"><mi>𝐖</mi><mo>¯</mo></munder><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{G}}(\bar{{\mathbf{X}}},\underline{{\mathbf{W}}})</annotation></semantics></math><span class="ltx_text ltx_font_italic">, então
+</span><math id="I1.i2.p1.m3" class="ltx_Math" alttext="f({\mathbf{Y}}|do({\mathbf{X}}),do({\mathbf{W}}),{\mathbf{Z}})=f({\mathbf{Y}}|%
+do({\mathbf{X}}),{\mathbf{W}},{\mathbf{Z}})" display="inline"><semantics><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>𝐘</mi><mo fence="false">|</mo><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝐗</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝐖</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mi>𝐙</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>𝐘</mi><mo fence="false">|</mo><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝐗</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mi>𝐖</mi><mo>,</mo><mi>𝐙</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">f({\mathbf{Y}}|do({\mathbf{X}}),do({\mathbf{W}}),{\mathbf{Z}})=f({\mathbf{Y}}|%
+do({\mathbf{X}}),{\mathbf{W}},{\mathbf{Z}})</annotation></semantics></math><span class="ltx_text ltx_font_italic">.</span></p>
+</div>
+</li>
+<li id="I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">3.</span><div id="I1.i3.p1" class="ltx_para">​<p class="ltx_p"><span class="ltx_text ltx_font_italic">Se </span><math id="I1.i3.p1.m1" class="ltx_Math" alttext="{\mathbf{Y}}\perp^{d}I_{{\mathbf{X}}}|{\mathbf{Z}}\cup{\mathbf{W}}" display="inline"><semantics><mrow><mi>𝐘</mi><msup><mo>⟂</mo><mi>d</mi></msup><mrow><msub><mi>I</mi><mi>𝐗</mi></msub><mo fence="false">|</mo><mrow><mi>𝐙</mi><mo>∪</mo><mi>𝐖</mi></mrow></mrow></mrow><annotation encoding="application/x-tex">{\mathbf{Y}}\perp^{d}I_{{\mathbf{X}}}|{\mathbf{Z}}\cup{\mathbf{W}}</annotation></semantics></math><span class="ltx_text ltx_font_italic"> em </span><math id="I1.i3.p1.m2" class="ltx_Math" alttext="{\mathcal{G}}(\bar{{\mathbf{W}}},{\mathbf{X}}^{+})" display="inline"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>𝐖</mi><mo>¯</mo></mover><mo>,</mo><msup><mi>𝐗</mi><mo>+</mo></msup><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{G}}(\bar{{\mathbf{W}}},{\mathbf{X}}^{+})</annotation></semantics></math><span class="ltx_text ltx_font_italic">, então
+</span><math id="I1.i3.p1.m3" class="ltx_Math" alttext="f(Y|do({\mathbf{W}}),do({\mathbf{X}}),{\mathbf{Z}})=f(Y|do({\mathbf{W}}),{%
+\mathbf{Z}})" display="inline"><semantics><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>Y</mi><mo fence="false">|</mo><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝐖</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝐗</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mi>𝐙</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>Y</mi><mo fence="false">|</mo><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝐖</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mi>𝐙</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">f(Y|do({\mathbf{W}}),do({\mathbf{X}}),{\mathbf{Z}})=f(Y|do({\mathbf{W}}),{%
+\mathbf{Z}})</annotation></semantics></math><span class="ltx_text ltx_font_italic">.</span></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">O seguinte lema mostra como
+o do calculus generaliza
+certos aspectos do critério backdoor:</p>
+</div>
+<div id="chapter3.Thmtheorem49" class="ltx_theorem ltx_theorem_lemma">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Lema 3.49</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter3.Thmtheorem49.p1" class="ltx_para">
+<p class="ltx_p"><math id="chapter3.Thmtheorem49.p1.m1" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math><span class="ltx_text ltx_font_italic"> satisfaz o item 2 do critério backdoor
+para medir o efeito causal de <math id="chapter3.Thmtheorem49.p1.m2" class="ltx_Math" alttext="{\mathbf{W}}" display="inline"><semantics><mi>𝐖</mi><annotation encoding="application/x-tex">{\mathbf{W}}</annotation></semantics></math> em <math id="chapter3.Thmtheorem49.p1.m3" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>
+se e somente se <math id="chapter3.Thmtheorem49.p1.m4" class="ltx_Math" alttext="Y\perp^{d}{\mathbf{W}}|X" display="inline"><semantics><mrow><mi>Y</mi><msup><mo>⟂</mo><mi>d</mi></msup><mrow><mi>𝐖</mi><mo fence="false">|</mo><mi>X</mi></mrow></mrow><annotation encoding="application/x-tex">Y\perp^{d}{\mathbf{W}}|X</annotation></semantics></math> em <math id="chapter3.Thmtheorem49.p1.m5" class="ltx_Math" alttext="{\mathcal{G}}(\underline{{\mathbf{W}}})" display="inline"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><munder accentunder="true"><mi>𝐖</mi><mo>¯</mo></munder><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{G}}(\underline{{\mathbf{W}}})</annotation></semantics></math>.</span></p>
+</div>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">Utilizando o do calculus,
+é possível obter todas
+as relações de identificação que
+são válidas supondo apenas que
+<math id="p4.m1" class="ltx_Math" alttext="f" display="inline"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math> é compatível com
+o grafo causal <cite class="ltx_cite ltx_citemacro_citep">(<span class="ltx_ref ltx_missing_citation ltx_ref_self">Shpitser2006</span>, <span class="ltx_ref ltx_missing_citation ltx_ref_self">Shpitser2008</span>)</cite>.
+Contudo, às vezes é razoável fazer
+mais suposições.
+Discutiremos este tipo de situação
+no próximo capítulo.</p>
+</div>
+<section id="SS1" class="ltx_subsection normal">
+<div class="section level2">
+
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection header-section-number">7.1</span> Exercícios</h2>
+
+<div id="chapter3.Thmtheorem50" class="ltx_theorem ltx_theorem_exercise">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Exercício 3.50</span></span><span class="ltx_text ltx_font_bold"> </span>(<cite class="ltx_cite ltx_citemacro_citet"><span class="ltx_ref ltx_missing_citation ltx_ref_self">Glymour2016</span></cite>[p.48])<span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter3.Thmtheorem50.p1" class="ltx_para">
+<p class="ltx_p">Considere o modelo estrutural causal
+em <a href="#F15" title="In Exercício 3.50 (Glymour2016[p.48]). ‣ 7.1 Exercícios ‣ 7 Do-calculus ‣ Capítulo 3 Intervenções ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">figur</span> <span class="ltx_text ltx_ref_tag">15</span></a>.</p>
+<ol id="I2" class="ltx_enumerate">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">(a)</span><div id="I2.i1.p1" class="ltx_para">​<p class="ltx_p">Para cada um dos pares de variáveis a seguir,
+determine um conjunto de outras variáveis que
+as d-separa: <math id="I2.i1.p1.m1" class="ltx_Math" alttext="(Z_{1},W)" display="inline"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>Z</mi><mn>1</mn></msub><mo>,</mo><mi>W</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(Z_{1},W)</annotation></semantics></math>, <math id="I2.i1.p1.m2" class="ltx_Math" alttext="(Z_{1},Z_{2})" display="inline"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>Z</mi><mn>1</mn></msub><mo>,</mo><msub><mi>Z</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(Z_{1},Z_{2})</annotation></semantics></math>, <math id="I2.i1.p1.m3" class="ltx_Math" alttext="(Z_{1},Y)" display="inline"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>Z</mi><mn>1</mn></msub><mo>,</mo><mi>Y</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(Z_{1},Y)</annotation></semantics></math>,
+<math id="I2.i1.p1.m4" class="ltx_Math" alttext="(Z_{3},W)" display="inline"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>Z</mi><mn>3</mn></msub><mo>,</mo><mi>W</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(Z_{3},W)</annotation></semantics></math>, e <math id="I2.i1.p1.m5" class="ltx_Math" alttext="(X,Y)" display="inline"><semantics><mrow><mo stretchy="false">(</mo><mi>X</mi><mo>,</mo><mi>Y</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(X,Y)</annotation></semantics></math>.</p>
+</div>
+</li>
+<li id="I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">(b)</span><div id="I2.i2.p1" class="ltx_para">​<p class="ltx_p">Para cada par de variáveis no item anterior,
+determine se elas são d-separadas dado
+todas as demais variáveis.</p>
+</div>
+</li>
+<li id="I2.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">(c)</span><div id="I2.i3.p1" class="ltx_para">​<p class="ltx_p">Determine conjuntos de variáveis que
+satisfazem, respectivamente,
+o critério backdoor e
+o critério frontdoor para
+estimar o efeito causal de <math id="I2.i3.p1.m1" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> em <math id="I2.i3.p1.m2" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>.</p>
+</div>
+</li>
+<li id="I2.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">(d)</span><div id="I2.i4.p1" class="ltx_para">​<p class="ltx_p">Considere que para cada variável, <math id="I2.i4.p1.m1" class="ltx_Math" alttext="V" display="inline"><semantics><mi>V</mi><annotation encoding="application/x-tex">V</annotation></semantics></math>, temos que
+<math id="I2.i4.p1.m2" class="ltx_Math" alttext="V\equiv\beta_{V}\cdot Pa(V)+\epsilon_{V}" display="inline"><semantics><mrow><mi>V</mi><mo>≡</mo><mrow><mrow><mrow><msub><mi>β</mi><mi>V</mi></msub><mo lspace="0.222em" rspace="0.222em">⋅</mo><mi>P</mi></mrow><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>V</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><msub><mi>ϵ</mi><mi>V</mi></msub></mrow></mrow><annotation encoding="application/x-tex">V\equiv\beta_{V}\cdot Pa(V)+\epsilon_{V}</annotation></semantics></math>,
+onde os <math id="I2.i4.p1.m3" class="ltx_Math" alttext="\epsilon" display="inline"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math> são i.i.d. e normais padrão e
+<math id="I2.i4.p1.m4" class="ltx_Math" alttext="\beta_{V}" display="inline"><semantics><msub><mi>β</mi><mi>V</mi></msub><annotation encoding="application/x-tex">\beta_{V}</annotation></semantics></math> são vetores conhecidos. Isto é,
+a distribuição de cada variável é
+determinada através de
+uma regressão linear simples em seus pais.
+Determine <math id="I2.i4.p1.m5" class="ltx_Math" alttext="f(Y|do(X=x))" display="inline"><semantics><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>Y</mi><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(Y|do(X=x))</annotation></semantics></math> utilizando a fórmula do ajuste
+nos <math id="I2.i4.p1.m6" class="ltx_Math" alttext="2" display="inline"><semantics><mn>2</mn><annotation encoding="application/x-tex">2</annotation></semantics></math> casos abordados no item anterior.</p>
+</div>
+</li>
+</ol>
+</div>
+<figure id="F15" class="ltx_figure"><div class="bml-overflow-wrapper"><svg id="F15.pic1" class="ltx_picture ltx_centering" height="211.15" overflow="visible" version="1.1" width="158.64" viewBox="0 0 158.64 211.15"><g class="bml_fill_000000 bml_stroke_000000" fill="#000000" stroke="#000000" stroke-width="0.4pt" transform="translate(0,211.15) matrix(1 0 0 -1 0 0) translate(12.88,0) translate(0,199.56)"><g class="bml_fill_000000 bml_stroke_000000" fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 -7.83 -3.81)"><foreignObject class="bml_color_000000" height="13.09" overflow="visible" transform="matrix(1 0 0 -1 0 18.82)" width="15.67"><math id="F15.pic1.m1" class="ltx_Math" alttext="Z_{1}" display="inline"><semantics><msub><mi>Z</mi><mn>1</mn></msub><annotation encoding="application/x-tex">Z_{1}</annotation></semantics></math></foreignObject></g><g class="bml_fill_000000 bml_stroke_000000" fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 57.86 -66.92)"><foreignObject class="bml_color_000000" height="13.09" overflow="visible" transform="matrix(1 0 0 -1 0 18.82)" width="15.67"><math id="F15.pic1.m2" class="ltx_Math" alttext="Z_{3}" display="inline"><semantics><msub><mi>Z</mi><mn>3</mn></msub><annotation encoding="application/x-tex">Z_{3}</annotation></semantics></math></foreignObject></g><g class="bml_fill_000000 bml_stroke_000000" fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 123.55 -3.81)"><foreignObject class="bml_color_000000" height="13.09" overflow="visible" transform="matrix(1 0 0 -1 0 18.82)" width="15.67"><math id="F15.pic1.m3" class="ltx_Math" alttext="Z_{2}" display="inline"><semantics><msub><mi>Z</mi><mn>2</mn></msub><annotation encoding="application/x-tex">Z_{2}</annotation></semantics></math></foreignObject></g><g class="bml_fill_000000 bml_stroke_000000" fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 -5.91 -130.03)"><foreignObject class="bml_color_000000" height="10.35" overflow="visible" transform="matrix(1 0 0 -1 0 18.82)" width="13.74"><math id="F15.pic1.m4" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math></foreignObject></g><g class="bml_fill_000000 bml_stroke_000000" fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 57.86 -128.66)"><foreignObject class="bml_color_000000" height="13.09" overflow="visible" transform="matrix(1 0 0 -1 0 18.82)" width="20.66"><math id="F15.pic1.m5" class="ltx_Math" alttext="W_{1}" display="inline"><semantics><msub><mi>W</mi><mn>1</mn></msub><annotation encoding="application/x-tex">W_{1}</annotation></semantics></math></foreignObject></g><g class="bml_fill_000000 bml_stroke_000000" fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 57.86 -191.78)"><foreignObject class="bml_color_000000" height="13.09" overflow="visible" transform="matrix(1 0 0 -1 0 18.82)" width="20.66"><math id="F15.pic1.m6" class="ltx_Math" alttext="W_{2}" display="inline"><semantics><msub><mi>W</mi><mn>2</mn></msub><annotation encoding="application/x-tex">W_{2}</annotation></semantics></math></foreignObject></g><g class="bml_fill_000000 bml_stroke_000000" fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 128.54 -130.03)"><foreignObject class="bml_color_000000" height="10.35" overflow="visible" transform="matrix(1 0 0 -1 0 18.82)" width="12.16"><math id="F15.pic1.m7" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math></foreignObject></g><g class="bml_fill_000000 bml_stroke_000000" fill="#000000" stroke="#000000"><path d="M 12.35 -11.87 L 51.35 -49.32"></path><g transform="matrix(0.72124 -0.6927 0.6927 0.72124 51.35 -49.32)"><path d="M 2.77 0 L -1.66 2.21 L 0 0 L -1.66 -2.21" style="stroke:none"></path></g></g><g class="bml_fill_000000 bml_stroke_000000" fill="#000000" stroke="#000000"><path d="M 0.09 -11.87 L 0.86 -111.58"></path><g transform="matrix(0.00772 -0.99997 0.99997 0.00772 0.86 -111.58)"><path d="M 2.77 0 L -1.66 2.21 L 0 0 L -1.66 -2.21" style="stroke:none"></path></g></g><g class="bml_fill_000000 bml_stroke_000000" fill="#000000" stroke="#000000"><path d="M 119.03 -11.87 L 80.04 -49.32"></path><g transform="matrix(-0.72124 -0.6927 0.6927 -0.72124 80.04 -49.32)"><path d="M 2.77 0 L -1.66 2.21 L 0 0 L -1.66 -2.21" style="stroke:none"></path></g></g><g class="bml_fill_000000 bml_stroke_000000" fill="#000000" stroke="#000000"><path d="M 131.69 -11.87 L 134.28 -111.59"></path><g transform="matrix(0.0259 -0.99966 0.99966 0.0259 134.28 -111.59)"><path d="M 2.77 0 L -1.66 2.21 L 0 0 L -1.66 -2.21" style="stroke:none"></path></g></g><g class="bml_fill_000000 bml_stroke_000000" fill="#000000" stroke="#000000"><path d="M 53.25 -74.98 L 13.97 -112.44"></path><g transform="matrix(-0.72366 -0.69016 0.69016 -0.72366 13.97 -112.44)"><path d="M 2.77 0 L -1.66 2.21 L 0 0 L -1.66 -2.21" style="stroke:none"></path></g></g><g class="bml_fill_000000 bml_stroke_000000" fill="#000000" stroke="#000000"><path d="M 78.85 -74.9 L 121.15 -112.79"></path><g transform="matrix(0.74478 -0.66731 0.66731 0.74478 121.15 -112.79)"><path d="M 2.77 0 L -1.66 2.21 L 0 0 L -1.66 -2.21" style="stroke:none"></path></g></g><g class="bml_fill_000000 bml_stroke_000000" fill="#000000" stroke="#000000"><path d="M 13.16 -124.86 L 49.76 -124.86"></path><g transform="matrix(1.0 0.0 0.0 1.0 49.76 -124.86)"><path d="M 2.77 0 L -1.66 2.21 L 0 0 L -1.66 -2.21" style="stroke:none"></path></g></g><g class="bml_fill_000000 bml_stroke_000000" fill="#000000" stroke="#000000"><path d="M 83.84 -124.86 L 120.44 -124.86"></path><g transform="matrix(1.0 0.0 0.0 1.0 120.44 -124.86)"><path d="M 2.77 0 L -1.66 2.21 L 0 0 L -1.66 -2.21" style="stroke:none"></path></g></g><g class="bml_fill_000000 bml_stroke_000000" fill="#000000" stroke="#000000"><path d="M 12.15 -135.36 L 53.53 -174.2"></path><g transform="matrix(0.72914 -0.68437 0.68437 0.72914 53.53 -174.2)"><path d="M 2.77 0 L -1.66 2.21 L 0 0 L -1.66 -2.21" style="stroke:none"></path></g></g><g class="bml_fill_000000 bml_stroke_000000" fill="#000000" stroke="#000000"><path d="M 80.68 -176.1 L 121.56 -137.26"></path><g transform="matrix(0.72508 0.68864 -0.68864 0.72508 121.56 -137.26)"><path d="M 2.77 0 L -1.66 2.21 L 0 0 L -1.66 -2.21" style="stroke:none"></path></g></g></g></svg></div>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:91%;">Figura 15</span>: </span><span class="ltx_text" style="font-size:91%;">Modelo estrutural causal do <a href="#chapter3.Thmtheorem50" title="Exercício 3.50 (Glymour2016[p.48]). ‣ 7.1 Exercícios ‣ 7 Do-calculus ‣ Capítulo 3 Intervenções ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Exercício</span> <span class="ltx_text ltx_ref_tag">3.50</span></a></span></figcaption>
+</figure>
+</div>
+<div id="chapter3.Thmtheorem51" class="ltx_theorem ltx_theorem_exercise">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Exercício 3.51</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter3.Thmtheorem51.p1" class="ltx_para">
+<p class="ltx_p">Considere que <math id="chapter3.Thmtheorem51.p1.m1" class="ltx_Math" alttext="{\mathcal{G}}=({\mathcal{V}},{\mathcal{E}})" display="inline"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒢</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi><mo>,</mo><mi class="ltx_font_mathcaligraphic">ℰ</mi><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">{\mathcal{G}}=({\mathcal{V}},{\mathcal{E}})</annotation></semantics></math> é um grafo causal e
+<math id="chapter3.Thmtheorem51.p1.m2" class="ltx_Math" alttext="{\mathbf{X}},{\mathbf{W}},{\mathbf{Y}}\subseteq{\mathcal{V}}" display="inline"><semantics><mrow><mrow><mi>𝐗</mi><mo>,</mo><mi>𝐖</mi><mo>,</mo><mi>𝐘</mi></mrow><mo>⊆</mo><mi class="ltx_font_mathcaligraphic">𝒱</mi></mrow><annotation encoding="application/x-tex">{\mathbf{X}},{\mathbf{W}},{\mathbf{Y}}\subseteq{\mathcal{V}}</annotation></semantics></math>. Além disso,
+para todo caminho, <math id="chapter3.Thmtheorem51.p1.m3" class="ltx_Math" alttext="C=(C_{1},\ldots,C_{n})" display="inline"><semantics><mrow><mi>C</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><msub><mi>C</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>C</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">C=(C_{1},\ldots,C_{n})</annotation></semantics></math>,
+com <math id="chapter3.Thmtheorem51.p1.m4" class="ltx_Math" alttext="C_{1}=X\in{\mathbf{X}}" display="inline"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>=</mo><mi>X</mi><mo>∈</mo><mi>𝐗</mi></mrow><annotation encoding="application/x-tex">C_{1}=X\in{\mathbf{X}}</annotation></semantics></math>, <math id="chapter3.Thmtheorem51.p1.m5" class="ltx_Math" alttext="C_{n}=Y\in{\mathbf{Y}}" display="inline"><semantics><mrow><msub><mi>C</mi><mi>n</mi></msub><mo>=</mo><mi>Y</mi><mo>∈</mo><mi>𝐘</mi></mrow><annotation encoding="application/x-tex">C_{n}=Y\in{\mathbf{Y}}</annotation></semantics></math>, e
+com <math id="chapter3.Thmtheorem51.p1.m6" class="ltx_Math" alttext="X\rightarrow C_{2}" display="inline"><semantics><mrow><mi>X</mi><mo stretchy="false">→</mo><msub><mi>C</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">X\rightarrow C_{2}</annotation></semantics></math>,
+<math id="chapter3.Thmtheorem51.p1.m7" class="ltx_Math" alttext="C" display="inline"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math> está bloqueado dado <math id="chapter3.Thmtheorem51.p1.m8" class="ltx_Math" alttext="{\mathbf{W}}" display="inline"><semantics><mi>𝐖</mi><annotation encoding="application/x-tex">{\mathbf{W}}</annotation></semantics></math>.
+Prove que <math id="chapter3.Thmtheorem51.p1.m9" class="ltx_Math" alttext="f({\mathbf{y}}|do({\mathbf{X}}))=\int f({\mathbf{y}}|{\mathbf{w}})f({\mathbf{w%
+}}|do({\mathbf{X}}))d{\mathbf{w}}" display="inline"><semantics><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>𝐲</mi><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝐗</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><mo>∫</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>𝐲</mi><mo fence="false">|</mo><mi>𝐰</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>𝐰</mi><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝐗</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>𝐰</mi></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">f({\mathbf{y}}|do({\mathbf{X}}))=\int f({\mathbf{y}}|{\mathbf{w}})f({\mathbf{w%
+}}|do({\mathbf{X}}))d{\mathbf{w}}</annotation></semantics></math> e
+<math id="chapter3.Thmtheorem51.p1.m10" class="ltx_Math" alttext="{\mathbb{E}}[Y|do({\mathbf{X}})]={\mathbb{E}}[{\mathbb{E}}[Y|{\mathbf{W}}]|do(%
+{\mathbf{X}})]" display="inline"><semantics><mrow><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>Y</mi><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝐗</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">]</mo></mrow></mrow><mo>=</mo><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mrow><mi>𝔼</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>Y</mi><mo fence="false">|</mo><mi>𝐖</mi></mrow><mo stretchy="false">]</mo></mrow></mrow><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝐗</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">]</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">{\mathbb{E}}[Y|do({\mathbf{X}})]={\mathbb{E}}[{\mathbb{E}}[Y|{\mathbf{W}}]|do(%
+{\mathbf{X}})]</annotation></semantics></math>.</p>
+</div>
+</div>
+<div id="chapter3.Thmtheorem52" class="ltx_theorem ltx_theorem_exercise">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Exercício 3.52</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter3.Thmtheorem52.p1" class="ltx_para">
+<p class="ltx_p">Prove que se <math id="chapter3.Thmtheorem52.p1.m1" class="ltx_Math" alttext="{\mathbf{W}}" display="inline"><semantics><mi>𝐖</mi><annotation encoding="application/x-tex">{\mathbf{W}}</annotation></semantics></math> satisfaz o critério frontdoor para
+medir o efeito causal de <math id="chapter3.Thmtheorem52.p1.m2" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> em <math id="chapter3.Thmtheorem52.p1.m3" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>, então
+<math id="chapter3.Thmtheorem52.p1.m4" class="ltx_Math" alttext="f({\mathbf{W}}|do(X))=f({\mathbf{W}}|X)" display="inline"><semantics><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>𝐖</mi><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>X</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>𝐖</mi><mo fence="false">|</mo><mi>X</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">f({\mathbf{W}}|do(X))=f({\mathbf{W}}|X)</annotation></semantics></math> e
+<math id="chapter3.Thmtheorem52.p1.m5" class="ltx_Math" alttext="f(Y|do({\mathbf{W}}))=\int f(Y|{\mathbf{W}},X=x^{*})f(X=x^{*})dx^{*}" display="inline"><semantics><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>Y</mi><mo fence="false">|</mo><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝐖</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><mo>∫</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>Y</mi><mo fence="false">|</mo><mrow><mi>𝐖</mi><mo>,</mo><mi>X</mi></mrow></mrow><mo>=</mo><msup><mi>x</mi><mo>∗</mo></msup></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>=</mo><msup><mi>x</mi><mo>∗</mo></msup></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><msup><mi>x</mi><mo>∗</mo></msup></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">f(Y|do({\mathbf{W}}))=\int f(Y|{\mathbf{W}},X=x^{*})f(X=x^{*})dx^{*}</annotation></semantics></math>.</p>
+</div>
+</div>
+<div id="chapter3.Thmtheorem53" class="ltx_theorem ltx_theorem_exercise">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Exercício 3.53</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter3.Thmtheorem53.p1" class="ltx_para">
+<p class="ltx_p">Prove o <a href="#chapter3.Thmtheorem49" title="Lema 3.49. ‣ 7 Do-calculus ‣ Capítulo 3 Intervenções ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Lema</span> <span class="ltx_text ltx_ref_tag">3.49</span></a>.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</section>
+</div>
+</div>
+</div>
+<a href="S6.html" class="navigation navigation-prev" aria-label="Previous page"><i class="fa fa-angle-left"></i></a><a href="chapter4.html" class="navigation navigation-next" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+</div>
+</div>
+<script src="bookml/gitbook/js/app.min.js"></script>
+<script src="bookml/gitbook/js/jquery.highlight.js"></script>
+<script src="bookml/gitbook/js/plugin-search.js"></script>
+<script src="bookml/gitbook/js/plugin-fontsettings.js"></script>
+<script src="bookml/gitbook/js/plugin-bookdown.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script>
+        MathJax = {
+          startup: {
+            ready() {
+              // do not process equations disabled with \bmlDisableMathJax (code suggested by Davide P. Cervone)
+              class bmlFindMathML extends MathJax._.input.mathml.FindMathML.FindMathML {
+                processMath(set) {
+                  const adaptor = this.adaptor;
+                  for (const node of set.values()) {
+                    if (adaptor.hasClass(node, 'bml_disable_mathjax')) {
+                      set.delete(node);
+                    }
+                  }
+                  return super.processMath(set);
+                }
+              }
+
+              MathJax._.components.global.combineDefaults(MathJax.config, 'mml', {FindMathML: new bmlFindMathML()});
+
+              MathJax.startup.defaultReady();
+
+              // preproces MathML to make MathJax aware of certain LaTeXML and BookML additional info
+              const mmlFilters = MathJax.startup.input[0].mmlFilters;
+
+              // convert the LaTeXML calligraphic (chancery) annotation to a form MathJax understands
+              // since the corresponding Unicode characters render as script (rounded)
+              const script2latin = {
+                '𝒜': 'A', 'ℬ': 'B', '𝒞': 'C', '𝒟': 'D', 'ℰ': 'E', 'ℱ': 'F', '𝒢': 'G',
+                'ℋ': 'H', 'ℐ': 'I', '𝒥': 'J', '𝒦': 'K', 'ℒ': 'L', 'ℳ': 'M', '𝒩': 'N',
+                '𝒪': 'O', '𝒫': 'P', '𝒬': 'Q', 'ℛ': 'R', '𝒮': 'S', '𝒯': 'T', '𝒰': 'U',
+                '𝒱': 'V', '𝒲': 'W', '𝒳': 'X', '𝒴': 'Y', '𝒵': 'Z',
+              };
+
+              mmlFilters.add((args) => {
+                for (const n of args.data.getElementsByClassName('ltx_font_mathcaligraphic')) {
+                  n.classList.add('MJX-tex-calligraphic');
+                  const letter = script2latin[n.textContent];
+                  if (letter !== undefined) { n.textContent = letter; }
+                }
+              });
+
+              // adjust characters based on Unicode variation sequences
+              const replacements = {
+                // MathJax renders the empty set as the U+FE00 variant, so the plain character needs adjusting
+                '∅': { variant: 'variant' },
+                // MathJax renders script characters in rounded style, which is fine for no variation and U+FE00
+                '𝒜\xFE00': { text: 'A', variant: 'tex-calligraphic' },
+                'ℬ\xFE00': { text: 'B', variant: 'tex-calligraphic' },
+                '𝒞\xFE00': { text: 'C', variant: 'tex-calligraphic' },
+                '𝒟\xFE00': { text: 'D', variant: 'tex-calligraphic' },
+                'ℰ\xFE00': { text: 'E', variant: 'tex-calligraphic' },
+                'ℱ\xFE00': { text: 'F', variant: 'tex-calligraphic' },
+                '𝒢\xFE00': { text: 'G', variant: 'tex-calligraphic' },
+                'ℋ\xFE00': { text: 'H', variant: 'tex-calligraphic' },
+                'ℐ\xFE00': { text: 'I', variant: 'tex-calligraphic' },
+                '𝒥\xFE00': { text: 'J', variant: 'tex-calligraphic' },
+                '𝒦\xFE00': { text: 'K', variant: 'tex-calligraphic' },
+                'ℒ\xFE00': { text: 'L', variant: 'tex-calligraphic' },
+                'ℳ\xFE00': { text: 'M', variant: 'tex-calligraphic' },
+                '𝒩\xFE00': { text: 'N', variant: 'tex-calligraphic' },
+                '𝒪\xFE00': { text: 'O', variant: 'tex-calligraphic' },
+                '𝒫\xFE00': { text: 'P', variant: 'tex-calligraphic' },
+                '𝒬\xFE00': { text: 'Q', variant: 'tex-calligraphic' },
+                'ℛ\xFE00': { text: 'R', variant: 'tex-calligraphic' },
+                '𝒮\xFE00': { text: 'S', variant: 'tex-calligraphic' },
+                '𝒯\xFE00': { text: 'T', variant: 'tex-calligraphic' },
+                '𝒰\xFE00': { text: 'U', variant: 'tex-calligraphic' },
+                '𝒱\xFE00': { text: 'V', variant: 'tex-calligraphic' },
+                '𝒲\xFE00': { text: 'W', variant: 'tex-calligraphic' },
+                '𝒳\xFE00': { text: 'X', variant: 'tex-calligraphic' },
+                '𝒴\xFE00': { text: 'Y', variant: 'tex-calligraphic' },
+                '𝒵\xFE00': { text: 'Z', variant: 'tex-calligraphic' }
+              };
+
+              mmlFilters.add((args) => {
+                let nodes = document.evaluate('.//m:mi | .//m:mn | .//m:mo | .//m:ms', args.data,
+                  () => 'http://www.w3.org/1998/Math/MathML', XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE);
+                for (let i = 0; i < nodes.snapshotLength; i++) {
+                  const n = nodes.snapshotItem(i);
+                  const repl = replacements[n.innerHTML];
+                  if (repl !== undefined) {
+                    const variant = repl['variant'];
+                    const text = repl['text'];
+                    if (variant !== undefined) { n.classList.add('MJX-' + variant); n.removeAttribute('mathvariant'); }
+                    if (text !== undefined) { n.innerHTML = text; }
+                  }
+                }
+              });
+            }
+          }
+        };
+      </script>
+<script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-chtml.js"></script>
+<script type="text/javascript">
+                gitbook.require(["gitbook"], function(gitbook) {
+                gitbook.start({
+                  "fontsettings": {
+                    "theme": "white",
+                    "family": "sans",
+                    "size": 2
+                  },
+                  "download": [ [ "book.pdf", "PDF" ], ],
+                  "search": {
+                    "engine": "fuse"
+                  },
+                  "toc": {
+                    "collapse": "none"
+                  }
+                });
+              });
+            </script>
+</body>
+
+</html>

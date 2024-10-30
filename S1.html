@@ -1,0 +1,387 @@
+<!DOCTYPE html><html lang="pt">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>1 O Paradoxo de Simpson ‣ Capítulo 1 Por que estudar Inferência Causal? ‣ Inferência Causal</title>
+<!--Generated on Tue Aug 27 12:19:15 2024 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on Última revisão: August 27, 2024.-->
+<style>:root { --bml-ltx-font-size: 10.95; }</style>
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/style.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-table.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-search.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-bookdown.css" type="text/css">
+<link rel="stylesheet" href="bookml/gitbook/css/plugin-fontsettings.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="bookml/CSS/style.css" type="text/css">
+<link rel="stylesheet" href="bookml/CSS/style.gitbook,plain.css" type="text/css">
+<link rel="stylesheet" href="bookml/CSS/style.gitbook.css" type="text/css">
+<link rel="stylesheet" href="bmluser/colors.gitbook-book.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6"></script>
+<link rel="up" href="chapter1.html" title="Capítulo 1 Por que estudar Inferência Causal? ‣ Inferência Causal">
+<link rel="up up" href="index.html" title="Inferência Causal">
+<link rel="start" href="index.html" title="Inferência Causal">
+<link rel="prev" href="chapter1.html" title="Capítulo 1 Por que estudar Inferência Causal? ‣ Inferência Causal">
+<link rel="next" href="chapter2.html" title="Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal">
+<link rel="chapter" href="chapter1.html" title="Capítulo 1 Por que estudar Inferência Causal? ‣ Inferência Causal">
+<link rel="chapter" href="chapter2.html" title="Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal">
+<link rel="chapter" href="chapter3.html" title="Capítulo 3 Intervenções ‣ Inferência Causal">
+<link rel="chapter" href="chapter4.html" title="Capítulo 4 Resultados potenciais ‣ Inferência Causal">
+<link rel="chapter" href="chapter5.html" title="Capítulo 5 Descoberta Causal ‣ Inferência Causal">
+<link rel="chapter" href="chapter6.html" title="Capítulo 6 Demonstrações ‣ Inferência Causal">
+</head>
+<body>
+<div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+<a href="#bml-main-content" tabindex="0" class="bml-skip-to-content">Skip to content.</a>
+<div class="book-summary"><nav class="ltx_page_navbar">
+<ul class="ltx_toclist summary">
+<li>
+<a href="index.html" title="" class="ltx_ref" rel="start">Inferência Causal <span class="ltx_text"> </span></a>
+</li>
+<li class="divider">
+<li data-level="1" data-path="chapter1.html" class="ltx_tocentry ltx_tocentry_chapter  chapter ">
+<a href="chapter1.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">1 </span></b>Por que estudar Inferência Causal?</a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li data-level="1" data-path="" class="ltx_tocentry ltx_tocentry_section ltx_ref_self  chapter active">
+<a href="" title="In Capítulo 1 Por que estudar Inferência Causal? ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">1 </span></b>O Paradoxo de Simpson</a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li data-level="1.1" data-path="" class="ltx_tocentry ltx_tocentry_subsection  chapter "><a href="#SS1" title="In 1 O Paradoxo de Simpson ‣ Capítulo 1 Por que estudar Inferência Causal? ‣ Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">1.1 </span></b>Exercícios</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li data-level="2" data-path="chapter2.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter2.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">2 </span></b>Modelo Causal (CM)</a></li>
+<li data-level="3" data-path="chapter3.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter3.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">3 </span></b>Intervenções</a></li>
+<li data-level="4" data-path="chapter4.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter4.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">4 </span></b>Resultados potenciais</a></li>
+<li data-level="5" data-path="chapter5.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter5.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">5 </span></b>Descoberta Causal</a></li>
+<li data-level="6" data-path="chapter6.html" class="ltx_tocentry ltx_tocentry_chapter  chapter "><a href="chapter6.html" title="In Inferência Causal" class="ltx_ref"><b><span class="ltx_tag ltx_tag_ref">6 </span></b>Demonstrações</a></li>
+</ul>
+</nav></div>
+<div class="ltx_page_main book-body fixed">
+<div class="body-inner">
+<div class="book-header fixed" role="navigation"><h1>O Paradoxo de Simpson</h1></div>
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="ltx_page_content page-inner" id="bml-main-content">
+<section class="ltx_section normal" lang="pt">
+<div class="section level1">
+
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section header-section-number">1</span> O Paradoxo de Simpson</h1>
+
+<figure id="T1" class="ltx_table">
+<div class="ltx_flex_figure ltx_flex_table">
+<div class="ltx_flex_cell ltx_flex_size_1"><span class="ltx_ERROR ltx_figure_panel undefined">\MakeFramed</span></div>
+<div class="ltx_flex_break"></div>
+<div class="ltx_flex_cell ltx_flex_size_1"><pre class="ltx_verbatim ltx_figure_panel bml_color_585858 ltx_font_typewriter">
+##     C   0   1
+## Z T
+## 0 0    36 234
+##   1     6  81
+## 1 0    25  55
+##   1    71 192
+</pre></div>
+<div class="ltx_flex_break"></div>
+<div class="ltx_flex_cell ltx_flex_size_1"><span class="ltx_ERROR ltx_figure_panel undefined">\endMakeFramed</span></div>
+</div>
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_table"><span class="ltx_text" style="font-size:91%;">Tabela 1</span>: </span><span class="ltx_text" style="font-size:91%;">Frequência conjunta
+das variáveis binárias <math id="T1.m4" class="ltx_Math" alttext="T" display="inline"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>, <math id="T1.m5" class="ltx_Math" alttext="C" display="inline"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>, e <math id="T1.m6" class="ltx_Math" alttext="Z" display="inline"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math>.</span></figcaption>
+</figure>
+<div id="p1" class="ltx_para">
+<p class="ltx_p">Considere que observamos em <math id="p1.m1" class="ltx_Math" alttext="700" display="inline"><semantics><mn>700</mn><annotation encoding="application/x-tex">700</annotation></semantics></math> pacientes <math id="p1.m2" class="ltx_Math" alttext="3" display="inline"><semantics><mn>3</mn><annotation encoding="application/x-tex">3</annotation></semantics></math> variáveis:
+<math id="p1.m3" class="ltx_Math" alttext="T" display="inline"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math> e <math id="p1.m4" class="ltx_Math" alttext="C" display="inline"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math> são as indicadoras de que, respectivamente,
+o paciente recebeu um tratamento e o paciente curou de uma doença, e
+<math id="p1.m5" class="ltx_Math" alttext="Z" display="inline"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math> é uma variável binária cujo significado será discutido mais tarde.
+Os dados foram resumidos na <a href="#T1" title="In 1 O Paradoxo de Simpson ‣ Capítulo 1 Por que estudar Inferência Causal? ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">tabela</span> <span class="ltx_text ltx_ref_tag">1</span></a>.</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">Em uma primeira análise desta tabela, podemos
+verificar a efetividade do tratamento
+dentro de cada valor de <math id="p2.m1" class="ltx_Math" alttext="Z" display="inline"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math>.
+Por exemplo, quando <math id="p2.m2" class="ltx_Math" alttext="Z=0" display="inline"><semantics><mrow><mi>Z</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">Z=0</annotation></semantics></math>,
+a frequência de recuperação dentre aqueles que
+receberam e não receberam o tratamento
+são, respectivamente: <math id="p2.m3" class="ltx_Math" alttext="\frac{81}{6+81}\approx 0.93" display="inline"><semantics><mrow><mfrac><mn>81</mn><mrow><mn>6</mn><mo>+</mo><mn>81</mn></mrow></mfrac><mo>≈</mo><mn>0.93</mn></mrow><annotation encoding="application/x-tex">\frac{81}{6+81}\approx 0.93</annotation></semantics></math> e
+<math id="p2.m4" class="ltx_Math" alttext="\frac{234}{36+234}\approx 0.87" display="inline"><semantics><mrow><mfrac><mn>234</mn><mrow><mn>36</mn><mo>+</mo><mn>234</mn></mrow></mfrac><mo>≈</mo><mn>0.87</mn></mrow><annotation encoding="application/x-tex">\frac{234}{36+234}\approx 0.87</annotation></semantics></math>.
+Similarmente, quando <math id="p2.m5" class="ltx_Math" alttext="Z=1" display="inline"><semantics><mrow><mi>Z</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">Z=1</annotation></semantics></math>,
+as respectivas frequências são:
+<math id="p2.m6" class="ltx_Math" alttext="\frac{192}{71+192}\approx 0.73" display="inline"><semantics><mrow><mfrac><mn>192</mn><mrow><mn>71</mn><mo>+</mo><mn>192</mn></mrow></mfrac><mo>≈</mo><mn>0.73</mn></mrow><annotation encoding="application/x-tex">\frac{192}{71+192}\approx 0.73</annotation></semantics></math> e
+<math id="p2.m7" class="ltx_Math" alttext="\frac{55}{25+55}\approx 0.69" display="inline"><semantics><mrow><mfrac><mn>55</mn><mrow><mn>25</mn><mo>+</mo><mn>55</mn></mrow></mfrac><mo>≈</mo><mn>0.69</mn></mrow><annotation encoding="application/x-tex">\frac{55}{25+55}\approx 0.69</annotation></semantics></math>.
+À primeira vista, para todos os valores de <math id="p2.m8" class="ltx_Math" alttext="Z" display="inline"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math>, a taxa de recuperação
+é maior com o tratamento do que sem ele.
+Isso nos traz informação de que
+o tratamento é efetivo na recuperação do paciente?</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">Em uma segunda análise, podemos considerar
+apenas as contagens para as variáveis <math id="p3.m1" class="ltx_Math" alttext="T" display="inline"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math> e <math id="p3.m2" class="ltx_Math" alttext="C" display="inline"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>,
+sem estratificar por <math id="p3.m3" class="ltx_Math" alttext="Z" display="inline"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math>.
+Dentre os pacientes que receberam e não receberam o tratamento
+as taxas de recuperação são, respectivamente:
+<math id="p3.m4" class="ltx_Math" alttext="\frac{81+192}{6+71+81+192}\approx 0.78" display="inline"><semantics><mrow><mfrac><mrow><mn>81</mn><mo>+</mo><mn>192</mn></mrow><mrow><mn>6</mn><mo>+</mo><mn>71</mn><mo>+</mo><mn>81</mn><mo>+</mo><mn>192</mn></mrow></mfrac><mo>≈</mo><mn>0.78</mn></mrow><annotation encoding="application/x-tex">\frac{81+192}{6+71+81+192}\approx 0.78</annotation></semantics></math> e
+<math id="p3.m5" class="ltx_Math" alttext="\frac{234+55}{36+25+234+55}\approx 0.83" display="inline"><semantics><mrow><mfrac><mrow><mn>234</mn><mo>+</mo><mn>55</mn></mrow><mrow><mn>36</mn><mo>+</mo><mn>25</mn><mo>+</mo><mn>234</mn><mo>+</mo><mn>55</mn></mrow></mfrac><mo>≈</mo><mn>0.83</mn></mrow><annotation encoding="application/x-tex">\frac{234+55}{36+25+234+55}\approx 0.83</annotation></semantics></math>. Isto é,
+sem estratificar por <math id="p3.m6" class="ltx_Math" alttext="Z" display="inline"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math>, a frequência de recuperação é
+maior dentre aqueles que não receberam o tratamento
+do que dentre aqueles que o receberam.</p>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">O que é possível concluir destas análises?
+Uma conclusão ingênua poderia ser a de que,
+se <math id="p4.m1" class="ltx_Math" alttext="Z" display="inline"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math> não for observada, então o tratamento não é recomendado.
+Por outro lado, se <math id="p4.m2" class="ltx_Math" alttext="Z" display="inline"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math> é observada,
+não importa qual seja o seu valor, o tratamento será recomendado.
+A falta de sentido desta conclusão ingênua é
+o que tornou este tipo de dado famoso como sendo
+um caso de Paradoxo de Simpson <cite class="ltx_cite ltx_citemacro_citep">(<span class="ltx_ref ltx_missing_citation ltx_ref_self">Simpson1951</span>)</cite>.</p>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p">Contudo, se a conclusão ingênua é paradoxal e incorreta,
+então qual conclusão pode ser obtida destes dados?
+A primeira lição que verificaremos é que não é possível obter
+uma conclusão sobre o <span class="ltx_text ltx_font_bold">efeito causal</span> do tratamento usando
+apenas a informação na tabela, isto é, associações.
+Para tal, analisaremos a tabela dando
+dois nomes distintos para a variável <math id="p5.m1" class="ltx_Math" alttext="Z" display="inline"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math>.
+Veremos que, usando exatamente os mesmos dados,
+uma conclusão válida diferente é obtida para cada nome de <math id="p5.m2" class="ltx_Math" alttext="Z" display="inline"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math>.
+Em outras palavras, o efeito causal depende de
+mais informação do que somente aquela disponível na tabela.</p>
+</div>
+<div id="p6" class="ltx_para">
+<p class="ltx_p">Em um primeiro cenário, considere que <math id="p6.m1" class="ltx_Math" alttext="Z" display="inline"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math> é a indicadora de que
+o sexo do paciente é masculino.
+Observando a tabela, notamos que, proporcionalmente,
+mais homens receberam o tratamento do que mulheres.
+Como o tratamento não tem qualquer influência sobre o sexo do paciente,
+podemos imaginar um cenário em que, proporcionalmente,
+mais homens escolheram receber o tratamento do que mulheres.</p>
+</div>
+<div id="p7" class="ltx_para">
+<p class="ltx_p">Usando esta observação,
+podemos fazer sentido do Paradoxo anteriormente obtido.
+Quando agregamos os dados,
+notamos que o primeiro grupo de pacientes que
+receberam o tratamento é predominantemente composto por homens e,
+similarmente, o segundo grupo de
+pacientes que não receberam o tratamento é
+predominantemente composto por mulheres.
+Isto é, na análise dos dados agregados estamos
+essencialmente comparando a taxa de recuperação de homens
+que receberam o tratamento com
+a de mulheres que não receberam o tratamento.
+Se assumirmos que, independentemente do tratamento,
+mulheres tem uma probabilidade de recuperação maior do que homens,
+então a taxa de recuperação menor no primeiro grupo pode ser explicada
+pelo fato de ele ser composto predominantemente por homens e
+não pelo fato de ser o grupo de pacientes que recebeu o tratamento.
+Também, da análise anterior, obtemos que para cada sexo,
+a taxa de recuperação é maior com o tratamento do que sem ele.
+Isto é, neste cenário, o tratamento parece efetivo para
+a recuperação dos pacientes.
+Isto significa que a análise estratificando <math id="p7.m1" class="ltx_Math" alttext="Z" display="inline"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math> é sempre a correta?</p>
+</div>
+<div id="p8" class="ltx_para">
+<p class="ltx_p">Caso o significado da variável <math id="p8.m1" class="ltx_Math" alttext="Z" display="inline"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math> seja outro, veremos que
+esta conclusão é incorreta.
+Considere que <math id="p8.m2" class="ltx_Math" alttext="Z" display="inline"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math> é a indicadora de que
+a pressão sanguínea do paciente está elevada.
+Além disso, é sabido que o tratamento tem como
+efeito colateral aumentar o risco de
+pressão elevada nos pacientes.
+Neste caso, o fato de que
+há mais indivíduos com pressão elevada dentre aqueles que
+receberam o tratamento é
+um efeito direto do tratamento.</p>
+</div>
+<div id="p9" class="ltx_para">
+<p class="ltx_p">Usando esta observação,
+podemos chegar a outras conclusões sobre o
+efeito do tratamento sobre a recuperação dos pacientes.
+Para tal, considere que o tratamento tem
+um efeito positivo moderado sobre a recuperação dos pacientes,
+mas que a pressão sanguínea elevada prejudica gravemente a recuperação.
+Quando fazemos comparações apenas dentre indivíduos com pressão alta ou
+apenas dentre indivíduos sem pressão alta,
+não é possível identificar o efeito coletaral do tratamento.
+Isto é, observamos apenas
+o efeito positivo moderado que o tratamento tem sobre a recuperação.
+Por outro lado, quando fazemos a análise agregada,
+observamos que a frequência de recuperação é
+maior dentre os indivíduos que não receberam o tratamento
+do que dentre os que o receberam.
+Isso ocorre pois o efeito colateral negativo tem um impacto
+maior sobre a recuperação do paciente do que o efeito geral benéfico.
+Assim, neste cenário, o tratamento não é
+eficiente para levar à recuperação do paciente.</p>
+</div>
+<div id="p10" class="ltx_para">
+<p class="ltx_p">Como nossas conclusões dependem de qual história adotamos,
+podemos ver que a mera apresentação da tabela é
+insuficiente para determinar a eficiência do tratamento.
+Observando com cuidado os cenários,
+identificamos uma explicação geral para
+as diferentes conclusões.
+No primeiro cenário, quando <math id="p10.m1" class="ltx_Math" alttext="Z" display="inline"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math> é sexo,
+<math id="p10.m2" class="ltx_Math" alttext="Z" display="inline"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math> é uma causa do indivíduo receber ou não o tratamento.
+Já no segundo cenário, quando <math id="p10.m3" class="ltx_Math" alttext="Z" display="inline"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math> é pressão elevada,
+o tratamento é causa de <math id="p10.m4" class="ltx_Math" alttext="Z" display="inline"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math>. Isto é,
+a diferença nas relações entre as variáveis
+explica as diferenças entre as conclusões obtidas.</p>
+</div>
+<div id="p11" class="ltx_para">
+<p class="ltx_p">Ao longo do curso, desenvolveremos ferramentas para
+formalizar a diferença entre estes cenários e, com base nisso,
+conseguir estimar o efeito causal que uma variável <math id="p11.m1" class="ltx_Math" alttext="X" display="inline"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> tem sobre outra variável <math id="p11.m2" class="ltx_Math" alttext="Y" display="inline"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>.
+Contudo, para tal, será necessário desenvolver
+um modelo em que seja possível descrever relações causais.
+Esta questão será tratada no <a href="chapter2.html" title="Capítulo 2 Modelo Causal (CM) ‣ Inferência Causal" class="ltx_ref"><span class="ltx_text ltx_ref_tag">capítulo</span> <span class="ltx_text ltx_ref_tag">2</span></a>.</p>
+</div>
+<section id="SS1" class="ltx_subsection normal">
+<div class="section level2">
+
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection header-section-number">1.1</span> Exercícios</h2>
+
+<div id="chapter1.Thmtheorem1" class="ltx_theorem ltx_theorem_exercise">
+
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem header-section-number"><span class="ltx_text ltx_font_bold">Exercício 1.1</span></span><span class="ltx_text ltx_font_bold"> </span>(<cite class="ltx_cite ltx_citemacro_citet"><span class="ltx_ref ltx_missing_citation ltx_ref_self">Glymour2016</span></cite>[p.6])<span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="chapter1.Thmtheorem1.p1" class="ltx_para">
+<p class="ltx_p">Há evidência de que há correlação positiva entre
+uma pessoa estar atrasada e estar apressada.
+Isso significa que uma pessoa pode evitar atrasos
+se não tiver pressa?
+Justifique sua resposta em palavras.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</section>
+</div>
+</div>
+</div>
+<a href="chapter1.html" class="navigation navigation-prev" aria-label="Previous page"><i class="fa fa-angle-left"></i></a><a href="chapter2.html" class="navigation navigation-next" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+</div>
+</div>
+<script src="bookml/gitbook/js/app.min.js"></script>
+<script src="bookml/gitbook/js/jquery.highlight.js"></script>
+<script src="bookml/gitbook/js/plugin-search.js"></script>
+<script src="bookml/gitbook/js/plugin-fontsettings.js"></script>
+<script src="bookml/gitbook/js/plugin-bookdown.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script>
+        MathJax = {
+          startup: {
+            ready() {
+              // do not process equations disabled with \bmlDisableMathJax (code suggested by Davide P. Cervone)
+              class bmlFindMathML extends MathJax._.input.mathml.FindMathML.FindMathML {
+                processMath(set) {
+                  const adaptor = this.adaptor;
+                  for (const node of set.values()) {
+                    if (adaptor.hasClass(node, 'bml_disable_mathjax')) {
+                      set.delete(node);
+                    }
+                  }
+                  return super.processMath(set);
+                }
+              }
+
+              MathJax._.components.global.combineDefaults(MathJax.config, 'mml', {FindMathML: new bmlFindMathML()});
+
+              MathJax.startup.defaultReady();
+
+              // preproces MathML to make MathJax aware of certain LaTeXML and BookML additional info
+              const mmlFilters = MathJax.startup.input[0].mmlFilters;
+
+              // convert the LaTeXML calligraphic (chancery) annotation to a form MathJax understands
+              // since the corresponding Unicode characters render as script (rounded)
+              const script2latin = {
+                '𝒜': 'A', 'ℬ': 'B', '𝒞': 'C', '𝒟': 'D', 'ℰ': 'E', 'ℱ': 'F', '𝒢': 'G',
+                'ℋ': 'H', 'ℐ': 'I', '𝒥': 'J', '𝒦': 'K', 'ℒ': 'L', 'ℳ': 'M', '𝒩': 'N',
+                '𝒪': 'O', '𝒫': 'P', '𝒬': 'Q', 'ℛ': 'R', '𝒮': 'S', '𝒯': 'T', '𝒰': 'U',
+                '𝒱': 'V', '𝒲': 'W', '𝒳': 'X', '𝒴': 'Y', '𝒵': 'Z',
+              };
+
+              mmlFilters.add((args) => {
+                for (const n of args.data.getElementsByClassName('ltx_font_mathcaligraphic')) {
+                  n.classList.add('MJX-tex-calligraphic');
+                  const letter = script2latin[n.textContent];
+                  if (letter !== undefined) { n.textContent = letter; }
+                }
+              });
+
+              // adjust characters based on Unicode variation sequences
+              const replacements = {
+                // MathJax renders the empty set as the U+FE00 variant, so the plain character needs adjusting
+                '∅': { variant: 'variant' },
+                // MathJax renders script characters in rounded style, which is fine for no variation and U+FE00
+                '𝒜\xFE00': { text: 'A', variant: 'tex-calligraphic' },
+                'ℬ\xFE00': { text: 'B', variant: 'tex-calligraphic' },
+                '𝒞\xFE00': { text: 'C', variant: 'tex-calligraphic' },
+                '𝒟\xFE00': { text: 'D', variant: 'tex-calligraphic' },
+                'ℰ\xFE00': { text: 'E', variant: 'tex-calligraphic' },
+                'ℱ\xFE00': { text: 'F', variant: 'tex-calligraphic' },
+                '𝒢\xFE00': { text: 'G', variant: 'tex-calligraphic' },
+                'ℋ\xFE00': { text: 'H', variant: 'tex-calligraphic' },
+                'ℐ\xFE00': { text: 'I', variant: 'tex-calligraphic' },
+                '𝒥\xFE00': { text: 'J', variant: 'tex-calligraphic' },
+                '𝒦\xFE00': { text: 'K', variant: 'tex-calligraphic' },
+                'ℒ\xFE00': { text: 'L', variant: 'tex-calligraphic' },
+                'ℳ\xFE00': { text: 'M', variant: 'tex-calligraphic' },
+                '𝒩\xFE00': { text: 'N', variant: 'tex-calligraphic' },
+                '𝒪\xFE00': { text: 'O', variant: 'tex-calligraphic' },
+                '𝒫\xFE00': { text: 'P', variant: 'tex-calligraphic' },
+                '𝒬\xFE00': { text: 'Q', variant: 'tex-calligraphic' },
+                'ℛ\xFE00': { text: 'R', variant: 'tex-calligraphic' },
+                '𝒮\xFE00': { text: 'S', variant: 'tex-calligraphic' },
+                '𝒯\xFE00': { text: 'T', variant: 'tex-calligraphic' },
+                '𝒰\xFE00': { text: 'U', variant: 'tex-calligraphic' },
+                '𝒱\xFE00': { text: 'V', variant: 'tex-calligraphic' },
+                '𝒲\xFE00': { text: 'W', variant: 'tex-calligraphic' },
+                '𝒳\xFE00': { text: 'X', variant: 'tex-calligraphic' },
+                '𝒴\xFE00': { text: 'Y', variant: 'tex-calligraphic' },
+                '𝒵\xFE00': { text: 'Z', variant: 'tex-calligraphic' }
+              };
+
+              mmlFilters.add((args) => {
+                let nodes = document.evaluate('.//m:mi | .//m:mn | .//m:mo | .//m:ms', args.data,
+                  () => 'http://www.w3.org/1998/Math/MathML', XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE);
+                for (let i = 0; i < nodes.snapshotLength; i++) {
+                  const n = nodes.snapshotItem(i);
+                  const repl = replacements[n.innerHTML];
+                  if (repl !== undefined) {
+                    const variant = repl['variant'];
+                    const text = repl['text'];
+                    if (variant !== undefined) { n.classList.add('MJX-' + variant); n.removeAttribute('mathvariant'); }
+                    if (text !== undefined) { n.innerHTML = text; }
+                  }
+                }
+              });
+            }
+          }
+        };
+      </script>
+<script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-chtml.js"></script>
+<script type="text/javascript">
+                gitbook.require(["gitbook"], function(gitbook) {
+                gitbook.start({
+                  "fontsettings": {
+                    "theme": "white",
+                    "family": "sans",
+                    "size": 2
+                  },
+                  "download": [ [ "book.pdf", "PDF" ], ],
+                  "search": {
+                    "engine": "fuse"
+                  },
+                  "toc": {
+                    "collapse": "none"
+                  }
+                });
+              });
+            </script>
+</body>
+
+</html>
